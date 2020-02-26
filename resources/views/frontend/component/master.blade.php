@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="{{asset('assets/css/colors.php?color=000000')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
 
     <!-- Document Title
 	============================================= -->
@@ -141,7 +141,8 @@
         <!-- #header end -->
 
         @yield('content')
-
+        
+        
         <!-- end yt -->
 
         <div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
