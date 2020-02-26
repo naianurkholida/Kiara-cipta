@@ -107,7 +107,9 @@
 #new front page route
 
 Route::group(['prefix' => 'dermaster'], function(){
-	Route::get('/', 'FrontPage\HomeController')->name('desamater.home');
+	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
+	Route::get('/dokter', 'FrontPage\DokterController@index')->name('dermaster.dokter');
+	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 });
 
 #end new front page route
