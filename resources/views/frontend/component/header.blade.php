@@ -21,17 +21,17 @@
 
                         <ul>
                             <li class="current">
-                                <a href="#">
+                            <a href="{{route('dermaster.home')}}">
                                     <div>Home</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <div>Tentang Kami</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('dermaster.dokter')}}">
                                     <div>Dokter</div>
                                 </a>
                             </li>
@@ -100,7 +100,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="galery.html">
+                            <a href="{{route('dermaster.gallery')}}">
                                     <div>Gallery</div>
                                 </a>
                             </li>
