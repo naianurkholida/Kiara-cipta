@@ -49,7 +49,9 @@ class DokterController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Dokter::where('name', str_replace('-', ' ', $id))->firstOrFail();
+
+        return view('frontend.dokter-detail', compact('data'));
     }
 
     /**

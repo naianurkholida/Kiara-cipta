@@ -14,7 +14,7 @@
                     <div class="col-md-3" style="text-align: center;margin-bottom: 20px;">
                         <div class="box-dokter">
                             <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('dokter') }});"></div>
-                            <p id="dokter-name">{{ $row->name }}</p>
+                            <a href="{{ route('dermaster.dokter.show', str_replace(' ', '-', $row->name)) }}"><p id="dokter-name">{{ $row->name }}</p></a>
                             <p style="margin-bottom:10 !important;">{{ $row->getCategory->category }}</p>
                         </div>
                     </div>

@@ -110,7 +110,12 @@
 
 Route::group(['prefix' => 'dermaster'], function(){
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
-	Route::get('/dokter', 'FrontPage\DokterController@index')->name('dermaster.dokter');
+	
+	Route::group(['prefix' => 'dokter'], function(){
+		Route::get('/', 'FrontPage\DokterController@index')->name('dermaster.dokter');
+		Route::get('/show/{id}', 'FrontPage\DokterController@show')->name('dermaster.dokter.show');
+	});
+
 	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 });
 
