@@ -4,6 +4,8 @@ namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Gallery;
+use App\Entities\Admin\core\Category;
 
 class GalleryController extends Controller
 {
@@ -14,7 +16,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('frontend.gallery');
+        $data = Gallery::where('deleted_at', NULL)->get();
+        $category = Category::where('id_parent', 39)->get();
+
+        return view('frontend.gallery', compact('data', 'category'));
     }
 
     /**

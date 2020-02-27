@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Dokter;
 
 class DokterController extends Controller
 {
@@ -14,7 +15,9 @@ class DokterController extends Controller
      */
     public function index()
     {
-        return view('frontend.dokter');
+        $data = Dokter::where('deleted_at', NULL)->get();
+
+        return view('frontend.dokter', compact('data'));
     }
 
     /**
