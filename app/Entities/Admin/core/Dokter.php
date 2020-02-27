@@ -24,7 +24,7 @@ class Dokter extends Model implements HasMedia
 
     public function getDokterLanguage()
     {
-        return $this->hasOne(DokterLanguage::class, 'id_dokter', 'id');
+        return $this->hasOne(DokterLanguage::class, 'id_dokter', 'id')->where('id_language', Session::get('locale'));
     }
 
     public function getCategory()

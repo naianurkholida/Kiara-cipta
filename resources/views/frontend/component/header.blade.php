@@ -43,41 +43,13 @@
                                     <ul class="mega-menu-column col-lg-12">
                                         <li class="mega-menu-title">
                                             <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Casual Shoes</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Formal Shoes</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Sports shoes</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Flip Flops</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Slippers</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Sandals</div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div>Party Shoes</div>
-                                                    </a>
-                                                </li>
+                                                @foreach(Helper::getCategory(47) as $row)
+                                                    <li>
+                                                        <a href="{{ route('dermaster.treatments', str_replace(' ', '-', $row->category)) }}">
+                                                            <div>{{ $row->category }}</div>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>

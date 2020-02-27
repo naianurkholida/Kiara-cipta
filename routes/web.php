@@ -108,7 +108,7 @@
 
 #new front page route
 
-Route::group(['prefix' => 'dermaster'], function(){
+Route::group(['prefix' => '/derma-express'], function(){
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
 	
 	Route::group(['prefix' => 'dokter'], function(){
