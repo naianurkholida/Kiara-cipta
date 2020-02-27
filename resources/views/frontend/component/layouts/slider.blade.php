@@ -7,15 +7,10 @@
                 <div class="swiper-container swiper-parent">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide" style="background-image: url({{asset('assets/images/banner.png')}}); background-position: center top;">
+                        @foreach(Helper::slider() as $row)
+                            <div class="swiper-slide" style="background-image: url( {{ $row->getFirstMediaUrl('slider') }} ); background-position: center top;"></div>
+                        @endforeach
 
-                        </div>
-                        <div class="swiper-slide" style="background-image: url({{asset('assets/images/banner.png')}}); background-position: center top;">
-
-                        </div>
-                        <div class="swiper-slide" style="background-image: url({{asset('assets/images/banner.png')}}); background-position: center top;">
-
-                        </div>
                     </div>
                     <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
                     <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>

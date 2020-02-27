@@ -2,11 +2,38 @@
 namespace App\Helpers;
 
 use Illuminate\Support\Facades\Session;
+use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Menu as Menu;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
+use App\Entities\Admin\core\Slider;
+use App\Entities\Admin\core\SlideLanguage;
+use App\Entities\Admin\core\Treatment;
+use App\Entities\Admin\core\TreatmentLanguage;
+use DB;
 
 class Helper
 {
+	private static function baseLanguageId()
+	{
+		$data = Session::get('locale');
+
+		return $data;
+	}
+
+	public static function baseLanguageName()
+	{
+		$data = Language::findOrFail(Session::get('locale'));
+
+		return $data->code;
+	}
+
+	public static function language()
+	{
+		$data = language::all();
+
+		return $data;
+	}
+
 	public static function title()
 	{
 		$data = 'DERMA EXPRESS';
@@ -57,10 +84,26 @@ class Helper
 							->get();
 
 		return $data;
-    }
-    
-    public static function labelPage($url)
+	}
+	
+	public static function removeTags($tags)
 	{
-		
+		$data = substr(strip_tags($tags), 0, 140) . '...';
+
+		return $data;
+	}
+    
+    public static function slider()
+	{
+		$data = Slider::all();
+
+		return $data;
+	}
+
+	public static function treatment()
+	{
+		$data = Treatment::where('deleted_at', NULL)->get();
+
+		return $data;
 	}
 }

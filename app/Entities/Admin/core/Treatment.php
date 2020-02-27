@@ -2,6 +2,7 @@
 
 namespace App\Entities\Admin\core;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -21,6 +22,6 @@ class Treatment extends Model implements HasMedia
 
     public function getTreatmentLanguage()
     {
-        return $this->hasOne(TreatmentLanguage::class, 'id_treatment', 'id');
+        return $this->hasOne(TreatmentLanguage::class, 'id_treatment', 'id')->where('id_language', Session::get('locale'));
     }
 }

@@ -14,7 +14,9 @@
 	use App\Entities\Admin\core\MenuFrontPage;
 	$url = MenuFrontPage::all();
 
-	Route::get('/', 'FrontPage\FrontPageController@index');
+	Route::get('/', function() {
+		return redirect()->route('dermaster.home');
+	});
 
 	#get kategori ajax midtrans zakat
 	Route::get('/get_data_kategori/{id}', 'FrontPage\FrontPageController@get_kategori')->name('kategorigetdata');
@@ -111,6 +113,14 @@ Route::group(['prefix' => 'dermaster'], function(){
 });
 
 #end new front page route
+
+#language route
+
+Route::group(['prefix' => 'language'], function(){
+	Route::get('/switch/{id}', 'Language\SwitchLanguageController')->name('language.switch');
+});
+
+#end language route
 
 #backend route
 	#login 
@@ -318,6 +328,20 @@ Route::group(['prefix' => 'dermaster'], function(){
 		Route::post('/edit/update_detail/{id_parameter}', 'Admin\core\ParameterController@update_detail')->name('parameter.update_detail');
 		Route::get('/detail/{id_parameter}', 'Admin\core\ParameterController@show')->name('parameter.detail');
 		Route::get('/delete/{id_parameter}', 'Admin\core\ParameterController@destroy')->name('parameter.delete');
+	});
+
+	#language
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'language'
+	], function(){
+		Route::get('/', 'Admin\core\LanguageController@index')->name('language.index');
+		Route::get('/insert', 'Admin\core\LanguageController@create')->name('language.insert');
+		Route::post('/insert/post', 'Admin\core\LanguageController@store')->name('language.post');
+		Route::get('/edit/{id}', 'Admin\core\LanguageController@edit')->name('language.edit');
+		Route::post('/insert/update/{id}', 'Admin\core\LanguageController@update')->name('language.update');
+		Route::get('/detail/{id}', 'Admin\core\LanguageController@show')->name('language.detail');
+		Route::get('/delete/{id}', 'Admin\core\LanguageController@destroy')->name('language.delete');
 	});
 
 	#theme

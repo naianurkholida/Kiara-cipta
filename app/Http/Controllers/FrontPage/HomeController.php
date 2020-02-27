@@ -3,13 +3,23 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Language;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
         $this->view = 'frontend.home';
+
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
     }
 
     /**

@@ -95,23 +95,15 @@
 						============================================= -->
                         <div class="top-links">
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">FAQS</a></li>
-                                <li><a href="#">Blogs</a></li>
-                                <li><a href="#">EN</a>
+                                <li><a href="#">{{ Helper::baseLanguageName() }}</a>
                                     <ul>
+                                        @foreach(Helper::language() as $row)
                                         <li>
-                                            <a href="#"><img src="{{asset('assets/images/icons/flags/french.png')}}'" alt="French"> FR</a>
+                                            <a href="{{ route('language.switch', $row->code) }}"><img src="{{ $row->getFirstMediaUrl('language') }}"> {{ $row->code }}</a> 
                                         </li>
-                                        <li>
-                                            <a href="#"><img src="{{asset('assets/images/icons/flags/italian.png')}}" alt="Italian"> IT</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img src="{{asset('assets/images/icons/flags/german.png')}}" alt="German"> DE</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li></li>
                             </ul>
                         </div>
                         <!-- .top-links end -->
