@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Session;
 use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Menu as Menu;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
+use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Sosmed;
 use App\Entities\Admin\core\Slider;
 use App\Entities\Admin\core\SlideLanguage;
 use App\Entities\Admin\core\Treatment;
@@ -32,6 +34,13 @@ class Helper
 		$data = language::all();
 
 		return $data;
+	}
+
+	public static function baseInstagram()
+	{
+		$data = Parameter::where('key', 'instagram')->first();
+
+		return $data->value;
 	}
 
 	public static function title()
@@ -103,6 +112,24 @@ class Helper
 	public static function treatment()
 	{
 		$data = Treatment::where('deleted_at', NULL)->get();
+
+		return $data;
+	}
+
+	public static function instagram()
+	{
+		$data = Sosmed::where('deleted_at', NULL)
+				->where('id_category', 53)
+				->get();
+
+		return $data;
+	}
+
+	public static function youtube()
+	{
+		$data = Sosmed::where('deleted_at', NULL)
+				->where('id_category', 54)
+				->get();
 
 		return $data;
 	}

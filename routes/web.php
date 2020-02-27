@@ -208,6 +208,20 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/history/{id}', 'Admin\core\ProdukController@history')->name('produk.history');
 	});
 
+	#sosmed admin
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'sosmed'
+	], function(){
+		Route::get('/', 'Admin\core\SosmedController@index')->name('sosmed.index');
+		Route::get('/insert', 'Admin\core\SosmedController@insert')->name('sosmed.insert');
+		Route::post('/store', 'Admin\core\SosmedController@store')->name('sosmed.store');
+		Route::get('/edit/{id}', 'Admin\core\SosmedController@edit')->name('sosmed.edit');
+		Route::post('/update/{id}', 'Admin\core\SosmedController@update')->name('sosmed.update');
+		Route::get('/delete/{id}', 'Admin\core\SosmedController@delete')->name('sosmed.delete');
+		Route::get('/history/{id}', 'Admin\core\SosmedController@history')->name('sosmed.history');
+	});
+
 	#treatment admin
 	Route::group([
 		'middleware' => 'middleware',
