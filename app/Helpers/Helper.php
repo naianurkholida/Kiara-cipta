@@ -3,6 +3,7 @@ namespace App\Helpers;
 
 use Illuminate\Support\Facades\Session;
 use App\Entities\Admin\core\Language;
+use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Menu as Menu;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Entities\Admin\core\Parameter;
@@ -105,6 +106,13 @@ class Helper
     public static function slider()
 	{
 		$data = Slider::all();
+
+		return $data;
+	}
+
+	public static function getCategory($id)
+	{
+		$data = Category::where('id_parent', $id)->get();
 
 		return $data;
 	}
