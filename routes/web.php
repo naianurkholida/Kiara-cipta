@@ -116,6 +116,16 @@ Route::group(['prefix' => 'dermaster'], function(){
 		Route::get('/show/{id}', 'FrontPage\DokterController@show')->name('dermaster.dokter.show');
 	});
 
+	Route::group(['prefix' => 'products'], function(){
+		Route::get('/', 'FrontPage\ProductsController@index')->name('dermaster.products');
+		Route::get('/show/{id}', 'FrontPage\ProductsController@show')->name('dermaster.products.show');
+	});
+
+	Route::group(['prefix' => 'treatments'], function(){
+		Route::get('/{id}', 'FrontPage\TreatmentsController@index')->name('dermaster.treatments');
+		Route::get('/show/{id}', 'FrontPage\TreatmentsController@show')->name('dermaster.treatments.show');
+	});
+
 	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 });
 

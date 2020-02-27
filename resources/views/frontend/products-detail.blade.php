@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         <div class="container">
-            @include('frontend.component.layouts.item-detail', ['related' => 'getDokterLanguage', 'column' => 'deskripsi','image' => 'dokter'])
+            @include('frontend.component.layouts.item-detail', ['related' => 'getProdukLanguage', 'column' => 'deskripsi','image' => 'produk'])
         </div>
     </div>
 </div>

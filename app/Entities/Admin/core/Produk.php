@@ -2,6 +2,7 @@
 
 namespace App\Entities\Admin\core;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -21,6 +22,6 @@ class Produk extends Model implements HasMedia
 
     public function getProdukLanguage()
     {
-        return $this->hasOne(ProdukLanguage::class, 'id_produk', 'id');
+        return $this->hasOne(ProdukLanguage::class, 'id_produk', 'id')->where('id_language', Session::get('locale'));
     }
 }
