@@ -13,7 +13,7 @@
 
             <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
             @foreach($category as $row)
-                <li><a href="#" data-filter=".pf-{{ $row->category }}">{{ $row->category }}</a></li>
+                <li><a href="#" data-filter=".pf-{{ str_replace(' ', '-', $row->category) }}">{{ $row->category }}</a></li>
             @endforeach
 
         </ul>
@@ -25,22 +25,17 @@
     <div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
 
         @foreach($category as $row)
-                @foreach($data as $item)
-                    @if($item->id_category == $row->id)
-                    <article class="portfolio-item pf-media pf-{{ $row->category }}">
+                @foreach($row->getGallery as $item)
+                    <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}">
                         <div class="portfolio-image">
-                            <a href="#">
-                                <img src="{{ $item->getFirstMediaUrl('gallery') }}" alt="Open Imagination">
-                            </a>
+                                <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
                             <div class="portfolio-overlay">
                                 <div class="portfolio-desc">
-                                    <h3><a href="#">Open Imagination</a></h3>
-                                    <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                                    <h3><a href="{{ $item->getFirstMediaUrl('gallery') }}" target="blank">Open image</ah3>
                                 </div>
                             </div>
                         </div>
                     </article>
-                    @endif
                 @endforeach
         @endforeach
 
