@@ -11,6 +11,6 @@ class Category extends Model
 
     public function getGallery()
     {
-        return $this->hasMany(Gallery::class, 'id_category', 'id');
+        return $this->hasMany(Gallery::class, 'id_category', 'id')->where('deleted_at', NULL);
     }
 }
