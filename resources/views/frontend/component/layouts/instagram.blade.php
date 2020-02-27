@@ -51,16 +51,13 @@
         posts_html += '<article class="portfolio-item pf-media pf-icons">' +
                         '<div class="portfolio-image">'  +
                             '<a href="'+url+'">'  +
-                                '<img src="'+url+'" alt="Open Imagination">' +
+                                '<div id="item-post-instagram" style ="background-image:url('+url+')"></div>' +
                             '</a>' +
                             '<div class="portfolio-overlay">' +
-                                'if ('+video+' == true) {' +
-                                    '<center><a href="'+url+'"><i class="icon-play"></i></a></center>' +
-                                '}' +
                             '</div>' +
                         '</div>' +
                         '<div class="portfolio-desc">' +
-                            '<a href="'+url+'" style="font-size: 8px; line-height: normal" title="'+caption+'">'+caption.substr(0, 50)+'...</a>' +
+                            '<a href="'+url+'" style="font-size: 11px; line-height: normal" title="'+caption+'">'+caption.substr(0, 50)+'...</a>' +
                             '<span><a href="#">'+nFormatter(likes)+' like</a>, <a href="#">'+nFormatter(comments)+' comment</a></span>' +
                         '</div>' +
                     '</article>'
