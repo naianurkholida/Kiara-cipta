@@ -31,7 +31,7 @@
                                 <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
                             <div class="portfolio-overlay">
                                 <div class="portfolio-desc">
-                                    <h3><a href="{{ $item->getFirstMediaUrl('gallery') }}" target="blank">Open image</ah3>
+                                    <h3><a href="{{ $item->getFirstMediaUrl('gallery') }}" target="blank">Open image</a><h3>
                                 </div>
                             </div>
                         </div>
