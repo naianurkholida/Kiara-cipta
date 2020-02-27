@@ -114,7 +114,8 @@
                             <ul>
                                 <li><a href="#" class="si-facebook"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
                                 <li><a href="#" class="si-instagram"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
-                                <li><a href="tel:+91.11.85412542" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
+                                <li><a href="#" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
+                                <li><a href="tel:+91.11.85412542" class="si-whatsaap"><span class="ts-icon"><i class="icon-whatsapp"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
                                 <li><a href="mailto:info@canvas.com" class="si-email3"><span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text">info@canvas.com</span></a></li>
                             </ul>
                         </div>
@@ -140,8 +141,11 @@
         <div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
             <div class="container clearfix">
                 <center>
-                    <a href="#" class="si-facebook" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;">Facebook</span></a>
-                    <a href="#" class="si-instagram" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;">Instagram</span></a>
+                    <a href="#"  style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;">Facebook</span></a>
+                    <a href="#"  style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;">Instagram</span></a>
+                    <a href="#"  style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;">Twitter</span></a>
+                    <a href="#" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;">Whatsapp</span></a>
+                    <a href="#" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;">Mail</span></a>
                 </center>
             </div>
         </div>
@@ -159,13 +163,13 @@
 
                     <div class="row justify-content-between align-items-center">
                         <div class="col-md-6">
-                            Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+                            Copyrights &copy; 2020 DermaExpress<br>
                             <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
                         </div>
 
                         <div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
                             <div class="copyrights-menu copyright-links clearfix">
-                                <a href="#">About</a>/<a href="#">Features</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+                                
                             </div>
                         </div>
                     </div>
