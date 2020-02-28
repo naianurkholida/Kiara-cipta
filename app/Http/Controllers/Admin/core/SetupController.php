@@ -118,6 +118,12 @@ class SetupController extends Controller
         #selected youtube
         $twitter = Parameter::where('key', 'twitter')->first();
 
+        #selected whatsapp
+        $whatsapp = Parameter::where('key', 'whatsapp')->first();
+
+        #selected email
+        $email = Parameter::where('key', 'email')->first();
+
         #kebijakan refund
         $kebijakan = Parameter::where('key', 'kebijakan_refund')->first();
         $content_kebijakan = Pages::select('pages.id as key_page','pages_language.*')
@@ -134,7 +140,7 @@ class SetupController extends Controller
         ->where('pages.id', $rekening->value)
         ->first();
 
-        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'kategori_program', 'youtube', 'content_zakat', 'kategori_zakat', 'kategori_kisah', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','kebijakan','content_kebijakan', 'rekening', 'content_rekening'));
+        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'kategori_program', 'youtube', 'content_zakat', 'kategori_zakat', 'kategori_kisah', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','kebijakan','content_kebijakan', 'rekening', 'content_rekening'));
     }
 
     public function store_settings(Request $request)
@@ -162,6 +168,14 @@ class SetupController extends Controller
         $twwiter 			= Parameter::where('key', 'twitter')->first();
         $twwiter->value 	= $request->twitter;
         $twwiter->save();
+
+        $whatsapp            = Parameter::where('key', 'whatsapp')->first();
+        $whatsapp->value     = $request->whatsapp;
+        $whatsapp->save();
+
+        $email            = Parameter::where('key', 'email')->first();
+        $email->value     = $request->email;
+        $email->save();
 
         $zakat 				= Parameter::where('key', 'content_zakat')->first();
         $zakat->value   	= $request->content_zakat;

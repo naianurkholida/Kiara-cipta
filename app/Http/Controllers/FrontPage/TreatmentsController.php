@@ -7,6 +7,7 @@ use App\Entities\Admin\core\Category;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
+use App\Entities\Admin\core\Parameter;
 
 class TreatmentsController extends Controller
 {
@@ -17,11 +18,17 @@ class TreatmentsController extends Controller
      */
     public function index($id)
     {
+        $facebook  = Parameter::where('key', 'facebook')->first();
+        $instagram = Parameter::where('key', 'instagram')->first();
+        $twitter   = Parameter::where('key', 'twitter')->first();
+        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
+        $email     = Parameter::where('key', 'email')->first();
+
         $category = Category::where('category', str_replace('-', ' ', $id))->first();
 
         $data = Treatment::where('id_category', $category->id)->get();
 
-        return view('frontend.treatments', compact('data'));
+        return view('frontend.treatments', compact('data','facebook','instagram','twitter','whatsapp','email'));
     }
 
     /**

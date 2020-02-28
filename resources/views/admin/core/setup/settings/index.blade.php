@@ -237,6 +237,17 @@
 				</div>
 			</div>
 			<br>
+			<div class="row">
+				<div class="col-lg-6">
+					<label>Whatsapp</label>
+					<input type="text" name="whatsapp" class="form-control" placeholder="Whatsapp" value="{{$whatsapp->value}}">
+				</div>
+				<div class="col-lg-6">
+					<label>Email</label>
+					<input type="text" name="email" class="form-control" placeholder="Email" value="{{$email->value}}">
+				</div>
+			</div>
+			<br>
 
 			<div class="row">
 				<div class="col-lg-12"><br>
