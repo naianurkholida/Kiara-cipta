@@ -30,11 +30,11 @@
                                     <div>Tentang Kami</div>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="{{route('dermaster.dokter')}}">
                                     <div>Dokter</div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#">
                                     <div>Treatments</div>
