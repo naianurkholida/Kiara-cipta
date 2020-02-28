@@ -2,7 +2,7 @@
     <div class="container clearfix">
         <div class="container clearfix">
             <div class="heading-block center nomargin">
-                <h3>Derma Express</h3>
+                <h2>Derma Express</h2>
                 <h3>A company by Dermaster Clinic Indonesia</h3>
             </div>
         </div>
