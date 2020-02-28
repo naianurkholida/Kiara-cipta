@@ -151,6 +151,8 @@ class FrontPageController extends Controller
 
     	$footer_text = Parameter::where('key', $id_lang)->first();
 
+        $facebook = Parameter::where('key', 'facebook')->first();
+
     	return view('front_page.'.$this->theme->key.'.main_layouts.index', compact(
     		'header', 
     		'footer', 
@@ -162,7 +164,8 @@ class FrontPageController extends Controller
     		'links',
     		'program_home',
     		'footer_text',
-    		'language'
+    		'language',
+            'facebook'
     	));
     }
 

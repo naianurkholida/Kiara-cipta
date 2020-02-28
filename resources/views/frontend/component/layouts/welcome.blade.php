@@ -2,7 +2,7 @@
     <div class="container clearfix">
         <div class="container clearfix">
             <div class="heading-block center nomargin">
-                <h3>Selamat Datang di Dermaster Indonesia</h3>
+                <h3>A company by Dermaster Clinic Indonesia</h3>
             </div>
         </div>
         <div class="row" style="margin-top: 70px;">
