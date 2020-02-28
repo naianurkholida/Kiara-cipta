@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Parameter;
 
 class CheckPointController extends Controller
 {
@@ -14,7 +15,13 @@ class CheckPointController extends Controller
      */
     public function index()
     {
-        return view('frontend.check_point');
+        $facebook  = Parameter::where('key', 'facebook')->first();
+        $instagram = Parameter::where('key', 'instagram')->first();
+        $twitter   = Parameter::where('key', 'twitter')->first();
+        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
+        $email = Parameter::where('key', 'email')->first();
+
+        return view('frontend.check_point', compact('facebook','instagram','twitter','whatsapp','email'));
     }
 
     /**
