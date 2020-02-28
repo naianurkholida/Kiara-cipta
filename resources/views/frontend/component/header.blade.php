@@ -75,7 +75,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('dermaster.checkpoint')}}">
+                                <a href="http://103.11.134.45:1717/apex/f?p=889">
                                         <div>Check Point</div>
                                     </a>
                                 </li>
