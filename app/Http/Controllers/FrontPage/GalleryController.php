@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Gallery;
 use App\Entities\Admin\core\Category;
+use App\Entities\Admin\core\Parameter;
 
 class GalleryController extends Controller
 {
@@ -16,10 +17,16 @@ class GalleryController extends Controller
      */
     public function index()
     {
+        $facebook  = Parameter::where('key', 'facebook')->first();
+        $instagram = Parameter::where('key', 'instagram')->first();
+        $twitter   = Parameter::where('key', 'twitter')->first();
+        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
+        $email     = Parameter::where('key', 'email')->first();
+
         $data = Gallery::where('deleted_at', NULL)->get();
         $category = Category::where('id_parent', 39)->get();
 
-        return view('frontend.gallery', compact('data', 'category'));
+        return view('frontend.gallery', compact('data', 'category','facebook','instagram','twitter','whatsapp','email'));
     }
 
     /**

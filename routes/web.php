@@ -116,6 +116,10 @@ Route::group(['prefix' => '/derma-express'], function(){
 		Route::get('/show/{id}', 'FrontPage\DokterController@show')->name('dermaster.dokter.show');
 	});
 
+	Route::group(['prefix' => 'profile'], function(){
+		Route::get('/', 'FrontPage\ProfileController@index')->name('dermaster.tentang_kami');
+	});
+
 	Route::group(['prefix' => 'products'], function(){
 		Route::get('/', 'FrontPage\ProductsController@index')->name('dermaster.products');
 		Route::get('/show/{id}', 'FrontPage\ProductsController@show')->name('dermaster.products.show');

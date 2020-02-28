@@ -4,11 +4,9 @@ namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Entities\Admin\core\Produk;
-use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
 
-class ProductsController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +15,13 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $facebook  = Parameter::where('key', 'facebook')->first();
+    	$facebook  = Parameter::where('key', 'facebook')->first();
         $instagram = Parameter::where('key', 'instagram')->first();
         $twitter   = Parameter::where('key', 'twitter')->first();
         $whatsapp  = Parameter::where('key', 'whatsapp')->first();
-        $email     = Parameter::where('key', 'email')->first();
-        $data      = Produk::where('deleted_at', NULL)->get();
+        $email = Parameter::where('key', 'email')->first();
 
-        return view('frontend.products', compact('data','facebook','instagram','twitter','whatsapp','email'));
+        return view('frontend.profile', compact('facebook','instagram','twitter','whatsapp','email'));
     }
 
     /**
@@ -56,11 +53,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $dataLanguage = ProdukLanguage::where('seo', $id)->firstOrFail();
-
-        $data = Produk::findOrFail($dataLanguage->id_produk);
-
-        return view('frontend.products-detail', compact('data'));
+        //
     }
 
     /**

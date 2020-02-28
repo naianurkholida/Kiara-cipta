@@ -7,16 +7,14 @@
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                    <!-- Logo
-            ============================================= -->
+                    <!-- Logo ============================================= -->
                     <div id="logo" style="border:0;">
                         <a href="" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
                         <a href="" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
                     </div>
                     <!-- #logo end -->
 
-                    <!-- Primary Navigation
-            ============================================= -->
+                    <!-- Primary Navigation ============================================= -->
                     <nav id="primary-menu" class="style-2 with-arrows">
 
                         <ul>
@@ -26,7 +24,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{route('dermaster.tentang_kami')}}">
                                     <div>Tentang Kami</div>
                                 </a>
                             </li>

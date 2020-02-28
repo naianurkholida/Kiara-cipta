@@ -10442,6 +10442,11 @@ body:not(.device-touch) .social-icon i {
     background-color: #00ACEE !important;
 }
 
+.si-whatsapp:hover,
+.si-colored.si-whatsapp {
+    background-color: #44f40e !important;
+}
+
 .si-youtube:hover,
 .si-colored.si-youtube {
     background-color: #C4302B !important;
