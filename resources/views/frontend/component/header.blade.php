@@ -75,6 +75,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{route('dermaster.checkpoint')}}">
+                                        <div>Check Point</div>
+                                    </a>
+                                </li>
+                            <li>
                                 <a href="#">
                                     <div>Kontak</div>
                                 </a>
