@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
-
+    <link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
     <!-- Document Title
 	============================================= -->
     <title>Home | Derma Express</title>
