@@ -60,12 +60,12 @@
 
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('dermaster.sosial') }}">
                                     <div>Sosial</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('dermaster.blog') }}">
                                     <div>Blog</div>
                                 </a>
                             </li>
