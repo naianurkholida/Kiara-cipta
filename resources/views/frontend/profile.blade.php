@@ -10,7 +10,9 @@
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1>Profile</h1>
+                <div class="col-lg-12">
+                    {!! $content->konten_page !!}
+                </div>
             </div>
         </div>
     </div>

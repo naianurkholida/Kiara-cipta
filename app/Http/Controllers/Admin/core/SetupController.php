@@ -61,29 +61,8 @@ class SetupController extends Controller
         ->where('pages.id', $profile_parent->value)
         ->first();
 
-        #selected kategori program
-        $program_parent_kategori = Parameter::where('key', 'kategori_program')->first();
-        $kategori_program = Category::where('id', '=', $program_parent_kategori->value)->first();
-
         #selected youtube
         $youtube = Parameter::where('key', 'video_home')->first();
-
-        #selected zakat
-        $zakat_parent = Parameter::where('key', 'content_zakat')->first();
-        $content_zakat = Pages::select('pages.id as key_page','pages_language.*')
-        ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
-        ->where('pages_language.id_language', 1)
-        ->where('pages.id', $zakat_parent->value)
-        ->first();
-
-        #selected kategori zakat
-        $zakat_parent_kategori = Parameter::where('key', 'kategori_zakat')->first();
-        $kategori_zakat = Category::where('id', '=', $zakat_parent_kategori->value)->first();
-
-        #selected kisah
-        $kisah_parent = Parameter::where('key', 'kisah_sukses')->first();
-        $kategori_kisah = Category::where('id', '=', $kisah_parent->value)->first();
-
 
         #selected ketentuan dan privacy
         $ketentuan_privacy = Parameter::where('key', 'ketentuan&privacy')->first();
@@ -124,23 +103,15 @@ class SetupController extends Controller
         #selected email
         $email = Parameter::where('key', 'email')->first();
 
-        #kebijakan refund
-        $kebijakan = Parameter::where('key', 'kebijakan_refund')->first();
-        $content_kebijakan = Pages::select('pages.id as key_page','pages_language.*')
+        #selected kontak
+        $kontak = Parameter::where('key', 'kontak')->first();
+        $content_kontak = Pages::select('pages.id as key_page','pages_language.*')
         ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
         ->where('pages_language.id_language', 1)
-        ->where('pages.id', $kebijakan->value)
+        ->where('pages.id', $kontak->value)
         ->first();
 
-        #rekening donasi
-        $rekening = Parameter::where('key', 'rekening_donasi')->first();
-        $content_rekening = Pages::select('pages.id as key_page','pages_language.*')
-        ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
-        ->where('pages_language.id_language', 1)
-        ->where('pages.id', $rekening->value)
-        ->first();
-
-        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'kategori_program', 'youtube', 'content_zakat', 'kategori_zakat', 'kategori_kisah', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','kebijakan','content_kebijakan', 'rekening', 'content_rekening'));
+        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak'));
     }
 
     public function store_settings(Request $request)
@@ -148,10 +119,6 @@ class SetupController extends Controller
         $profile 			= Parameter::where('key', 'content_profile')->first();
         $profile->value 	= $request->content_profile;
         $profile->save();
-
-        $kategori_program           = Parameter::where('key', 'kategori_program')->first();
-        $kategori_program->value    = $request->kategori_program;
-        $kategori_program->save();
 
         $video 				= Parameter::where('key', 'video_home')->first();
         $video->value 		= $request->video;
@@ -177,18 +144,6 @@ class SetupController extends Controller
         $email->value     = $request->email;
         $email->save();
 
-        $zakat 				= Parameter::where('key', 'content_zakat')->first();
-        $zakat->value   	= $request->content_zakat;
-        $zakat->save();
-
-        $kategori_zakat 		= Parameter::where('key', 'kategori_zakat')->first();
-        $kategori_zakat->value  = $request->kategori_zakat;
-        $kategori_zakat->save();
-
-        $kategori_kisah         = Parameter::where('key', 'kisah_sukses')->first();
-        $kategori_kisah->value  = $request->kategori_kisah;
-        $kategori_kisah->save(); 
-
         $ketentuan_privacy        = Parameter::where('key', 'ketentuan&privacy')->first();
         $ketentuan_privacy->value = $request->ketentuan_privacy;
         $ketentuan_privacy->save();
@@ -201,13 +156,9 @@ class SetupController extends Controller
         $kantor->value = $request->kantor_cabang;
         $kantor->save();
 
-        $kebijakan = Parameter::where('key', 'kebijakan_refund')->first();
-        $kebijakan->value = $request->kebijakan_refund;
-        $kebijakan->save();
-
-        $rekening = Parameter::where('key', 'rekening_donasi')->first();
-        $rekening->value = $request->rekening_donasi;
-        $rekening->save();
+        $kontak = Parameter::where('key', 'kontak')->first();
+        $kontak->value = $request->kontak;
+        $kontak->save();
 
         return redirect()->back();
     }

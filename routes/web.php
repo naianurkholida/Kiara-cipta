@@ -133,6 +133,8 @@ Route::group(['prefix' => '/derma-express'], function(){
 	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.checkpoint');
+
+	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');
 });
 
 #end new front page route

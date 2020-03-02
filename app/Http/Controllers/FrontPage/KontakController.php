@@ -8,7 +8,7 @@ use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
 
-class ProfileController extends Controller
+class KontakController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,10 +26,10 @@ class ProfileController extends Controller
         $content = Pages::select('*')
                 ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
                 ->join('parameter', 'parameter.value', '=', 'pages.id')
-                ->where('parameter.key', 'content_profile')
+                ->where('parameter.key', 'kontak')
                 ->first();
 
-        return view('frontend.profile', compact('facebook','instagram','twitter','whatsapp','email','content'));
+        return view('frontend.kontak', compact('facebook','instagram','twitter','whatsapp','email','content'));
     }
 
     /**

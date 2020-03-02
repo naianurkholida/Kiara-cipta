@@ -75,12 +75,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://103.11.134.45:1717/apex/f?p=889">
+                                <a href="http://103.11.134.45:1717/apex/f?p=889" target="_blank">
                                         <div>Check Point</div>
                                     </a>
                                 </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('dermaster.kontak')}}">
                                     <div>Kontak</div>
                                 </a>
                             </li>

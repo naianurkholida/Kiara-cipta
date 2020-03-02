@@ -50,18 +50,11 @@ class UserController extends Controller
 	public function index()
 	{
 		$top_bar = $this->top_bar();
-		if(Session::get('role_id') == '1'){
-			$user = User::select('users.*','roles.name as role_user')
-			->join('roles', 'roles.id','=','users.role_id')
-			->where('users.deleted_at', '=', null)
-			->get();
-		}else{
-			$user = User::select('users.*','roles.name as role_user')
-			->join('roles', 'roles.id','=','users.role_id')
-			->where('users.deleted_at', '=', null)
-			->where('users.is_created', Session::get('id'))
-			->get();
-		}
+		$user = User::select('users.*','roles.name as role_user')
+		->join('roles', 'roles.id','=','users.role_id')
+		->where('users.deleted_at', '=', null)
+		->get();
+
 		$validasi = MenuAccess::select('*')
 		->leftjoin('menus', 'menus.id', '=', 'menu_access.menu_id')
 		->where('role_id', \Session::get('role_id'))
@@ -101,11 +94,11 @@ class UserController extends Controller
 
 			if ($request->foto != NULL) {
 				$media = $user->getFirstMedia('user');
-	
+				
 				if ($media != NULL) {
 					$media->delete();
 				}
-	
+				
 				$user->addMedia($request->foto)->toMediaCollection('user');
 			}
 		}else{
@@ -165,8 +158,8 @@ class UserController extends Controller
 		
 		$media = $user->getFirstMedia('user');
 
-        if ($media != NULL) {
-            $media->delete();
+		if ($media != NULL) {
+			$media->delete();
 		}
 		
 		$user->deleted_at = date('Y-m-d H:i:s');
