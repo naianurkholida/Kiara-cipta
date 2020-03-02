@@ -9,7 +9,8 @@
     </div>
     <div class="container">
         <div class="container">
-            <iframe align="center" frameborder="yes" height="250px" name="frame1" scrolling="auto" src="http://103.11.134.45:1717/apex/f?p=889" style="border: 1px solid;" width="250px"></iframe>
+            <!-- <iframe style="border:0px #ffffff none;" width="600" height="400" src="http://103.11.134.45:1717/apex/f?p=889:1" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
+            <iframe src="http://localhost:8000/derma-express/checkpoint" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
         </div>
     </div>
 
