@@ -19,7 +19,7 @@
 
                         <ul>
                             <li class="current">
-                            <a href="{{route('dermaster.home')}}">
+                                <a href="{{route('dermaster.home')}}">
                                     <div>Home</div>
                                 </a>
                             </li>
@@ -42,11 +42,11 @@
                                         <li class="mega-menu-title">
                                             <ul>
                                                 @foreach(Helper::getCategory(47) as $row)
-                                                    <li>
-                                                        <a href="{{ route('dermaster.treatments', str_replace(' ', '-', $row->category)) }}">
-                                                            <div>{{ $row->category }}</div>
-                                                        </a>
-                                                    </li>
+                                                <li>
+                                                    <a href="{{ route('dermaster.treatments', str_replace(' ', '-', $row->category)) }}">
+                                                        <div>{{ $row->category }}</div>
+                                                    </a>
+                                                </li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -70,15 +70,15 @@
                                 </a>
                             </li>
                             <li>
-                            <a href="{{route('dermaster.gallery')}}">
+                                <a href="{{route('dermaster.gallery')}}">
                                     <div>Gallery</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="http://103.11.134.45:1717/apex/f?p=889" target="_blank">
-                                        <div>Check Point</div>
-                                    </a>
-                                </li>
+                                <a href="{{route('dermaster.checkpoint')}}">
+                                    <div>Check Point</div>
+                                </a>
+                            </li>
                             <li>
                                 <a href="{{route('dermaster.kontak')}}">
                                     <div>Kontak</div>
@@ -87,23 +87,23 @@
                         </ul>
 
                         <!-- Top Search
-                ============================================= -->
-                        <div id="top-search">
-                            <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-                            </form>
-                        </div>
-                        <!-- #top-search end -->
+                            ============================================= -->
+                            <div id="top-search">
+                                <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+                                <form action="search.html" method="get">
+                                    <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                                </form>
+                            </div>
+                            <!-- #top-search end -->
 
 
 
-                    </nav>
-                    <!-- #primary-menu end -->
+                        </nav>
+                        <!-- #primary-menu end -->
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</header>
+    </header>

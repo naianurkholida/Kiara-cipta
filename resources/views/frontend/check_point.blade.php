@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         <div class="container">
-            <iframe src="https://103.11.134.45:1717/apex/f?p=889" frameborder="0"></iframe>
+            <iframe align="center" frameborder="yes" height="250px" name="frame1" scrolling="auto" src="http://103.11.134.45:1717/apex/f?p=889" style="border: 1px solid;" width="250px"></iframe>
         </div>
     </div>
 
