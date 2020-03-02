@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<label>Content Profile</label>
-					<select class="form-control" name="content_profile">
+					<select class="form-control" name="content_profile" required="">
 						<option value="" selected="" disabled="">- Content profile -</option>
 						@foreach($pages as $val)
 						<?php 
@@ -31,11 +31,11 @@
 				</div>
 				<div class="col-lg-4">
 					<label>Video Home</label>
-					<input type="text" name="video" class="form-control" placeholder="Link Youtube" value="{{$youtube->value}}">
+					<input type="text" name="video" class="form-control" placeholder="Link Youtube" value="{{$youtube->value}}" required="">
 				</div>
 				<div class="col-lg-4">
 					<label>Ketentuan Privacy</label>
-					<select class="form-control" name="ketentuan_privacy">
+					<select class="form-control" name="ketentuan_privacy" required="">
 					<option value="" selected="" disabled="">- Ketentuan Privacy -</option>
 						@foreach($pages as $val)
 						<?php
@@ -59,7 +59,7 @@
 				
 				<div class="col-lg-4">
 					<label>Syarat Ketentuan</label>
-					<select class="form-control" name="syarat_ketentuan">
+					<select class="form-control" name="syarat_ketentuan" required="">
 					<option value="" selected="" disabled="">- Syarat Ketentuan -</option>
 						@foreach($pages as $val)
 						<?php
@@ -79,7 +79,7 @@
 				</div>
 				<div class="col-lg-4">
 					<label>Kantor Cabang</label>
-					<select class="form-control" name="kantor_cabang">
+					<select class="form-control" name="kantor_cabang" required="">
 					<option value="" selected="" disabled="">- Kantor Cabang -</option>
 						@foreach($pages as $val)
 						<?php
@@ -99,29 +99,29 @@
 				</div>
 				<div class="col-lg-4">
 					<label>Email</label>
-					<input type="text" name="email" class="form-control" placeholder="Email" value="{{$email->value}}">
+					<input type="text" name="email" class="form-control" placeholder="Email" value="{{$email->value}}" required="">
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-lg-4">
 					<label>Facebook</label>
-					<input type="text" name="facebook" class="form-control" placeholder="Facebook" value="{{$facebook->value}}">
+					<input type="text" name="facebook" class="form-control" placeholder="Facebook" value="{{$facebook->value}}" required="">
 				</div>
 				<div class="col-lg-4">
 					<label>Instagram</label>
-					<input type="text" name="instagram" class="form-control" placeholder="Instagram" value="{{$instagram->value}}">
+					<input type="text" name="instagram" class="form-control" placeholder="Instagram" value="{{$instagram->value}}" required="">
 				</div>
 				<div class="col-lg-4">
 					<label>Twitter</label>
-					<input type="text" name="twitter" class="form-control" placeholder="Twitter" value="{{$twitter->value}}">
+					<input type="text" name="twitter" class="form-control" placeholder="Twitter" value="{{$twitter->value}}" required="">
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Kontak</label>
-					<select class="form-control" name="kontak">
+					<select class="form-control" name="kontak" required="">
 					@foreach($pages as $val)
 						<?php
 						if($content_kontak != null){
@@ -143,7 +143,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Whatsapp</label>
-					<textarea class="form-control" name="whatsapp">{{$whatsapp->value}}</textarea>
+					<textarea class="form-control" name="whatsapp" required="">{{$whatsapp->value}}</textarea>
 				</div>
 			</div>
 			<br>
