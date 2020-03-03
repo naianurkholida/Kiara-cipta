@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="">content</label>
-                                <textarea id="content[<?=$key?>]" name="content[]" class="summernote" id="kt_summernote_1"></textarea>
+                                <textarea id="content[<?=$key?>]" name="content[]" class="summernote1"></textarea>
                             </div>
                         </div>
                     @endif
@@ -107,5 +107,56 @@
 @endsection
 
 @section('js')
+<script type="text/javascript">
+    $(document).ready(function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
+            $('.summernote1').summernote({
+                height: "300px",
+                callbacks: {
+                    onImageUpload: function(image) {
+                        uploadImage(image[0]);
+                    },
+                    onMediaDelete : function(target) {
+                        deleteImage(target[0].src);
+                    }
+                }
+            });
+
+            function uploadImage(image) {
+                var data = new FormData();
+                data.append("image", image);
+                $.ajax({
+                    url: "{{url('uploadimagewysywig')}}",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    type: "POST",
+                    success: function(url) {
+                        $('.summernote1').summernote("insertImage", url);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+
+            function deleteImage(src) {
+                $.ajax({
+                    data: {src : src},
+                    type: "POST",
+                    url: "{{url('deleteimagewysywig')}}",
+                    cache: false,
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+            }
+        });
+</script>
 @endsection
