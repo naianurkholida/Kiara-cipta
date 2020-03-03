@@ -130,6 +130,16 @@ Route::group(['prefix' => '/derma-express'], function(){
 		Route::get('/show/{id}', 'FrontPage\TreatmentsController@show')->name('dermaster.treatments.show');
 	});
 
+	Route::group(['prefix' => 'sosial'], function(){
+		Route::get('/', 'FrontPage\SosialController@index')->name('dermaster.sosial');
+		Route::get('/show/{id}', 'FrontPage\SosialController@show')->name('dermaster.sosial.show');
+	});
+
+	Route::group(['prefix' => 'blog'], function(){
+		Route::get('/', 'FrontPage\BlogController@index')->name('dermaster.blog');
+		Route::get('/show/{id}', 'FrontPage\BlogController@show')->name('dermaster.blog.show');
+	});
+
 	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.checkpoint');

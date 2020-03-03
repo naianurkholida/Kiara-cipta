@@ -81,9 +81,7 @@ class GalleryController extends Controller
             if ($request->image != NULL) {
                 if (count($gallery->getMedia('gallery')) > 0) {
                     foreach ($gallery->getMedia('gallery') as $media) {
-                        if (!in_array($media->file_name, $request->image)) {
-                            $media->delete();
-                        }
+                        $media->delete();
                     }
                 }
     
