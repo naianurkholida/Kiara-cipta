@@ -67,7 +67,7 @@ class DokterController extends Controller
 			}
 		}
 
-        return redirect()->route('dokter.index');
+        return redirect()->route('dokter.index')->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit($id)
@@ -146,7 +146,7 @@ class DokterController extends Controller
             $dokter->addMedia($request->image)->toMediaCollection('dokter');
         }
 
-        return redirect()->route('dokter.index');
+        return redirect()->route('dokter.index')->with('info', 'Data Berhasil di Update');;
 	}
 	
 	public function delete($id)
@@ -165,6 +165,6 @@ class DokterController extends Controller
 
 		$dokter->update($data);
 
-		return redirect()->route('dokter.index');
+		return redirect()->route('dokter.index')->with('danger', 'Data Berhasil di Hapus');;
 	}
 }

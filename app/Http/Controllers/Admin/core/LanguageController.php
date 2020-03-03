@@ -52,7 +52,7 @@ class LanguageController extends Controller
             $language->addMedia($request->image)->toMediaCollection('language');
         }
 
-    	return redirect('language');
+    	return redirect('language')->with('success', 'Data Berhasil di Simpan');
     }
 
     /**
@@ -105,7 +105,7 @@ class LanguageController extends Controller
             $language->addMedia($request->image)->toMediaCollection('language');
         }
 
-    	return redirect('language');
+    	return redirect('language')->with('info', 'Data Berhasil di Update');
     }
 
     /**
@@ -127,6 +127,6 @@ class LanguageController extends Controller
         
         $language->delete();
 			
-    	return redirect('language');
+    	return redirect('language')->with('danger', 'Data Berhasil di Hapus');
     }
 }

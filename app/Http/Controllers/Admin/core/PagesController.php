@@ -116,7 +116,7 @@ class PagesController extends Controller
             }
         }        
 
-        return redirect('pages');
+        return redirect('pages')->with('success', 'Data Berhasil di Simpan');
     }
 
     /**
@@ -203,7 +203,7 @@ class PagesController extends Controller
             }
         }
 
-        return redirect('pages');
+        return redirect('pages')->with('info', 'Data Berhasil di Update');
     }
 
     /**
@@ -217,6 +217,6 @@ class PagesController extends Controller
         Pages::where('id', $id)->delete();
         PagesLanguage::where('id_pages', $id)->delete();
 
-        return redirect('pages');
+        return redirect('pages')->with('danger', 'Data Berhasil di Hapus');
     }
 }

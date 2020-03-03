@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Kategori Treatment</label>
-					<select class="form-control" name="kategori_treatment">
+					<select class="form-control" name="kategori_treatment" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
 						@foreach($category as $key => $val)
 							<option value="{{$val->id}}">{{$val->category}}</option>
@@ -44,11 +44,11 @@
 				</div>
 				<div class="col-md-12">
 					<label for="">Title</label>
-					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control">
+					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" required>
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>
-					<textarea id="content[<?=$key?>]" name="deskripsi[]" cols="30" rows="10" class="summernote" id="kt_summernote_1"></textarea>
+					<textarea id="content[<?=$key?>]" name="deskripsi[]" cols="30" rows="10" class="summernote" id="kt_summernote_1" required></textarea>
 				</div>
 			</div>
 			<hr>

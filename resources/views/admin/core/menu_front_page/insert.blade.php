@@ -54,7 +54,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Kategori</label>
-                        <select name="kategori" id="kategori" class="form-control">
+                        <select name="kategori" id="kategori" class="form-control" required="">
                             <option value="" selected="">-- Pilih Kategori --</option>
                             @foreach($category as $category)
                                 <option value="{{$category->id}}">{{$category->category}}</option>
@@ -64,7 +64,7 @@
 
                     <div class="col-md-6">
                         <label for="">Parent</label>
-                        <select name="parent" id="parent" class="form-control">
+                        <select name="parent" id="parent" class="form-control" required="">
                             <option value="0" selected="">Parent</option>
                             @foreach($menu_front_page_language as $menu_front_page_language)
                                 <option value="{{$menu_front_page_language->id_menu_front_page}}">{{$menu_front_page_language->judul_menu}}</option>
@@ -76,12 +76,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Sort order</label>
-                        <input type="number" class="form-control" name="sort_order" id="sort_order">
+                        <input type="number" class="form-control" name="sort_order" id="sort_order" required="">
                     </div>
 
                     <div class="col-md-6">
                         <label for="">Jenis</label>
-                        <select name="jenis" id="jenis" class="form-control">
+                        <select name="jenis" id="jenis" class="form-control" required="">
                             <option value="" selected="">-- pilih Jenis --</option>
                             <option value="Page">Page</option>
                             <option value="Modul">Modul</option>

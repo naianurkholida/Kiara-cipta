@@ -67,7 +67,7 @@ class MenuController extends Controller
 		$menu->created_by = $request->created_by;
 		$menu->save();
 
-		return redirect('/menu');
+		return redirect('/menu')->with('success', 'Data Berhasil di Simpan');
 	}
 
 	public function edit($id)
@@ -90,7 +90,7 @@ class MenuController extends Controller
 		$menu->created_by = $request->created_by;
 		$menu->save();
 
-		return redirect('/menu');
+		return redirect('/menu')->with('info', 'Data Berhasil di Update');
 	}
 
 	public function delete($id)
@@ -98,6 +98,6 @@ class MenuController extends Controller
 		$menu = Menu::find($id);
 		$menu->deleted_at = date('Y-m-d H:i:s');
 		$menu->save();
-		return redirect()->back();
+		return redirect('/menu')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

@@ -41,7 +41,7 @@ class GalleryController extends Controller
             }
         }
 
-        return redirect()->route('gallery.index');
+        return redirect()->route('gallery.index')->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit($id)
@@ -99,7 +99,7 @@ class GalleryController extends Controller
             }
         } 
 
-        return redirect()->route('gallery.index');
+        return redirect()->route('gallery.index')->with('info', 'Data Berhasil di Update');
 	}
 	
 	public function delete($id)
@@ -112,6 +112,6 @@ class GalleryController extends Controller
 
 		$gallery->update($data);
 
-		return redirect()->route('gallery.index');
+		return redirect()->route('gallery.index')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

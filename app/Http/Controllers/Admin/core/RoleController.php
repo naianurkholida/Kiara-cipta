@@ -64,7 +64,7 @@ class RoleController extends Controller
 		$role->icon 	   = '-';
 		$role->created_by  = $request->created_by;
 		$role->save();
-		return redirect('/role');
+		return redirect('/role')->with('success', 'Data Berhasil di Simpan');
 	}
 
 	public function edit($id)
@@ -84,7 +84,7 @@ class RoleController extends Controller
 		$role->created_by  = $request->created_by;
 		$role->save();
 
-		return redirect('/role');
+		return redirect('/role')->with('info', 'Data Berhasil di Update');
 	}
 
 	public function delete($id)
@@ -92,6 +92,6 @@ class RoleController extends Controller
 		$role = Role::find($id);
 		$role->deleted_at = date('Y-m-d H:i:s');
 		$role->save();
-		return redirect()->back();
+		return redirect('/role')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

@@ -69,7 +69,7 @@ class TreatmentController extends Controller
 			}
 		}
 
-        return redirect()->route('treatment.index');
+        return redirect()->route('treatment.index')->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit($id)
@@ -157,7 +157,7 @@ class TreatmentController extends Controller
             }
         }
 
-        return redirect()->route('treatment.index');
+        return redirect()->route('treatment.index')->with('info', 'Data Berhasil di Update');
 	}
 	
 	public function delete($id)
@@ -170,6 +170,6 @@ class TreatmentController extends Controller
 
 		$treatment->update($data);
 
-		return redirect()->route('treatment.index');
+		return redirect()->route('treatment.index')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Kategori Produk</label>
-					<select class="form-control" name="kategori_produk">
+					<select class="form-control" name="kategori_produk" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
 						@foreach($category as $key => $val)
 							<option value="{{$val->id}}" {{ $produk->id_category == $val->id ? 'selected' : '' }}>{{$val->category}}</option>

@@ -34,11 +34,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="">Kategori</label>
-                    <input type="text" class="form-control" name="kategori" id="kategori" value="{{$category->category}}">
+                    <input type="text" class="form-control" name="kategori" id="kategori" value="{{$category->category}}" required="">
                 </div>
                 <div class="col-md-6">
                     <label>Order Num</label>
-                    <input type="text" name="order_num" class="form-control" value="{{$category->order_num}}">
+                    <input type="text" name="order_num" class="form-control" value="{{$category->order_num}}" required="">
                 </div>
                 @if($cek_kat != null)
                 <div class="col-md-12"><br>

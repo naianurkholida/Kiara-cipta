@@ -107,7 +107,7 @@ class UserController extends Controller
 			$pesan = "Username Telah Digunakan, Mohon Gunakan Username Lain, Isi Ulang Kembali Data Anda!";
 			return view('admin.core.user.insert', compact('role','top_bar','pesan'));
 		}
-		return redirect('/user');
+		return redirect('/user')->with('success', 'Data Berhasil di Simpan');
 	}
 
 	public function edit($id)
@@ -149,7 +149,7 @@ class UserController extends Controller
 			$user->addMedia($request->foto)->toMediaCollection('user');
 		}
 
-		return redirect('/user');
+		return redirect('/user')->with('info', 'Data Berhasil di Update');
 	}
 
 	public function delete($id)
@@ -164,6 +164,6 @@ class UserController extends Controller
 		
 		$user->deleted_at = date('Y-m-d H:i:s');
 		$user->save();
-		return redirect()->back();
+		return redirect('/user')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

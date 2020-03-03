@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Kategori treatment</label>
-					<select class="form-control" name="kategori_treatment">
+					<select class="form-control" name="kategori_treatment" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
 						@foreach($category as $key => $val)
 							<option value="{{$val->id}}" {{ $treatment->id_category == $val->id ? 'selected' : '' }}>{{$val->category}}</option>
@@ -58,11 +58,11 @@
 				</div>
 				<div class="col-md-12">
 					<label for="">Title</label>
-					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" value="{{$judul}}">
+					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" value="{{$judul}}" required="">
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>
-					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1">{{$content}}</textarea>
+					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1" required="">{{$content}}</textarea>
 				</div>
 			</div>
 			<hr>
@@ -74,11 +74,11 @@
 				</div>
 				<div class="col-md-12">
 					<label for="">Title</label>
-					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control">
+					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" required="">
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>
-					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1"></textarea>
+					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1" required=""></textarea>
 				</div>
 			</div>
 			@endif

@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $category->is_created = Session::get('id');
     	$category->save();
 
-    	return redirect('category');
+    	return redirect('category')->with('success', 'Data Berhasil di Simpan');
     }
 
     /**
@@ -176,7 +176,7 @@ class CategoryController extends Controller
          $gambar->save();
      }
 
-     return redirect('category');
+     return redirect('category')->with('info', 'Data Berhasil di Update');
  }
 
     /**
@@ -194,6 +194,6 @@ class CategoryController extends Controller
 
     	Gambar::where('id_relasi', $id)->delete();
     	Category::where('id', $id)->delete();
-    	return redirect()->back();
+    	return redirect('category')->with('danger', 'Data Berhasil di Hapus');
     }
 }

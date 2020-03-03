@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <label for="">Tipe</label>
-                    <select name="tipe" id="tipe" class="form-control">
+                    <select name="tipe" id="tipe" class="form-control" required="">
                         <option value="0">Main Tipe</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->category}}</option>
@@ -44,12 +44,12 @@
 
                 <div class="col-md-4">
                     <label for="">Kategori</label>
-                    <input type="text" class="form-control" name="kategori" id="kategori">
+                    <input type="text" class="form-control" name="kategori" id="kategori" required="">
                 </div>
 
                 <div class="col-md-4">
                     <label>Order Num</label>
-                    <input type="number" name="order_num" class="form-control">
+                    <input type="number" name="order_num" class="form-control" required="">
                 </div>
             </div>
             <div class="row">

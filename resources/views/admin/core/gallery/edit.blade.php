@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Kategori Gallery</label>
-					<select class="form-control" name="kategori_produk">
+					<select class="form-control" name="kategori_produk" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
 						@foreach($category as $key => $val)
 							<option value="{{$val->id}}" {{ $gallery->id_category == $val->id ? 'selected' : '' }}>{{$val->category}}</option>
@@ -92,7 +92,7 @@
 				<div class="col-lg-12" id="link">
 					<div class="form-group">
 						<label for="document">Link</label>
-						<input type="text" class="form-control" placeholde="https://www.youtube.com/embed/....." name="link" value="{{ $gallery->embed }}">
+						<input type="text" class="form-control" placeholde="https://www.youtube.com/embed/....." name="link" value="{{ $gallery->embed }}" required="">
 					</div>
 				</div>
 			</div>

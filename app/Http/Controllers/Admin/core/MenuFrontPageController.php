@@ -130,7 +130,7 @@ class MenuFrontPageController extends Controller
             }
         }
 
-        return redirect('menu_front_page');
+        return redirect('menu_front_page')->with('success', 'Data Berhasil di Simpan');
     }
 
     /**
@@ -225,7 +225,7 @@ class MenuFrontPageController extends Controller
             }
         }
 
-        return redirect('menu_front_page');
+        return redirect('menu_front_page')->with('info', 'Data Berhasil di Update');
     }
 
     public function update_back(Request $request, $id)
@@ -287,6 +287,6 @@ class MenuFrontPageController extends Controller
         MenuFrontPage::where('id', $id)->delete();
         MenuFrontPageLanguage::where('id_menu_front_page', $id)->delete();
 
-        return redirect()->back();
+        return redirect('menu_front_page')->with('danger', 'Data Berhasil di Hapus');
     }
 }

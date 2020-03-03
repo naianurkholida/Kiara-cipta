@@ -122,7 +122,7 @@ class SliderController extends Controller
     		}
     	}
 
-    	return redirect('/slider');
+    	return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
 
     }
 
@@ -223,7 +223,7 @@ class SliderController extends Controller
     		}
     	}
 
-    	return redirect('/slider');
+    	return redirect('/slider')->with('info', 'Data Berhasil di Update');
     }
 
     /**
@@ -244,6 +244,6 @@ class SliderController extends Controller
             $media->delete();
 		}
 
-    	return redirect('/slider');
+    	return redirect('/slider')->with('danger', 'Data Berhasil di Hapus');
     }
 }

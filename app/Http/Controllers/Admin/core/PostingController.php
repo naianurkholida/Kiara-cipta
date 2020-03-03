@@ -150,7 +150,7 @@ class PostingController extends Controller
     		}
     	}
 
-    	return redirect('posting');
+    	return redirect('posting')->with('success', 'Data Berhasil di Simpan');
     }
 
     /**
@@ -254,7 +254,7 @@ class PostingController extends Controller
     		}
     	}
 
-    	return redirect('posting');
+    	return redirect('posting')->with('info', 'Data Berhasil di Update');
     }
 
     /**
@@ -277,6 +277,6 @@ class PostingController extends Controller
             $media->delete();
 		}
 			
-    	return redirect('posting');
+    	return redirect('posting')->with('danger', 'Data Berhasil di Hapus');
     }
 }

@@ -35,7 +35,7 @@ class SosmedController extends Controller
 
         $sosmed = Sosmed::create($data);
 
-        return redirect()->route('sosmed.index');
+        return redirect()->route('sosmed.index')->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit($id)
@@ -65,7 +65,7 @@ class SosmedController extends Controller
         $sosmed = Sosmed::findOrFail($id);
         $sosmed->update($data);
 
-        return redirect()->route('sosmed.index');
+        return redirect()->route('sosmed.index')->with('info', 'Data Berhasil di Update');
 	}
 	
 	public function delete($id)
@@ -78,6 +78,6 @@ class SosmedController extends Controller
 
 		$sosmed->update($data);
 
-		return redirect()->route('sosmed.index');
+		return redirect()->route('sosmed.index')->with('danger', 'Data Berhasil di Hapus');
 	}
 }

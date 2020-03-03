@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Kategori</label>
-                        <select name="kategori" id="kategori" class="form-control">
+                        <select name="kategori" id="kategori" class="form-control" required="">
                             <option value="" selected="">-- Pilih Kategori --</option>
                             @foreach($category as $category)
                                 <option value="{{$category->id}}" <?php if($menu_front_page->id_category == $category->id){ ?> selected="selected" <?php } ?>>{{$category->category}}</option>
@@ -71,7 +71,7 @@
 
                     <div class="col-md-6">
                         <label for="">Parent</label>
-                        <select name="parent" id="parent" class="form-control">
+                        <select name="parent" id="parent" class="form-control" required="">
                             <option value="0" <?php if($menu_front_page->id_sub_menu == 0){ ?> selected="selected" <?php } ?>>Parent</option>
                             @foreach($menu_front_page_language as $menu_front_page_language)
                                 <option value="{{$menu_front_page_language->id_menu_front_page}}" <?php if($menu_front_page->id_sub_menu == $menu_front_page_language->id_menu_front_page){ ?> selected="selected" <?php } ?>>{{$menu_front_page_language->judul_menu}}</option>
@@ -83,12 +83,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Sort order</label>
-                        <input type="number" class="form-control" name="sort_order" id="sort_order" value="{{$menu_front_page->sort_order}}">
+                        <input type="number" class="form-control" name="sort_order" id="sort_order" value="{{$menu_front_page->sort_order}}" required="">
                     </div>
 
                     <div class="col-md-6">
                         <label for="">Jenis</label>
-                        <select name="jenis" id="jenis" class="form-control">
+                        <select name="jenis" id="jenis" class="form-control" required="">
                             <option value="" selected="">-- pilih Jenis --</option>
                             <option value="Page" <?php if($menu_front_page->jenis == "Page"){ ?> selected="selected" <?php } ?>>Page</option>
                             <option value="Modul" <?php if($menu_front_page->jenis == "Modul"){ ?> selected="selected" <?php } ?>>Modul</option>

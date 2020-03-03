@@ -54,7 +54,7 @@
 
             <div class="col-md-12">
                 <label for="">Kategori</label>
-                <select name="kategori" id="kategori" class="form-control">
+                <select name="kategori" id="kategori" class="form-control" required="">
                     <option value="" selected="selected">-- Pilih Kategori--</option>
                     @foreach($category as $category)
                     <option value="{{$category->id}}" <?php if($posting->id_category == $category->id){ ?> selected="selected" <?php } ?>>{{$category->category}}</option>

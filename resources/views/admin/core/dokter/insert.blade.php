@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<label>Posisi Dokter</label>
-					<select class="form-control" name="kategori_dokter">
+					<select class="form-control" name="kategori_dokter" required="">
 						<option value="" selected="" disabled="">- Position -</option>
 						@foreach($category as $key => $val)
 							<option value="{{$val->id}}">{{$val->category}}</option>
@@ -28,7 +28,7 @@
 
 				<div class="col-lg-12">
 					<label for="">Nama</label>
-					<input type="text" name="name" class="form-control">
+					<input type="text" name="name" class="form-control" required="">
 				</div>
 				
 				<div class="col-lg-12">
@@ -54,11 +54,11 @@
 			<div class="row" id="field[<?=$key?>]">
 				<div class="col-md-12">
 					<center><h3>{{$lang->judul_language}}</h3></center>
-					<input type="hidden" id="language[<?=$key?>]" name="language[]" class="form-control" readonly="" value="{{$lang->id}}">
+					<input type="hidden" id="language[<?=$key?>]" name="language[]" class="form-control" readonly="" value="{{$lang->id}}" required>
 				</div>
 				<div class="col-md-12">
 					<label for="">Deskripsi</label>
-					<textarea id="content[<?=$key?>]" name="deskripsi[]" cols="30" rows="10" class="summernote" id="kt_summernote_1"></textarea>
+					<textarea id="content[<?=$key?>]" name="deskripsi[]" cols="30" rows="10" class="summernote" id="kt_summernote_1" required></textarea>
 				</div>
 			</div>
 			<hr>

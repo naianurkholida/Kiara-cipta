@@ -70,7 +70,7 @@ class ProdukController extends Controller
 			}
 		}
 
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit($id)
@@ -158,7 +158,7 @@ class ProdukController extends Controller
             }
         }
 
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')->with('info', 'Data Berhasil di Update');
 	}
 	
 	public function delete($id)
@@ -171,6 +171,6 @@ class ProdukController extends Controller
 
 		$produk->update($data);
 
-		return redirect()->route('produk.index');
+		return redirect()->route('produk.index')->with('danger', 'Data Berhasil di Hapus');
 	}
 }
