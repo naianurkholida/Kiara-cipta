@@ -17,19 +17,13 @@ class ProfileController extends Controller
      */
     public function index()
     {
-    	$facebook  = Parameter::where('key', 'facebook')->first();
-        $instagram = Parameter::where('key', 'instagram')->first();
-        $twitter   = Parameter::where('key', 'twitter')->first();
-        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
-        $email = Parameter::where('key', 'email')->first();
-
         $content = Pages::select('*')
                 ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
                 ->join('parameter', 'parameter.value', '=', 'pages.id')
                 ->where('parameter.key', 'content_profile')
                 ->first();
 
-        return view('frontend.profile', compact('facebook','instagram','twitter','whatsapp','email','content'));
+        return view('frontend.profile', compact('content'));
     }
 
     /**

@@ -15,13 +15,7 @@ class CheckPointController extends Controller
      */
     public function index()
     {
-        $facebook  = Parameter::where('key', 'facebook')->first();
-        $instagram = Parameter::where('key', 'instagram')->first();
-        $twitter   = Parameter::where('key', 'twitter')->first();
-        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
-        $email = Parameter::where('key', 'email')->first();
-
-        return view('frontend.check_point', compact('facebook','instagram','twitter','whatsapp','email'));
+        return view('frontend.check_point');
     }
 
     /**

@@ -31,12 +31,6 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $facebook  = Parameter::where('key', 'facebook')->first();
-        $instagram = Parameter::where('key', 'instagram')->first();
-        $twitter   = Parameter::where('key', 'twitter')->first();
-        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
-        $email = Parameter::where('key', 'email')->first();
-
-        return view($this->view, compact('facebook','instagram','twitter','whatsapp','email'));
+        return view($this->view);
     }
 }

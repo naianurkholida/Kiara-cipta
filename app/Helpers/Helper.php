@@ -141,4 +141,39 @@ class Helper
 
 		return $data;
 	}
+
+	public static function Cfacebook()
+	{
+		$data = Parameter::where('key', 'facebook')->first();
+
+        return $data->value;
+	}
+
+	public static function Cinstagram()
+	{
+        $data = Parameter::where('key', 'instagram')->first();
+
+        return $data->value;
+	}
+
+	public static function Cwhatsapp()
+	{
+        $data  = Parameter::where('key', 'whatsapp')->first();
+
+        return $data->value;
+	}
+
+	public static function Ctwitter()
+	{
+        $data   = Parameter::where('key', 'twitter')->first();
+
+        return $data->value;
+	}
+
+	public static function Cemail()
+	{
+        $data = Parameter::where('key', 'email')->first();
+
+        return $data->value;
+	}
 }

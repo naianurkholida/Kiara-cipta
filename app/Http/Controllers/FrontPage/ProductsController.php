@@ -17,14 +17,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $facebook  = Parameter::where('key', 'facebook')->first();
-        $instagram = Parameter::where('key', 'instagram')->first();
-        $twitter   = Parameter::where('key', 'twitter')->first();
-        $whatsapp  = Parameter::where('key', 'whatsapp')->first();
-        $email     = Parameter::where('key', 'email')->first();
         $data      = Produk::where('deleted_at', NULL)->get();
 
-        return view('frontend.products', compact('data','facebook','instagram','twitter','whatsapp','email'));
+        return view('frontend.products', compact('data'));
     }
 
     /**
