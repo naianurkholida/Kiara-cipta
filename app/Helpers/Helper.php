@@ -176,4 +176,11 @@ class Helper
 
         return $data->value;
 	}
+
+	public static function DescHome()
+	{
+		$data = Parameter::where('key', 'deskripsi_home')->first();
+
+		return $data->value;
+	}
 }

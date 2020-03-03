@@ -36,7 +36,7 @@
 				<div class="col-lg-4">
 					<label>Ketentuan Privacy</label>
 					<select class="form-control" name="ketentuan_privacy" required="">
-					<option value="" selected="" disabled="">- Ketentuan Privacy -</option>
+						<option value="" selected="" disabled="">- Ketentuan Privacy -</option>
 						@foreach($pages as $val)
 						<?php
 						if($content_privacy != null){
@@ -60,7 +60,7 @@
 				<div class="col-lg-4">
 					<label>Syarat Ketentuan</label>
 					<select class="form-control" name="syarat_ketentuan" required="">
-					<option value="" selected="" disabled="">- Syarat Ketentuan -</option>
+						<option value="" selected="" disabled="">- Syarat Ketentuan -</option>
 						@foreach($pages as $val)
 						<?php
 						if($content_syarat != null){
@@ -80,7 +80,7 @@
 				<div class="col-lg-4">
 					<label>Kantor Cabang</label>
 					<select class="form-control" name="kantor_cabang" required="">
-					<option value="" selected="" disabled="">- Kantor Cabang -</option>
+						<option value="" selected="" disabled="">- Kantor Cabang -</option>
 						@foreach($pages as $val)
 						<?php
 						if($content_kantor != null){
@@ -122,7 +122,7 @@
 				<div class="col-lg-12">
 					<label>Kontak</label>
 					<select class="form-control" name="kontak" required="">
-					@foreach($pages as $val)
+						@foreach($pages as $val)
 						<?php
 						if($content_kontak != null){
 							if($content_kontak->key_page == $val->key_page){
@@ -135,7 +135,7 @@
 						}
 						?>
 						<option value="{{$val->key_page}}" <?=$selected?> >{{$val->judul_page}}</option>
-					@endforeach
+						@endforeach
 					</select>
 				</div>
 			</div>
@@ -144,6 +144,13 @@
 				<div class="col-lg-12">
 					<label>Whatsapp</label>
 					<textarea class="form-control" name="whatsapp" required="">{{$whatsapp->value}}</textarea>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-lg-12">
+					<label>Deskripsi Home</label>
+					<textarea class="form-control" name="desc" required="" style="height: 150px;">{{$desc->value}}</textarea>
 				</div>
 			</div>
 			<br>

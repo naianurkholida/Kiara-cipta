@@ -12,14 +12,7 @@
             </div>
             <div class="col-md-8 col-sm-12">
                 <p>
-                    Lahir dari impian masyarakat yang ingin memiliki wajah yang proporsional, kulit wajah yang sehat dan awet muda.
-
-                    Maka kami menghadirkan DERMA EXPRESS Klinik yang dapat di jangkau oleh semua kalangan agar memiliki kulit wajah yang sehat, awet muda dan wajah yang proporsional dengan harga terjangkau.
-
-                    Kenapa DERMA EXPRESS
-                    - Memiliki dokter yang ahli di bidang estetika medis
-                    - Bagi kami wajah & kulit anda adalah INVESTASI MASA DEPAN anda
-                    - Dapatkan wajah proporsional & kulit yang sehat itu sangat ekonomis dengan DERMA EXPRESS
+                    {{ Helper::DescHome() }}
                 </p>
             </div>
         </div>

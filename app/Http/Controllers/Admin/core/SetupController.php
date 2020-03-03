@@ -111,7 +111,10 @@ class SetupController extends Controller
         ->where('pages.id', $kontak->value)
         ->first();
 
-        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak'));
+        #selected desc
+        $desc = Parameter::where('key', 'deskripsi_home')->first();
+
+        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak','desc'));
     }
 
     public function store_settings(Request $request)
@@ -159,6 +162,10 @@ class SetupController extends Controller
         $kontak = Parameter::where('key', 'kontak')->first();
         $kontak->value = $request->kontak;
         $kontak->save();
+
+        $desc = Parameter::where('key', 'deskripsi_home')->first();
+        $desc->value = $request->desc;
+        $desc->save();
 
         return redirect()->back();
     }
