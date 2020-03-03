@@ -16,7 +16,6 @@
 						<td>Inbox And Comment</td>
 						<td>Status</td>
 						<td>Tanggal</td>
-                        <td>Actions</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -32,40 +31,11 @@
 								<?php $date = date_create($incom->created_at); $date = date_format($date, 'd-M-Y h:i'); ?>
 								{{$date}}
 							</td>
-							<td>
-								action ny guys
-							</td>
 						</tr>
 						<?php $no++?>
 					@endforeach
 
-					@foreach($comments as $com)
-						<tr>
-							<!-- <td>{{$no}}</td> -->
-							<td>{{$com->nama}}</td>
-							<td>{{$com->judul}}</td>
-							<td>{{substr($com->comment,0 ,15)}}</td>
-							<td>
-								@if($com->status == 1)
-									Active
-								@else
-									Non-Active
-								@endif
-							</td>
-							<td>
-								<?php $date = date_create($com->created_at); $date = date_format($date, 'd-M-Y h:i'); ?>
-								{{$date}}
-							</td>
-							<td>
-								@if($com->status == 1)
-									<a href="{{Route('comments.actived', $com->id)}}" class="btn btn-sm btn-danger">Non-active</a>
-								@else
-									<a href="{{Route('comments.actived', $com->id)}}" class="btn btn-sm btn-success">Active</a>
-								@endif
-							</td>
-						</tr>
-						<?php $no++?>
-					@endforeach
+					
 				</tbody>
 			</table>
 		</div>

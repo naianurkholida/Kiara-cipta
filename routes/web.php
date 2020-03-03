@@ -404,7 +404,6 @@ Route::group(['prefix' => 'language'], function(){
 
 	#inbox
 	Route::group([
-		'middleware' => 'middleware',
 		'prefix' => 'inbox'
 	], function(){
 		Route::get('/', 'Admin\core\InboxAndCommentsController@index')->name('inbox.index');

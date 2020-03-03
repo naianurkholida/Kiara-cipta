@@ -9,6 +9,27 @@
     </div>
     <div class="container">
         <div class="container">
+        @include('component.alert.global')
+            <div class="row">
+                <div class="col-lg-12">
+                   <h3>Hubungi Kami</h3>
+                    <p>Anda juga dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara mengisi formulir dibawah ini. Semua kolom harus diisi.</p>
+                    <form method="POST" action="{{ route('inbox.post') }}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Lengkap" name="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukan alamat email anda" name="email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="inbox"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </form>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     {!! $content->konten_page !!}

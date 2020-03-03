@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\core;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Entities\FrontPage\Inbox;
 use App\Entities\FrontPage\Comments;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
@@ -39,10 +40,8 @@ class InboxAndCommentsController extends Controller
     public function index()
     {
         $top_bar = $this->top_bar();
-        $comments = Comments::select('comments.*', 'posting.id as id_pos', 'posting_language.judul')->join('posting', 'posting.id', '=', 'comments.id_posting')->join('posting_language', 'posting_language.id_posting', '=', 'posting.id')->where('posting_language.id_language', 1)->get();
         $inbox = Inbox::all();
-        // dd($inbox);
-        return view('admin.core.inbox_and_comments.index', compact('top_bar', 'inbox', 'comments'));
+        return view('admin.core.inbox_and_comments.index', compact('top_bar', 'inbox'));
     }
 
     public function actived($id){
@@ -60,12 +59,12 @@ class InboxAndCommentsController extends Controller
     public function post_inbox(Request $request){
         
         $inbox = new Inbox;
-        $inbox->nama = $request->nama;
+        $inbox->nama = $request->name;
         $inbox->email = $request->email;
         $inbox->inbox = $request->inbox;
         $inbox->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
     }
 
     public function post_comment(Request $request){
