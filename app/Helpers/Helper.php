@@ -142,42 +142,42 @@ class Helper
 		return $data;
 	}
 
-	public static function Cfacebook()
+	public static function cfacebook()
 	{
 		$data = Parameter::where('key', 'facebook')->first();
 
         return $data->value;
 	}
 
-	public static function Cinstagram()
+	public static function cinstagram()
 	{
         $data = Parameter::where('key', 'instagram')->first();
 
         return $data->value;
 	}
 
-	public static function Cwhatsapp()
+	public static function cwhatsapp()
 	{
         $data  = Parameter::where('key', 'whatsapp')->first();
 
         return $data->value;
 	}
 
-	public static function Ctwitter()
+	public static function ctwitter()
 	{
         $data   = Parameter::where('key', 'twitter')->first();
 
         return $data->value;
 	}
 
-	public static function Cemail()
+	public static function cemail()
 	{
         $data = Parameter::where('key', 'email')->first();
 
         return $data->value;
 	}
 
-	public static function DescHome()
+	public static function descHome()
 	{
 		$data = Parameter::where('key', 'deskripsi_home')->first();
 

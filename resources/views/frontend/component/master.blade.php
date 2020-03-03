@@ -112,15 +112,15 @@
                           ============================================= -->
                           <div id="top-social">
                             <ul>
-                                <li><a href="{{ Helper::Cfacebook() }}" class="si-facebook" target="_blank"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
+                                <li><a href="{{ Helper::cfacebook() }}" class="si-facebook" target="_blank"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
 
-                                <li><a href="{{ Helper::Cinstagram() }}" class="si-instagram" target="_blank"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
+                                <li><a href="{{ Helper::cinstagram() }}" class="si-instagram" target="_blank"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
 
-                                <li><a href="{{ Helper::Ctwitter() }}" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
+                                <li><a href="{{ Helper::ctwitter() }}" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
 
-                                <li><a href="{{ Helper::Cwhatsapp() }}" target="_blank" rel="noopener" class="si-whatsapp"><span class="ts-icon"><i class="icon-whatsapp"></i></span><span class="ts-text">Whatsapp</span></a></li>
+                                <li><a href="{{ Helper::cwhatsapp() }}" target="_blank" rel="noopener" class="si-whatsapp"><span class="ts-icon"><i class="icon-whatsapp"></i></span><span class="ts-text">Whatsapp</span></a></li>
 
-                                <li><a href="{{ Helper::Cemail() }}" class="si-email3" target="_blank"><span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text">Email</span></a></li>
+                                <li><a href="{{ Helper::cemail() }}" class="si-email3" target="_blank"><span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text">Email</span></a></li>
                             </ul>
                         </div>
                         <!-- #top-social end -->
@@ -145,15 +145,15 @@
           <div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
             <div class="container clearfix">
                 <center>
-                    <a href="{{ Helper::Cfacebook() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;">Facebook</span></a>
+                    <a href="{{ Helper::cfacebook() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;">Facebook</span></a>
 
-                    <a href="{{ Helper::Cinstagram() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;">Instagram</span></a>
+                    <a href="{{ Helper::cinstagram() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;">Instagram</span></a>
 
-                    <a href="{{ Helper::Ctwitter() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;">Twitter</span></a>
+                    <a href="{{ Helper::ctwitter() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;">Twitter</span></a>
 
-                    <a href="{{ Helper::Cwhatsapp() }}" target="_blank" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;">Whatsapp</span></a>
+                    <a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;">Whatsapp</span></a>
 
-                    <a href="{{ Helper::Cemail() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;">Mail</span></a>
+                    <a href="{{ Helper::cemail() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;">Mail</span></a>
                 </center>
             </div>
         </div>
