@@ -11,7 +11,7 @@
                 <div class="img-home" style="width: 100%; height: 300px; background-color: #f9f9f9; background-image: url({{asset('assets/images/dermaexpress.jpg')}}); background-size: cover; background-position: center;"></div>
             </div>
             <div class="col-md-8 col-sm-12">
-                <p>
+                <p style="font-size: 19px;text-align: justify;">
                     {{ Helper::DescHome() }}
                 </p>
             </div>
