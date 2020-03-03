@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 @foreach($data as $row)
-                    <div class="col-md-3" style="text-align: center;margin-bottom: 20px;">
+                    <div class="col-md-4" style="text-align: center;margin-bottom: 20px;">
                         <div class="box-dokter">
                             <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('posting') }});"></div>
                             <a href="{{ route('dermaster.sosial.show', $row->getPostingLanguage->seo) }}"><p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p></a>
