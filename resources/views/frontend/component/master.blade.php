@@ -171,8 +171,12 @@
 
                     <div class="row justify-content-between align-items-center">
                         <div class="col-md-6">
+                            <p>
+                                SERPONG <br>
+Gading Serpong <br>
+Ruko Diamond III No 12-15, Jalan Gading Golf Boulevard, Gading Serpong, Pakulonan Bar., Kec. Klp. Dua, Kota Tangerang, Banten 15810
+                            </p>
                             Copyrights &copy; 2020 DermaExpress<br>
-                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
                         </div>
 
                         <div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
