@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="">content</label>
-                                <textarea id="content[<?=$key?>]" name="content[]" class="summernote" id="kt_summernote_1">{{$content}}</textarea>
+                                <textarea id="content[<?=$key?>]" name="content[]" class="summernote1">{{$content}}</textarea>
                             </div>
                         </div>
                         <hr>
