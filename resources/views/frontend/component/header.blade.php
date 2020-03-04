@@ -53,7 +53,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('dermaster.products') }}">
                                     <div>Products</div>
                                 </a>
@@ -68,7 +68,7 @@
                                 <a href="{{ route('dermaster.blog') }}">
                                     <div>Blog</div>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="{{route('dermaster.gallery')}}">
                                     <div>Gallery</div>
