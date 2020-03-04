@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Slider
 		============================================= -->
 <<<<<<< HEAD
@@ -19,17 +20,21 @@
                 </div>
                 @endforeach
 
+=======
+ <section id="slider" class="slider-element boxed-slider" style="padding-top:0px !important;">
+    <div class="fslider" data-easing="easeInQuad">
+      <div class="flexslider">
+        <div class="slider-wrap">
+          @foreach(Helper::slider() as $row)
+            <div class="slide" data-thumb="{{ $row->getFirstMediaUrl('slider') }}">
+              <a href="#">
+                <div class="img-slider" style="background-image: url({{ $row->getFirstMediaUrl('slider') }});height:500px;width:100%;"></div>
+              </a>
+>>>>>>> d5839a89c299170ea226b0406ae90079b4de5118
             </div>
-            <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
-            <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
-            <div class="slide-number">
-                <div class="slide-number-current"></div><span>/</span>
-                <div class="slide-number-total"></div>
-            </div>
-            <div class="swiper-pagination"></div>
+          @endforeach
+          
         </div>
-
+      </div>
     </div>
-
 </section>
-<!-- #Slider End --> 
