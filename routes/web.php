@@ -453,4 +453,8 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/update/{id}', 'Admin\core\SliderController@update')->name('slider.update');
 		Route::get('/delete/{id}', 'Admin\core\SliderController@delete')->name('slider.delete');
 	});
+
+	#upload wysiwyg
+	Route::post('/uploadimagewysywig', 'Admin\core\UploadImageBase64@uploadImage');
+	Route::post('/deleteimagewysywig', 'Admin\core\UploadImageBase64@deleteImage');
 #end route backend
