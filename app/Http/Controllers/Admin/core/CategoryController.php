@@ -8,6 +8,8 @@ use App\Entities\Admin\core\MenuAccess;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Gambar;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\MenuFrontPage;
+use App\Entities\Admin\core\MenuFrontPageLanguage;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use DB;
@@ -96,7 +98,24 @@ class CategoryController extends Controller
     	$category->category = $request->kategori;
     	$category->order_num = $request->order_num;
         $category->is_created = Session::get('id');
-    	$category->save();
+        $category->save();
+        
+        $menu = new MenuFrontPage;
+        $menu->id_category = 8;
+        $menu->id_sub_menu = 3;
+        $menu->jenis = 'Page';
+        $menu->sort_order = 1;
+        $menu->url = strtolower($request->kategori);
+        $menu->is_created = \Session::get('id');
+        $menu->save();
+
+        for($i = 0; $i < 2; $i++){
+            $menulang = new MenuFrontPageLanguage;
+            $menulang->id_menu_front_page = $menu->id;
+            $menulang->id_language = 1;
+            $menulang->judul_menu = $request->kategori;
+            $menulang->save();
+        }
 
     	return redirect('category')->with('success', 'Data Berhasil di Simpan');
     }
@@ -193,7 +212,14 @@ class CategoryController extends Controller
     	}
 
     	Gambar::where('id_relasi', $id)->delete();
-    	Category::where('id', $id)->delete();
+        $dataCat = Category::where('id', $id);
+
+        $language = MenuFrontPageLanguage::where('judul_menu', $dataCat->category);
+        $languageFirst = MenuFrontPage::where('id', $language[0]->id_menu_front_page)->delete();
+
+        $dataCat->delete();
+        $language->delete();
+        
     	return redirect('category')->with('danger', 'Data Berhasil di Hapus');
     }
 }

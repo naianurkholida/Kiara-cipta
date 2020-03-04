@@ -16,74 +16,31 @@
 
                     <!-- Primary Navigation ============================================= -->
                     <nav id="primary-menu" class="style-2 with-arrows">
-
                         <ul>
-                            <li class="current">
-                                <a href="{{route('dermaster.home')}}">
-                                    <div>Home</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('dermaster.tentang_kami')}}">
-                                    <div>Tentang Kami</div>
-                                </a>
-                            </li>
-                            <!-- <li>
-                                <a href="{{route('dermaster.dokter')}}">
-                                    <div>Dokter</div>
-                                </a>
-                            </li> -->
-                            <li>
-                                <a href="#">
-                                    <div>Treatments</div>
-                                </a>
-                                <div class="mega-menu-content style-2 clearfix">
-                                    <ul class="mega-menu-column col-lg-12">
-                                        <li class="mega-menu-title">
-                                            <ul>
-                                                @foreach(Helper::getCategory(47) as $row)
-                                                <li>
-                                                    <a href="{{ route('dermaster.treatments', str_replace(' ', '-', $row->category)) }}">
-                                                        <div>{{ $row->category }}</div>
-                                                    </a>
-                                                </li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="{{ route('dermaster.products') }}">
-                                    <div>Products</div>
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="{{ route('dermaster.sosial') }}">
-                                    <div>Sosial</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('dermaster.blog') }}">
-                                    <div>Blog</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('dermaster.gallery')}}">
-                                    <div>Gallery</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('dermaster.checkpoint')}}">
-                                    <div>Check Point</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('dermaster.kontak')}}">
-                                    <div>Kontak</div>
-                                </a>
-                            </li>
+                            @foreach(Helper::MenuFrontPage() as $row)
+                                <li>
+                                    <a href="{{ url($row->url) }}">
+                                        <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
+                                    </a>
+                                @if(count(Helper::childFrontPage($row->id)) != 0)
+                                    <div class="mega-menu-content style-2 clearfix">
+                                        <ul class="mega-menu-column col-lg-12">
+                                            <li class="mega-menu-title">
+                                                <ul>
+                                                    @foreach(Helper::childFrontPage($row->id) as $item)
+                                                    <li>
+                                                        <a href="{{ url($row->url, str_replace(' ', '-', Helper::getLanguageJudul($item->id))) }}">
+                                                            <div>{{ Helper::getLanguageJudul($item->id) }}</div>
+                                                        </a>
+                                                    </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endif
+                                </li>
+                            @endforeach
                         </ul>
 
                         <!-- Top Search

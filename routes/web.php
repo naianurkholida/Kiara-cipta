@@ -14,10 +14,6 @@
 	use App\Entities\Admin\core\MenuFrontPage;
 	$url = MenuFrontPage::all();
 
-	Route::get('/', function() {
-		return redirect()->route('dermaster.home');
-	});
-
 	#get kategori ajax midtrans zakat
 	Route::get('/get_data_kategori/{id}', 'FrontPage\FrontPageController@get_kategori')->name('kategorigetdata');
 
@@ -108,7 +104,6 @@
 
 #new front page route
 
-Route::group(['prefix' => '/derma-express'], function(){
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
 	
 	Route::group(['prefix' => 'dokter'], function(){
@@ -145,7 +140,6 @@ Route::group(['prefix' => '/derma-express'], function(){
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.checkpoint');
 
 	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');
-});
 
 #end new front page route
 

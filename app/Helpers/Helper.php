@@ -6,6 +6,8 @@ use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Menu as Menu;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
+use App\Entities\Admin\core\MenuFrontPage;
+use App\Entities\Admin\core\MenuFrontPageLanguage;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Sosmed;
 use App\Entities\Admin\core\Slider;
@@ -182,5 +184,26 @@ class Helper
 		$data = Parameter::where('key', 'deskripsi_home')->first();
 
 		return $data->value;
+	}
+
+	public static function MenuFrontPage()
+	{
+		$data = MenuFrontPage::where('id_sub_menu', 0)->get();
+
+		return $data;
+	}
+
+	public static function childFrontPage($id)
+	{
+		$data = MenuFrontPage::where('id_sub_menu', $id)->get();
+
+		return $data;
+	}
+
+	public static function getLanguageJudul($id)
+	{
+		$data = MenuFrontPageLanguage::where('id_menu_front_page', $id)->where('id_language', Session::get('locale'))->first();
+		
+		return $data->judul_menu;
 	}
 }
