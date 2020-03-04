@@ -1,8 +1,8 @@
 <!-- Slider
 		============================================= -->
-        <section id="slider" style="height:500px!importnant" class="slider-element slider-parallax swiper_wrapper full-screen clearfix" data-autoplay="7000" data-speed="650" data-loop="true">
+        <section id="slider" style="height:450px !importnant;background-color:#f9f9f9;" class="slider-element slider-parallax swiper_wrapper full-screen clearfix" data-autoplay="7000" data-speed="650" data-loop="true">
 
-            <div class="slider-parallax-inner">
+            <div class="slider-parallax-inner" style="height:450px !importnant;">
 
                 <div class="swiper-container swiper-parent">
                     <div class="swiper-wrapper">
