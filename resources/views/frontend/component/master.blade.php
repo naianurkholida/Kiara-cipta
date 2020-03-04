@@ -180,9 +180,13 @@ Ruko Diamond III No 12-15, Jalan Gading Golf Boulevard, Gading Serpong, Pakulona
                         </div>
 
                         <div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
-                            <div class="copyrights-menu copyright-links clearfix">
-                                
-                            </div>
+                            <p>
+                                UTAN KAYU <br>
+Jl. Utan Kayu Raya No. 79B dan 79C RT 001/RW 08 <br>
+no telp 02122896702 <br>
+no telp 02122897879 <br>
+no telp 02122895170 <br>
+                            </p>
                         </div>
                     </div>
 

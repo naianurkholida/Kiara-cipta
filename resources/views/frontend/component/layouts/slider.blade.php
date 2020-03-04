@@ -1,6 +1,6 @@
 <!-- Slider
 		============================================= -->
-        <section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix" data-autoplay="7000" data-speed="650" data-loop="true">
+        <section id="slider" style="height:500px!importnant" class="slider-element slider-parallax swiper_wrapper full-screen clearfix" data-autoplay="7000" data-speed="650" data-loop="true">
 
             <div class="slider-parallax-inner">
 
