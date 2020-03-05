@@ -15,7 +15,7 @@
                         <div class="box-dokter">
                             <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('produk') }});"></div>
                             <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
-                            <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getProdukLanguage->deskripsi) !!}</p>
+                            <p style="margin-bottom:10 !important;">{str_replace('$nbsp;','', Helper::removeTags($row->getProdukLanguage->deskripsi)) !!}</p>
                         </div>
                     </div>
                 @endforeach
