@@ -12,7 +12,7 @@
             <div class="row">
                 @foreach($data as $row)
                     <div class="col-md-3" style="text-align: center;margin-bottom: 20px;">
-                        <div class="box-dokter">
+                        <div class="box-dokter" style="min-height: 414px; !important;">
                             <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('produk') }});"></div>
                             <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
                             <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getProdukLanguage->deskripsi) !!}</p>
