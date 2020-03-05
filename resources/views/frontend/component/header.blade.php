@@ -58,7 +58,7 @@
                         			<ul style="display: none;">
                         				<li class="sub-menu">
                         					<a href="{{route('dermaster.treatments', '48')}}" class="sf-with-ul">BOTOX</a>
-                        					<a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">CHEMICAL PEELING</a>
+                        					<a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">Meso DNA Salmon</a>
                         				</li>
                         			</ul>
                         		</li>
@@ -68,11 +68,11 @@
                                     <div>Products</div>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="{{route('dermaster.blog')}}">
                                     <div>Blog</div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{{route('dermaster.gallery')}}">
                                     <div>Gallery</div>
