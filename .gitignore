@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/storage
+/public/assets/admin/assets/media
 /vendor
 .env
 .phpunit.result.cache
