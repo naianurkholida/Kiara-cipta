@@ -16,7 +16,7 @@
 
                     <!-- Primary Navigation ============================================= -->
                     <nav id="primary-menu" class="style-2 with-arrows">
-                        <ul>
+                        <!-- <ul>
                             @foreach(Helper::MenuFrontPage() as $row)
                                 <li>
                                     <a href="{{ url($row->url) }}">
@@ -41,8 +41,42 @@
                                 @endif
                                 </li>
                             @endforeach
+                        </ul> --> 
+                        <ul>
+                        	<li>
+                        		<a href="{{route('dermaster.home')}}">
+                        			<div>Home</div>
+                        		</a>
+                        	</li>
+                        	<li>
+                        		<a href="{{route('dermaster.tentang_kami')}}">
+                        			<div>Tentang Kami</div>
+                        		</a>
+                        	</li>
+                        	<!-- <li>
+                        		<a href="#">
+                        			<div>Treatments</div>
+                        		</a>
+                        		<ul class="mega-menu-column col-lg-12">
+                        			<li class="mega-menu-title">
+                        				<ul>
+                        					<li>1</li>
+                        					<li>2</li>
+                        				</ul>
+                        			</li>
+                        		</ul>
+                        	</li> -->
+                        	<li>
+                        		<a href="{{route('dermaster.checkpoint')}}">
+                        			<div>Check Point</div>
+                        		</a>
+                        	</li>
+                        	<li>
+                        		<a href="{{route('dermaster.kontak')}}">
+                        			<div>Kontak</div>
+                        		</a>
+                        	</li>
                         </ul>
-
                         <!-- Top Search
                             ============================================= -->
                             <div id="top-search">
