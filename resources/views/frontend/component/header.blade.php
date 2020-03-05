@@ -1,21 +1,21 @@
 <header id="header" class="full-header clearfix">
 
-    <div id="header-wrap">
-        <div class="container">
-            <div class="container">
-                <div class="container clearfix">
+	<div id="header-wrap">
+		<div class="container">
+			<div class="container">
+				<div class="container clearfix">
 
-                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                    <!-- Logo ============================================= -->
-                    <div id="logo" style="border:0;">
-                        <a href="" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
-                        <a href="" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
-                    </div>
-                    <!-- #logo end -->
+					<!-- Logo ============================================= -->
+					<div id="logo" style="border:0;">
+						<a href="" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
+						<a href="" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
+					</div>
+					<!-- #logo end -->
 
-                    <!-- Primary Navigation ============================================= -->
-                    <nav id="primary-menu" class="style-2 with-arrows">
+					<!-- Primary Navigation ============================================= -->
+					<nav id="primary-menu" class="style-2 with-arrows">
                         <!-- <ul>
                             @foreach(Helper::MenuFrontPage() as $row)
                                 <li>
@@ -53,19 +53,16 @@
                         			<div>Tentang Kami</div>
                         		</a>
                         	</li>
-                        	<!-- <li>
-                        		<a href="#">
-                        			<div>Treatments</div>
-                        		</a>
-                        		<ul class="mega-menu-column col-lg-12">
-                        			<li class="mega-menu-title">
-                        				<ul>
-                        					<li>1</li>
-                        					<li>2</li>
-                        				</ul>
-                        			</li>
-                        		</ul>
-                        	</li> -->
+                        	<li>
+                        		<li class="sub-menu"><a href="" class="sf-with-ul"><div>Treatments</div></a>
+                        			<ul style="display: none;">
+                        				<li class="sub-menu">
+                        					<a href="{{route('dermaster.treatments', '48')}}" class="sf-with-ul">BOTOX</a>
+                        					<a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">CHEMICAL PEELING</a>
+                        				</li>
+                        			</ul>
+                        		</li>
+                        	</li>
                         	<li>
                         		<a href="{{route('dermaster.checkpoint')}}">
                         			<div>Check Point</div>
@@ -78,14 +75,14 @@
                         	</li>
                         </ul>
                         <!-- Top Search
-                            ============================================= -->
-                            <div id="top-search">
-                                <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-                                <form action="search.html" method="get">
-                                    <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-                                </form>
-                            </div>
-                            <!-- #top-search end -->
+                        	============================================= -->
+                        	<div id="top-search">
+                        		<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+                        		<form action="search.html" method="get">
+                        			<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                        		</form>
+                        	</div>
+                        	<!-- #top-search end -->
 
 
 

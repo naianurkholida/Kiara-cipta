@@ -20,7 +20,8 @@ class TreatmentsController extends Controller
     {
         $category = Category::where('category', str_replace('-', ' ', $id))->first();
 
-        $data = Treatment::where('id_category', $category->id)->get();
+        // $data = Treatment::where('id_category', $category->id)->get();
+        $data = Treatment::where('id_category', $id)->get();
 
         return view('frontend.treatments', compact('data'));
     }
