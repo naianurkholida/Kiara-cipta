@@ -9,7 +9,11 @@
               </a>
             </div>
           @endforeach
-          
+          <div class="slide" data-thumb="{{ asset('assets/images/blog/full/10.jpg') }}">
+            <a href="#">
+              <div class="img-slider" style="background-image: url({{ asset('assets/images/blog/full/10.jpg') }});height:500px;width:100%;"></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
