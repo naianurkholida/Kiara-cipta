@@ -63,11 +63,26 @@
                         			</ul>
                         		</li>
                         	</li>
-                        	<li>
+                            <li>
+                                <a href="{{route('dermaster.products')}}">
+                                    <div>Products</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('dermaster.blog')}}">
+                                    <div>Blog</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('dermaster.gallery')}}">
+                                    <div>Gallery</div>
+                                </a>
+                            </li>
+                        	<!-- <li>
                         		<a href="{{route('dermaster.checkpoint')}}">
                         			<div>Check Point</div>
                         		</a>
-                        	</li>
+                        	</li> -->
                         	<li>
                         		<a href="{{route('dermaster.kontak')}}">
                         			<div>Kontak</div>

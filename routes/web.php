@@ -135,7 +135,9 @@
 		Route::get('/show/{id}', 'FrontPage\BlogController@show')->name('dermaster.blog.show');
 	});
 
-	Route::get('/gallery', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
+	Route::group(['prefix' => 'gallery'], function(){
+		Route::get('/show', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
+	});
 
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.checkpoint');
 
