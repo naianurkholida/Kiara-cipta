@@ -68,6 +68,11 @@
                                     <div>Products</div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{route('dermaster.price_list')}}">
+                                    <div>Price List</div>
+                                </a>
+                            </li>
                             <!-- <li>
                                 <a href="{{route('dermaster.blog')}}">
                                     <div>Blog</div>

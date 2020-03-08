@@ -459,4 +459,6 @@ Route::group(['prefix' => 'language'], function(){
 	#upload wysiwyg
 	Route::post('/uploadimagewysywig', 'Admin\core\UploadImageBase64@uploadImage');
 	Route::post('/deleteimagewysywig', 'Admin\core\UploadImageBase64@deleteImage');
+
+	Route::get('/price-list', 'FrontPage\PriceListController@index')->name('dermaster.price_list');
 #end route backend
