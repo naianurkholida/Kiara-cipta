@@ -10,7 +10,7 @@
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
-            <h3 class="nott ls0">Products</h3>
+            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
         </div>
     </div>
     <div class="container" id="container_luar">

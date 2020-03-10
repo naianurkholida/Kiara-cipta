@@ -65,7 +65,7 @@
                         	</li>
                             <li>
                                 <a href="{{route('dermaster.products')}}">
-                                    <div>Product</div>
+                                    <div>Products</div>
                                 </a>
                             </li>
                             <li>
