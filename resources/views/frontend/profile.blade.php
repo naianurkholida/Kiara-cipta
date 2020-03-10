@@ -7,8 +7,8 @@
             <h3 class="nott ls0">Profile</h3>
         </div>
     </div>
-    <div class="container">
-        <div class="container">
+    <div class="container" id="container_luar">
+        <div class="container" id="container_dalem">
             <div class="row">
                 <div class="col-lg-12">
                     {!! $content->konten_page !!}
@@ -18,4 +18,19 @@
     </div>
 
 </div>
+@endsection
+
+@section('js')
+    <script>
+        
+        if (window.matchMedia('(max-width: 425px)'))
+        {
+            $( "#container_dalem" ).removeClass("container");
+            $( "#container_luar" ).removeClass("container").addClass("container-fluid");
+            $( "#text-content").css("width", "100%");
+        } else {
+            $( "#container_dalem" ).addClass("container");
+            $( "#container_luar" ).removeClass("container-fluid").addClass("container");
+        }
+    </script>
 @endsection
