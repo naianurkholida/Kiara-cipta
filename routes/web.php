@@ -38,9 +38,9 @@
 	Route::post('/dashboard-donatur/post_ganti_profile/{id}', 'FrontPage\FrontPageController@post_ganti_profile')->name('front_end.post_edit_profile');
 	Route::get('/dashboard-donatur/post_ganti_profile/{id}', 'FrontPage\FrontPageController@post_ganti_profile')->name('front_end.post_edit_profile');
 
-	foreach($url as $url){
-		Route::get('/'.$url->url, 'FrontPage\FrontPageController@routing')->name('front_page.'.$url->url);
-	}
+	// foreach($url as $url){
+	// 	Route::get('/'.$url->url, 'FrontPage\FrontPageController@routing')->name('front_page.'.$url->url);
+	// }
 	Route::get('/logout', 'FrontPage\FrontPageController@logout')->name('front_page.logout');
 
 	#change lang
@@ -112,7 +112,7 @@
 	});
 
 	Route::group(['prefix' => 'profile'], function(){
-		Route::get('/', 'FrontPage\ProfileController@index')->name('dermaster.tentang_kami');
+		Route::get('/', 'FrontPage\ProfileController@index')->name('dermaster.tentang-kami');
 	});
 
 	Route::group(['prefix' => 'products'], function(){
@@ -139,9 +139,11 @@
 		Route::get('/show', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 	});
 
-	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.checkpoint');
+	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.check-point');
 
 	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');
+
+	Route::get('/price-list', 'FrontPage\PriceListController@index')->name('dermaster.price-list');
 
 #end new front page route
 
@@ -357,6 +359,10 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/edit/update_back/{id_menu_front_page}', 'Admin\core\MenuFrontPageController@update_back')->name('menu_front_page.update_back');
 		Route::get('/detail/{id_menu_front_page}', 'Admin\core\MenuFrontPageController@show')->name('menu_front_page.detail');
 		Route::get('/delete/{id_menu_front_page}', 'Admin\core\MenuFrontPageController@destroy')->name('menu_front_page.delete');
+
+
+		Route::get('/active-menu', 'Admin\core\MenuFrontPageController@active')->name('menu_front_page.active');
+		Route::get('/non-active-menu', 'Admin\core\MenuFrontPageController@nonactive')->name('menu_front_page.nonactive');
 	});
 
 
@@ -459,6 +465,4 @@ Route::group(['prefix' => 'language'], function(){
 	#upload wysiwyg
 	Route::post('/uploadimagewysywig', 'Admin\core\UploadImageBase64@uploadImage');
 	Route::post('/deleteimagewysywig', 'Admin\core\UploadImageBase64@deleteImage');
-
-	Route::get('/price-list', 'FrontPage\PriceListController@index')->name('dermaster.price_list');
 #end route backend

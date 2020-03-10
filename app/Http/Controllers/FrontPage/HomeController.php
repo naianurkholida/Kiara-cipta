@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\FrontPage\Pengunjung;
 
 class HomeController extends Controller
 {
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->view = 'frontend.home';
 
@@ -20,6 +21,14 @@ class HomeController extends Controller
 
         if ($locale == NULL) {
             $locale = Session::put('locale', $language);
+        }
+
+        $cekip = Pengunjung::where('ip', $request->ip())->first();
+
+        if($cekip == null){
+            $pengunjung = new Pengunjung;
+            $pengunjung->ip = $request->ip();
+            $pengunjung->save();
         }
     }
 

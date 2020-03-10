@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\PostingLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Pages;
 
 class PriceListController extends Controller
 {
@@ -17,7 +18,10 @@ class PriceListController extends Controller
      */
     public function index()
     {
-        return view('frontend.price_list');
+        $image = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
+                ->where('pages.id_category', 55)->first();
+
+        return view('frontend.price_list', compact('image'));
     }
 
     /**

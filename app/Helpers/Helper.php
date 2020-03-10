@@ -188,14 +188,14 @@ class Helper
 
 	public static function MenuFrontPage()
 	{
-		$data = MenuFrontPage::where('id_sub_menu', 0)->get();
+		$data = MenuFrontPage::where('id_sub_menu', 0)->where('is_active', 0)->get();
 
 		return $data;
 	}
 
 	public static function childFrontPage($id)
 	{
-		$data = MenuFrontPage::where('id_sub_menu', $id)->get();
+		$data = MenuFrontPage::where('id_sub_menu', $id)->where('is_active', 0)->get();
 
 		return $data;
 	}

@@ -55,6 +55,16 @@
                                     <i class="la la-trash"></i>
                                 </a>
                                 @endif
+
+                                @if($menufp->is_active == 0)
+                                <button type="button" class="btn btn-success btn-sm" title="active" onclick="nonactive('{{$menufp->id_menu_front_page}}')">
+                                    <i class="la la-check"></i>
+                                </button>
+                                @else
+                                <button type="button" class="btn btn-dark btn-sm" title="non active" onclick="active('{{$menufp->id_menu_front_page}}')">
+                                    <i class="la la-close"></i>
+                                </button>
+                                @endif
                             </td>
                         </tr>
                         <?php $no++?>
@@ -72,5 +82,30 @@
 @endsection
 
 @section('js')
+<script type="text/javascript">
+    function active(id) {
+        $.ajax({
+            url: '{{Route("menu_front_page.active")}}',
+            type: 'GET',
+            dataType: 'json',
+            data: {id: id},
+            success: function(response){
+                location.reload();
+            }
+        });
+        
+    }
 
+    function nonactive(id) {
+        $.ajax({
+            url: '{{Route("menu_front_page.nonactive")}}',
+            type: 'GET',
+            dataType: 'json',
+            data: {id: id},
+            success: function(response){
+                location.reload();
+            }
+        });
+    }
+</script>
 @endsection

@@ -39,6 +39,26 @@ class MenuFrontPageController extends Controller
         return $data;
     }
 
+    function active(Request $request){
+        $id = $request->id;
+
+        $active = MenuFrontPage::find($id);
+        $active->is_active = 0;
+        $active->save();
+
+        return response()->json($active);
+    }
+
+    function nonactive(Request $request){
+        $id = $request->id;
+
+        $active = MenuFrontPage::find($id);
+        $active->is_active = 1;
+        $active->save();
+
+        return response()->json($active);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -48,26 +68,14 @@ class MenuFrontPageController extends Controller
     {
         $top_bar = $this->top_bar();
 
-        if(!Session::get('role_id') == '1'){
-            $menu_front_page = DB::table('menu_front_page')
-            ->join('category', 'category.id', '=', 'menu_front_page.id_category')
-            ->join('menu_front_page_language', 'menu_front_page.id', '=', 'menu_front_page_language.id_menu_front_page')
-            ->where('menu_front_page_language.id_language', 1)
-            ->where('menu_front_page.id_sub_menu', 0)
-            ->orderby('category.category', 'desc')
-            ->orderby('menu_front_page.sort_order', 'asc')
-            ->get();
-        }else{
-            $menu_front_page = DB::table('menu_front_page')
-            ->join('category', 'category.id', '=', 'menu_front_page.id_category')
-            ->join('menu_front_page_language', 'menu_front_page.id', '=', 'menu_front_page_language.id_menu_front_page')
-            ->where('menu_front_page_language.id_language', 1)
-            ->where('menu_front_page.id_sub_menu', 0)
-            ->where('menu_front_page.is_created', \Session::get('id'))
-            ->orderby('category.category', 'desc')
-            ->orderby('menu_front_page.sort_order', 'asc')
-            ->get();
-        }
+        $menu_front_page = DB::table('menu_front_page')->select('*', 'menu_front_page.id as key_id')
+        ->join('category', 'category.id', '=', 'menu_front_page.id_category')
+        ->join('menu_front_page_language', 'menu_front_page.id', '=', 'menu_front_page_language.id_menu_front_page')
+        ->where('menu_front_page_language.id_language', 1)
+        ->where('menu_front_page.id_sub_menu', 0)
+        ->orderby('category.category', 'desc')
+        ->orderby('menu_front_page.sort_order', 'asc')
+        ->get();
 
         $validasi = MenuAccess::select('*')
         ->leftjoin('menus', 'menus.id', '=', 'menu_access.menu_id')
@@ -106,7 +114,7 @@ class MenuFrontPageController extends Controller
         $menu->id_sub_menu = $request->parent;
         $menu->jenis = $request->jenis;
         $menu->sort_order = $request->sort_order;
-        $menu->url = strtolower($request->judul[0]);
+        $menu->url = strtolower(str_replace(' ','-',$request->judul[0]));
         $menu->is_created = \Session::get('id');
         $menu->save();
 

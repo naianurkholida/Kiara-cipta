@@ -10,7 +10,7 @@
 	<div class="container" id="container_luar">
 		<div class="container" id="container_dalem">
 			<div class="text-center">
-				<img src="{{asset('assets/admin/assets/media/img/price_list.jpg')}}">
+				{!! $image->konten_page !!}
 			</div>
 		</div>
 	</div>
