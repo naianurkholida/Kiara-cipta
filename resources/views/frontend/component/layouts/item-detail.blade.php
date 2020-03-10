@@ -3,7 +3,7 @@
         <div class="row" style="margin-top: 70px;">
             <div class="col-md-4 col-sm-12">
                 @foreach($data->getMedia($image) as $row)
-                    <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #f9f9f9; background-image: url({{ $row->getUrl() }}); background-size: cover; background-position: center;"></div>
+                    <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                 @endforeach
             </div>
             <div class="col-md-8 col-sm-12">
