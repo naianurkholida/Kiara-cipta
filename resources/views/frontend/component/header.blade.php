@@ -83,11 +83,11 @@
                                     <div>Gallery</div>
                                 </a>
                             </li>
-                        	<!-- <li>
+                        	<li>
                         		<a href="{{route('dermaster.checkpoint')}}">
                         			<div>Check Point</div>
                         		</a>
-                        	</li> -->
+                        	</li>
                         	<li>
                         		<a href="{{route('dermaster.kontak')}}">
                         			<div>Kontak</div>
