@@ -28,6 +28,7 @@
             $( "#container_dalem" ).removeClass("container");
             $( "#container_luar" ).removeClass("container").addClass("container-fluid");
             $( "#text-content").css("width", "100%");
+            $( "#img-content").css("width", "100%");
         } else {
             $( "#container_dalem" ).addClass("container");
             $( "#container_luar" ).removeClass("container-fluid").addClass("container");

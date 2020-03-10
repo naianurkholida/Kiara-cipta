@@ -133,7 +133,16 @@ body,
     height: 290px;
     background-size: cover;
 }
+@media only screen and (max-width: 425px) {
+    #menu-item-gallery{
+        float: left;
+        width: 65px;
+    }
 
+    #boxmenu{
+        margin-left: 0 !important;
+    }
+}
 #item-gallery {
     width: 100%;
     height: 250px;

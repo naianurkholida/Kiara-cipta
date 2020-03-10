@@ -1,5 +1,5 @@
 <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; padding-top: 0 !important">
-    <div class="container" id="container-detail">
+    <div class="container" id="container_detail">
         <div class="row" style="margin-top: 70px;">
             <div class="col-md-4 col-sm-12">
                 @foreach($data->getMedia($image) as $row)
@@ -12,3 +12,4 @@
         </div>
     </div>
 </div>
+

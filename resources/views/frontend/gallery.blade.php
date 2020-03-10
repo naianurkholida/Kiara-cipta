@@ -1,5 +1,11 @@
 @extends('frontend.component.master')
 
+@section('css')
+    <style>
+        
+    </style>
+@endsection
+
 @section('content')
 <div class="section nobg nobottommargin clearfix">
     <div class="container clearfix">
@@ -9,11 +15,11 @@
 
         <!-- Portfolio Filter
         ============================================= -->
-        <ul class="portfolio-filter style-2 center clearfix" data-container="#portfolio" style="margin-left:25%;">
+        <ul class="portfolio-filter style-2 center clearfix" data-container="#portfolio" style="margin-left:25%;" id="boxmenu">
 
-            <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+            <li class="activeFilter" id="menu-item-gallery"><a href="#" data-filter="*">Show All</a></li>
             @foreach($category as $row)
-                <li><a href="#" data-filter=".pf-{{ str_replace(' ', '-', $row->category) }}">{{ $row->category }}</a></li>
+                <li id="menu-item-gallery"><a href="#" data-filter=".pf-{{ str_replace(' ', '-', $row->category) }}">{{ $row->category }}</a></li>
             @endforeach
 
         </ul>

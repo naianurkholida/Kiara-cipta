@@ -7,8 +7,8 @@
             <h3 class="nott ls0">Treatments</h3>
         </div>
     </div>
-    <div class="container" id="container-luar">
-        <div class="container" id="container-dalem">
+    <div class="container" id="container_luar">
+        <div class="container" id="container_dalem">
             @include('frontend.component.layouts.item-detail', ['related' => 'getTreatmentLanguage', 'column' => 'deskripsi','image' => 'treatment'])
         </div>
     </div>
