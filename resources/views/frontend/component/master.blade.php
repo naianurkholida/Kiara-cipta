@@ -237,7 +237,18 @@
         s0.parentNode.insertBefore(s1,s0);
       })();
     </script>
-
+     <script>
+      if (window.matchMedia('(max-width: 425px)'))
+     {
+         $( "#header_dalem" ).removeClass("container");
+         $( "#header_luar" ).removeClass("container").addClass("container-fluid");
+         $( "#header_detail" ).removeClass("container");
+     } else {
+         $( "#header_dalem" ).addClass("container");
+         $( "#header_detail" ).addClass("container");
+         $( "#header_luar" ).removeClass("container-fluid").addClass("container");
+     }
+    </script>
     @yield('js')
 
   </body>

@@ -1,9 +1,9 @@
 <header id="header" class="full-header clearfix">
 
 	<div id="header-wrap">
-		<div class="container">
-			<div class="container">
-				<div class="container clearfix">
+		<div class="container" id="header_luar">
+			<div class="container" id="header_dalem">
+				<div class="container" id="header_detail">
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
@@ -115,3 +115,4 @@
         </div>
 
     </header>
+   
