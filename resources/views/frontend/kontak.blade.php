@@ -7,8 +7,8 @@
             <h3 class="nott ls0">Kontak</h3>
         </div>
     </div>
-    <div class="container">
-        <div class="container">
+    <div class="container" id="container_luar">
+        <div class="container" id="container_dalem">
         @include('component.alert.global')
             <div class="row">
                 <div class="col-lg-12">
@@ -39,4 +39,16 @@
     </div>
 
 </div>
+@endsection
+
+@section('js')
+    <script>
+        
+        if (window.matchMedia('(max-width: 425px)'))
+        {
+            $( "#container_dalem" ).removeClass("container");
+        } else {
+            $( "#container_dalem" ).addClass("container");
+        }
+    </script>
 @endsection

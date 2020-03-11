@@ -12,6 +12,7 @@
 					<tr class="m-datatable__row text-center">
                         <!-- <td>No</td> -->
 						<td>Nama</td>
+						<td>Email</td>
 						<td>Posting</td>
 						<td>Inbox And Comment</td>
 						<td>Status</td>
@@ -24,6 +25,7 @@
 						<tr>
 							<!-- <td>{{$no}}</td> -->
 							<td>{{$incom->nama}}</td>
+							<td>{{$incom->email}}</td>
 							<td>Inbox</td>
 							<td>{{substr($incom->inbox,0 ,15)}}</td>
 							<td>Active</td>

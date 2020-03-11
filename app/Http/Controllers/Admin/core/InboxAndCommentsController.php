@@ -40,7 +40,7 @@ class InboxAndCommentsController extends Controller
     public function index()
     {
         $top_bar = $this->top_bar();
-        $inbox = Inbox::all();
+        $inbox = Inbox::orderBy('created_at', 'desc')->get();
         return view('admin.core.inbox_and_comments.index', compact('top_bar', 'inbox'));
     }
 
