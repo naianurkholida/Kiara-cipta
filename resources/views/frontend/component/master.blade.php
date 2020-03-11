@@ -33,7 +33,22 @@
     <!-- Document Title
      ============================================= -->
      <title>Home | Derma Express</title>
-
+      @php
+          $next = asset('assets/image/next.png');
+          $prev = asset('assets/image/prev.png');
+          $close = asset('assets/image/close.png');
+      @endphp
+      <style>
+        .lb-nav a.lb-prev {
+          background: url(<?= $prev ?>) left 48% no-repeat;
+        }
+        .lb-nav a.lb-next {
+          background: url(<?= $next ?>) right 48% no-repeat;
+        }
+        .lb-data .lb-close {
+          background: url(<?= $close ?>) top right no-repeat;
+        }
+      </style>
    </head>
 
    <body class="stretched">
