@@ -144,8 +144,9 @@ class CategoryController extends Controller
     {
     	$top_bar = $this->top_bar();
     	$category = Category::find($id);
-    	$id_cek  = Parameter::where('key', 'kategori_program')->first();
-    	$cek_kat = Category::where('id_parent', $id_cek->value)->where('id', $category->id)->first();
+    	// $id_cek  = Parameter::where('key', 'kategori_program')->first();
+    	// $cek_kat = Category::where('id_parent', $id_cek->value)->where('id', $category->id)->first();
+        $cek_kat = '';
     	return view('admin.core.category.edit', compact('top_bar', 'category', 'cek_kat'));
     }
 
@@ -168,8 +169,10 @@ class CategoryController extends Controller
        $category->is_created = Session::get('id');
        $category->save();
 
-       $id_cek  = Parameter::where('key', 'kategori_program')->first();
-       $cek_kat = Category::where('id_parent', $id_cek->value)->where('id', $category->id)->first();
+       // $id_cek  = Parameter::where('key', 'kategori_program')->first();
+       // $cek_kat = Category::where('id_parent', $id_cek->value)->where('id', $category->id)->first();
+
+       $cek_kat = '';
 
        if($cek_kat != null && $request->file('gambar') != null){
           $gambar = Gambar::where('id_relasi', $category->id)->first();

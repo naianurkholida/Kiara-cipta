@@ -203,7 +203,7 @@ class Helper
 	public static function getLanguageJudul($id)
 	{
 		$data = MenuFrontPageLanguage::where('id_menu_front_page', $id)->where('id_language', Session::get('locale'))->first();
-		
+	
 		return $data->judul_menu;
 	}
 }
