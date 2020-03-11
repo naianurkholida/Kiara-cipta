@@ -41,12 +41,15 @@
       <style>
         .lb-nav a.lb-prev {
           background: url(<?= $prev ?>) left 48% no-repeat;
+          background-size: 50px;
         }
         .lb-nav a.lb-next {
           background: url(<?= $next ?>) right 48% no-repeat;
+          background-size: 50px;
         }
         .lb-data .lb-close {
           background: url(<?= $close ?>) top right no-repeat;
+          background-size: 20px;
         }
       </style>
    </head>
