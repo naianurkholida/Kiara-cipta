@@ -142,11 +142,38 @@ body,
     #boxmenu{
         margin-left: 0 !important;
     }
+
+    #treatment-item{
+        padding-right: 0px !important;
+    }
+
+    .img-slider{
+        height: 250px !important ;
+    }
+
+    #text-sosmed{
+        display: none;
+    }
+    .ts-icon{
+        margin-right: 0px !important;
+        color: white;
+    }
+    #sosmed-a{
+        background-color: #65b5aa;
+        width: 35px;
+    }
+    .fb-ic{
+        padding-left:13px !important;
+        padding-right:13px !important;
+    }
+
 }
 #item-gallery {
     width: 100%;
     height: 250px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .img-dokter {
