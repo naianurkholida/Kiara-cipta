@@ -143,18 +143,18 @@
           <!-- end yt -->
 
           <div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
-            <div class="container clearfix">
+            <div class="container" id="footer-sosmed">
               <center>
-                <a href="{{ Helper::cfacebook() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;">Facebook</span></a>
+                  <a href="{{ Helper::cfacebook() }}" class="fb-ic" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Facebook</span></a>
 
-                <a href="{{ Helper::cinstagram() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;">Instagram</span></a>
+                  <a href="{{ Helper::cinstagram() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Instagram</span></a>
+  
+                  <a href="{{ Helper::ctwitter() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Twitter</span></a>
+                  
+                  <a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Whatsapp</span></a>
 
-                <a href="{{ Helper::ctwitter() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;">Twitter</span></a>
-
-                <a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;">Whatsapp</span></a>
-
-                <a href="{{ Helper::cemail() }}" style="padding:10px"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;">Mail</span></a>
-              </center>
+                  <a href="{{ Helper::cemail() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Mail</span></a>
+                </center>
             </div>
           </div>
         <!-- Footer
@@ -241,10 +241,12 @@
       if (window.matchMedia('(max-width: 425px)'))
      {
          $( "#header_dalem" ).removeClass("container");
+         $( "#footer-sosmed" ).removeClass("container");
          $( "#header_luar" ).removeClass("container").addClass("container-fluid");
          $( "#header_detail" ).removeClass("container");
      } else {
          $( "#header_dalem" ).addClass("container");
+         $( "#footer-sosmed" ).addClass("container");
          $( "#header_detail" ).addClass("container");
          $( "#header_luar" ).removeClass("container-fluid").addClass("container");
      }
