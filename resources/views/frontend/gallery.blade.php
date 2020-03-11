@@ -32,16 +32,19 @@
 
         @foreach($category as $row)
                 @foreach($row->getGallery as $item)
-                    <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}">
-                        <div class="portfolio-image">
-                                <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-desc">
-                                    <h3><a href="{{ $item->getFirstMediaUrl('gallery') }}" target="blank">Open image</a><h3>
-                                </div>
+                   
+                        <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}">
+                            <div class="portfolio-image">
+                                <a href="{{ $item->getFirstMediaUrl('gallery') }}" data-lightbox="gallery">
+                                    <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-desc">
+                                            <h3>Open image<h3>
+                                        </div>
+                                    </div>    
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                        </article>
                 @endforeach
         @endforeach
 

@@ -13,6 +13,8 @@
      <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" type="text/css" />
      <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" />
      <link rel="stylesheet" href="{{asset('assets/css/swiper.css')}}" type="text/css" />
+     <link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}" type="text/css" />
+
 
      <!-- shop Demo Specific Stylesheet -->
      <link rel="stylesheet" href="{{asset('assets/demos/shop/shop.css')}}" type="text/css" />
@@ -209,6 +211,7 @@
      ============================================= -->
      <script src="{{asset('assets/js/jquery.js')}}"></script>
      <script src="{{asset('assets/js/plugins.js')}}"></script>
+     <script src="{{asset('assets/js/lightbox.js')}}"></script>
 
     <!-- Footer Scripts
      ============================================= -->
