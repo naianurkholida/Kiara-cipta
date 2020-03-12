@@ -73,10 +73,13 @@
                                     <ul class="mega-menu-column col-lg-12">
                                         <li class="mega-menu-title">
                                             <ul style="display: none;">
-                                                <li class="sub-menu">
-                                                    <a href="{{route('dermaster.treatments', '48')}}" class="sf-with-ul">BOTOX</a>
-                                                    <a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">Meso DNA Salmon</a>
+                                                @foreach(Helper::childFrontPage($row->id) as $item)
+                                                <li>
+                                                    <a href="{{ route('dermaster.treatments', $item->url) }}">
+                                                        <div>{{ Helper::getLanguageJudul($item->id) }}</div>
+                                                    </a>
                                                 </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
