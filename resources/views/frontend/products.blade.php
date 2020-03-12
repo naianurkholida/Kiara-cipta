@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="container">
+        <div class="container" id="container_dalem">
             <div class="row">
                 @foreach($data as $row)
                     <div class="col-md-3" style="text-align: center;margin-bottom: 20px;">
@@ -24,4 +24,16 @@
     </div>
 
 </div>
+@endsection
+
+@section('js')
+    <script>
+        
+        if (window.matchMedia('(max-width: 425px)'))
+        {
+            $( "#container_dalem" ).removeClass("container");
+        } else {
+            $( "#container_dalem" ).addClass("container");
+        }
+    </script>
 @endsection
