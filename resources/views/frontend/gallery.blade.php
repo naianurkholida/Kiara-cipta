@@ -28,27 +28,32 @@
 
     <!-- Portfolio Items
     ============================================= -->
-    <div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
+    <div class="container">
+        <div class="container">
+            <div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
 
-        @foreach($category as $row)
-                @foreach($row->getGallery as $item)
-                   
-                        <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}">
-                            <div class="portfolio-image">
-                                <a href="{{ $item->getFirstMediaUrl('gallery') }}" data-lightbox="gallery">
-                                    <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
-                                    <div class="portfolio-overlay">
-                                        <div class="portfolio-desc">
-                                            <h3>Open image<h3>
-                                        </div>
-                                    </div>    
-                                </a>
-                            </div>
-                        </article>
+                @foreach($category as $row)
+                        @foreach($row->getGallery as $item)
+                           
+                                <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
+                                    <div class="portfolio-image">
+                                        <a href="{{ $item->getFirstMediaUrl('gallery') }}" data-lightbox="gallery">
+                                            <div id="item-gallery" style ="background-image:url({{ $item->getFirstMediaUrl('gallery') }})"></div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-desc">
+                                                    <h3>Open image<h3>
+                                                </div>
+                                            </div>    
+                                        </a>
+                                    </div>
+                                </article>
+                        @endforeach
                 @endforeach
-        @endforeach
-
+        
+            </div>
+        </div>
     </div>
+   
     <!-- #portfolio end -->
 </div>
 @endsection
