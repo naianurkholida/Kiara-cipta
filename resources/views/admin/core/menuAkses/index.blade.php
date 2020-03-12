@@ -36,6 +36,7 @@
 							<th>View</th>
 							<th>Print</th>
 							<th>Download</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 
@@ -68,14 +69,23 @@
 							'<td>'+no+'</td>'+
 							'<td>'+value.label+'</td>'+
 							'<td>'+value.url+'</td>'+
-							'<td><input type="checkbox" name"show_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="create_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="read_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="update_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="delete_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="view_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="print_'+value.id+'"></td>'+
-							'<td><input type="checkbox" name="download_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name"show_'+value.id+'" id="show_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="create_'+value.id+'" id="create_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="read_'+value.id+'" id="read_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="update_'+value.id+'" id="update_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="delete_'+value.id+'" id="delete_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="view_'+value.id+'" id="view_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="print_'+value.id+'" id="print_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="download_'+value.id+'" id="download_'+value.id+'"></td>'+
+							'<td>'+
+							'<button type="button" class="btn btn-success btn-sm" title="Active" onclick="active_all('+value.id+')">'+
+							'<i class="la la-check"></i>'+
+							'</button>'+
+							'&nbsp;'+
+							'<button type="button" class="btn btn-danger btn-sm" title="Non Active" onclick="non_active_all('+value.id+')">'+
+							'<i class="la la-close"></i>'+
+							'</button>'+
+							'</td>'+
 							'</tr>'
 							);
 						no++;
@@ -111,14 +121,23 @@
 							'<td>'+no+'</td>'+
 							'<td>'+value.label+'</td>'+
 							'<td>'+value.url+'</td>'+
-							'<td><input type="checkbox" name="show_'+value.id+'" '+show+'></td>'+
-							'<td><input type="checkbox" name="create_'+value.id+'" '+create+'></td>'+
-							'<td><input type="checkbox" name="read_'+value.id+'" '+read+'></td>'+
-							'<td><input type="checkbox" name="update_'+value.id+'" '+update+'></td>'+
-							'<td><input type="checkbox" name="delete_'+value.id+'" '+hapus+'></td>'+
-							'<td><input type="checkbox" name="view_'+value.id+'" '+view+'></td>'+
-							'<td><input type="checkbox" name="print_'+value.id+'" '+print+'></td>'+
-							'<td><input type="checkbox" name="download_'+value.id+'" '+download+'></td>'+
+							'<td><input type="checkbox" name="show_'+value.id+'" '+show+' id="show_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="create_'+value.id+'" '+create+' id="create_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="read_'+value.id+'" '+read+' id="read_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="update_'+value.id+'" '+update+' id="update_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="delete_'+value.id+'" '+hapus+' id="delete_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="view_'+value.id+'" '+view+' id="view_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="print_'+value.id+'" '+print+' id="print_'+value.id+'"></td>'+
+							'<td><input type="checkbox" name="download_'+value.id+'" '+download+' id="download_'+value.id+'"></td>'+
+							'<td>'+
+							'<button type="button" class="btn btn-success btn-sm" title="Active" onclick="active_all('+value.id+')">'+
+							'<i class="la la-check"></i>'+
+							'</button>'+
+							'&nbsp;'+
+							'<button type="button" class="btn btn-danger btn-sm" title="Non Active" onclick="non_active_all('+value.id+')">'+
+							'<i class="la la-close"></i>'+
+							'</button>'+
+							'</td>'+
 							'</tr>'
 							);
 					});
@@ -126,6 +145,28 @@
 			}
 
 		});
+	}
+
+	function active_all(id) {
+		let show  	 = document.getElementById('show_'+id).checked = true;
+		let create 	 = document.getElementById('create_'+id).checked = true;
+		let read 	 = document.getElementById('read_'+id).checked = true;
+		let update 	 = document.getElementById('update_'+id).checked = true;
+		let destroy  = document.getElementById('delete_'+id).checked = true;
+		let view     = document.getElementById('view_'+id).checked = true;
+		let print    = document.getElementById('print_'+id).checked = true;
+		let download = document.getElementById('download_'+id).checked = true;
+	}
+
+	function non_active_all(id) {
+		let show  	 = document.getElementById('show_'+id).checked = false;
+		let create 	 = document.getElementById('create_'+id).checked = false;
+		let read 	 = document.getElementById('read_'+id).checked = false;
+		let update 	 = document.getElementById('update_'+id).checked = false;
+		let destroy  = document.getElementById('delete_'+id).checked = false;
+		let view     = document.getElementById('view_'+id).checked = false;
+		let print    = document.getElementById('print_'+id).checked = false;
+		let download = document.getElementById('download_'+id).checked = false;
 	}
 </script>
 @endsection
