@@ -10,97 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-#front page route
-	use App\Entities\Admin\core\MenuFrontPage;
-	$url = MenuFrontPage::all();
-
-	#get kategori ajax midtrans zakat
-	Route::get('/get_data_kategori/{id}', 'FrontPage\FrontPageController@get_kategori')->name('kategorigetdata');
-
-	#login and register
-	Route::get('/masuk', 'FrontPage\FrontPageController@login')->name('front_page.login');
-	Route::post('/proses-masuk', 'FrontPage\FrontPageController@pro_login')->name('front_page.pro_login');
-	Route::get('/daftar', 'FrontPage\FrontPageController@register')->name('front_page.register');
-	Route::post('/proses-daftar', 'FrontPage\FrontPageController@pro_register')->name('front_page.pro_register');
-	Route::get('/daftar/cek_email/{email}', 'FrontPage\FrontPageController@cek_email')->name('front_page.cek_email');
-	Route::get('/daftar/email-verify'."/".'{tok}', 'FrontPage\FrontPageController@email_verify')->name('front_page.email_verify');
-	Route::get('/dashboard-donatur/cek_password/{password}', 'FrontPage\FrontPageController@cek_password')->name('front_page.cek_password');
-
-	Route::get('/forgot-password', 'FrontPage\FrontPageController@forgot_password')->name('front_page.forgot_password');
-	Route::post('/forgot-password-post', 'FrontPage\FrontPageController@forgot_password_post')->name('front_page.forgot_password_post');
-	Route::get('/forgot-password/{token}', 'FrontPage\FrontPageController@verify_forgot_password')->name('front_page.verify_forgot_password');
-	Route::post('/post-ganti-password/{id}', 'FrontPage\FrontPageController@post_ganti_password')->name('front_page.post_reset_password');
-
-	#front page
-	Route::get('/home', 'FrontPage\FrontPageController@index')->name('front_page.index');
-	Route::get('/dashboard-donatur', 'FrontPage\FrontPageController@dashboard_donatur')->name('front_page.dash_donatur');
-	Route::get('/dashboard-donatur/post_ganti_password/{id}', 'FrontPage\FrontPageController@post_ganti_password')->name('front_end.post_reset_password');
-	Route::post('/dashboard-donatur/post_ganti_profile/{id}', 'FrontPage\FrontPageController@post_ganti_profile')->name('front_end.post_edit_profile');
-	Route::get('/dashboard-donatur/post_ganti_profile/{id}', 'FrontPage\FrontPageController@post_ganti_profile')->name('front_end.post_edit_profile');
-
-	// foreach($url as $url){
-	// 	Route::get('/'.$url->url, 'FrontPage\FrontPageController@routing')->name('front_page.'.$url->url);
-	// }
-	Route::get('/logout', 'FrontPage\FrontPageController@logout')->name('front_page.logout');
-
-	#change lang
-	Route::post('/switch-language', 'FrontPage\FrontPageController@switch_language')->name('front_page.switch_language');
-
-	#program dan donasi
-	Route::get('donateform/{id}', 'FrontPage\FrontPageController@donasi_program')->name('program.donasi');
-	Route::get('detailprogram/{id}', 'FrontPage\FrontPageController@detailprogram')->name('program.detailprogram');
-	Route::get('/snaptoken', 'FrontPage\DonasiController@token')->name('donasi.snaptoken');
-	Route::post('/snapfinish', 'FrontPage\DonasiController@finish')->name('donasi.snapfinish');
-	Route::get('/get-invoice/{id}', 'FrontPage\DonasiController@get_invoice')->name('donasi.get_invoice');
-
-	#update
-	Route::get('update/{id}', 'FrontPage\FrontPageController@update_detail')->name('update.detail');
-
-	#search
-	Route::get('/programs/pencarian', 'FrontPage\FrontPageController@cari')->name('program.cari');
-
-	#zakat front page
-	Route::group(['prefix' => 'zakat'], function(){
-		#front page
-		Route::get('/form-zakat', 'FrontPage\FrontPageController@form_zakat')->name('zakat.form');
-		Route::get('/kalkulator', 'FrontPage\FrontPageController@kalkulator')->name('zakat.kalkulator');
-		Route::get('/snaptokens', 'FrontPage\ZakatController@token')->name('zakat.snaptokens');
-		Route::post('/snapfinishs', 'FrontPage\ZakatController@finish')->name('zakat.snapfinishs');
-		Route::post('/zakat-post-penghasilan', 'FrontPage\FrontPageController@zakat_penghasilan_store')->name('zakat.insert_penghasilan');
-		Route::post('/zakat-post-harta', 'FrontPage\FrontPageController@zakat_harta_store')->name('zakat.insert_harta');
-		Route::post('/zakat-post-perniagaan', 'FrontPage\FrontPageController@zakat_perniagaan_store')->name('zakat.insert_perniagaan');
-		Route::post('/zakat-post-fitrah', 'FrontPage\FrontPageController@zakat_fitrah_store')->name('zakat.insert_fitrah');
-	});
-
-	#kisah sukses
-	Route::get('/kisah-sukses/{id}', 'FrontPage\FrontPageController@kisah_sukses')->name('home.kisah');
-
-	#notif midtrans
-	Route::group(['prefix' => 'notif'], function(){
-		Route::get('/notif-success', 'FrontPage\DonasiController@setSuccess')->name('notif.success');
-		Route::get('/notif-pending', 'FrontPage\DonasiController@setPending')->name('notif.pending');
-		Route::get('/notif-error', 'FrontPage\DonasiController@setError')->name('notif.error');
-		Route::get('/notif-konfirmasi', 'FrontPage\DonasiController@setKonfirmasi')->name('notif.konfirmasi');
-		Route::get('/notifikasi-konfirmasi', 'FrontPage\DonasiController@setKonfirmasi2')->name('notif.konfirmasi2');
-	});
-
-	#redirect
-
-	Route::get('/notif-register', 'FrontPage\FrontPageController@notif_register')->name('notif.register');
-
-	#footer
-	Route::get('/syarat&ketentuan', 'FrontPage\FrontPageController@syarat_dan_ketentuan');
-	Route::get('/ketentuan&privasi', 'FrontPage\FrontPageController@ketentuan_privacy');
-	Route::get('/kontak', 'FrontPage\FrontPageController@kontak');
-	Route::get('/kantor-cabang', 'FrontPage\FrontPageController@kantor_cabang');
-	Route::get('/kebijakan-refund', 'FrontPage\FrontPageController@kebijakan_refund');
-	Route::get('/rekening-donasi', 'FrontPage\FrontPageController@rekening_donasi');
-
-
-	#detail transfer
-	Route::get('/konfirmasi-pembayaran/{id}', 'FrontPage\DonasiController@konfirmasi_pembayaran')->name('konfirmasi.pembayaran');
-	Route::post('/approve-pay', 'FrontPage\DonasiController@konfirmasi_pay')->name('konfirmasi.pay');
-#end frontpage route
 
 #new front page route
 
@@ -395,15 +304,6 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/delete/{id}', 'Admin\core\LanguageController@destroy')->name('language.delete');
 	});
 
-	#theme
-	Route::group([
-		'middleware' => 'middleware',
-		'prefix' => 'theme'
-	], function(){
-		Route::get('/', 'Admin\core\ThemeController@index')->name('theme.index');
-		Route::get('/actived/{id_theme}', 'Admin\core\ThemeController@actived')->name('theme.actived');
-	});
-
 	#inbox
 	Route::group([
 		'prefix' => 'inbox'
@@ -414,25 +314,6 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/comment/post', 'Admin\core\InboxAndCommentsController@post_comment')->name('comment.post');
 	});
 
-	#modul profile
-	Route::group([
-		'middleware' => 'middleware',
-		'prefix' => 'modul_profile'
-	], function(){
-		Route::get('/', 'Admin\core\ModulProfileController@index')->name('modul_profile.index');
-		Route::post('/post', 'Admin\core\ModulProfileController@post')->name('modul_profile.post');
-
-		//delete
-		Route::get('/delete_misi/{id}', 'Admin\core\ModulProfileController@delete_misi')->name('modul_profile.delete_misi');
-		Route::get('/delete_legalitas/{id}', 'Admin\core\ModulProfileController@delete_legalitas')->name('modul_profile.delete_legalitas');
-		Route::get('/delete_dewan_pembina/{id}', 'Admin\core\ModulProfileController@delete_dewan_pembina')->name('modul_profile.delete_dewan_pembina');
-		Route::get('/delete_pengawas_syariah/{id}', 'Admin\core\ModulProfileController@delete_pengawas_syariah')->name('modul_profile.delete_pengawas_syariah');
-		Route::get('/delete_pengawas/{id}', 'Admin\core\ModulProfileController@delete_pengawas')->name('modul_profile.delete_pengawas');
-		Route::get('/delete_direksi/{id}', 'Admin\core\ModulProfileController@delete_direksi')->name('modul_profile.delete_direksi');
-		Route::get('/delete_sejarah/{id}', 'Admin\core\ModulProfileController@delete_sejarah')->name('modul_profile.delete_sejarah');
-		Route::get('/delete_kepengurusan/{id}', 'Admin\core\ModulProfileController@delete_kepengurusan')->name('modul_profile.delete_kepengurusan');
-	});
-
 	#setup
 	Route::group([
 		'middleware' => 'middleware',
@@ -440,13 +321,6 @@ Route::group(['prefix' => 'language'], function(){
 	], function(){
 		Route::get('/settings', 'Admin\core\SetupController@settings')->name('setup.settings');
 		Route::post('/store_settings', 'Admin\core\SetupController@store_settings')->name('setup.store_settings');
-	});
-
-	Route::group([
-		'middleware' => 'middleware',
-		'prefix' => 'zakats'
-	], function(){
-		Route::get('/', 'Admin\core\ZakatsController@index')->name('zakats.index');
 	});
 
 	#slider
