@@ -31,9 +31,9 @@
 					<tr>
 						<td class="text-center">{{$no}}</td>
 						<td>{{$slide->judul}}</td>
-						<!-- <td class="text-center">
-							<img src="{{asset('admin/assets/media/slider/245')}}/{{$slide->gambar}}">
-						</td> -->
+						<td class="text-center">
+							<a href="{{$slide->getFirstMediaUrl('slider')}}" target="blank">{{$slide->getFirstMediaUrl('slider')}}</a>
+						</td>
 						<td>{{$slide->link}}</td>
 						<td><?php if($slide->status == 1){ echo"Aktif"; }else{ echo"Non-Aktif"; } ?></td>
 						<td class="text-center">
