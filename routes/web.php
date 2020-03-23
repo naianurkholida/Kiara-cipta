@@ -14,7 +14,7 @@
 #new front page route
 
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
-	
+
 	Route::group(['prefix' => 'dokter'], function(){
 		Route::get('/', 'FrontPage\DokterController@index')->name('dermaster.dokter');
 		Route::get('/show/{id}', 'FrontPage\DokterController@show')->name('dermaster.dokter.show');
@@ -48,12 +48,17 @@
 		Route::get('/show', 'FrontPage\GalleryController@index')->name('dermaster.gallery');
 	});
 
+	#cek point
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.check-point');
 
+	#kontak
 	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');
 
+	#price list
 	Route::get('/price-list', 'FrontPage\PriceListController@index')->name('dermaster.price-list');
 
+	#feedback
+	Route::get('/feedback/{no}', 'FrontPage\FeedbackController@index')->name('dermaster.feedback');
 #end new front page route
 
 #language route
