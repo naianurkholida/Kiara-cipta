@@ -9,7 +9,7 @@
     </div>
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem">
-            <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.134.45:1717/apex/f?p=887:1::::1:P1REGNO:{{$no}}" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
+            <iframe style="border:0px #ffffff none;" width="100%" height="500px;" src="http://103.11.134.45:1717/apex/f?p=887:1::::1:P1REGNO:{{$no}}" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
         </div>
     </div>
 
