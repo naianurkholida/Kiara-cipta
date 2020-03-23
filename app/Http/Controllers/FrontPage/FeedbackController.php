@@ -18,7 +18,7 @@ class FeedbackController extends Controller
     public function index(Request $request)
     {
     	$url = $request->url();
-    	$no  = str_replace('http://derma-express.com/', '', $url);
+    	$no  = str_replace('http://derma-express.com/feedback/', '', $url);
     	return view('frontend.feedback', compact('no'));
     }
 
