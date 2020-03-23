@@ -7,9 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\PostingLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class FeedbackController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +19,14 @@ class FeedbackController extends Controller
      */
     public function index(Request $request)
     {
+        $language = Language::first()->id;
+
+        $locale = \Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = \Session::put('locale', $language);
+        }
+
     	$url = $request->url();
     	$no  = str_replace('http://derma-express.com/feedback/', '', $url);
     	return view('frontend.feedback', compact('no'));
