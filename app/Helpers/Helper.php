@@ -189,7 +189,7 @@ class Helper
 
 	public static function MenuFrontPage()
 	{
-		$data = MenuFrontPage::where('id_sub_menu', 0)->where('is_active', 0)->get();
+		$data = MenuFrontPage::where('id_sub_menu', 0)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
 
 		return $data;
 	}
