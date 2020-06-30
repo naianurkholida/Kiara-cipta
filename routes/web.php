@@ -59,6 +59,9 @@
 
 	#feedback
 	Route::get('/feedback/{no}', 'FrontPage\FeedbackController@index')->name('dermaster.feedback');
+
+	#kemitraan
+	Route::get('/kemitraan', 'FrontPage\KemitraanController@index')->name('dermaster.kemitraan');
 #end new front page route
 
 #language route

@@ -139,6 +139,7 @@ class Helper
 	{
 		$data = Sosmed::where('deleted_at', NULL)
 				->where('id_category', 54)
+				->orderBy('id', 'DESC')
 				->get();
 
 		return $data;
