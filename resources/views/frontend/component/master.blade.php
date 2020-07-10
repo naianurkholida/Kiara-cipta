@@ -33,28 +33,28 @@
     <!-- Document Title
      ============================================= -->
      <title>Home | Derma Express</title>
-      @php
-          $next = asset('assets/image/next.png');
-          $prev = asset('assets/image/prev.png');
-          $close = asset('assets/image/close.png');
-      @endphp
-      <style>
-        .lb-nav a.lb-prev {
-          background: url(<?= $prev ?>) left 48% no-repeat;
-          background-size: 50px;
-        }
-        .lb-nav a.lb-next {
-          background: url(<?= $next ?>) right 48% no-repeat;
-          background-size: 50px;
-        }
-        .lb-data .lb-close {
-          background: url(<?= $close ?>) top right no-repeat;
-          background-size: 20px;
-        }
-      </style>
-   </head>
+     @php
+     $next = asset('assets/image/next.png');
+     $prev = asset('assets/image/prev.png');
+     $close = asset('assets/image/close.png');
+     @endphp
+     <style>
+      .lb-nav a.lb-prev {
+        background: url(<?= $prev ?>) left 48% no-repeat;
+        background-size: 50px;
+      }
+      .lb-nav a.lb-next {
+        background: url(<?= $next ?>) right 48% no-repeat;
+        background-size: 50px;
+      }
+      .lb-data .lb-close {
+        background: url(<?= $close ?>) top right no-repeat;
+        background-size: 20px;
+      }
+    </style>
+  </head>
 
-   <body class="stretched">
+  <body class="stretched">
 
     <!-- Document Wrapper
      ============================================= -->
@@ -165,16 +165,16 @@
           <div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
             <div class="container" id="footer-sosmed">
               <center>
-                  <a href="{{ Helper::cfacebook() }}" class="fb-ic" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Facebook</span></a>
+                <a href="{{ Helper::cfacebook() }}" class="fb-ic" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Facebook</span></a>
 
-                  <a href="{{ Helper::cinstagram() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Instagram</span></a>
-  
-                  <a href="{{ Helper::ctwitter() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Twitter</span></a>
-                  
-                  <a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Whatsapp</span></a>
+                <a href="{{ Helper::cinstagram() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Instagram</span></a>
 
-                  <a href="{{ Helper::cemail() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Mail</span></a>
-                </center>
+                <a href="{{ Helper::ctwitter() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Twitter</span></a>
+
+                <a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Whatsapp</span></a>
+
+                <a href="{{ Helper::cemail() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Mail</span></a>
+              </center>
             </div>
           </div>
         <!-- Footer
@@ -190,36 +190,53 @@
               <div class="container clearfix">
 
                 <div class="row justify-content-between align-items-center">
-                  <div class="col-md-6">
-                    <p>
-                      SERPONG <br>
-                      Gading Serpong <br>
-                      Ruko Diamond III No 12-15, Jalan Gading Golf Boulevard, Gading Serpong, Pakulonan Bar., Kec. Klp. Dua, Kota Tangerang, Banten 15810
-                    </p>
-                    Copyrights &copy; 2020 DermaExpress<br>
+                  <div class="col-lg-12">
+                    Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer di bawah ini.
+                  </div>
+                  <div class="col-lg-4">
+                    <b>UTAN KAYU </b><br> No Tlp 02122897879 <br> No Tlp 02122895170 <br> 0821 33554191
                   </div>
 
-                  <div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
+                  <div class="col-lg-4"><br>
+                    <b>GADING SERPONG </b><br> No Tlp 02154214764 <br> No Tlp 02154214756 <br> No Tlp 02154214758 <br> 0821 33554192
+                  </div>
+
+                  <div class="col-lg-4">
+                    <b>Kritik dan Saran </b><br> 0822-5888-3050 <br>
+                    <b>Jam Operasional</b><br>Senin - Jumat: 11:30 - 19:30 WIB <br> Sabtu - Minggu: 10:00 - 19:00 WIB 
+                  </div>
+
+                  <div class="col-md-12">
                     <p>
-                      UTAN KAYU <br>
-                      Jl. Utan Kayu Raya No. 79B dan 79C RT 001/RW 08 <br>
-                      No telp 02122896702 <br>
-                      No telp 02122897879 <br>
-                      No telp 02122895170 <br>
+                      Klinik Kami<br>
+                      <b>UTAN KAYU</b> <br> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur. <br>
+                      <b>GADING SERPONG</b> <br> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. 
                     </p>
                   </div>
+
+                  <div class="col-lg-12">
+                    <b>Google Maps Alamat</b><br>
+                    Gedung WH47, lantai 2, Jl.Kh Wahid Hasyim No.47, Gondangdia, Jakarta Pusat<br>
+                    <div class="mapouter">
+                      <div class="gmap_canvas">
+                        <iframe width="600" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=jl.kh%20wahid%20hasyim%20no.47%2C%20gondangdia%2C%20Jakarta%20Pusat&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe>
+                      </div>
+                    </div>
+                    <br>
+                    <span style="text-align: center;"><b>Copyrights &copy; <?=date('Y')?> DermaExpress </b></span>
+                  </div>
+
                 </div>
 
               </div>
+              <!-- #copyrights end -->
 
-            </div>
-            <!-- #copyrights end -->
+            </footer>
+            <!-- #footer end -->
 
-          </footer>
-          <!-- #footer end -->
-
-        </div>
-        <!-- #wrapper end -->
+          </div>
+          <!-- #wrapper end -->
 
     <!-- Go To Top
      ============================================= -->
@@ -258,22 +275,22 @@
         s0.parentNode.insertBefore(s1,s0);
       })();
     </script>
-     <script>
+    <script>
       if (window.matchMedia('(max-width: 425px)'))
-     {
-         $( "#header_dalem" ).removeClass("container");
-         $( "#footer-sosmed" ).removeClass("container");
-         $( "#header_luar" ).removeClass("container").addClass("container-fluid");
-         $( "#header_detail" ).removeClass("container");
+      {
+       $( "#header_dalem" ).removeClass("container");
+       $( "#footer-sosmed" ).removeClass("container");
+       $( "#header_luar" ).removeClass("container").addClass("container-fluid");
+       $( "#header_detail" ).removeClass("container");
      } else {
-         $( "#header_dalem" ).addClass("container");
-         $( "#footer-sosmed" ).addClass("container");
-         $( "#header_detail" ).addClass("container");
-         $( "#header_luar" ).removeClass("container-fluid").addClass("container");
+       $( "#header_dalem" ).addClass("container");
+       $( "#footer-sosmed" ).addClass("container");
+       $( "#header_detail" ).addClass("container");
+       $( "#header_luar" ).removeClass("container-fluid").addClass("container");
      }
-    </script>
-    @yield('js')
+   </script>
+   @yield('js')
 
-  </body>
+ </body>
 
-  </html>
+ </html>
