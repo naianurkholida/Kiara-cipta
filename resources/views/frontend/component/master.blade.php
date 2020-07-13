@@ -185,7 +185,7 @@
 				<!-- Footer Widgets
 					============================================= -->
 					<div class="footer-widgets-wrap clearfix">
-						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer di bawah ini.</p>
+						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara mengisi formulir dibawah ini.</p>
 						<div class="col_two_third">
 
 							<div class="col_one_third">
@@ -270,7 +270,7 @@
 								<div id="post-list-footer">
 									<div class="spost clearfix">
 										<div class="entry-c">
-											<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0821 33554192 </abbr>
+											<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0822 58883050  </abbr>
 										</div>
 									</div>
 
@@ -281,7 +281,7 @@
 											</div>
 											<ul class="entry-meta">
 												<strong>Senin - Jumat: 11:30 - 19:30 WIB</strong> <br>
-												<strong>Sabtu - Minggu: 10:00 - 19:00 WIB </strong>
+												<strong>Sabtu - Minggu: 10:00 - 18:00 WIB </strong>
 											</ul>
 										</div>
 									</div>
