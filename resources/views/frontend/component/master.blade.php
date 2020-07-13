@@ -296,18 +296,18 @@
 
 			<!-- Copyrights
 				============================================= -->
-				<div id="copyrights">
-					<div class="container clearfix">
+				<!-- <div id="copyrights">
+					<div class="container clearfix"> -->
 						<!-- <div class="col_half"> -->
-							<div class="mapouter">
+							<!-- <div class="mapouter">
 								<div class="gmap_canvas">
 									<iframe width="1000" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=jl.kh%20wahid%20hasyim%20no.47%2C%20gondangdia%2C%20Jakarta%20Pusat&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" >
 									</iframe>
 								</div>
-							</div>
+							</div> -->
 						<!-- </div> -->
-					</div>
-				</div>
+					<!-- </div>
+				</div> -->
 				<div id="copyrights">
 
 					<div class="container clearfix">
