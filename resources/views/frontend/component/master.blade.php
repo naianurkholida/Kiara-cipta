@@ -240,7 +240,7 @@
 													<h4>UTAN KAYU</h4>
 												</div>
 												<ul class="entry-meta">
-													<li>Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</li>
+													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
 												</ul>
 											</div>
 										</div>
@@ -251,7 +251,7 @@
 													<h4>GADING SERPONG</h4>
 												</div>
 												<ul class="entry-meta">
-													<li>Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </li>
+													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
 												</ul>
 											</div>
 										</div>
