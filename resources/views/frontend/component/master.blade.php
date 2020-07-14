@@ -185,7 +185,7 @@
 				<!-- Footer Widgets
 					============================================= -->
 					<div class="footer-widgets-wrap clearfix">
-						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara mengisi formulir dibawah ini.</p>
+						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer di bawah ini.</p>
 						<div class="col_two_third">
 
 							<div class="col_one_third">
