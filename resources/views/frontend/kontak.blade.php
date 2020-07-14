@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
                    <h3>Hubungi Kami</h3>
-                    <p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara mengisi formulir dibawah ini.</p>
+                    <p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer dibawah ini.</p>
                     <form method="POST" action="{{ route('inbox.post') }}">
                         @csrf
                         <div class="form-group">
