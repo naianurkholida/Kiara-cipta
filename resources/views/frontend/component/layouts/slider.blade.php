@@ -1,15 +1,15 @@
-<section id="slider" class="slider-element boxed-slider" style="padding-top:0px !important;">
-    <div class="fslider" data-easing="easeInQuad">
-      <div class="flexslider">
-        <div class="slider-wrap">
-          @foreach(Helper::slider() as $row)
-            <div class="slide" data-thumb="{{ $row->getFirstMediaUrl('slider') }}">
-              <a href="#">
-                <div class="img-slider" style="background-image: url({{ $row->getFirstMediaUrl('slider') }});height:500px;width:100%;background-size: contain;background-repeat: no-repeat;background-position: center;height: 500px;width: 100%;"></div>
-              </a>
-            </div>
-          @endforeach
-        </div>
+<div class="slider-container">
+  <div id="slider-owl" class="owl-carousel owl-theme">
+    @foreach(Helper::slider() as $key=>$row)
+      <div class="item" data-hash="{{$key+1}}">
+        <div class="img-slider" style="background-image: url({{ $row->getFirstMediaUrl('slider') }});background-color:#ececec;height:700px;width:100%;background-size: contain;background-repeat: no-repeat;background-position: center;height: 700px;width: 100%;"></div>
       </div>
-    </div>    
-</section>
+    @endforeach
+  </div>
+  <div class="btn-container">
+    @foreach(Helper::slider() as $key=>$row)
+      <a class="btn-nav-slider" href="#{{$key+1}}">{{$key+1}}</a>
+    @endforeach
+  </div>
+</div>
+

@@ -108,7 +108,6 @@ class Helper
     public static function slider()
 	{
 		$data = Slider::all();
-
 		return $data;
 	}
 
@@ -121,7 +120,8 @@ class Helper
 
 	public static function treatment()
 	{
-		$data = Treatment::where('deleted_at', NULL)->get();
+		$data = Treatment::join('treatmentlanguage', 'treatmentlanguage.id_treatment', '=' , 'treatment.id')->where('treatment.deleted_at', NULL)->orderBy('treatmentlanguage.judul', 'ASC')->groupBy('treatment.id')->get();
+		
 
 		return $data;
 	}
@@ -185,6 +185,7 @@ class Helper
 		$data = Parameter::where('key', 'deskripsi_home')->first();
 
 		return $data->value;
+		
 	}
 
 	public static function MenuFrontPage()

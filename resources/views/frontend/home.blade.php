@@ -7,7 +7,7 @@
         
         @include('frontend.component.layouts.treatment')
 
-        @include('frontend.component.layouts.instagram')
+        {{-- @include('frontend.component.layouts.bestseller') --}}
 
         @include('frontend.component.layouts.youtube')
 

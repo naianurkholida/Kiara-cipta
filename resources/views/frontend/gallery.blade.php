@@ -9,9 +9,6 @@
 @section('content')
 <div class="section nobg nobottommargin clearfix">
     <div class="container clearfix">
-        <div class="heading-block center noborder" data-heading="O">
-            <h3 class="nott ls0">Gallery</h3>
-        </div>
 
         <!-- Portfolio Filter
         ============================================= -->

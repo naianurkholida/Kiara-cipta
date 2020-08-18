@@ -9,7 +9,8 @@
     <!-- Stylesheets
     	============================================= -->
     	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i" rel="stylesheet" type="text/css" />
-    	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" type="text/css" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/swiper.css')}}" type="text/css" />
@@ -29,6 +30,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     	<link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" type="text/css" />
     	<link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
     <!-- Document Title
     	============================================= -->
@@ -162,21 +164,7 @@
 
         	<!-- end yt -->
 
-        	<div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
-        		<div class="container" id="footer-sosmed">
-        			<center>
-        				<a href="{{ Helper::cfacebook() }}" class="fb-ic" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Facebook</span></a>
-
-        				<a href="{{ Helper::cinstagram() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Instagram</span></a>
-
-        				<a href="{{ Helper::ctwitter() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Twitter</span></a>
-
-        				<a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Whatsapp</span></a>
-
-        				<a href="{{ Helper::cemail() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Mail</span></a>
-        			</center>
-        		</div>
-        	</div>
+        
         <!-- Footer
         	============================================= -->
         	<footer id="footer">
@@ -185,28 +173,20 @@
 				<!-- Footer Widgets
 					============================================= -->
 					<div class="footer-widgets-wrap clearfix">
-						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer di bawah ini.</p>
 						<div class="col_two_third">
 
 							<div class="col_one_third">
 
-								<div class="widget clearfix">
+								<div class="widget widget_links clearfix">
 
-									<h4>Kontak Kami</h4>
-									<div>
-										<strong>UTAN KAYU</strong><br>
-										<abbr title="Phone Number"><strong><i class="icon-phone-sign"></i></strong></abbr> 02122897879<br>
-										<abbr title="Fax"><strong><i class="icon-phone-sign"></i></strong></abbr> 02122895170 <br>
-										<abbr title="Email Address"><strong><i class="icon-whatsapp-square"></i></strong></abbr> 0821 33554191
-									</div>
-									<br>
-									<div>
-										<strong>GADING SERPONG</strong><br>
-										<abbr title="Phone Number"><strong><i class="icon-phone-sign"></i></strong></abbr>  02154214764<br>
-										<abbr title="Fax"><strong><i class="icon-phone-sign"></i></strong></abbr> 02154214756 <br>
-										<abbr title="Email Address"><strong><i class="icon-phone-sign"></i></strong></abbr> 02154214758 <br>
-										<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0821 33554192 </abbr>
-									</div>
+									<h4>FOLLOW US</h4>
+									<ul>
+										<li><a href="{{ Helper::cfacebook() }}"><img src="{{asset('assets/image/logo/fb.png')}}" style="width: 20px;"> <strong>Facebook</strong></a></li>
+										<li><a href="{{ Helper::cinstagram() }}"><img src="{{asset('assets/image/logo/ig.png')}}" style="width: 20px;"> <strong>Instagram</strong></a></li>
+										<li><a href="{{ Helper::ctwitter() }}"><img src="{{asset('assets/image/logo/twit.png')}}" style="width: 20px;"> <strong>Twitter</strong></a></li>
+										<li><a href="{{ Helper::cwhatsapp() }}"><img src="{{asset('assets/image/logo/wa.png')}}" style="width: 20px;"><strong>Whatsapp</strong></a></li>
+										<li><a href="{{ Helper::cemail() }}"><img src="{{asset('assets/image/logo/mail.png')}}" style="width: 20px;"><strong>Mail</strong></a></li>
+									</ul>
 								</div>
 
 							</div>
@@ -270,7 +250,7 @@
 								<div id="post-list-footer">
 									<div class="spost clearfix">
 										<div class="entry-c">
-											<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0822 58883050  </abbr>
+											<a href="{{ Helper::cwhatsapp() }}"><abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0822 58883050  </abbr></a>
 										</div>
 									</div>
 
@@ -334,7 +314,9 @@
     	============================================= -->
     	<script src="{{asset('assets/js/jquery.js')}}"></script>
     	<script src="{{asset('assets/js/plugins.js')}}"></script>
-    	<script src="{{asset('assets/js/lightbox.js')}}"></script>
+		<script src="{{asset('assets/js/lightbox.js')}}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		
 
     <!-- Footer Scripts
     	============================================= -->
@@ -376,6 +358,28 @@
     			$( "#header_detail" ).addClass("container");
     			$( "#header_luar" ).removeClass("container-fluid").addClass("container");
     		}
+
+			$('#slider-owl').owlCarousel({
+				loop:true,
+				margin:10,
+				nav:true,
+				dots: false,
+				autoplay:true,
+				URLhashListener:true,
+				autoplayTimeout:5000,
+				autoplayHoverPause:true,
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:1
+					},
+					1000:{
+						items:1
+					}
+				}
+			})
     	</script>
     	@yield('js')
 

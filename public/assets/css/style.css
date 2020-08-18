@@ -118,7 +118,9 @@
         max-width: 1170px;
     }
 }
-
+body{
+    font-family: 'Roboto', sans-serif !important;
+}
 body,
 .dropdown-menu {
     font-size: 0.875rem;
@@ -258,7 +260,7 @@ li {
 body {
     line-height: 1.5;
     color: #555;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -315,7 +317,7 @@ h6 {
     font-weight: 600;
     line-height: 1.5;
     margin: 0 0 30px 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h5,
@@ -380,7 +382,7 @@ form {
 }
 
 small {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -737,15 +739,15 @@ span.middot {
 }
 
 .font-body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .font-primary {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .font-secondary {
-    font-family: 'Crete Round', serif;
+    font-family: 'Roboto', serif;
 }
 
 .bgicon {
@@ -1484,7 +1486,7 @@ body.stretched #header.full-header .container {
 #logo {
     position: relative;
     float: left;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 36px;
     line-height: 100%;
     margin-right: 40px;
@@ -1635,7 +1637,7 @@ body.stretched #header.full-header .container {
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-transition: margin .4s ease, padding .4s ease;
     -o-transition: margin .4s ease, padding .4s ease;
     transition: margin .4s ease, padding .4s ease;
@@ -1738,7 +1740,7 @@ body.no-superfish #primary-menu li:hover>.mega-menu-content {
     padding-bottom: 10px;
     border: 0;
     letter-spacing: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -1850,7 +1852,7 @@ body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-cont
 #primary-menu ul li .mega-menu-content.style-2 ul.mega-menu-column>li.mega-menu-title>a {
     font-size: 13px;
     font-weight: bold;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase !important;
     margin-bottom: 15px;
@@ -2345,7 +2347,7 @@ body.top-search-open #top-search form {
     color: #333;
     font-weight: 700;
     margin-top: 0 !important;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -2571,7 +2573,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 }
 
 #top-account .dropdown-menu li a {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     text-align: left;
     line-height: 22px;
@@ -5961,7 +5963,7 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay {
     padding: 30px 0;
     text-align: center;
     color: #444;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 24px;
@@ -6245,7 +6247,7 @@ body:not(.device-touch) .entry-link {
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .post-timeline .entry-timeline {
@@ -6843,7 +6845,7 @@ div.alignright {
 .wp-caption {
     text-align: center;
     margin: 10px 20px 13px 20px;
-    font-family: 'Lato', Georgia, "Times New Roman", Times, serif;
+    font-family: 'Roboto', Georgia, "Times New Roman", Times, serif;
     font-style: italic;
 }
 
@@ -7876,7 +7878,7 @@ body:not(.device-touch) .button {
     font-size: 22px;
     height: auto;
     line-height: 1;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .button.button-desc span {
@@ -9395,7 +9397,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .feature-box.fbox-center.fbox-italic p {
     font-style: italic;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -11418,7 +11420,7 @@ ul.tab-nav-lg li {
 ul.tab-nav-lg li a {
     display: inline-block;
     color: #444;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
@@ -12503,7 +12505,7 @@ body:not(.device-touch) .team-overlay {
 .counter {
     font-size: 42px;
     font-weight: 600;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .counter.counter-small {
@@ -12645,7 +12647,7 @@ body:not(.device-touch) .rounded-skill {
 
 .skills li .progress-percent .counter {
     font-weight: 400;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .progress-percent:after,
@@ -13499,7 +13501,7 @@ label {
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #555;
@@ -15048,7 +15050,7 @@ body:not(.device-touch) .tagcloud a {
 .widget-filter-links li a {
     display: block;
     color: #444;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
@@ -15111,7 +15113,7 @@ body:not(.device-touch) .tagcloud a {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-tree li i {
@@ -15150,7 +15152,7 @@ body:not(.device-touch) .tagcloud a {
     font-size: 12px;
     padding: 6px 0;
     letter-spacing: 1px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-tree ul ul a i.icon-angle-down {
@@ -15193,7 +15195,7 @@ body:not(.device-touch) .tagcloud a {
     font-weight: bold;
     text-align: right;
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -16704,4 +16706,69 @@ body:not(.no-transition) #wrapper,
 .rating-container .filled-stars {
     -webkit-text-stroke: 0px !important;
     text-shadow: none !important;
+}
+.owl-stage{
+    padding: 0px !important;
+}
+.slider-container{
+    position: relative;
+}
+.btn-container{
+    width: 50px;
+    position: absolute;
+    z-index: 99;
+    top: 0px;
+    height: 100%;
+    justify-content: center;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.btn-nav-slider{
+    background-color: #81818133;
+    color: black;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.box-bestseller {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-bestseller {
+    width: 32%;
+    min-height: 500px;
+    background-color: #d3d3d3;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-bestseller {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 128, 128, 0.521);
+    transition: .5s ease;
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    top: 0px;
+}
+
+.item-bestseller:hover .overlay-bestseller {
+    opacity: 1;
+}
+
+.img-bestseller {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

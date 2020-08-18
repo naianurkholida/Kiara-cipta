@@ -20,10 +20,10 @@
                         </a>
                         <div class="entry-meta-wrapper">
                             <div class="entry-title clearfix">
-                                <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px;"><a href="{{ route('dermaster.treatments.show', $row->getTreatmentLanguage->seo) }}" style="color:#65b5aa;">{{ $row->getTreatmentLanguage->judul }}</a></h2>
+                                <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px;"><a href="{{ route('dermaster.treatments.show', $row->seo) }}" style="color:#65b5aa;">{{ $row->judul }}</a></h2>
                             </div>
                             <div class="entry-content clearfix" style="margin-top: 0 !important;">
-                                <p class="nobottommargin" style="padding: 10px;padding-left: 15px;padding-right: 15px;">{{ Helper::removeTags($row->getTreatmentLanguage->deskripsi) }}</p>
+                                <p class="nobottommargin" style="padding: 10px;padding-left: 15px;padding-right: 15px;">{{ Helper::removeTags($row->deskripsi) }}</p>
                             </div>
                         </div>
                     </div>

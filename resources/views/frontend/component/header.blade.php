@@ -3,7 +3,7 @@
 	<div id="header-wrap">
 		<div class="container" id="header_luar">
 			<div class="container" id="header_dalem">
-				<div class="container" id="header_detail">
+				<div class="container" id="header_detail" style="display: flex; justify-content:center;">
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
