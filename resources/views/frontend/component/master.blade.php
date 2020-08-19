@@ -214,25 +214,25 @@
 									<h4>Klinik Kami</h4>
 
 									<div id="post-list-footer">
-										<div class="spost clearfix">
+										<div class="">
 											<div class="entry-c">
 												<div class="entry-title">
-													<h4>UTAN KAYU</h4>
+													<a href="https://g.co/kgs/xfrpoV" target="blank"><h6>UTAN KAYU</h6></a>
 												</div>
-												<ul class="entry-meta">
+												{{-- <ul class="entry-meta">
 													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
-												</ul>
+												</ul> --}}
 											</div>
 										</div>
 
-										<div class="spost clearfix">
+										<div class="">
 											<div class="entry-c">
 												<div class="entry-title">
-													<h4>GADING SERPONG</h4>
+													<a href="https://g.co/kgs/1c6QKP" target="blank"><h6>GADING SERPONG</h6></a>
 												</div>
-												<ul class="entry-meta">
+												{{-- <ul class="entry-meta">
 													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
-												</ul>
+												</ul> --}}
 											</div>
 										</div>
 									</div>
