@@ -7,8 +7,15 @@
         
         @include('frontend.component.layouts.treatment')
 
-        {{-- @include('frontend.component.layouts.bestseller') --}}
+        @include('frontend.component.layouts.bestseller')
 
         @include('frontend.component.layouts.youtube')
+
+        <div class="pop-container">
+                <div class="box-pop">
+                        <div class="close-pop">X</div>
+                        <div class="img-pop" style="background-image: url({{asset('assets/image/logo/img.jpg')}})"></div>
+                </div>
+        </div>
 
 @endsection

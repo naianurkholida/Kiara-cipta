@@ -16743,10 +16743,9 @@ body:not(.no-transition) #wrapper,
 
 .item-bestseller {
     width: 32%;
-    min-height: 500px;
-    background-color: #d3d3d3;
+    min-height: 600px;
     position: relative;
-    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .overlay-bestseller {
@@ -16771,4 +16770,93 @@ body:not(.no-transition) #wrapper,
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.desc-bestseller {
+    padding: 20px;
+    text-align: center;
+}
+.btn-bestseller {
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(16, 158, 158);
+    color: white !important;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-bestseller:hover {
+    background-color: rgb(13, 141, 141); 
+}
+
+.btn-bestseller-overlay {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    color: rgb(16, 158, 158) !important;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+.btn-bestseller-overlay:hover{
+    background-color: rgb(13, 141, 141); 
+}
+.btn-bestseller-overlay:hover a{
+    color: white !important;
+}
+.container-overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+}
+.item-dalem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pop-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 128, 128, 0.466);
+    top: 0px;
+    left: 0px;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-pop{
+    width: 60%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+}
+.img-pop{
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.close-pop{
+    font-weight: bold;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }

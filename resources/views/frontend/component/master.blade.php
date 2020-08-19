@@ -302,10 +302,10 @@
 
 			</footer>
 			<!-- #footer end -->
-
+			
 		</div>
 		<!-- #wrapper end -->
-
+		
     <!-- Go To Top
     	============================================= -->
     	<div id="gotoTop" class="icon-line-arrow-up"></div>
@@ -346,6 +346,13 @@
     		})();
     	</script>
     	<script>
+			$(document).ready(function(){
+				$(".pop-container").hide();
+				setTimeout(function(){
+					$(".pop-container").show();
+					console.log('show');
+				},7000); // 5000 to load it after 5 seconds from page load
+			});
     		if (window.matchMedia('(max-width: 425px)'))
     		{
     			$( "#header_dalem" ).removeClass("container");
@@ -358,7 +365,9 @@
     			$( "#header_detail" ).addClass("container");
     			$( "#header_luar" ).removeClass("container-fluid").addClass("container");
     		}
-
+			$( ".close-pop" ).click(function() {
+				$(".pop-container").hide();
+			});
 			$('#slider-owl').owlCarousel({
 				loop:true,
 				margin:10,
