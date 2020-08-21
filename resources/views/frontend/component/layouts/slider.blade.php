@@ -1,9 +1,8 @@
 <div class="slider-container">
-  <div id="slider-owl" class="owl-carousel" style="display: inline;">
+  <div id="slider-owl" class="owl-carousel owl-theme">
     @foreach(Helper::slider() as $key=>$row)
-      <div class="item" data-hash="{{$key+1}}" style="min-height:700px;">
-        <div class="img-slider" style="background-image: url({{ $row->getFirstMediaUrl('slider') }});height:700px;width:100%;background-size: cover;background-repeat: no-repeat;background-position: center;height: 700px;width: 100%;"></div>
-        {{-- <img src="{{ $row->getFirstMediaUrl('slider') }}" alt="" style="width:100%;"> --}}
+      <div class="item" data-hash="{{$key+1}}">
+        <div class="img-slider" style="background-image: url({{ $row->getFirstMediaUrl('slider') }});height:700px;width:100%;background-size: contain;background-repeat: no-repeat;background-position: center;height: 700px;width: 100%;"></div>
       </div>
     @endforeach
   </div>
