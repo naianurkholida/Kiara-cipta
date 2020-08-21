@@ -16860,3 +16860,6 @@ body:not(.no-transition) #wrapper,
     font-size: 20px;
     cursor: pointer;
 }
+.owl-item{
+    margin: 0px !important;
+}
