@@ -16864,3 +16864,25 @@ body:not(.no-transition) #wrapper,
     margin: 0px !important;
     width: 100%;
 }
+
+.menu-drop-new {
+    width: 100%;
+    position: absolute;
+    height: 0px;
+    background-color: teal;
+    z-index: -1;
+    margin-top: 80px;
+    left: 0px;
+    transition: all 0.5s;
+}
+
+#menu-hover:hover + .menu-drop-new{
+    height: 500px !important;
+}
+.menu-drop-new:hover{
+    height: 500px !important;
+}
+
+.owl-carousel:hover .owl-nav .owl-next{
+    display: none !important;
+}

@@ -4,7 +4,7 @@
 		<div class="container" id="header_luar">
 			<div class="container" id="header_dalem">
 				<div class="container" id="header_detail" style="display: flex; justify-content:center;">
-
+                    
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
 					<!-- Logo ============================================= -->
@@ -17,12 +17,22 @@
 					<!-- Primary Navigation ============================================= -->
 					<nav id="primary-menu" class="style-2 with-arrows">
                         <ul>
+                            <li id="menu-hover">
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>
+                               
+                            </li>
+                            <div class="menu-drop-new">
+                                
+                            </div>
                             @foreach(Helper::MenuFrontPage() as $row)
                             @if($row->url != "treatments")
                             <li>
                                 <a href="{{ route('dermaster.'.$row->url) }}">
                                     <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                 </a>
+                                
                                 @if(count(Helper::childFrontPage($row->id)) != 0)
                                 <div class="mega-menu-content style-2 clearfix">
                                     <ul class="mega-menu-column col-lg-12">
@@ -35,6 +45,7 @@
                                                     </a>
                                                 </li>
                                                 @endforeach
+                                                
                                             </ul>
                                         </li>
                                     </ul>
@@ -92,7 +103,7 @@
 
                         </nav>
                         <!-- #primary-menu end -->
-
+                        
                     </div>
                 </div>
             </div>

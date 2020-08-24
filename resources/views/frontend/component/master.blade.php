@@ -388,6 +388,8 @@
 					}
 				}
 			})
+			$('.owl-next').hide();
+			$('.owl-prev').hide();	
     	</script>
     	@yield('js')
 
