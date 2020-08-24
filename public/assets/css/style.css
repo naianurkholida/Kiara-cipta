@@ -16862,4 +16862,5 @@ body:not(.no-transition) #wrapper,
 }
 .owl-item{
     margin: 0px !important;
+    width: 100%;
 }
