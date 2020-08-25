@@ -16907,12 +16907,19 @@ body:not(.no-transition) #wrapper,
     width: 100%;
     background-color: #ededed;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .detail-submenu{
     width: 70%;
     height: 100%;
     background-color: violet;
+    display: none;
 }
+
+#submenu1:hover ~ .detail-submenu{
+    display: block !important;
+}
+
 #menu-hover:hover + .menu-drop-new .scroller-detail{
     display: block !important;
 }

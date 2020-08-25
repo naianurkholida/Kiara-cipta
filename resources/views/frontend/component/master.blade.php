@@ -390,6 +390,14 @@
 			})
 			$('.owl-next').hide();
 			$('.owl-prev').hide();	
+
+			$(function() {
+			$('#submenu1').hover(function() {
+				$('.detail-submenu').css('display', 'block');
+			}, function() {
+				$('.detail-submenu').css('display', 'none');
+			});
+			});
     	</script>
     	@yield('js')
 
