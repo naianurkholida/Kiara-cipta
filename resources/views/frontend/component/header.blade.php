@@ -114,7 +114,7 @@
                                 <?php foreach (Helper::produkList() as $key => $value) { ?>
                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
                                         @foreach($value->getMedia('produk') as $row)
-                                        <div class="img-home" style="margin-bottom:20px;width: 100%; background-color:#fafafa; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                        <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                         @endforeach
                                         <div class="desc-detail">
                                             <h2>
