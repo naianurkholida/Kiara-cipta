@@ -24,7 +24,21 @@
                                
                             </li>
                             <div class="menu-drop-new">
-                                
+                                <div class="scroller-detail">
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                    <div class="submenu"></div>
+                                </div>
+                                <div class="detail-submenu"></div>
                             </div>
                             @foreach(Helper::MenuFrontPage() as $row)
                             @if($row->url != "treatments")
