@@ -16903,21 +16903,30 @@ body:not(.no-transition) #wrapper,
     overflow-x: hidden;
 }
 .submenu{
-    height: 50px;
     width: 100%;
-    background-color: #ededed;
+    background-color: #ededed3b;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
 }
 .detail-submenu{
     width: 70%;
     height: 100%;
-    background-color: violet;
+    /* background-color: violet; */
     display: none;
+    transition: all 0.5s;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
 
 #submenu1:hover ~ .detail-submenu{
-    display: block !important;
+    display: flex !important;
+}
+
+.detail-submenu:hover{
+    display: flex !important;
 }
 
 #menu-hover:hover + .menu-drop-new .scroller-detail{
@@ -16948,4 +16957,20 @@ body:not(.no-transition) #wrapper,
 #carousel-profile {
     margin-top: 50px;
     margin-bottom: 100px;
+}
+.desc-detail{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+.btn-submenu{
+    width: 100%;
+    color: white !important;
+    background-color: teal;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
 }

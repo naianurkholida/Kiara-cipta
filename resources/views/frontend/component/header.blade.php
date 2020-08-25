@@ -114,13 +114,16 @@
                                 <?php foreach (Helper::produkList() as $key => $value) { ?>
                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
                                         @foreach($value->getMedia('produk') as $row)
-                                        <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                        <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                         @endforeach
+                                        <div class="desc-detail">
+                                            <h2>
+                                            {{ $value->getProdukLanguage->judul }}
+                                            </h2>
+                                            {!! $value->getProdukLanguage->deskripsi !!}
 
-                                        {{ $value->getProdukLanguage->judul }}
-                                        {!! $value->getProdukLanguage->deskripsi !!}
-
-                                         <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $value->getProdukLanguage->judul }}</p></a>
+                                            <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
+                                        </div>
                                     </div>
                                 <?php } ?>
 
