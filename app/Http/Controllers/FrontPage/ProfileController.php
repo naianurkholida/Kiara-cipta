@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
+use App\Entities\Admin\core\Gallery;
 
 class ProfileController extends Controller
 {
@@ -17,13 +18,12 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $content = Pages::select('*')
-                ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
-                ->join('parameter', 'parameter.value', '=', 'pages.id')
-                ->where('parameter.key', 'content_profile')
-                ->first();
+        $data = Gallery::where('gallery.deleted_at', NULL)
+                ->join('category', 'category.id', '=', 'gallery.id_category')
+                ->where('category.category', 'profile')
+                ->where('category.id_parent', '!=', '0')->get();
 
-        return view('frontend.profile', compact('content'));
+        return view('frontend.profile', compact('data'));
     }
 
     /**
