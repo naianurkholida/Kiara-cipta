@@ -392,11 +392,20 @@
 			$('.owl-prev').hide();	
 
 			$(function() {
-			$('#submenu1').hover(function() {
-				$('.detail-submenu').css('display', 'block');
-			}, function() {
-				$('.detail-submenu').css('display', 'none');
-			});
+				$.ajax({
+					url: '{{ url("ajax-produk") }}',
+					type: 'GET',
+					dataType: 'Json',
+				})
+				.done(function(res) {
+					$.each(res, function(index, val) {
+						$('#submenu'+index).hover(function() {
+							$('#detail-submenu'+index).css('display', 'block');
+						}, function() {
+							$('#detail-submenu'+index).css('display', 'none');
+						});
+					});
+				});
 			});
 
 			$('#carousel-profile').owlCarousel({
