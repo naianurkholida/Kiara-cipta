@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\FrontPage\Pengunjung;
+use App\Entities\Admin\core\Produk;
 
 class HomeController extends Controller
 {
@@ -41,5 +42,12 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         return view($this->view);
+    }
+
+    public static function produkListJson()
+    {
+        $data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+    
+        return response()->json($data);
     }
 }

@@ -17,7 +17,7 @@
 					<!-- Primary Navigation ============================================= -->
 					<nav id="primary-menu" class="style-2 with-arrows">
                         <ul>
-                            <li id="menu-hover">
+                           <!--  <li id="menu-hover">
                                 <a href="">
                                     <div>Testing</div>
                                 </a>
@@ -25,24 +25,29 @@
                             </li>
                             <div class="menu-drop-new">
                                 <div class="scroller-detail">
-                                    <div class="submenu" id="submenu1"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
-                                    <div class="submenu"></div>
+                                    <?php foreach(Helper::produkList() as $key => $row){ ?>
+                                        <div class="submenu" id="submenu{{$key}}">
+                                            <span>{{$row->getProdukLanguage->judul}}</span>
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                                <div class="detail-submenu"></div>
 
-                            </div>
+                                <?php foreach (Helper::produkList() as $key => $value) { ?>
+                                    <div class="detail-submenu" id="detail-submenu{{$key}}">
+                                        @foreach($value->getMedia('produk') as $row)
+                                        <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                        @endforeach
+
+                                        {{ $value->getProdukLanguage->judul }}
+                                        {!! $value->getProdukLanguage->deskripsi !!}
+
+                                         <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $value->getProdukLanguage->judul }}</p></a>
+                                    </div>
+                                <?php } ?>
+
+                            </div> -->
                             @foreach(Helper::MenuFrontPage() as $row)
-                            @if($row->url != "treatments")
+                            @if($row->url != "treatments" && $row->url != "products")
                             <li>
                                 <a href="{{ route('dermaster.'.$row->url) }}">
                                     <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
@@ -67,29 +72,7 @@
                                 </div>
                                 @endif
                             </li>
-                            @else
-                            <!-- <li>
-                                <?php if(\Config::get('app.locale') != 'id'){?>
-                                    <li class="sub-menu"><a href="" class="sf-with-ul"><div>Treatments</div></a>
-                                        <ul style="display: none;">
-                                            <li class="sub-menu">
-                                                <a href="{{route('dermaster.treatments', '48')}}" class="sf-with-ul">BOTOX</a>
-                                                <a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">Meso DNA Salmon</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <?php }else{?>
-                                    <li class="sub-menu"><a href="" class="sf-with-ul"><div>Perawatan</div></a>
-                                        <ul style="display: none;">
-                                            <li class="sub-menu">
-                                                <a href="{{route('dermaster.treatments', '48')}}" class="sf-with-ul">BOTOX</a>
-                                                <a href="{{route('dermaster.treatments', '49')}}" class="sf-with-ul">Meso DNA Salmon</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                <?php }?>
-                            </li> -->
-
+                            @elseif($row->url == "treatments" && $row->url != "products")
                             <li>
                                 <a href="#">
                                     <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
@@ -112,6 +95,36 @@
                                 </div>
                                 @endif
                             </li>
+                            @else
+                            <li id="menu-hover">
+                                <a href="{{ route('dermaster.'.$row->url) }}">
+                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                </a>
+                               
+                            </li>
+                            <div class="menu-drop-new">
+                                <div class="scroller-detail">
+                                    <?php foreach(Helper::produkList() as $key => $row){ ?>
+                                        <div class="submenu" id="submenu{{$key}}">
+                                            <span>{{$row->getProdukLanguage->judul}}</span>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+
+                                <?php foreach (Helper::produkList() as $key => $value) { ?>
+                                    <div class="detail-submenu" id="detail-submenu{{$key}}">
+                                        @foreach($value->getMedia('produk') as $row)
+                                        <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                        @endforeach
+
+                                        {{ $value->getProdukLanguage->judul }}
+                                        {!! $value->getProdukLanguage->deskripsi !!}
+
+                                         <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $value->getProdukLanguage->judul }}</p></a>
+                                    </div>
+                                <?php } ?>
+
+                            </div>
                             @endif
                             @endforeach
                         </ul> 

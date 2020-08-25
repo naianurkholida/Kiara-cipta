@@ -14,15 +14,32 @@ use App\Entities\Admin\core\Slider;
 use App\Entities\Admin\core\SlideLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
+use App\Entities\Admin\core\Produk;
 use DB;
 
 class Helper
 {
+
+
 	private static function baseLanguageId()
 	{
 		$data = Session::get('locale');
 
 		return $data;
+	}
+	
+	public static function produkList()
+	{
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+	
+		return $data;
+	}
+
+	public static function produkListId()
+	{
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+		
+		return count($data);
 	}
 
 	public static function baseLanguageName()

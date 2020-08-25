@@ -14,6 +14,7 @@
 #new front page route
 
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
+	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
 
 	Route::group(['prefix' => 'dokter'], function(){
 		Route::get('/', 'FrontPage\DokterController@index')->name('dermaster.dokter');
