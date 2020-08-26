@@ -4,15 +4,13 @@
 <div class="container">
     <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($data as $row)
-            @if($row->embed == Null)
-                @foreach($row->getGallery as $item)
-                    <iframe width="100%" height="600px" src="{{ $item->getFirstMediaUrl('gallery') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                @endforeach
-            @else
-                @foreach($row->getGallery as $item)
-                    <img src="{{ $item->getFirstMediaUrl('gallery') }}" style="height: 600px; width: 100%;">
-                @endforeach
-            @endif
+            @foreach($row->getMedia('gallery') as $val)
+                @if($row->embed == Null)
+                    <iframe width="100%" height="600px" src="{{ $val->getFirstMediaUrl('gallery') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                @else
+                    <img src="{{ $val->getFirstMediaUrl('gallery') }}" style="height: 600px; width: 100%;">
+                @endif
+            @endforeach
         @endforeach
     </div>
 </div>
