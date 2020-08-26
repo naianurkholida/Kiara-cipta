@@ -8,6 +8,7 @@ use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
 use App\Entities\Admin\core\Gallery;
+use App\Entities\Admin\core\Category;
 
 class ProfileController extends Controller
 {
@@ -24,7 +25,9 @@ class ProfileController extends Controller
                 ->where('category.id_parent', '!=', '0')
                 ->get();
 
-        return view('frontend.profile', compact('data'));
+        $category = Category::where('category', 'Best Seller')->get();
+        
+        return view('frontend.profile', compact('data','category'));
     }
 
     /**

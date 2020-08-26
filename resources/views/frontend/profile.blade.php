@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div id="carousel-profile" class="owl-carousel owl-theme">
-        @foreach($data as $row)
-            @foreach($row->getMedia('gallery') as $val)
-                @if($row->embed == Null)
+        @foreach($category as $row)
+            @foreach($row->getGallery as $val)
+                @if($val->embed == Null)
                     <iframe width="100%" height="600px" src="{{ $val->getFirstMediaUrl('gallery') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                 @else
                     <img src="{{ $val->getFirstMediaUrl('gallery') }}" style="height: 600px; width: 100%;">
