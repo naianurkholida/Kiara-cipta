@@ -1622,6 +1622,8 @@ body.stretched #header.full-header .container {
 #primary-menu ul>li {
     float: left;
     margin-left: 2px;
+    width: 114px;
+    text-align: center;
 }
 
 #primary-menu>ul>li:first-child {
@@ -16973,4 +16975,7 @@ body:not(.no-transition) #wrapper,
     padding: 10px;
     text-align: center;
     margin-top: 10px;
+}
+.menu-height{
+    width: 250px;
 }

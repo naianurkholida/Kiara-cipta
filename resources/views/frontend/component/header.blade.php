@@ -17,7 +17,7 @@
                             @foreach(Helper::MenuFrontPage() as $key => $row)
                                 @if($key < 4)
                                     @if($row->url != "treatments" && $row->url != "products")
-                                    <li>
+                                    <li class="menu-header">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                         </a>
@@ -42,7 +42,7 @@
                                         @endif
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
-                                    <li>
+                                    <li class="menu-header">
                                         <a href="#">
                                             <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                         </a>
@@ -65,7 +65,7 @@
                                         @endif
                                     </li>
                                     @else
-                                    <li id="menu-hover">
+                                    <li class="menu-header" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
@@ -107,7 +107,7 @@
                             @foreach(Helper::MenuFrontPage() as $key => $row)
                                 @if($key > 3)
                                     @if($row->url != "treatments" && $row->url != "products")
-                                    <li>
+                                    <li class="menu-header">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                         </a>
@@ -132,7 +132,7 @@
                                         @endif
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
-                                    <li>
+                                    <li class="menu-header">
                                         <a href="#">
                                             <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                         </a>
@@ -155,7 +155,7 @@
                                         @endif
                                     </li>
                                     @else
-                                    <li id="menu-hover">
+                                    <li class="menu-header" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
