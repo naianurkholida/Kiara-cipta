@@ -25,8 +25,8 @@ class ProfileController extends Controller
                 ->where('category.id_parent', '!=', '0')
                 ->get();
 
-        $category = Category::where('category', 'Best Seller')->get();
-        
+        $category = Category::where('category', 'Profile')->get();
+
         return view('frontend.profile', compact('data','category'));
     }
 
