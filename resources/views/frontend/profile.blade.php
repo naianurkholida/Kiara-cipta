@@ -5,8 +5,8 @@
     <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($category as $row)
             @foreach($row->getGallery as $val)
-                @if($val->embed == Null)
-                    <iframe width="100%" height="600px" src="{{ $val->getFirstMediaUrl('gallery') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                @if($val->embed != Null)
+                    <iframe width="100%" height="600px" src="{{ $val->embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                 @else
                     <img src="{{ $val->getFirstMediaUrl('gallery') }}" style="height: 600px; width: 100%;">
                 @endif
