@@ -8,16 +8,57 @@
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
 					<!-- Logo ============================================= -->
-					<div id="logo" style="border:0;">
-						<a href="" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
-						<a href="" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
-					</div>
+					
 					<!-- #logo end -->
 
 					<!-- Primary Navigation ============================================= -->
 					<nav id="primary-menu" class="style-2 with-arrows">
                         <ul>
-                           <!--  <li id="menu-hover">
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <div id="logo" style="border:0;padding: 0px !important;margin: 0px !important;">
+                                <a href="" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
+                                <a href="" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
+                            </div>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>Testing</div>
+                                </a>   
+                            </li>
+                            <!-- <li id="menu-hover">
                                 <a href="">
                                     <div>Testing</div>
                                 </a>
@@ -45,7 +86,7 @@
                                     </div>
                                 <?php } ?>
 
-                            </div> -->
+                            </div>
                             @foreach(Helper::MenuFrontPage() as $row)
                             @if($row->url != "treatments" && $row->url != "products")
                             <li>
@@ -129,7 +170,7 @@
 
                             </div>
                             @endif
-                            @endforeach
+                            @endforeach -->
                         </ul> 
 
                         </nav>
