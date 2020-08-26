@@ -25,11 +25,11 @@
                                         @if(count(Helper::childFrontPage($row->id)) != 0)
                                         <div class="mega-menu-content style-2 clearfix">
                                             <ul class="mega-menu-column col-lg-12">
-                                                <li class="mega-menu-title">
+                                                <li class="mega-menu-title" style="width: 100% !important;">
                                                     <ul>
                                                         @foreach(Helper::childFrontPage($row->id) as $item)
                                                         <li>
-                                                            <a href="{{ url($row->url, str_replace(' ', '-', Helper::getLanguageJudul($item->id))) }}">
+                                                            <a  href="{{ url($row->url, str_replace(' ', '-', Helper::getLanguageJudul($item->id))) }}">
                                                                 <div>{{ Helper::getLanguageJudul($item->id) }}</div>
                                                             </a>
                                                         </li>
@@ -49,12 +49,12 @@
                                         @if(count(Helper::childFrontPage($row->id)) != 0)
                                         <div class="mega-menu-content style-2 clearfix">
                                             <ul class="mega-menu-column col-lg-12">
-                                                <li class="mega-menu-title">
+                                                <li class="mega-menu-title" style="width: 100% !important;">
                                                     <ul style="display: none;">
                                                         @foreach(Helper::childFrontPage($row->id) as $item)
-                                                        <li>
+                                                        <li style="width: 100% !important;">
                                                             <a href="{{ route('dermaster.treatments', $item->url) }}">
-                                                                <div>{{ Helper::getLanguageJudul($item->id) }}</div>
+                                                                <div style="width: 100% !important;">{{ Helper::getLanguageJudul($item->id) }}</div>
                                                             </a>
                                                         </li>
                                                         @endforeach
@@ -142,9 +142,9 @@
                                                 <li class="mega-menu-title">
                                                     <ul style="display: none;">
                                                         @foreach(Helper::childFrontPage($row->id) as $item)
-                                                        <li>
-                                                            <a href="{{ route('dermaster.treatments', $item->url) }}">
-                                                                <div>{{ Helper::getLanguageJudul($item->id) }}</div>
+                                                        <li style="width: 100% !important;">
+                                                            <a style="width: 100% !important;" href="{{ route('dermaster.treatments', $item->url) }}">
+                                                                <div style="width: 100% !important;">{{ Helper::getLanguageJudul($item->id) }}</div>
                                                             </a>
                                                         </li>
                                                         @endforeach
