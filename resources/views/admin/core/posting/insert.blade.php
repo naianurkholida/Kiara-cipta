@@ -175,5 +175,6 @@
 @endsection
 
 @section('js')
+<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>  
 
 @endsection

@@ -19,13 +19,19 @@ use DB;
 
 class Helper
 {
-
-
 	private static function baseLanguageId()
 	{
 		$data = Session::get('locale');
 
 		return $data;
+	}
+
+	public static function iklan()
+	{
+		$data = Parameter::where('key', 'iklan')->first();
+
+		$img = 'assets/admin/assets/media/img/'.$data->value;
+		return $img;
 	}
 	
 	public static function produkList()

@@ -155,6 +155,21 @@
 			</div>
 			<br>
 			<div class="row">
+				<div class="col-lg-12">
+					<label>Iklan</label><br>
+					<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
+						<div class="kt-avatar__holder" style="background-image: url('{{ asset('assets/admin/assets/media/img/')  }}/{{$iklan->value}}')"></div>
+						<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+							<i class="fa fa-pen"></i>
+							<input type="file" name="iklan" id="iklan">
+						</label>
+						<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+							<i class="fa fa-times"></i>
+						</span>
+					</div>
+				</div>
+			</div><br>
+			<div class="row">
 				<div class="col-lg-12"><br>
 					<button type="submit" class="btn btn-info pull-right">Simpan</button>
 				</div>
@@ -165,7 +180,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>	
 <script type="text/javascript">
 
 </script>

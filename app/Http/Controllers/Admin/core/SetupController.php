@@ -22,6 +22,11 @@ use File;
 
 class SetupController extends Controller
 {
+    public function __construct()
+    {
+        $this->path =  'assets/admin/assets/media/img';
+    }
+
     public function top_bar()
     {
         $data['menu_item'] = MenuAccess::select('*')
@@ -114,7 +119,9 @@ class SetupController extends Controller
         #selected desc
         $desc = Parameter::where('key', 'deskripsi_home')->first();
 
-        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak','desc'));
+        $iklan = Parameter::where('key', 'iklan')->first();
+
+        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak','desc','iklan'));
     }
 
     public function store_settings(Request $request)
@@ -166,6 +173,20 @@ class SetupController extends Controller
         $desc = Parameter::where('key', 'deskripsi_home')->first();
         $desc->value = $request->desc;
         $desc->save();
+
+        if($request->file('iklan') != null){
+            $iklan = Parameter::where('key', 'iklan')->first();
+            $file = $request->file('iklan');
+
+            if (!File::isDirectory($this->path)) {
+                File::makeDirectory($this->path);
+            }
+
+            $fileName = 'Iklan'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            Image::make($file)->save($this->path.'/'. $fileName);
+            $iklan->value = $fileName;
+            $iklan->save();
+        }
 
         return redirect()->back();
     }
