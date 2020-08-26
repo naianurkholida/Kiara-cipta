@@ -12,14 +12,14 @@
 
         <!-- Portfolio Filter
         ============================================= -->
-        <ul class="portfolio-filter style-2 center clearfix" data-container="#portfolio" style="margin-left:25%;" id="boxmenu">
+        <!-- <ul class="portfolio-filter style-2 center clearfix" data-container="#portfolio" style="margin-left:25%;" id="boxmenu">
 
             <li class="activeFilter" id="menu-item-gallery"><a href="#" data-filter="*">Show All</a></li>
             @foreach($category as $row)
                 <li id="menu-item-gallery"><a href="#" data-filter=".pf-{{ str_replace(' ', '-', $row->category) }}">{{ $row->category }}</a></li>
             @endforeach
 
-        </ul>
+        </ul> -->
         <!-- #portfolio-filter end -->
     </div>
 

@@ -21,7 +21,8 @@ class ProfileController extends Controller
         $data = Gallery::where('gallery.deleted_at', NULL)
                 ->join('category', 'category.id', '=', 'gallery.id_category')
                 ->where('category.category', 'profile')
-                ->where('category.id_parent', '!=', '0')->get();
+                ->where('category.id_parent', '!=', '0')
+                ->get();
 
         return view('frontend.profile', compact('data'));
     }

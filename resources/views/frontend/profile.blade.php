@@ -5,9 +5,13 @@
     <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($data as $row)
             @if($row->embed == Null)
-                <iframe width="100%" height="600px" src="https://www.youtube.com/embed/il3x_A2wgsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @foreach($row->getGallery as $item)
+                    <iframe width="100%" height="600px" src="{{ $item->getFirstMediaUrl('gallery') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @endforeach
             @else
-                <img src="http://derma-express.com/storage/175/Program_5f27e4094703e.jpg" style="height: 600px; width: 100%;">
+                @foreach($row->getGallery as $item)
+                    <img src="{{ $item->getFirstMediaUrl('gallery') }}" style="height: 600px; width: 100%;">
+                @endforeach
             @endif
         @endforeach
     </div>
