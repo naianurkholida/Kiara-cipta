@@ -17,7 +17,14 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $data      = Produk::where('deleted_at', NULL)->get();
+        $data = Produk::with('getProdukLanguage')
+                ->where('deleted_at', NULL)
+                ->get();
+
+                $data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
 
         return view('frontend.products', compact('data'));
     }

@@ -31,6 +31,27 @@ class Helper
 	public static function produkList()
 	{
 		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
+	
+		return $data;
+	}
+
+	public static function produkListBestSeller()
+	{
+		$data = Produk::with('getProdukLanguage','getCategory')->where('deleted_at', null)
+				->whereHas('getCategory', function($q){
+					$q->where('category', 'Best Seller');
+				})
+				->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
 	
 		return $data;
 	}
@@ -38,6 +59,11 @@ class Helper
 	public static function produkListId()
 	{
 		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
 		
 		return count($data);
 	}

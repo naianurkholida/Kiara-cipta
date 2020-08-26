@@ -30,6 +30,7 @@
             <div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
 
                 @foreach($category as $row)
+                    @if($row->category != "Profile")
                         @foreach($row->getGallery as $item)
                            
                                 <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
@@ -44,7 +45,9 @@
                                         </a>
                                     </div>
                                 </article>
+                                
                         @endforeach
+                    @endif
                 @endforeach
         
             </div>

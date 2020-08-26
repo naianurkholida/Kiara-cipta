@@ -19,7 +19,6 @@
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
 						<th>Title</th>
-						<th>Content</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -30,7 +29,6 @@
 					<tr>
 						<td>{{$no}}</td>
 						<td>{{ $row->getProdukLanguage->judul }}</td>
-						<td>{!! $row->getProdukLanguage->deskripsi !!}</td>
 						<td class="text-center">
 							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>
