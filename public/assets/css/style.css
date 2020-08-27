@@ -16726,6 +16726,41 @@ body:not(.no-transition) #wrapper,
     display: flex;
     flex-direction: column;
 }
+@media (min-width: 425px) {
+    .btn-container{
+        width: 100%;
+        position: absolute;
+        z-index: 99;
+        bottom: -60px !important;
+        height: 50px;
+        justify-content: center;
+        right: 0px !important;
+        display: flex;
+        flex-direction: row;
+        top: unset !important;
+    }
+    .btn-nav-slider{
+        background-color: #81818133;
+        color: black;
+        width: 40px !important;
+        text-align: center;
+        padding: 10px 0px;
+        border-radius: 7px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .box-pop{
+        width: 80% !important;
+        height: 30vh !important;
+        background-color: white;
+        border-radius: 20px;
+        padding: 5px;
+        position: relative;
+    }
+}
+
 .btn-nav-slider{
     background-color: #81818133;
     color: black;
