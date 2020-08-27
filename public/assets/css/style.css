@@ -16761,7 +16761,7 @@ body:not(.no-transition) #wrapper,
     }
 
     .item-bestseller{
-        width: 100%;
+        width: 100% !important;
         min-height: 600px;
         position: relative;
         margin-bottom: 20px;
