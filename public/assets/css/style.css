@@ -16726,7 +16726,7 @@ body:not(.no-transition) #wrapper,
     display: flex;
     flex-direction: column;
 }
-@media (min-width: 425px) {
+@media (max-width: 425px) {
     .btn-container{
         width: 100%;
         position: absolute;
