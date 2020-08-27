@@ -16759,6 +16759,13 @@ body:not(.no-transition) #wrapper,
         padding: 5px;
         position: relative;
     }
+
+    .item-bestseller{
+        width: 100%;
+        min-height: 600px;
+        position: relative;
+        margin-bottom: 20px;
+    }
 }
 
 .btn-nav-slider{
