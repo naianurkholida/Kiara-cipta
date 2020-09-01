@@ -4,8 +4,9 @@
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     
     <div class="container" id="container_luar">
-        <div class="container" id="container_dalem">
-            <iframe style="border:0px #ffffff none;" width="100%" height="800px;" src="http://103.11.134.45:1717/apex/f?p=889:2" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
+        <div class="container" id="container_dalem"><!-- 
+            <iframe style="border:0px #ffffff none;" width="100%" height="800px;" src="http://103.11.134.45:1717/apex/f?p=889:2" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
+            <iframe style="border:0px #ffffff none;" width="100%" height="800px;" src="http://103.11.135.109:1717/apex/f?p=889:2" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
         </div>
     </div>
 
