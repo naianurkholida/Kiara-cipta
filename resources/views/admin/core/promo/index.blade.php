@@ -32,7 +32,7 @@
 						<tr>
 							<td>{{ $no++ }}</td>
 							<td>{{ $row->judul }}</td>
-							<td><input type="text" class="form-control" id="copy" value="{{ url('promosi') }}/{{$row->file}}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
+							<td><input type="text" class="form-control" id="copy_{{$row->id}}" value="{{ url('promosi') }}/{{$row->file}}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
 							<td>{{ Helper::tanggal_indonesia($row->date) }}</td>
 							<td class="text-center">
 								@if($validasi->update == 1)
@@ -41,7 +41,7 @@
 								</a>
 								@endif
 
-								<a href="javascript:0;" class="btn btn-sm btn-info" title="Copy Link" onclick="copyToClip()">
+								<a href="javascript:0;" class="btn btn-sm btn-info" title="Copy Link" onclick="copyToClip('{{$row->id}}')">
 									<i class="la la-copy"></i>
 								</a>
 
@@ -62,10 +62,12 @@
 
 @section('js')
 <script type="text/javascript">
-	function copyToClip()
+	function copyToClip(id)
 	{
 		/* Get the text field */
-		var copyText = document.getElementById("copy");
+		var copyText = document.getElementById("copy_"+id);
+
+		console.log(copyText)
 
 		/* Select the text field */
 		copyText.select();
