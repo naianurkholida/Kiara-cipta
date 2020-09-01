@@ -355,5 +355,10 @@ Route::group(['prefix' => 'language'], function(){
 		'prefix' => 'promo'
 	], function(){
 		Route::get('', 'Admin\core\PromoController@index')->name('promo.index');
+		Route::get('/insert', 'Admin\core\PromoController@insert')->name('promo.insert');
+		Route::post('/store', 'Admin\core\PromoController@store')->name('promo.store');
+		Route::get('/edit/{id}', 'Admin\core\PromoController@edit')->name('promo.edit');
+		Route::post('/update/{id}', 'Admin\core\PromoController@update')->name('promo.update');
+		Route::get('/delete/{id}', 'Admin\core\PromoController@delete')->name('promo.delete');
 	});
 #end route backend
