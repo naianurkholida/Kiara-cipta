@@ -32,7 +32,7 @@
 						<tr>
 							<td>{{ $no++ }}</td>
 							<td>{{ $row->judul }}</td>
-							<td><input type="text" class="form-control" id="copy" value="{{ $row->file }}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
+							<td><input type="text" class="form-control" id="copy" value="{{ url('promosi') }}/{{$row->file}}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
 							<td>{{ Helper::tanggal_indonesia($row->date) }}</td>
 							<td class="text-center">
 								@if($validasi->update == 1)
@@ -75,7 +75,7 @@
 		document.execCommand("copy");
 
 		/* Alert the copied text */
-		alert("Copied the text: " + 'http://derma-express.com/promosi/'+copyText.value);
+		alert("Copied the text: " +copyText.value);
 	}
 </script>
 @endsection
