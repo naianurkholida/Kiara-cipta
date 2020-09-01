@@ -37,15 +37,15 @@ class PromoController extends Controller
 		$top_bar = $this->top_bar();
 
 		$validasi = MenuAccess::select('*')
-    	->leftjoin('menus', 'menus.id', '=', 'menu_access.menu_id')
-    	->where('role_id', \Session::get('role_id'))
-    	->where('menus.deleted_at', null)
-    	->where('menus.id', 8)
-    	->first();
+		->leftjoin('menus', 'menus.id', '=', 'menu_access.menu_id')
+		->where('role_id', \Session::get('role_id'))
+		->where('menus.deleted_at', null)
+		->where('menus.id', 8)
+		->first();
 
-    	$data = Promo::all();
+		$data = Promo::all();
 
-    	return view('admin.core.promo.index', compact('top_bar', 'validasi', 'data'));
+		return view('admin.core.promo.index', compact('top_bar', 'validasi', 'data'));
 	}
 
 	public function insert(Request $request)
@@ -61,24 +61,18 @@ class PromoController extends Controller
 
 		$cek = $file->getClientOriginalExtension();
 
-		if($cek == 'pdf'){
+		$data 	     = new Promo;
+		$data->seo   = Str::slug($request->judul);
+		$data->judul = $request->judul;
+		$data->file  = $file->getClientOriginalName();
+		$data->date  = date('Y-m-d');
+		$data->save();
 
-			$data 	     = new Promo;
-			$data->seo   = Str::slug($request->judul);
-			$data->judul = $request->judul;
-			$data->file  = $file->getClientOriginalName();
-			$data->date  = date('Y-m-d');
-			$data->save();
+		$update = Promo::find($data->id);
+		$update->file = $data->id.'_'.$data->seo.'.'.$cek;
+		$update->save();
 
-			$update = Promo::find($data->id);
-			$update->file = $data->id.'_'.$data->seo.'.pdf';
-			$update->save();
-
-			$file->move(public_path('promosi'), $update->file);
-
-		}else{
-			return redirect('promo/insert')->with('danger', 'Format File Tidak di Dukung!');
-		}
+		$file->move(public_path('promosi'), $update->file);
 
 		return redirect('promo')->with('success', 'Data Berhasil di Simpan');
 	}
@@ -99,26 +93,20 @@ class PromoController extends Controller
 
 			$cek = $file->getClientOriginalExtension();
 
-			if($cek == 'pdf'){
+			$data 			= Promo::find($id);
+			$data->seo 		= Str::slug($request->judul);
+			$data->judul 	= $request->judul;
+			$data->file 	= $file->getClientOriginalName();
+			$data->date     = date('Y-m-d');
+			$data->save();
 
-				$data 			= Promo::find($id);
-				$data->seo 		= Str::slug($request->judul);
-				$data->judul 	= $request->judul;
-				$data->file 	= $file->getClientOriginalName();
-				$data->date     = date('Y-m-d');
-				$data->save();
+			$update = Promo::find($data->id);
+			$update->file = $data->id.'_'.$data->seo.'.'.$cek;
+			$update->save();
 
-				$update = Promo::find($data->id);
-				$update->file = $data->id.'_'.$data->seo.'.pdf';
-				$update->save();
+			$file->move(public_path('promosi'), $update->file);
 
-				$file->move(public_path('promosi'), $update->file);
-
-				File::delete('promosi/'.$request->file_before);
-
-			}else{
-				return redirect('promo/edit/'.$id)->with('danger', 'Format File Tidak di Dukung!');
-			}
+			File::delete('promosi/'.$request->file_before);
 
 		}
 
