@@ -32,7 +32,7 @@
 						<tr>
 							<td>{{ $no++ }}</td>
 							<td>{{ $row->judul }}</td>
-							<td><input type="text" class="form-control" id="copy_{{$row->id}}" value="{{ url('promosi') }}/{{$row->file}}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
+							<td><input type="text" class="form-control" id="copy_{{$row->id}}" value="{{ url('share/promo') }}/{{$row->file}}" style="border: 0px; background-color: #f7f8fa;" readonly=""></td>
 							<td>{{ Helper::tanggal_indonesia($row->date) }}</td>
 							<td class="text-center">
 								@if($validasi->update == 1)

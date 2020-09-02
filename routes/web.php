@@ -360,5 +360,9 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/edit/{id}', 'Admin\core\PromoController@edit')->name('promo.edit');
 		Route::post('/update/{id}', 'Admin\core\PromoController@update')->name('promo.update');
 		Route::get('/delete/{id}', 'Admin\core\PromoController@delete')->name('promo.delete');
+
 	});
+	
+	#share
+	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');
 #end route backend
