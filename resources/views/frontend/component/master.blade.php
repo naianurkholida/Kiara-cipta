@@ -309,8 +309,7 @@
                                             <h4>Jam Operasional</h4>
                                         </div>
                                         <ul class="entry-meta">
-                                            <strong>Senin - Jumat: 11:30 - 19:30 WIB</strong> <br>
-                                            <strong>Sabtu - Minggu: 10:00 - 18:00 WIB </strong>
+                                            <strong>Senin - Minggu: 10:00 - 17:00 WIB</strong>
                                         </ul>
                                     </div>
                                 </div>
