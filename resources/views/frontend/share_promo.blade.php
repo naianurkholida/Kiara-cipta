@@ -6,7 +6,23 @@
     <div class="container">
         <div class="container" id="container_dalem">
             <div class="row">
-                <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="{{url('')}}/promosi/{{$seo}}" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
+                <?php 
+                $url = $_SERVER['REQUEST_URI'];
+                $url = explode('/', $url);
+                $url = $url[3];
+                $url = explode('.', $url);
+                $url = $url[1];
+                ?>
+
+                <?php if($url == 'jpg' || $url == 'png' || $url == 'jpeg'){ ?>
+
+                    <img src="{{url('')}}/promosi/{{$seo}}" style="width: 100%;">
+
+                <?php } else { ?>
+
+                    <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="{{url('')}}/promosi/{{$seo}}" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
+
+                <?php } ?>
             </div>
         </div>
     </div>
