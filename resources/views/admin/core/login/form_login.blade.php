@@ -84,9 +84,11 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!-- end::Page Loader -->        
 	<!-- begin:: Page -->
 	<div class="kt-grid kt-grid--ver kt-grid--root kt-page">
+
 		<div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v1" id="kt_login">
 			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--desktop kt-grid--ver-desktop kt-grid--hor-tablet-and-mobile">
 				<!--begin::Aside-->
+
 				<div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside" style="background-image: url({{asset('assets/admin/assets/media/bg/bg-6.png')}});">
 					<div class="kt-grid__item">
 						<!-- <a href="#" class="kt-login__logo">
@@ -94,6 +96,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						</a> -->
 					</div>
 					<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver">
+
 						<div class="kt-grid__item kt-grid__item--middle">
 							<h3 class="kt-login__title">Welcome {{ Helper::title() }}</h3>
 							<h4 class="kt-login__subtitle">Login to your account!</h4>
@@ -124,6 +127,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							<!--begin::Form-->
 							<form action="{{route('login.proses_login')}}" method="POST">
+								@if(Session::get('alert'))
+								<div class="alert alert-danger alert-block">
+									{{Session::get('alert')}}
+								</div>
+								@endif
 								{{csrf_field()}}
 								<label>Username</label>
 								<div class="input-group">

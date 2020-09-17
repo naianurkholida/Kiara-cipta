@@ -39,9 +39,9 @@ class LoginController extends Controller
 
 		$data = User::where('username',$username)->first();
 
-		$this->create_token($data->id, $token);
-
 		if($data){
+			$this->create_token($data->id, $token);
+
 			if($password == $data->password){
 				session::put('id', $data->id);
 				session::put('name',$data->name);
@@ -53,6 +53,8 @@ class LoginController extends Controller
 			} else {
 				return redirect('/login')->with('alert','Periksa Kembali Username dan Password Anda !');
 			}
+		}else{
+			return redirect('/login')->with('alert','Periksa Kembali Username dan Password Anda !');
 		}
 	}
 
