@@ -58,23 +58,31 @@ class PromoController extends Controller
 	public function store(Request $request)
 	{
 		$file = $request->file('file');
+		$size = $file->getSize();
+		$cek  = $file->getClientOriginalExtension();
 
-		$cek = $file->getClientOriginalExtension();
+		if($size <= (5242880*2)){
 
-		$data 	     = new Promo;
-		$data->seo   = Str::slug($request->judul);
-		$data->judul = $request->judul;
-		$data->file  = $file->getClientOriginalName();
-		$data->date  = date('Y-m-d');
-		$data->save();
+			$data 	     = new Promo;
+			$data->seo   = Str::slug($request->judul);
+			$data->judul = $request->judul;
+			$data->file  = $file->getClientOriginalName();
+			$data->date  = date('Y-m-d');
+			$data->save();
 
-		$update = Promo::find($data->id);
-		$update->file = $data->id.'_'.$data->seo.'.'.$cek;
-		$update->save();
+			$update = Promo::find($data->id);
+			$update->file = $data->id.'_'.$data->seo.'.'.$cek;
+			$update->save();
 
-		$file->move(public_path('promosi'), $update->file);
+			$file->move(public_path('promosi'), $update->file);
 
-		return redirect('promo')->with('success', 'Data Berhasil di Simpan');
+			return redirect('promo')->with('success', 'Data Berhasil di Simpan');
+
+		}else{
+
+			return redirect('promo')->with('danger', 'File tidak di Dukung, Maksimal upload 10 MB.');
+
+		}
 	}
 
 	public function edit($id)
