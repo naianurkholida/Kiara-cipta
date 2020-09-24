@@ -61,7 +61,7 @@ class PromoController extends Controller
 		$size = $file->getSize();
 		$cek  = $file->getClientOriginalExtension();
 
-		if($size <= (5242880*2)){
+		if($size <= 20971520){
 
 			$data 	     = new Promo;
 			$data->seo   = Str::slug($request->judul);
@@ -80,7 +80,7 @@ class PromoController extends Controller
 
 		}else{
 
-			return redirect('promo')->with('danger', 'File tidak di Dukung, Maksimal upload 10 MB.');
+			return redirect('promo')->with('danger', 'File tidak di Dukung, Maksimal Upload 20 MB.');
 
 		}
 	}
