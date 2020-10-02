@@ -2,7 +2,7 @@
 <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
     <div class="container clearfix">
         <div class="heading-block center nomargin">
-            <h3>Youtube Channel</h3>
+            <h3>Jurnal</h3>
         </div>
     </div>
 </div>

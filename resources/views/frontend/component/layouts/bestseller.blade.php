@@ -12,10 +12,6 @@
             @foreach($row->getMedia('produk') as $val)
             <div class="img-bestseller" style="background-image: url({{ $val->getUrl() }})"></div>
             @endforeach
-            <div class="desc-bestseller">
-                <h3>{{$row->getProdukLanguage->judul}}</h3>
-                <p >{{Helper::removeTags($row->getProdukLanguage->deskripsi)}}</p>
-            </div>
             <div class="btn-bestseller"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
             <div class="overlay-bestseller">
                 <div class="container-overlay">
