@@ -16,7 +16,6 @@ class SwitchLanguageController extends Controller
      */
     public function switch_lang(Request $request)
     {
-        dd($request->all());
         if (!Session::has('locale')) {
             Session::put('locale', $request->lang);
         }else{

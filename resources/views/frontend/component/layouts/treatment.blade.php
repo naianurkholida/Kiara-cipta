@@ -1,7 +1,13 @@
 <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
     <div class="container clearfix">
         <center>
-            <h2>Our Treatments</h2>
+            <h2>
+                @if(Session::get('locale') == 2)
+                    Our Treatments
+                @else
+                    Treatment Kami
+                @endif
+            </h2>
         </center>
         <br><br>
         <div id="posts" class="post-grid grid-3 clearfix">
