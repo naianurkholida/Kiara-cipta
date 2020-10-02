@@ -196,8 +196,8 @@
 
                 <div class="container">
                 <!-- Footer Widgets
-                   ============================================= -->
-                   <div class="footer-widgets-wrap clearfix">
+                 ============================================= -->
+                 <div class="footer-widgets-wrap clearfix">
                     <div class="col_two_third">
 
                         <div class="col_one_third">
@@ -206,144 +206,180 @@
 
                                 <h4>FOLLOW US</h4>
                                 <ul>
-                                    <li><a href="{{ Helper::cfacebook() }}"><img
-                                        src="{{asset('assets/image/logo/fb.png')}}" style="width: 20px;">
-                                        <strong>Facebook</strong></a></li>
-                                        <li><a href="{{ Helper::cinstagram() }}"><img
-                                            src="{{asset('assets/image/logo/ig.png')}}" style="width: 20px;">
-                                            <strong>Instagram</strong></a></li>
-                                            <li><a href="{{ Helper::ctwitter() }}"><img
-                                                src="{{asset('assets/image/logo/twit.png')}}" style="width: 20px;">
-                                                <strong>Twitter</strong></a></li>
-                                                <li><a href="{{ Helper::cwhatsapp() }}"><img
-                                                    src="{{asset('assets/image/logo/wa.png')}}"
-                                                    style="width: 20px;"><strong>Whatsapp</strong></a></li>
-                                                    <li><a href="{{ Helper::cemail() }}"><img
-                                                        src="{{asset('assets/image/logo/mail.png')}}"
-                                                        style="width: 20px;"><strong>Mail</strong></a></li>
-                                                    </ul>
-                                                </div>
+                                    <li>
+                                        <a href="{{ Helper::cfacebook() }}" target="blank">
+                                            <img src="{{asset('assets/image/logo/fb.png')}}" style="width: 20px;">
+                                            <strong>Facebook</strong>
+                                        </a>
+                                    </li>
+                                    <li><a href="{{ Helper::cinstagram() }}" target="blank">
+                                        <img src="{{asset('assets/image/logo/ig.png')}}" style="width: 20px;">
+                                        <strong>Instagram</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ Helper::ctwitter() }}" target="blank">
+                                        <img src="{{asset('assets/image/logo/twit.png')}}" style="width: 20px;">
+                                        <strong>Twitter</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ Helper::cwhatsapp() }}" target="blank">
+                                        <img src="{{asset('assets/image/logo/wa.png')}}"
+                                        style="width: 20px;"><strong>Whatsapp</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ Helper::cemail() }}" target="blank">
+                                        <img src="{{asset('assets/image/logo/mail.png')}}"
+                                        style="width: 20px;"><strong>Mail</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ Helper::cyoutube() }}" target="blank">
+                                        <img src="{{asset('assets/image/logo/youtube.png')}}"
+                                        style="width: 20px;"><strong>Youtube</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                                            </div>
+                    </div>
 
-                                            <div class="col_one_third">
+                    <div class="col_one_third">
 
-                                                <div class="widget widget_links clearfix">
+                        <div class="widget widget_links clearfix">
 
-                                                    <h4>Online Store</h4>
+                            <h4>Online Store</h4>
 
-                                                    <ul>
-                                                        <li><a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3"><img
-                                                            src="{{asset('assets/image/logo/shopee.png')}}" style="width: 20px;">
-                                                            <strong>Shopee</strong></a></li>
-                                                            <li><a href="https://tokopedia.link/8WuUYJSWA7"><img
-                                                                src="{{asset('assets/image/logo/tokopedia.png')}}" style="width: 20px;">
-                                                                <strong>Tokopedia</strong></a></li>
-                                                                <li><a href="https://www.bukalapak.com/u/dermaexpress"><img
-                                                                    src="{{asset('assets/image/logo/bukalapak.png')}}" style="width: 20px;">
-                                                                    <strong>Bukalapak</strong></a></li>
-                                                                    <li><a href="https://s.lazada.co.id/s.b7283"><img
-                                                                        src="{{asset('assets/image/logo/lazada.png')}}"
-                                                                        style="width: 30px;"><strong>Lazada</strong></a></li>
-                                                                    </ul>
+                            <ul>
+                                <li>
+                                    <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank">
+                                        <img src="{{asset('assets/image/logo/shopee.png')}}" style="width: 20px;">
+                                        <strong>Shopee</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://tokopedia.link/8WuUYJSWA7" target="blank">
+                                        <img src="{{asset('assets/image/logo/tokopedia.png')}}" style="width: 20px;">
+                                        <strong>Tokopedia</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.bukalapak.com/u/dermaexpress" target="blank">
+                                        <img src="{{asset('assets/image/logo/bukalapak.png')}}" style="width: 20px;">
+                                        <strong>Bukalapak</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://s.lazada.co.id/s.b7283" target="blank">
+                                        <img src="{{asset('assets/image/logo/lazada.png')}}"
+                                        style="width: 30px;"><strong>Lazada</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.ilotte.com/di/displayView/Derma-Express/000000141130/view.do" target="blank">
+                                        <img src="{{asset('assets/image/logo/ilotte.png')}}" style="width: 30px;">
+                                        <strong>iLotte</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                                                                </div>
+                    <div class="col_one_third col_last">
 
-                                                            </div>
+                        <div class="widget clearfix">
+                            <h4>Klinik Kami</h4>
 
-                                                            <div class="col_one_third col_last">
-
-                                                                <div class="widget clearfix">
-                                                                    <h4>Klinik Kami</h4>
-
-                                                                    <div id="post-list-footer">
-                                                                        <div class="">
-                                                                            <div class="entry-c">
-                                                                                <div class="entry-title">
-                                                                                    <a href="https://g.co/kgs/xfrpoV" target="blank">
-                                                                                        <h6>UTAN KAYU</h6>
-                                                                                    </a>
-                                                                                </div>
-                                                                                {{-- <ul class="entry-meta">
-                                                                                   <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
-                                                                               </ul> --}}
-                                                                           </div>
-                                                                       </div>
-
-                                                                       <div class="">
-                                                                        <div class="entry-c">
-                                                                            <div class="entry-title">
-                                                                                <a href="https://g.co/kgs/1c6QKP" target="blank">
-                                                                                    <h6>GADING SERPONG</h6>
-                                                                                </a>
-                                                                            </div>
-                                                                            {{-- <ul class="entry-meta">
-                                                                               <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
-                                                                           </ul> --}}
-                                                                       </div>
-                                                                   </div>
-                                                               </div>
-                                                           </div>
-
-                                                       </div>
-
-                                                   </div>
-
-                                                   <div class="col_one_third col_last">
-
-                                                    <div class="widget clearfix">
-                                                        <h4>Kritik dan Saran</h4>
-
-                                                        <div id="post-list-footer">
-                                                            <div class="spost clearfix">
-                                                                <div class="entry-c">
-                                                                    <a href="{{ Helper::cwhatsapp() }}"><abbr title=""><strong><i
-                                                                        class="icon-whatsapp-square"></i></strong> 0822 58883050
-                                                                    </abbr></a>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="spost clearfix">
-                                                                <div class="entry-c">
-                                                                    <div class="entry-title">
-                                                                        <h4>Jam Operasional</h4>
-                                                                    </div>
-                                                                    <ul class="entry-meta">
-                                                                        <strong>Utan kayu</strong><br>
-                                                                        <span>Senin – Minggu : 10:00 -17:00 WIB</span><br><br>
-
-                                                                        <strong>Serpong</strong><br>
-                                                                        <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
-                                                                        <span>Sabtu - Minggu : 10:00 - 18:00 WIB</span>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                            </div><!-- .footer-widgets-wrap end -->
-
+                            <div id="post-list-footer">
+                                <div class="">
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <a href="https://g.co/kgs/xfrpoV" target="blank">
+                                                <h6>UTAN KAYU</h6>
+                                            </a>
                                         </div>
+                                        {{-- <ul class="entry-meta">
+                                         <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
+                                     </ul> --}}
+                                 </div>
+                             </div>
 
-                                        <div id="copyrights">
+                             <div class="">
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <a href="https://g.co/kgs/1c6QKP" target="blank">
+                                            <h6>GADING SERPONG</h6>
+                                        </a>
+                                    </div>
+                                    {{-- <ul class="entry-meta">
+                                     <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
+                                 </ul> --}}
+                             </div>
+                         </div>
+                     </div>
+                 </div>
 
-                                            <div class="container clearfix">
+             </div>
 
-                                                <div class="col_half">
-                                                    Copyrights © <?=date('Y')?> Derma Express<br>
-                                                </div>
+         </div>
 
-                                            </div>
+         <div class="col_one_third col_last">
 
-                                        </div><!-- #copyrights end -->
+            <div class="widget clearfix">
+                <h4>Kritik dan Saran</h4>
 
-                                    </footer>
-                                    <!-- #footer end -->
+                <div id="post-list-footer">
+                    <div class="spost clearfix">
+                        <div class="entry-c">
+                            <a href="{{ Helper::cwhatsapp() }}"><abbr title=""><strong><i
+                                class="icon-whatsapp-square"></i></strong> 0822 58883050
+                            </abbr></a>
+                        </div>
+                    </div>
 
-                                </div>
-                                <!-- #wrapper end -->
+                    <div class="spost clearfix">
+                        <div class="entry-c">
+                            <div class="entry-title">
+                                <h4>Jam Operasional</h4>
+                            </div>
+                            <ul class="entry-meta">
+                                <strong>Utan kayu</strong><br>
+                                <span>Senin – Minggu : 10:00 -17:00 WIB</span><br><br>
+
+                                <strong>Serpong</strong><br>
+                                <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
+                                <span>Sabtu - Minggu : 10:00 - 18:00 WIB</span>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- .footer-widgets-wrap end -->
+
+</div>
+
+<div id="copyrights">
+
+    <div class="container clearfix">
+
+        <div class="col_half">
+            Copyrights © <?=date('Y')?> Derma Express<br>
+        </div>
+
+    </div>
+
+</div><!-- #copyrights end -->
+
+</footer>
+<!-- #footer end -->
+
+</div>
+<!-- #wrapper end -->
 
     <!-- Go To Top
     	============================================= -->

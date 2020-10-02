@@ -36,7 +36,7 @@ class Helper
 	
 	public static function produkList()
 	{
-		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->where('id_category', 37)->get();
 
 				$data = $data->sortBy(function ($data, $key)
                 {
@@ -226,6 +226,13 @@ class Helper
 	public static function cemail()
 	{
         $data = Parameter::where('key', 'email')->first();
+
+        return $data->value;
+	}
+
+	public static function cyoutube()
+	{
+		$data = Parameter::where('key', 'youtube')->first();
 
         return $data->value;
 	}
