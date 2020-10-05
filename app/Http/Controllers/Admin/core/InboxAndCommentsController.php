@@ -70,7 +70,7 @@ class InboxAndCommentsController extends Controller
             {
                 $message->subject('Customer Help');
                 $message->from($request->email, $request->name);
-                $message->to('media@derma_express.com');
+                $message->to('media@derma-express.com');
             });
             return redirect()->back()->with('alert-success','Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
         }
