@@ -8,7 +8,8 @@ use App\Entities\FrontPage\Inbox;
 use App\Entities\FrontPage\Comments;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Http\Controllers\Controller;
-use Mail;
+use App\Mail\Email\InboxEmail;
+use Illuminate\Support\Facades\Mail;
 
 class InboxAndCommentsController extends Controller
 {
@@ -58,7 +59,6 @@ class InboxAndCommentsController extends Controller
     }
 
     public function post_inbox(Request $request){
-        
         $inbox = new Inbox;
         $inbox->nama = $request->name;
         $inbox->email = $request->email;
@@ -69,10 +69,10 @@ class InboxAndCommentsController extends Controller
             Mail::send('email', ['nama' => $request->name, 'pesan' => $request->inbox], function ($message) use ($request)
             {
                 $message->subject('Customer Help');
-                $message->from('media@derma-express.com', 'Derma Express');
-                $message->to($request->email);
+                $message->from($request->email, $request->name);
+                $message->to('media@derma_express.com');
             });
-            return redirect()->back()->with('success', 'Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
+            return redirect()->back()->with('alert-success','Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
         }
         catch (Exception $e){
             return response (['status' => false,'errors' => $e->getMessage()]);
@@ -80,7 +80,6 @@ class InboxAndCommentsController extends Controller
     }
 
     public function post_comment(Request $request){
-        // dd($request->all());
         
         $comment = new Comments;
         $comment->nama = $request->nama;
@@ -91,21 +90,5 @@ class InboxAndCommentsController extends Controller
         $comment->save();
 
         return redirect()->back();
-    }
-
-    public function sendEmail(Request $request)
-    {
-        try{
-            Mail::send('agussetiawan0448@gmail.com', ['nama' => 'Agus Setiawan', 'pesan' => 'TEST'], function ($message) use ($request)
-            {
-                $message->subject('judul');
-                $message->from('luciversetiawan110@gmail.com', 'agus');
-                $message->to('agussetiawan0448@gmail.com');
-            });
-            return back()->with('alert-success','Berhasil Kirim Email');
-        }
-        catch (Exception $e){
-            return response (['status' => false,'errors' => $e->getMessage()]);
-        }
     }
 }
