@@ -8,7 +8,7 @@
   </div>
   <div class="btn-container">
     @foreach(Helper::slider() as $key=>$row)
-      <a class="btn-nav-slider" href="#{{$key+1}}">{{$key+1}}</a>
+      <a class="btn-nav-slider" style="width: 75%;" href="#{{$key+1}}">{{$key+1}}</a>
     @endforeach
   </div>
 </div>
