@@ -15,6 +15,11 @@
 
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
+	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');
+
+	Route::group(['prefix' => 'jurnal'], function(){
+		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
+	});
 
 	Route::group(['prefix' => 'dokter'], function(){
 		Route::get('/', 'FrontPage\DokterController@index')->name('dermaster.dokter');

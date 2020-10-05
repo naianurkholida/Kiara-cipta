@@ -169,9 +169,7 @@ class Helper
 
 	public static function treatment()
 	{
-		// $data = Treatment::join('treatmentlanguage', 'treatmentlanguage.id_treatment', '=' , 'treatment.id')->where('treatment.deleted_at', NULL)->orderBy('treatmentlanguage.judul', 'ASC')->groupBy('treatment.id')->get();
-		
-		$data = Treatment::where('deleted_at', NULL)->get();
+		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
 
 		return $data;
 	}

@@ -488,6 +488,25 @@
                 });
             });
 
+            $(function () {
+                $.ajax({
+                    url: '{{ url("ajax-treatment") }}',
+                    type: 'GET',
+                    dataType: 'Json',
+                })
+                .done(function (res) {
+                    $.each(res, function (index, val) {
+                        $('#submenut' + index).hover(function () {
+                            $('#detail-submenut' + index).css('display', 'flex');
+                        }, function () {
+                            setTimeout(function () {
+                                $('#detail-submenut' + index).css('display', 'none');
+                            }, 100);
+                        });
+                    });
+                });
+            });
+
             $('#carousel-profile').owlCarousel({
                 loop: true,
                 nav: true,

@@ -1,7 +1,7 @@
 @extends('frontend.component.master')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($category as $row)
             @foreach($row->getGallery as $val)

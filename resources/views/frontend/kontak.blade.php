@@ -28,7 +28,31 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! $content->konten_page !!}
+                        <!-- {!! $content->konten_page !!} -->
+                        <h4>Lokasi Derma Express</h4><br>
+                        <b>Utan Kayu</b><br>
+                        Jl. Utan Kayu Raya No.79B dan 79C, Jakarta Timur.<br>
+                        <i class="icon-phone-sign"></i> 02122897879<br>
+                        <i class="icon-phone-sign"></i> 02122895170<br>
+                        <i class="icon-whatsapp-square"></i> 0821 33554191<br><br>
+
+                        <b>GadingSerpong</b><br>
+                        Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,Pakulonan Barat, Kelapa dua Kota Tangerang, Banten.<br>
+                        <i class="icon-phone-sign"></i> 02154214764<br>
+                        <i class="icon-phone-sign"></i> 02154214756<br>
+                        <i class="icon-phone-sign"></i> 02154214758<br>
+                        <i class="icon-whatsapp-square"></i> 0821 33554192<br><br>
+
+                        <b>Kritik dan Saran</b><br>
+                        <i class="icon-whatsapp-square"></i> 0822 58883050<br><br>
+                        
+                        <b>Jam Operasional</b><br>
+                        <b>Utan kayu</b><br>
+                        Senin – Minggu : 10:00 -17:00 WIB<br><br>
+
+                        <b>Serpong</b><br>
+                        Senin - Jumat : 11:00 - 19:00 WIB<br>
+                        Sabtu - Minggu : 10:00 - 18:00 WIB<br>
                     </div>
                 </div>
             </div>

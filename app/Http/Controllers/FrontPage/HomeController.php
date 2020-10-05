@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Treatment;
 use App\Entities\FrontPage\Pengunjung;
 use App\Entities\Admin\core\Produk;
 
@@ -48,6 +49,13 @@ class HomeController extends Controller
     {
         $data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
     
+        return response()->json($data);
+    }
+
+    public function treatmentListJson()
+    {
+        $data = Treatment::with('getTreatmentLanguage')->where('deleted_at', null)->get();
+
         return response()->json($data);
     }
 }

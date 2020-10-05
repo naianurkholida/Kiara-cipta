@@ -1,7 +1,7 @@
 @extends('frontend.component.master')
 
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0;padding-left: 300px;padding-right: 350px;">
     
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem"><!-- 
