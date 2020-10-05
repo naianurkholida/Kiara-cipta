@@ -3,9 +3,9 @@
         <center>
             <h2>
                 @if(Session::get('locale') == 2)
-                    Our Treatments
+                Our Treatments
                 @else
-                    Treatment Kami
+                Treatment Kami
                 @endif
             </h2>
         </center>

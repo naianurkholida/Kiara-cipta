@@ -15,6 +15,7 @@ use App\Entities\Admin\core\SlideLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
+use App\Entities\Admin\core\Posting;
 use DB;
 
 class Helper
@@ -280,5 +281,14 @@ class Helper
 		}
 		$text .=$tanggal ." ". $bulan ." ". $tahun;
 		return $text;
+	}
+
+	public static function posting()
+	{
+		$data = Posting::with('getPostingLanguage')
+				->where('id_category', 58)
+				->get();
+
+		return $data;
 	}
 }

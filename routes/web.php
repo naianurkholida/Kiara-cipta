@@ -19,6 +19,7 @@
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
+		Route::get('/show/{id}', 'FrontPage\JurnalController@show')->name('dermaster.jurnal.show');
 	});
 
 	Route::group(['prefix' => 'dokter'], function(){
