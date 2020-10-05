@@ -8,6 +8,7 @@ use App\Entities\FrontPage\Inbox;
 use App\Entities\FrontPage\Comments;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class InboxAndCommentsController extends Controller
 {
@@ -64,7 +65,18 @@ class InboxAndCommentsController extends Controller
         $inbox->inbox = $request->inbox;
         $inbox->save();
 
-        return redirect()->back()->with('success', 'Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
+        try{
+            Mail::send('email', ['nama' => $request->name, 'pesan' => $request->inbox], function ($message) use ($request)
+            {
+                $message->subject('Customer Help');
+                $message->from('media@derma-express.com', 'Derma Express');
+                $message->to($request->email);
+            });
+            return redirect()->back()->with('success', 'Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
     }
 
     public function post_comment(Request $request){
@@ -79,5 +91,21 @@ class InboxAndCommentsController extends Controller
         $comment->save();
 
         return redirect()->back();
+    }
+
+    public function sendEmail(Request $request)
+    {
+        try{
+            Mail::send('agussetiawan0448@gmail.com', ['nama' => 'Agus Setiawan', 'pesan' => 'TEST'], function ($message) use ($request)
+            {
+                $message->subject('judul');
+                $message->from('luciversetiawan110@gmail.com', 'agus');
+                $message->to('agussetiawan0448@gmail.com');
+            });
+            return back()->with('alert-success','Berhasil Kirim Email');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
     }
 }
