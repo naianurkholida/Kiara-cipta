@@ -1,7 +1,7 @@
 <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
     <div class="container clearfix">
         <div class="heading-block center nomargin">
-            <h3>BEST SELLER</h3>
+            <h3>Best Seller</h3>
         </div>
     </div>
 </div>
