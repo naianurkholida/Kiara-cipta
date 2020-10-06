@@ -1,8 +1,10 @@
 <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
     <div class="container clearfix">
-        <div class="heading-block center nomargin">
-            <h3>Best Seller</h3>
-        </div>
+       <center>
+            <h2>
+                Best Seller
+            </h2>
+        </center>
     </div>
 </div>
 <div class="container" style="background-color: #ffffff; z-index: 9 !important;">
