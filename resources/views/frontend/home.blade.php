@@ -9,7 +9,7 @@
 
 @include('frontend.component.layouts.bestseller')
 
-@include('frontend.component.layouts.youtube')
+<!-- @include('frontend.component.layouts.youtube') -->
 
 <div class="pop-container">
     <div class="box-pop">
