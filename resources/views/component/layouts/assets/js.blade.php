@@ -318,7 +318,7 @@
 	var uploadedDocumentMap = {}
 	Dropzone.options.documentDropzone = {
 		url: '{{ route('media.store') }}',
-            maxFilesize: 2, // MB
+            maxFilesize: 20, // MB
             addRemoveLinks: true,
             headers: {
             	'X-CSRF-TOKEN': "{{ csrf_token() }}"
