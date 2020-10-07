@@ -16,6 +16,11 @@ use Carbon\Carbon;
 
 class TreatmentController extends Controller
 {
+	public function phpinfo()
+	{
+		phpinfo();
+	}
+
     public function index()
     {
         $data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();

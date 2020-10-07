@@ -22,6 +22,10 @@ class Treatment extends Model implements HasMedia
 
     public function getTreatmentLanguage()
     {
-        return $this->hasOne(TreatmentLanguage::class, 'id_treatment', 'id')->where('id_language', Session::get('locale'));
+        if(session::get('locale')){
+            return $this->hasOne(TreatmentLanguage::class, 'id_treatment', 'id')->where('id_language', Session::get('locale'));
+        }else{
+            return $this->hasOne(TreatmentLanguage::class, 'id_treatment', 'id')->where('id_language', 1);
+        }
     }
 }
