@@ -18,7 +18,7 @@ class TreatmentController extends Controller
 {
     public function index()
     {
-        $data = Treatment::where('deleted_at', NULL)->get();
+        $data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
 
 		return view('admin.core.treatment.index', compact('data'));
     }
@@ -75,7 +75,7 @@ class TreatmentController extends Controller
     public function edit($id)
     {
         $treatment = treatment::findOrFail($id);
-		$treatment_language = TreatmentLanguage::where('id_treatment', $id)->get();
+		$treatment_language = TreatmentLanguage::with('getTreatmentLanguage')->where('id_treatment', $id)->get();
         
         $data = $treatment->getMedia('treatment');
 
