@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/phpinfo', 'admin\core\TreatmentController@phpinfo');
+Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 #new front page route
 
