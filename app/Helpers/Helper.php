@@ -53,7 +53,7 @@ class Helper
 				->whereHas('getCategory', function($q){
 					$q->where('category', 'Best Seller');
 				})
-				->orderBy('id', 'ASC')
+				->orderBy('order_num', 'ASC')
 				->get();
 	
 		return $data;
