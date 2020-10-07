@@ -53,12 +53,8 @@ class Helper
 				->whereHas('getCategory', function($q){
 					$q->where('category', 'Best Seller');
 				})
+				->orderBy('id', 'ASC')
 				->get();
-
-				$data = $data->sortBy(function ($data, $key)
-                {
-                    return $data->getProdukLanguage->judul;
-                });
 	
 		return $data;
 	}
