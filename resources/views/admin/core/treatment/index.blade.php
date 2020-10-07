@@ -29,8 +29,16 @@
 					@foreach($data as $row)
 					<tr>
 						<td>{{$no}}</td>
-						<td>{{ $row->getTreatmentLanguage->judul }}</td>
-						<td>{!! $row->getTreatmentLanguage->deskripsi !!}</td>
+						<td>
+							@if($row->getTreatmentLanguage)
+							{{ $row->getTreatmentLanguage->judul }}
+							@endif
+						</td>
+						<td>
+							@if($row->getTreatmentLanguage)
+							{!! $row->getTreatmentLanguage->deskripsi !!}
+							@endif
+						</td>
 						<td class="text-center">
 							<a href="{{Route('treatment.edit',$row->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>

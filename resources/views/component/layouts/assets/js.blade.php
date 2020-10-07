@@ -320,6 +320,7 @@
 		url: '{{ route('media.store') }}',
             maxFilesize: 20, // MB
             addRemoveLinks: true,
+            acceptedFiles:".png,.jpg,.gif,.bmp,.jpeg",
             headers: {
             	'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
