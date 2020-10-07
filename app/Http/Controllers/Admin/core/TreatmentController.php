@@ -80,7 +80,7 @@ class TreatmentController extends Controller
     public function edit($id)
     {
         $treatment = treatment::findOrFail($id);
-		$treatment_language = TreatmentLanguage::with('getTreatmentLanguage')->where('id_treatment', $id)->get();
+		$treatment_language = TreatmentLanguage::where('id_treatment', $id)->get();
         
         $data = $treatment->getMedia('treatment');
 
