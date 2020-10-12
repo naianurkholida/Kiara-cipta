@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <label>Cover</label><br>
                         <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
-                            <div class="kt-avatar__holder" style="width: 1000px; height:450px; background-image: url({{ asset($slider->getFirstMediaUrl('slider') == NULL ? 'public/image/default/placeholder.png' : $data) }})"></div>
+                            <div class="kt-avatar__holder" style="width: 1335px; height:450px; background-image: url({{ asset($slider->getFirstMediaUrl('slider') == NULL ? 'public/image/default/placeholder.png' : $data) }})"></div>
                             <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                 <i class="fa fa-pen"></i>
                                 <input type="file" name="image" accept=".png, .jpg, .jpeg">
@@ -45,6 +45,13 @@
                 <div class="col-md-12">
                     <label for="">Title Button</label>
                     <input type="text" name="title_button" class="form-control" value="{{$slider->title_button}}"><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="">Code Warna</label>
+                    <input type="text" name="code_warna" class="form-control" value="{{$slider->code_warna}}">
                 </div>
             </div>
 

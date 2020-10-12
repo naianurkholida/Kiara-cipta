@@ -81,6 +81,7 @@ class SliderController extends Controller
     public function store(Request $request)
     {
     	$slider = new Slider;
+      $slider->code_warna = $request->code_warna;
     	$slider->title_button = $request->title_button;
     	$slider->link = $request->link;
     	$slider->status = 1;
@@ -156,6 +157,7 @@ return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
     public function update(Request $request, $id)
     {
     	$slider = Slider::find($id);
+      $slider->code_warna = $request->code_warna;
     	$slider->title_button = $request->title_button;
     	$slider->link = $request->link;
     	$slider->status = 1;
