@@ -11,7 +11,7 @@
         </center>
         <br><br>
         <div id="posts" class="post-grid grid-3 clearfix">
-            @foreach(Helper::treatment() as $row)
+            @foreach(Helper::treatmentPage() as $row)
             <div class="entry nobottomborder nobottompadding clearfix" id="treatment-item">
                 <div class="entry-box-shadow" style="background-color: #ffffff;    border: 4px solid #ddd;min-height: 400px;">
                     @foreach($row->getMedia('treatment') as $val)
