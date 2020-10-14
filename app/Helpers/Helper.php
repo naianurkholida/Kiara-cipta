@@ -166,7 +166,7 @@ class Helper
 
 	public static function treatment()
 	{
-		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
+		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->limit(3)->get();
 
 		return $data;
 	}
