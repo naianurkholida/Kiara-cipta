@@ -63,9 +63,9 @@
                                                     <h2>
                                                     {{ $value->getTreatmentLanguage->judul }}
                                                     </h2>
-                                                    {!! $value->getTreatmentLanguage->deskripsi !!}
-
-                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">{{ $value->getTreatmentLanguage->judul }}</a>
+                                                    {!! substr($value->getTreatmentLanguage->deskripsi, 0, 1000) !!}
+                                                    
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu" style="margin-top: 20px;">{{ $value->getTreatmentLanguage->judul }}</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -96,9 +96,9 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
-                                                    {!! $value->getProdukLanguage->deskripsi !!}
-
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
+                                                    {!! substr($value->getProdukLanguage->deskripsi, 0, 1000) !!}
+                                                    <br>
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="margin-top: 20px;">{{ $value->getProdukLanguage->judul }}</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -185,9 +185,9 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
-                                                    {!! $value->getProdukLanguage->deskripsi !!}
-
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
+                                                    {!! substr($value->getProdukLanguage->deskripsi, 0, 1000) !!}
+                                                    <br>
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="margin-top: 20px;">{{ $value->getProdukLanguage->judul }}</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
