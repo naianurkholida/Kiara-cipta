@@ -63,7 +63,7 @@
                                                     <h2>
                                                     {{ $value->getTreatmentLanguage->judul }}
                                                     </h2>
-                                                    {!! substr($value->getTreatmentLanguage->deskripsi, 0, 1000) !!} ...
+                                                    {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
                                                     <br>
                                                     <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">{{ $value->getTreatmentLanguage->judul }}</a>
                                                 </div>
@@ -96,9 +96,8 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
-                                                    {!! substr($value->getProdukLanguage->deskripsi, 0, 1000) !!}...
-                                                    <br>
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
+                                                    {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">{{ $value->getProdukLanguage->judul }}</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -138,28 +137,36 @@
                                         @endif
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
-                                    <li class="menu-header">
-                                        <a href="#">
-                                            <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
+                                    <li class="menu-header" id="menu-hover">
+                                        <a href="javascript:0;">
+                                            <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
-                                        @if(count(Helper::childFrontPage($row->id)) != 0)
-                                        <div class="mega-menu-content style-2 clearfix">
-                                            <ul class="mega-menu-column col-lg-12">
-                                                <li class="mega-menu-title">
-                                                    <ul style="display: none;">
-                                                        @foreach(Helper::childFrontPage($row->id) as $item)
-                                                        <li style="width: 100% !important;">
-                                                            <a style="width: 100% !important;" href="{{ route('dermaster.treatments', $item->url) }}">
-                                                                <div style="width: 100% !important;">{{ Helper::getLanguageJudul($item->id) }}</div>
-                                                            </a>
-                                                        </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        @endif
+                                       
                                     </li>
+                                    <div class="menu-drop-new">
+                                        <div class="scroller-detail">
+                                            <?php foreach(Helper::treatment() as $key => $row){ ?>
+                                                <div class="submenu" id="submenut{{$key}}">
+                                                    <span>{{$row->getTreatmentLanguage->judul}}</span>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+
+                                        <?php foreach (Helper::treatment() as $key => $value) { ?>
+                                            <div class="detail-submenu" id="detail-submenut{{$key}}">
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                                <div class="desc-detail">
+                                                    <h2>
+                                                    {{ $value->getTreatmentLanguage->judul }}
+                                                    </h2>
+                                                    {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
+                                                    <br>
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">{{ $value->getTreatmentLanguage->judul }}</a>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+
+                                    </div>
                                     @else
                                     <li class="menu-header" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
@@ -185,8 +192,8 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
-                                                    {!! substr($value->getProdukLanguage->deskripsi, 0, 1000) !!}...
-                                                    <br>
+                                                    {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    <br><br><br>
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
                                                 </div>
                                             </div>
