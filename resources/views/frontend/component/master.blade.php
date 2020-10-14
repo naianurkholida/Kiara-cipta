@@ -437,6 +437,18 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179474592-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-179474592-1');
+        </script>
+        <!-- End gtag -->
+
         <script>
             $(document).ready(function () {
                 $(".pop-container").hide();
