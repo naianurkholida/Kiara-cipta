@@ -1,6 +1,15 @@
 @extends('frontend.component.master')
 
+@section('header')
+<meta name="description" content="Derma Express, klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
+
+<link rel="canonical" href="http://derma-express.com/">
+
+<title>Dashboard</title>
+@endsection
+
 @section('content')
+
 @include('frontend.component.layouts.slider')
 
 @include('frontend.component.layouts.welcome')

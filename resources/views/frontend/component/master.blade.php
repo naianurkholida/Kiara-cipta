@@ -36,7 +36,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         type="text/css" />
         <link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
-    <!-- Document Title
+        @yield('header')
+
+        <!-- Document Title
     	============================================= -->
         <title>Home | Derma Express</title>
         @php

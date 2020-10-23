@@ -1,5 +1,13 @@
 @extends('frontend.component.master')
 
+@section('header')
+<meta name="description" content="Treatments List Derma Express.">
+
+<link rel="canonical" href="http://derma-express.com/treatments">
+
+<title>Treatments List Derma Express</title>
+@endsection
+
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
@@ -17,7 +25,6 @@
                         <a href="{{ route('dermaster.treatments.show', $row->getTreatmentLanguage->seo) }}">
                             <p id="dokter-name">
                                 {{ $row->getTreatmentLanguage->judul }}
-                                @endif
                             </p>
                         </a>
                         <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getTreatmentLanguage->deskripsi) !!}</p>

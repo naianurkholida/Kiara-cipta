@@ -1,5 +1,11 @@
 @extends('frontend.component.master')
+@section('header')
+<meta name="description" content="Derma Express - A Company by Dermaster Clinic.">
 
+<link rel="canonical" href="http://derma-express.com/profile">
+
+<title>Derma Express - A Company by Dermaster Clinic</title>
+@endsection
 @section('content')
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     <div id="carousel-profile" class="owl-carousel owl-theme">

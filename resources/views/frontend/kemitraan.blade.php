@@ -1,5 +1,13 @@
 @extends('frontend.component.master')
 
+@section('header')
+<meta name="description" content="Kemitraan atau Reseller Derma Express.">
+
+<link rel="canonical" href="http://derma-express.com/kemitraan">
+
+<title>Reseller</title>
+@endsection
+
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;padding-left: 300px;padding-right: 350px;">
     

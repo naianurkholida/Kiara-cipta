@@ -1,9 +1,11 @@
 @extends('frontend.component.master')
 
-@section('css')
-    <style>
-        
-    </style>
+@section('header')
+<meta name="description" content="Gallery Derma Express.">
+
+<link rel="canonical" href="http://derma-express.com/gallery/show">
+
+<title>Gallery</title>
 @endsection
 
 @section('content')

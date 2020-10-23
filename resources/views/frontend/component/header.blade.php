@@ -42,7 +42,7 @@
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
                                     <li class="menu-header" id="menu-hover">
-                                        <a href="javascript:0;">
+                                        <a href="{{ Route('dermaster.treatments') }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
                                        
@@ -138,7 +138,7 @@
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
                                     <li class="menu-header" id="menu-hover">
-                                        <a href="javascript:0;">
+                                        <a href="{{ Route('dermaster.treatments') }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
                                        

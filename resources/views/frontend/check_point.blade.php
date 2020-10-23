@@ -1,5 +1,13 @@
 @extends('frontend.component.master')
 
+@section('header')
+<meta name="description" content="Check Point Derma Express.">
+
+<link rel="canonical" href="http://derma-express.com/checkpoint">
+
+<title>Check Point</title>
+@endsection
+
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container" id="container_luar">

@@ -38,7 +38,7 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	});
 
 	Route::group(['prefix' => 'treatments'], function(){
-		Route::get('/{id}', 'FrontPage\TreatmentsController@index')->name('dermaster.treatments');
+		Route::get('/', 'FrontPage\TreatmentsController@index')->name('dermaster.treatments');
 		Route::get('/show/{id}', 'FrontPage\TreatmentsController@show')->name('dermaster.treatments.show');
 	});
 
