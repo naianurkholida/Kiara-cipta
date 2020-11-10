@@ -17,7 +17,8 @@ class KemitraanController extends Controller
      */
     public function index()
     {
-        return view('frontend.kemitraan');
+        $data = '';
+        return view('frontend.kemitraan', compact('data'));
     }
 
     /**
@@ -38,7 +39,15 @@ class KemitraanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/reseller/?name='.$request->name.'&email='.$request->email.'&hp='.$request->no_hp.'&city='.$request->city);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);
+
+        $data = 'Data Berhasil di Kirim';
+        return redirect()->back()->with('message', $data);
     }
 
     /**

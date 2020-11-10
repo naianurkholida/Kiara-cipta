@@ -70,6 +70,7 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 	#kemitraan
 	Route::get('/kemitraan', 'FrontPage\KemitraanController@index')->name('dermaster.kemitraan');
+	Route::post('/store-kemitraan', 'FrontPage\KemitraanController@store')->name('dermaster.kemitraan.store');
 #end new front page route
 
 #language route
