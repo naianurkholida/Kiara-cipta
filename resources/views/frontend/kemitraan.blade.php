@@ -42,12 +42,12 @@
                                 </select><br>
                             </div>
                             <br>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12"><br>
                                 <label>Email <span style="color: red;">*</span></label>
                                 <input type="text" name="email" class="form-control" required="" placeholder="Email"><br>
                             </div>
                             <br>
-                            <div class="col-lg-12"><br>
+                            <div class="col-lg-12">
                                 <label>No HP / Whatsapp</label>
                                 <input type="text" name="no_hp" class="form-control" required="" placeholder="No Hp atau Whatsapp"><br>
                             </div>
