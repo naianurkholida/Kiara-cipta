@@ -11,7 +11,6 @@ use App\Entities\Admin\core\Treatment;
 use App\Entities\FrontPage\Pengunjung;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
-use Session;
 
 class JurnalController extends Controller
 {
