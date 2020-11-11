@@ -14,6 +14,17 @@ use App\Entities\Admin\core\Posting;
 
 class JurnalController extends Controller
 {
+	public function __construct(Request $request)
+	{
+		$language = Language::first()->id;
+
+		$locale = Session::get('locale');
+
+		if ($locale == NULL) {
+			$locale = Session::put('locale', $language);
+		}
+	}
+	
 	public function index()
 	{
 		$data = Posting::with('getPostingLanguage')

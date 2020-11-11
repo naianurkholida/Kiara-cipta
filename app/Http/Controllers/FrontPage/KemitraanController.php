@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\PostingLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class KemitraanController extends Controller
 {
@@ -15,6 +16,17 @@ class KemitraanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
     public function index()
     {
         $data = '';

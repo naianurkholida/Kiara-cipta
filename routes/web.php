@@ -58,6 +58,8 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 	#cek point
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.check-point');
+	Route::post('/checkpoint-store', 'FrontPage\CheckPointController@store')->name('dermaster.checkpoint.store');
+	Route::get('/checkpoint-report/{idtrx}/{no_hp}', 'FrontPage\CheckPointController@report')->name('dermaster.checkpoint.report');
 
 	#kontak
 	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');

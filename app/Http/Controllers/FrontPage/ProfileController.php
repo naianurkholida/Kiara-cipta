@@ -9,6 +9,7 @@ use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
 use App\Entities\Admin\core\Gallery;
 use App\Entities\Admin\core\Category;
+use App\Entities\Admin\core\language;
 
 class ProfileController extends Controller
 {
@@ -17,6 +18,19 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
+
     public function index()
     {
         $data = Gallery::where('gallery.deleted_at', NULL)

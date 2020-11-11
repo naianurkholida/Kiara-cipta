@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class ProductsController extends Controller
 {
@@ -15,6 +16,17 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
     public function index()
     {
         $data = Produk::with('getProdukLanguage')

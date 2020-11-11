@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontPage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class CheckPointController extends Controller
 {
@@ -13,9 +14,55 @@ class CheckPointController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct(Request $request)
     {
-        return view('frontend.check_point');
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
+    public function index(Request $request)
+    {
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/customer/?id='.$request->no_hp);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);
+
+        $output = json_decode($output);
+        $data   = $output[0];
+
+        $chs = curl_init(); 
+        curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$data[0]);
+        curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
+        $outputs = curl_exec($chs); 
+        curl_close($chs);
+
+        $history = json_decode($outputs);
+
+        $no_hp = $request->no_hp;
+
+        return view('frontend.check_point', compact('data', 'history', 'no_hp'));
+    }
+
+    public function report($idTrx, $no_hp)
+    {
+        $chs = curl_init(); 
+        curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$idTrx);
+        curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
+        $outputs = curl_exec($chs); 
+        curl_close($chs);
+
+        $history = json_decode($outputs);
+
+        return view('frontend.check_point_report', compact('history'));
     }
 
     /**
