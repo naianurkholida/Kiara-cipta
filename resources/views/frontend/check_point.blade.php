@@ -49,7 +49,7 @@
                                 <tr>
                                     <td>{{ $data[0] }}</td>
                                     <td>{{ $data[1] }}</td>
-                                    <td>{{ $data[2] }}</td>
+                                    <td style="text-align: right;">{{ $data[2] }}</td>
                                 </tr>
                             </table>
                         </div>
