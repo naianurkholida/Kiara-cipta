@@ -13,8 +13,8 @@
         <tr>
             <td style="padding:7px;">{{ $val[0] }}</td>
             <td style="padding:7px;">{{ $val[1] }}</td>
-            <td style="padding:7px;">{{ $val[2] }}</td>
-            <td style="padding:7px;">{{ $val[3] }}</td>
+            <td style="padding:7px; text-align: right;">{{ $val[2] }}</td>
+            <td style="padding:7px; text-align: right;">{{ $val[3] }}</td>
         </tr>
         @endforeach
     </tbody>

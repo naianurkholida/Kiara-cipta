@@ -78,8 +78,8 @@
                                     <tr>
                                         <td>{{ $val[0] }}</td>
                                         <td>{{ $val[1] }}</td>
-                                        <td>{{ $val[2] }}</td>
-                                        <td>{{ $val[3] }}</td>
+                                        <td style="text-align: right;">{{ $val[2] }}</td>
+                                        <td style="text-align: right;">{{ $val[3] }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
