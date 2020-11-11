@@ -28,26 +28,33 @@ class CheckPointController extends Controller
 
     public function index(Request $request)
     {
-        $ch = curl_init(); 
-        curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/customer/?id='.$request->no_hp);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-        $output = curl_exec($ch); 
-        curl_close($ch);
+        if($request->no_hp){
+            $ch = curl_init(); 
+            curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/customer/?id='.$request->no_hp);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+            $output = curl_exec($ch); 
+            curl_close($ch);
 
-        $output = json_decode($output);
-        $data   = $output[0];
+            $output = json_decode($output);
 
-        $chs = curl_init(); 
-        curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$data[0]);
-        curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
-        curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
-        $outputs = curl_exec($chs); 
-        curl_close($chs);
+            $data   = $output[0];
 
-        $history = json_decode($outputs);
+            $chs = curl_init(); 
+            curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$data[0]);
+            curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
+            $outputs = curl_exec($chs); 
+            curl_close($chs);
 
-        $no_hp = $request->no_hp;
+            $history = json_decode($outputs);
+
+            $no_hp = $request->no_hp;
+        }else{
+            $data = null;
+            $history = null;
+            $no_hp = null;
+        }
 
         return view('frontend.check_point', compact('data', 'history', 'no_hp'));
     }
