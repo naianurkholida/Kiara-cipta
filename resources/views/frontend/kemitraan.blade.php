@@ -47,9 +47,9 @@
                                 <input type="text" name="email" class="form-control" required="" placeholder="Email"><br>
                             </div>
                             <br>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12"><br>
                                 <label>No HP / Whatsapp</label>
-                                <input type="number" name="no_hp" class="form-control" required="" placeholder="No Hp atau Whatsapp"><br>
+                                <input type="text" name="no_hp" class="form-control" required="" placeholder="No Hp atau Whatsapp"><br>
                             </div>
                             <br>
                             <div class="col-lg-12">
