@@ -10,7 +10,7 @@ use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
 use App\Entities\Admin\core\Gallery;
 use App\Entities\Admin\core\Category;
-use App\Entities\Admin\core\language;
+use App\Entities\Admin\core\Language;
 
 class ProfileController extends Controller
 {
