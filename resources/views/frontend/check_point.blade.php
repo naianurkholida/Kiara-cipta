@@ -9,13 +9,13 @@
 @endsection
 
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;padding-left: 300px;padding-right: 350px;">
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
 	<div class="container" id="container_luar">
-		<div class="container" id="container_dalem">
+		<div class="container" id="container_dalem" style="display: flex;justify-content: center;">
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:1" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:3" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 
-			<div class="card" style="border-radius: 10px;">
+			<div class="card card-kemitraan" style="border-radius: 10px;">
 				<div class="card-body">
 					<h2>Checkpoint</h2>
 					@if(session()->has('message'))
