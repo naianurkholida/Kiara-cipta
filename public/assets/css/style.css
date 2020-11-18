@@ -183,7 +183,7 @@ body,
     height: 250px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 #dokter-name {
@@ -17023,4 +17023,14 @@ body:not(.no-transition) #wrapper,
 }
 .menu-height{
     width: 250px;
+}
+.card-kemitraan {
+    width: 30%;
+    
+}
+@media (max-width: 425px) {
+    .card-kemitraan {
+        width: 80%;
+        
+    }
 }
