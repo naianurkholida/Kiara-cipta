@@ -21,7 +21,7 @@
 <div class="pop-container">
     <div class="box-pop">
         <div class="close-pop">X</div>
-        <img src="{{ Helper::iklan() }}">
+        <img src="{{ Helper::iklan() }}" style="border-radius: 20px;">
         <!-- <div class="img-pop" style="background-image: url({{ Helper::iklan() }})"></div> -->
     </div>
 </div>

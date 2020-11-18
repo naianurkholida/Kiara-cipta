@@ -16879,8 +16879,8 @@ body:not(.no-transition) #wrapper,
     align-items: center;
 }
 .box-pop{
-    width: 60%;
-    height: 70vh;
+    max-width: 60%;
+    /* height: 70vh; */
     background-color: white;
     border-radius: 20px;
     padding: 5px;
