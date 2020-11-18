@@ -58,7 +58,7 @@ class SliderController extends Controller
       ->get();
 
       return view('admin.core.slider.index', compact('top_bar', 'slider'));
-  }
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -82,39 +82,39 @@ class SliderController extends Controller
     {
     	$slider = new Slider;
       $slider->code_warna = $request->code_warna;
-    	$slider->title_button = $request->title_button;
-    	$slider->link = $request->link;
-    	$slider->status = 1;
-    	$slider->is_created = \Session::get('id');
+      $slider->title_button = $request->title_button;
+      $slider->link = $request->link;
+      $slider->status = 1;
+      $slider->is_created = \Session::get('id');
       $slider->save();
 
       if ($request->image != NULL) {
         $slider->addMedia($request->image)->toMediaCollection('slider');
-    }
+      }
 
-    if($request->trigger == 1){
-      foreach ($request->judul as $key => $value) {
+      if($request->trigger == 1){
+        foreach ($request->judul as $key => $value) {
          $slider_language = new SlideLanguage;
          $slider_language->slider_id = $slider->id;
          $slider_language->id_language = $request->language[$key];
          $slider_language->judul       = $request->judul[0];
          $slider_language->deskripsi   = $request->deskripsi[0];
          $slider_language->save();
-     }
- }else{
-  foreach ($request->judul as $key => $value) {
-     if($request->judul[$key] != null){
+       }
+     }else{
+      foreach ($request->judul as $key => $value) {
+       if($request->judul[$key] != null){
         $slider_language = new SlideLanguage;
         $slider_language->slider_id = $slider->id;
         $slider_language->id_language = $request->language[$key];
         $slider_language->judul     = $request->judul[$key];
         $slider_language->deskripsi = $request->deskripsi[$key];
         $slider_language->save();
+      }
     }
-}
-}
+  }
 
-return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
+  return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
 
 }
 
@@ -145,7 +145,7 @@ return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
       $data = $slider->getFirstMediaUrl('slider');
 
       return view('admin.core.slider.edit', compact('top_bar', 'slider', 'language', 'slider_language', 'data'));
-  }
+    }
 
     /**
      * Update the specified resource in storage.
@@ -158,65 +158,65 @@ return redirect('/slider')->with('success', 'Data Berhasil di Simpan');
     {
     	$slider = Slider::find($id);
       $slider->code_warna = $request->code_warna;
-    	$slider->title_button = $request->title_button;
-    	$slider->link = $request->link;
-    	$slider->status = 1;
-    	$slider->is_created = \Session::get('id');
+      $slider->title_button = $request->title_button;
+      $slider->link = $request->link;
+      $slider->status = 1;
+      $slider->is_created = \Session::get('id');
       $slider->save();
 
       if ($request->image != NULL) {
         $media = $slider->getFirstMedia('slider');
 
         if ($media != NULL) {
-            $media->delete();
+          $media->delete();
         }
 
         $slider->addMedia($request->image)->toMediaCollection('slider');
-    }
+      }
 
-    if($request->trigger == 1){
-      foreach ($request->judul as $key => $value) {
+      if($request->trigger == 1){
+        foreach ($request->judul as $key => $value) {
          $ceker = SlideLanguage::where('id_language', $request->language[$key])->where('slider_id', $id)->count();
          if($ceker == 1){
-            $slider_language = SlideLanguage::where('id', $request->idl[$key])->first();
-            $slider_language->slider_id   = $slider->id;
-            $slider_language->id_language = $request->language[$key];
-            $slider_language->judul       = $request->judul[0];
-            $slider_language->deskripsi   = $request->deskripsi[0];
-            $slider_language->save();
+          $slider_language = SlideLanguage::where('id', $request->idl[$key])->first();
+          $slider_language->slider_id   = $slider->id;
+          $slider_language->id_language = $request->language[$key];
+          $slider_language->judul       = $request->judul[0];
+          $slider_language->deskripsi   = $request->deskripsi[0];
+          $slider_language->save();
         }else{
-            $slider_language = new SlideLanguage;
-            $slider_language->slider_id   = $slider->id;
-            $slider_language->id_language = $request->language[$key];
-            $slider_language->judul       = $request->judul[0];
-            $slider_language->deskripsi   = $request->deskripsi[0];
-            $slider_language->save();
+          $slider_language = new SlideLanguage;
+          $slider_language->slider_id   = $slider->id;
+          $slider_language->id_language = $request->language[$key];
+          $slider_language->judul       = $request->judul[0];
+          $slider_language->deskripsi   = $request->deskripsi[0];
+          $slider_language->save();
         }
-    }
-}else{
-  foreach ($request->judul as $key => $value) {
-     if($request->judul[$key] != null){
+      }
+    }else{
+      foreach ($request->judul as $key => $value) {
+       if($request->judul[$key] != null){
         $ceker = SlideLanguage::where('id_language', $request->language[$key])->where('slider_id', $id)->count();
         if($ceker == 1){
-           $slider_language = SlideLanguage::where('id', $request->idl[$key])->first();
-           $slider_language->slider_id = $slider->id;
-           $slider_language->id_language = $request->language[$key];
-           $slider_language->judul       = $request->judul[$key];
-           $slider_language->deskripsi   = $request->deskripsi[$key];
-           $slider_language->save();
+         $slider_language = SlideLanguage::where('id', $request->idl[$key])->first();
+         $slider_language->slider_id = $slider->id;
+         $slider_language->id_language = $request->language[$key];
+         $slider_language->judul       = $request->judul[$key];
+         $slider_language->deskripsi   = $request->deskripsi[$key];
+         $slider_language->save();
        }else{
-           $slider_language = new SlideLanguage;
-           $slider_language->slider_id = $slider->id;
-           $slider_language->id_language = $request->language[$key];
-           $slider_language->judul       = $request->judul[$key];
-           $slider_language->deskripsi   = $request->deskripsi[$key];
-           $slider_language->save();
+         $slider_language = new SlideLanguage;
+         $slider_language->slider_id = $slider->id;
+         $slider_language->id_language = $request->language[$key];
+         $slider_language->judul       = $request->judul[$key];
+         $slider_language->deskripsi   = $request->deskripsi[$key];
+         $slider_language->save();
        }
+     }
    }
-}
-}
+ }
 
-return redirect('/slider')->with('info', 'Data Berhasil di Update');
+ return redirect('/slider')->with('info', 'Data Berhasil di Update');
 }
 
     /**
@@ -235,8 +235,8 @@ return redirect('/slider')->with('info', 'Data Berhasil di Update');
 
       if ($media != NULL) {
         $media->delete();
-    }
+      }
 
-    return redirect('/slider')->with('danger', 'Data Berhasil di Hapus');
-}
-}
+      return redirect('/slider')->with('danger', 'Data Berhasil di Hapus');
+    }
+  }
