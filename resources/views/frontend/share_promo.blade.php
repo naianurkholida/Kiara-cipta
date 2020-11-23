@@ -20,7 +20,7 @@
 
                 <?php } else { ?>
 
-                    <iframe style="border:0px #ffffff none;" width="100%" height="600px;" src="{{url('')}}/promosi/{{$seo}}" scrolling="no" frameborder="1" allowfullscreen="" style="overflow: scroll;"></iframe>
+                    <iframe style="border:0px #ffffff none;" width="100%" height="800px;" src="{{url('')}}/promosi/{{$seo}}" scrolling="no" frameborder="1" allowfullscreen=""></iframe>
 
                 <?php } ?>
             </div>
