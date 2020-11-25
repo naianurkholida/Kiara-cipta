@@ -319,6 +319,15 @@
                                      <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
                                  </ul> --}}
                              </div>
+
+                             <div class="">
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <a href="https://shorturl.at/ySWX9" target="blank">
+                                            <h6>Tawakal</h6>
+                                        </a>
+                                    </div>
+                             </div>
                          </div>
                      </div>
                  </div>
@@ -330,7 +339,7 @@
          <div class="col_one_third col_last">
 
             <div class="widget clearfix">
-                <h4>Kritik dan Saran</h4>
+                <h4>Kontak Kami</h4>
 
                 <div id="post-list-footer">
                     <div class="spost clearfix">
