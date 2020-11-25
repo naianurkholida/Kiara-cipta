@@ -324,9 +324,10 @@
                                 <div class="entry-c">
                                     <div class="entry-title">
                                         <a href="https://shorturl.at/ySWX9" target="blank">
-                                            <h6>Tawakal</h6>
+                                            <h6>TAWAKAL</h6>
                                         </a>
                                     </div>
+                                </div>
                              </div>
                          </div>
                      </div>
