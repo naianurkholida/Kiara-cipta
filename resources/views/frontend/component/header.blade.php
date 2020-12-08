@@ -106,8 +106,8 @@
                                 @endif
                             @endforeach 
                             <div id="logo" style="border:0;padding: 0px !important;margin: 0px !important;">
-                                <a href="{{ url('/') }}" class="standard-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
-                                <a href="{{ url('/') }}" class="retina-logo"><img src="{{asset('assets/images/dermaexpress.png')}}" alt="DermaexpressLogo"></a>
+                                <a href="{{ url('/') }}" class="standard-logo"><img src="{{asset('assets/images/LogoDermaExpress.png')}}" alt="DermaexpressLogo"></a>
+                                <a href="{{ url('/') }}" class="retina-logo"><img src="{{asset('assets/images/LogoDermaExpress.png')}}" alt="DermaexpressLogo"></a>
                             </div>
                             @foreach(Helper::MenuFrontPage() as $key => $row)
                                 @if($key > 3)
