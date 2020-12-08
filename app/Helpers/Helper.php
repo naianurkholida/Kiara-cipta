@@ -153,7 +153,7 @@ class Helper
     
     public static function slider()
 	{
-		$data = Slider::all();
+		$data = Slider::orderBy('order_num', 'ASC')->get();
 		return $data;
 	}
 
