@@ -362,7 +362,7 @@
 
                                 <strong>Serpong</strong><br>
                                 <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
-                                <span>Sabtu - Minggu : 10:00 - 18:00 WIB</span>
+                                <span>Sabtu - Minggu : 10:00 - 18:00 WIB</span><br>
 
                                 <strong>Tawakal</strong><br>
                                 <span>Senin – Minggu : 10:00 -17:00 WIB</span><br><br>
