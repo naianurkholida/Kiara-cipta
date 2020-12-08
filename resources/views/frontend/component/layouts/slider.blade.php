@@ -9,7 +9,12 @@
           $code_warna = "#dedede;";
         }?>
         <div class="item" data-hash="{{$key+1}}">
-            <img src="{{ $row->getFirstMediaUrl('slider') }}" alt="">
+            <img src="{{ $row->getFirstMediaUrl('slider') }}" alt="Derma Express">
+            @if($row->link != null && $row->link != '-')
+            <a href="{{ $row->link }}" class="btn btn-info" style="position: absolute; bottom: 50px; left: 42%; width: 300px; font-size: 25px;">
+                {{ $row->title_button }}
+            </a>
+            @endif
         </div>
         @endforeach
     </div>
