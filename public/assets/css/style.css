@@ -17037,6 +17037,8 @@ body:not(.no-transition) #wrapper,
 
     .button-slider {
         width: auto;
-        font-size: 12px;
+        bottom: 20px !important;
+        font-size: 12px !important;
+        left: 45% !important;
     }
 }
