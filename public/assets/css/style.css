@@ -17028,9 +17028,15 @@ body:not(.no-transition) #wrapper,
     width: 30%;
     
 }
+
 @media (max-width: 425px) {
     .card-kemitraan {
         width: 80%;
         
+    }
+
+    .button-slider {
+        width: auto;
+        font-size: 12px;
     }
 }

@@ -165,6 +165,9 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/update/{id}', 'Admin\core\ProdukController@update')->name('produk.update');
 		Route::get('/delete/{id}', 'Admin\core\ProdukController@delete')->name('produk.delete');
 		Route::get('/history/{id}', 'Admin\core\ProdukController@history')->name('produk.history');
+
+		#icon best seller
+		Route::get('/best_seller/icon', 'Admin\core\BestSellerContr@icon_best_seller')->name('produk.best_seller.icon');
 	});
 
 	#sosmed admin
