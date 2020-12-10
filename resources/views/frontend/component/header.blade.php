@@ -4,6 +4,7 @@
 		<div class="container" id="header_luar">
 			<div class="container" id="header_dalem">
 				<div class="container" id="header_detail" style="display: flex; justify-content:center;">
+                    <a href="{{ url('/') }}" class="mobile-logo"><img src="{{asset('assets/images/LogoDermaExpress-1@4x.png')}}" alt="DermaexpressLogo" width="100"></a>
                     
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
@@ -105,7 +106,8 @@
                                     @endif
                                 @endif
                             @endforeach 
-                            <div id="logo" style="border:0;padding: 0px !important;margin: 0px !important;">
+
+                            <div id="logo" class="logo-desktop" style="border:0;padding: 0px !important;margin: 0px !important;">
                                 <a href="{{ url('/') }}" class="standard-logo"><img src="{{asset('assets/images/LogoDermaExpress-1@4x.png')}}" alt="DermaexpressLogo"></a>
                                 <a href="{{ url('/') }}" class="retina-logo"><img src="{{asset('assets/images/LogoDermaExpress-1@4x.png')}}" alt="DermaexpressLogo"></a>
                             </div>

@@ -17028,6 +17028,9 @@ body:not(.no-transition) #wrapper,
     width: 30%;
     
 }
+.mobile-logo{
+    display: none;
+}
 
 @media (max-width: 425px) {
     .card-kemitraan {
@@ -17041,4 +17044,27 @@ body:not(.no-transition) #wrapper,
         font-size: 10px !important;
         left: 39% !important;
     }
+}
+
+@media only screen and (max-width: 425px) {
+    .logo-desktop {
+      display: none !important;
+    }
+    .menu-drop-new{
+        display: none !important;
+    }
+    #primary-menu{
+        width: 100%;
+        margin-top: 100px;
+    }
+    .menu-header{
+        width: 100% !important;
+    }
+    .mobile-logo{
+        display: inline;
+        position: fixed;
+        top: 20px;
+        left: 100px;
+    }
+    
 }
