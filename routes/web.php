@@ -167,7 +167,12 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/history/{id}', 'Admin\core\ProdukController@history')->name('produk.history');
 
 		#icon best seller
-		Route::get('/best_seller/icon', 'Admin\core\BestSellerContr@icon_best_seller')->name('produk.best_seller.icon');
+		Route::get('/best_seller', 'Admin\core\BestSellerController@index')->name('produk.best_seller');
+		Route::get('/best_seller_insert', 'Admin\core\BestSellerController@insert')->name('produk.best_seller.insert');
+		Route::post('/best_seller_store', 'Admin\core\BestSellerController@store')->name('produk.best_seller.store');
+		Route::get('/best_seller_edit/{id}', 'Admin\core\BestSellerController@edit')->name('produk.best_seller.edit');
+		Route::post('/best_seller_update/{id}', 'Admin\core\BestSellerController@update')->name('produk.best_seller.update');
+		Route::get('/best_seller_delete/{id}', 'Admin\core\BestSellerController@delete')->name('produk.best_seller.delete');
 	});
 
 	#sosmed admin

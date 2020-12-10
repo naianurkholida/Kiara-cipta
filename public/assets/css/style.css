@@ -16952,7 +16952,7 @@ body:not(.no-transition) #wrapper,
 .submenu{
     width: 100%;
     background-color: #ededed3b;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
     padding: 20px;
     border-radius: 10px;

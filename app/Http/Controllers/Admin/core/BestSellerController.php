@@ -3,19 +3,21 @@
 namespace App\Http\Controllers\Admin\core;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use App\Entities\Admin\core\MenuFrontPage;
+use App\Entities\Admin\core\MenuFrontPageLanguage;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\MenuAccess;
 use App\Entities\Admin\core\Parameter;
-use App\Http\Controllers\Controller;
-use App\Entities\Admin\core\MenuFrontPage;
-use App\Entities\Admin\core\MenuFrontPageLanguage;
-use Illuminate\Support\Facades\Session;
+use App\Entities\Admin\core\BestSellerIcon;
+use App\Entities\Admin\core\Produk;
 use Carbon\Carbon;
 use DB;
 use Image;
 use File;
 
-class CategoryController extends Controller
+class BestSellerController extends Controller
 {
 	public function __construct()
 	{
@@ -54,13 +56,7 @@ class CategoryController extends Controller
     public function index()
     {
     	$top_bar = $this->top_bar();
-    	if(Session::get('role_id') == '1'){
-    		$categories = Category::where('id_parent', '0')->get();
-    	}else{
-    		$categories = Category::where('id_parent', '0')
-    		->where('is_created', 1)
-    		->get();
-    	}
+    	
     	$validasi = MenuAccess::select('*')
     	->leftjoin('menus', 'menus.id', '=', 'menu_access.menu_id')
     	->where('role_id', \Session::get('role_id'))
@@ -68,6 +64,77 @@ class CategoryController extends Controller
     	->where('menus.id', 8)
     	->first();
 
-    	return view('admin.core.category.index', compact('top_bar', 'categories', 'validasi'));
+    	$best_seller_icon = BestSellerIcon::with('produk.getProdukLanguage')->get();
+
+    	return view('admin.core.produk.best_seller.index', compact('top_bar', 'validasi', 'best_seller_icon'));
+    }
+
+    public function insert(Request $request)
+    {
+    	$top_bar = $this->top_bar();
+
+    	$produk = Produk::with('getProdukLanguage')->where('id_category', 57)->get();
+
+    	return view('admin.core.produk.best_seller.insert', compact('top_bar', 'produk'));
+    }
+
+    public function store(Request $request)
+    {
+    	if($request->file('icon') != null){
+    		$data = new BestSellerIcon;
+    		$data->product_id = $request->best_seller;
+            $file = $request->file('icon');
+
+            if (!File::isDirectory($this->path)) {
+                File::makeDirectory($this->path);
+            }
+
+            $fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            Image::make($file)->save($this->path.'/'. $fileName);
+            $data->icon = $fileName;
+            $data->save();
+        }
+
+        return redirect('produk/best_seller')->with('success', 'Icon Berhasil di Tambahkan');
+    }
+
+    public function edit(Request $request, $id)
+    {
+    	$top_bar = $this->top_bar();
+    	$best_seller = BestSellerIcon::findOrFail($id);
+
+    	$produk = Produk::with('getProdukLanguage')->where('id_category', 57)->get();
+
+    	return view('admin.core.produk.best_seller.edit', compact('id', 'top_bar', 'best_seller', 'produk'));
+    }
+
+    public function update(Request $request, $id)
+    {
+    	$data = BestSellerIcon::findOrFail($id);
+    	$data->product_id = $request->best_seller;
+    	if($request->file('icon') != null){
+    		$file = $request->file('icon');
+
+            if (!File::isDirectory($this->path)) {
+                File::makeDirectory($this->path);
+            }
+
+            $fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+            Image::make($file)->save($this->path.'/'. $fileName);
+            $data->icon = $fileName;
+    	}
+    	$data->save();
+
+    	return redirect('produk/best_seller')->with('success', 'Icon Berhasil di Update');
+    }
+
+    public function delete($id)
+    {
+    	$data = BestSellerIcon::findOrFail($id);
+    	File::delete('admin/assets/media/icons/'.$data->icon);
+
+    	BestSellerIcon::where('id', $id)->delete();
+
+    	return redirect()->back()->with('success', 'Icon Berhasil di Hapus');
     }
 }
