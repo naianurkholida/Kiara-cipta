@@ -16,6 +16,7 @@ use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
+use App\Entities\Admin\core\BestSellerIcon;
 use DB;
 
 class Helper
@@ -56,6 +57,13 @@ class Helper
 				->orderBy('order_num', 'ASC')
 				->get();
 	
+		return $data;
+	}
+
+	public static function iconProdukBestSeller($id)
+	{
+		$data = BestSellerIcon::where('product_id', $id)->get();
+
 		return $data;
 	}
 

@@ -17,11 +17,12 @@
             <div class="btn-bestseller"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
             <div class="overlay-bestseller">
                 <div class="container-overlay">
-                    <div class="item-dalem">
-                        @foreach($row->getMedia('produk') as $val)
-                        <img src="{{ $val->getUrl() }}" alt="" style="width: 30px">
+                    <div>
+                        <!-- <p style="margin-bottom:0px !important; margin-left:10px; font-size:20px">{{$row->getCategory->category}}</p><br> -->
+                        <?php $icon = Helper::iconProdukBestSeller($row->id); ?>
+                        @foreach($icon as $val)
+                        <img src="{{ asset('assets/admin/assets/media/icons/') }}/{{ $val->icon }}" alt="" style="width: 50px;">
                         @endforeach
-                        <p style="margin-bottom:0px !important; margin-left:10px; font-size:20px">{{$row->getCategory->category}}</p>
                     </div>
                 </div>
                 <div class="btn-bestseller-overlay"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
