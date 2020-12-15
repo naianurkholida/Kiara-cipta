@@ -16952,10 +16952,13 @@ body:not(.no-transition) #wrapper,
 .submenu{
     width: 100%;
     background-color: #ededed3b;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     cursor: pointer;
     padding: 20px;
     border-radius: 10px;
+}
+.submenu:hover{
+    background-color: #dddddd;
 }
 .detail-submenu{
     width: 70%;
