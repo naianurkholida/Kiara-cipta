@@ -59,7 +59,7 @@
             <div class="row">
                     <div class="col-lg-12">
                         <label>Cover</label><br>
-                        <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
+                        <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%;">
                             <div class="kt-avatar__holder" style="width: 100%; height:450px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
                             <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                 <i class="fa fa-pen"></i>
