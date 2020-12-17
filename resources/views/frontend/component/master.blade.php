@@ -345,13 +345,11 @@
                 <div id="post-list-footer">
                     <div class="spost clearfix">
                         <div class="entry-c">
-                            <a href="{{ Helper::cwhatsapp() }}"><abbr title=""><strong><i
-                                class="icon-whatsapp-square"></i></strong> 0822 58883050
-                            </abbr></a>
+                            <a href="{{ Helper::cwhatsapp() }}"><i
+                                class="icon-whatsapp-square"></i> 0822 58883050
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="spost clearfix">
+                        <br>
                         <div class="entry-c">
                             <div class="entry-title">
                                 <h4>Jam Operasional</h4>
