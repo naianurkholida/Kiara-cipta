@@ -470,6 +470,7 @@
                     console.log('show');
             }, 7000); // 5000 to load it after 5 seconds from page load
             });
+
             if (window.matchMedia('(max-width: 425px)')) {
                 $("#header_dalem").removeClass("container");
                 $("#footer-sosmed").removeClass("container");
@@ -515,12 +516,10 @@
                 })
                 .done(function (res) {
                     $.each(res, function (index, val) {
-                        $('#submenu' + index).hover(function () {
+                        $("#submenu"+index).hover(function(){
                             $('#detail-submenu' + index).css('display', 'flex');
-                        }, function () {
-                            setTimeout(function () {
-                                $('#detail-submenu' + index).css('display', 'none');
-                            }, 100);
+                        }, function(){
+                            $('#detail-submenu' + index).css('display', 'none');
                         });
                     });
                 });
@@ -537,9 +536,7 @@
                         $('#submenut' + index).hover(function () {
                             $('#detail-submenut' + index).css('display', 'flex');
                         }, function () {
-                            setTimeout(function () {
-                                $('#detail-submenut' + index).css('display', 'none');
-                            }, 100);
+                            $('#detail-submenut' + index).css('display', 'none');
                         });
                     });
                 });
@@ -563,7 +560,6 @@
                     }
                 }
             })
-
         </script>
         @yield('js')
 

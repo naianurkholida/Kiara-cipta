@@ -82,7 +82,7 @@
                                     <div class="menu-drop-new">
                                         <div class="scroller-detail">
                                             <?php foreach(Helper::produkList() as $key => $row){ ?>
-                                                <div class="submenu" id="submenu{{$key}}">
+                                                <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
                                                     <span>{{$row->getProdukLanguage->judul}}</span>
                                                 </div>
                                             <?php } ?>
