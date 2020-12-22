@@ -20,6 +20,8 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
+		Route::get('/blog', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.blog');
+		Route::get('/media', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.media');
 		Route::get('/show/{id}', 'FrontPage\JurnalController@show')->name('dermaster.jurnal.show');
 	});
 

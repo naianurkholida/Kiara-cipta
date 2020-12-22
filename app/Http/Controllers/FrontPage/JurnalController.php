@@ -28,7 +28,7 @@ class JurnalController extends Controller
 	public function index()
 	{
 		$data = Posting::with('getPostingLanguage')
-				->where('id_category', 58)
+				->whereIn('id_category', [58,51])
 				->get();
 
 		return view('frontend.jurnal', compact('data'));
@@ -44,5 +44,23 @@ class JurnalController extends Controller
 				->first();
 
 		return view('frontend.jurnal-detail', compact('data'));
+	}
+
+	public function blog()
+	{
+		$data = Posting::with('getPostingLanguage')
+				->where('id_category', 51)
+				->get();
+
+		return view('frontend.jurnal', compact('data'));
+	}
+
+	public function media()
+	{
+		$data = Posting::with('getPostingLanguage')
+				->where('id_category', 58)
+				->get();
+
+		return view('frontend.jurnal', compact('data'));
 	}
 }

@@ -26,11 +26,11 @@
                                         @if(count(Helper::childFrontPage($row->id)) != 0)
                                         <div class="mega-menu-content style-2 clearfix">
                                             <ul class="mega-menu-column col-lg-12">
-                                                <li class="mega-menu-title" style="width: 100% !important;">
+                                                <li class="mega-menu-title" style="width: 100%;">
                                                     <ul>
                                                         @foreach(Helper::childFrontPage($row->id) as $item)
-                                                        <li>
-                                                            <a  href="{{ url($row->url, str_replace(' ', '-', Helper::getLanguageJudul($item->id))) }}">
+                                                        <li style="width: 100%;">
+                                                            <a  href="{{ url($row->url, $item->url) }}">
                                                                 <div>{{ Helper::getLanguageJudul($item->id) }}</div>
                                                             </a>
                                                         </li>
