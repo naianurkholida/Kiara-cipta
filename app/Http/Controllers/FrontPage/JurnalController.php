@@ -39,7 +39,7 @@ class JurnalController extends Controller
 		$data = Posting::with('getPostingLanguage')
 				->whereIn('id_category', [58,51])
 				->whereHas('getPostingLanguage', function($query) use ($seo){
-					$query->where('seo', $seo);
+					$query->where('seo', $seo)->where('id_language', 1);
 				})
 				->first();
 
