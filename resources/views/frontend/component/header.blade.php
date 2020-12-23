@@ -90,14 +90,14 @@
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
 
-                                                <div class="">
-                                                    <div class="" id="">
+                                                <div class="scroller-detail" style="width:30%;">
+                                                    <div class="submenu" id="">
                                                         <span>test judul</span>
                                                     </div>
-                                                    <div class="" id="">
+                                                    <div class="submenu" id="">
                                                         <span>test judul</span>
                                                     </div>
-                                                    <div class="" id="">
+                                                    <div class="submenu" id="">
                                                         <span>test judul</span>
                                                     </div>
                                                 </div>
