@@ -138,7 +138,7 @@
                                         @endif
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
-                                    <li class="menu-header" id="menu-hover">
+                                    <li class="menu-header header-treatment" id="menu-hover">
                                         <a href="{{ Route('dermaster.treatments') }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
@@ -169,9 +169,9 @@
 
                                     </div>
                                     @else
-                                    <li class="menu-header" id="menu-hover">
+                                    <li class="menu-header header-produk" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
-                                            <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                            <div>{{$row->getMenuFrontPageLanguage->judul_menu}} wkwkwk</div>
                                         </a>
                                        
                                     </li>
@@ -186,12 +186,24 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
+                                                <div class="">
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                </div>
+
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
                                                 <div class="desc-detail">
                                                     <h2>
-                                                    {{ $value->getProdukLanguage->judul }}
+                                                    {{ $value->getProdukLanguage->judul }} test
                                                     </h2>
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
                                                     <br><br><br>

@@ -508,6 +508,18 @@
             $('.owl-next').hide();
             $('.owl-prev').hide();
 
+            $("#menu-hover").hover(function(){
+                $('#detail-submenu2').css('display', 'flex');
+                // $('#detail-submenut0').css('display', 'flex');
+
+            }, function(){
+                $('#detail-submenu2').css('display', 'none');
+                // $('#detail-submenut0').css('display', 'none');
+
+            });
+           
+
+
             $(function () {
                 $.ajax({
                     url: '{{ url("ajax-produk") }}',
@@ -515,10 +527,14 @@
                     dataType: 'Json',
                 })
                 .done(function (res) {
+                   
+
                     $.each(res, function (index, val) {
                         $("#submenu"+index).hover(function(){
+                            $('#detail-submenu2').css('display', 'none');
                             $('#detail-submenu' + index).css('display', 'flex');
                         }, function(){
+                            // $('#detail-submenu2').css('display', 'flex');
                             $('#detail-submenu' + index).css('display', 'none');
                         });
                     });

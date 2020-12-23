@@ -16936,6 +16936,7 @@ body:not(.no-transition) #wrapper,
     padding: 20px;
 }
 
+
 .owl-carousel:hover .owl-nav .owl-next{
     display: none !important;
 }
