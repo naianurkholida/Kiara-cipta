@@ -89,6 +89,19 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
+
+                                                <div class="">
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                    <div class="" id="">
+                                                        <span>test judul</span>
+                                                    </div>
+                                                </div>
+
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
@@ -186,18 +199,6 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                <div class="">
-                                                    <div class="" id="">
-                                                        <span>test judul</span>
-                                                    </div>
-                                                    <div class="" id="">
-                                                        <span>test judul</span>
-                                                    </div>
-                                                    <div class="" id="">
-                                                        <span>test judul</span>
-                                                    </div>
-                                                </div>
-
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
