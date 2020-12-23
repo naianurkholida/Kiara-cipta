@@ -42,7 +42,7 @@
                                         @endif
                                     </li>
                                     @elseif($row->url == "treatments" && $row->url != "products")
-                                    <li class="menu-header" id="menu-hover">
+                                    <li class="menu-header treatment" id="menu-hover">
                                         <a href="{{ Route('dermaster.treatments') }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
@@ -73,7 +73,7 @@
 
                                     </div>
                                     @else
-                                    <li class="menu-header" id="menu-hover">
+                                    <li class="menu-header produk" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>

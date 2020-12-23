@@ -508,17 +508,18 @@
             $('.owl-next').hide();
             $('.owl-prev').hide();
 
-            $("#menu-hover").hover(function(){
+            $('.menu-header.produk').hover(function(){
                 $('#detail-submenu2').css('display', 'flex');
-                // $('#detail-submenut0').css('display', 'flex');
-
             }, function(){
                 $('#detail-submenu2').css('display', 'none');
-                // $('#detail-submenut0').css('display', 'none');
+            })
 
-            });
-           
+            $('.menu-header.treatment').hover(function(){
+                $('#detail-submenut0').css('display', 'flex');
+            }, function(){
+                $('#detail-submenut0').css('display', 'none');
 
+            })
 
             $(function () {
                 $.ajax({
