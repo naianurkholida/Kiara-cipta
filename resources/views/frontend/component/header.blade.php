@@ -77,7 +77,6 @@
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
-                                       
                                     </li>
                                     <div class="menu-drop-new">
                                         <div class="scroller-detail">
