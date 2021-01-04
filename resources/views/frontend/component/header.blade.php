@@ -49,7 +49,7 @@
                                        
                                     </li>
                                     <div class="menu-drop-new">
-                                        <div class="scroller-detail">
+                                        <div class="scroller-detail" style="width:20% !important">
                                             <?php foreach (Helper::childFrontPage(3) as $key => $treat) { ?>
 
                                                 <div class="submenu" id="submenut-{{$treat->url}}">
@@ -59,7 +59,7 @@
                                             <?php } ?>
                                         </div>
 
-                                        <div id="menu-drop-new" style="width: 20%;">
+                                        <div id="menu-drop-new" style="width:20% !important">
                                             <div class="scroller-detail" style="width: 100%">
                                                 <?php foreach (Helper::childFrontPageArray([19, 20, 21, 22, 23, 24]) as $key => $treat) { 
                                                     $url = explode('/', $treat->url);
@@ -75,7 +75,7 @@
                                         </div>
 
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
-                                            <div class="detail-submenu" id="detail-submenut-{{$value->getTreatmentLanguage->seo}}">
+                                            <div class="detail-submenu" id="detail-submenut-{{$value->getTreatmentLanguage->seo}}" style="width:60% !important">
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 <div class="desc-detail">
                                                     <h2>
