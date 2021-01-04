@@ -38,7 +38,7 @@ class Helper
 	
 	public static function produkList()
 	{
-		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->where('id_category', 37)->get();
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
 
 				$data = $data->sortBy(function ($data, $key)
                 {
@@ -262,10 +262,30 @@ class Helper
 		return $data;
 	}
 
+	public static function MenuJurnal()
+	{
+		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
+
+		return $data;
+	}
+
+	public static function getJurnal()
+	{
+		$data = Posting::with('getPostingLanguage', 'category')->whereIn('id_category', [58,51])->get();
+
+		return $data;
+	}
+
 	public static function childFrontPage($id)
 	{
 		$data = MenuFrontPage::where('id_sub_menu', $id)->where('is_active', 0)->get();
 
+		return $data;
+	}
+
+	public static function childFrontPageArray($id)
+	{
+		$data = MenuFrontPage::whereIn('id_sub_menu', $id)->where('is_active', 0)->get();
 		return $data;
 	}
 

@@ -10,6 +10,9 @@ use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\FrontPage\Pengunjung;
 use App\Entities\Admin\core\Produk;
+use App\Entities\Admin\core\Posting;
+use App\Entities\Admin\core\MenuFrontPage;
+use App\Entities\Admin\core\MenuFrontPageLanguage;
 
 class HomeController extends Controller
 {
@@ -45,7 +48,16 @@ class HomeController extends Controller
         return view($this->view);
     }
 
-    public static function produkListJson()
+    public function jurnalListJson()
+    {
+        $data = Posting::with('getPostingLanguage')
+                ->whereIn('id_category', [58,51])
+                ->get();
+
+        return response()->json($data);
+    }
+
+    public function produkListJson()
     {
         $data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
     
@@ -55,6 +67,13 @@ class HomeController extends Controller
     public function treatmentListJson()
     {
         $data = Treatment::with('getTreatmentLanguage')->where('deleted_at', null)->get();
+
+        return response()->json($data);
+    }
+
+    public function getSubMenuById()
+    {
+        $data = MenuFrontPage::with('getMenuFrontPageLanguage')->whereIn('id_sub_menu', [19,20,21,22,23,24])->get();
 
         return response()->json($data);
     }

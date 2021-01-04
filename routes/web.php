@@ -17,6 +17,8 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
 	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');
+	Route::get('/ajax-jurnal', 'FrontPage\HomeController@jurnalListJson');
+	Route::get('/ajax-sub-menu', 'FrontPage\HomeController@getSubMenuById');
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');

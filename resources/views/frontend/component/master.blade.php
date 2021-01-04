@@ -515,9 +515,30 @@
             })
 
             $('.menu-header.treatment').hover(function(){
-                $('#detail-submenut0').css('display', 'flex');
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-hair-care').css('display', 'flex');
+                $('.submenu.submenut-two-face-care').css('display', 'none');    
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+
+                $('#detail-submenut-hair-removal').css('display', 'flex');
             }, function(){
-                $('#detail-submenut0').css('display', 'none');
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+
+                $('#detail-submenut-hair-removal').css('display', 'none');
+            })
+
+            $('.menu-header.jurnal').hover(function(){
+                $('#detail-submenuts0').css('display', 'flex');
+            }, function(){
+                $('#detail-submenuts0').css('display', 'none');
 
             })
 
@@ -535,7 +556,6 @@
                             $('#detail-submenu2').css('display', 'none');
                             $('#detail-submenu' + index).css('display', 'flex');
                         }, function(){
-                            // $('#detail-submenu2').css('display', 'flex');
                             $('#detail-submenu' + index).css('display', 'none');
                         });
                     });
@@ -557,6 +577,145 @@
                         });
                     });
                 });
+            });
+
+            $(function () {
+                $.ajax({
+                    url: '{{ url("ajax-jurnal") }}',
+                    type: 'GET',
+                    dataType: 'Json',
+                })
+                .done(function (res) {
+                    $.each(res, function (index, val) {
+                        $('#submenuts' + index).hover(function () {
+                            $('#detail-submenuts' + index).css('display', 'flex');
+                        }, function () {
+                            $('#detail-submenuts' + index).css('display', 'none');
+                        });
+                    });
+                });
+            });
+
+            $(function () {
+                $.ajax({
+                    url: '{{ url("ajax-sub-menu") }}',
+                    type: 'GET',
+                    dataType: 'Json',
+                })
+                .done(function (res) {
+                    $.each(res, function (index, val) {
+                        var url = val.url.split('/');
+                        $('#submenu-'+url[1]).hover(function() {
+                            $('.submenu.submenut-two-'+url[1]).css('display', 'flex');
+                            $('#detail-submenut-'+url[1]).css('display', 'flex');
+                        }, function() {
+                            $('#detail-submenut-'+url[1]).css('display', 'none');
+                            $('.submenu.submenut-two-'+url[1]).css('display', 'none');
+                        });
+                    });
+                });
+            });
+
+            $('#submenut-hair-care').hover(function () {
+                $('.submenu.submenut-two-hair-care').css('display', 'flex');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');                
+            }, function () {
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-hair-care').css('display', 'block');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-face-care').hover(function () {
+                $('.submenu.submenut-two-face-care').css('display', 'flex');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-face-care').css('display', 'block');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-threadlift').hover(function () {
+                $('.submenu.submenut-two-threadlift').css('display', 'flex');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-threadlift').css('display', 'block');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-countouring').hover(function () {
+                $('.submenu.submenut-two-countouring').css('display', 'flex');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-countouring').css('display', 'block');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-infusion').hover(function () {
+                $('.submenu.submenut-two-infusion').css('display', 'flex');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+                $('#menu-drop-new2').show();
+                $('.submenu.submenut-two-infusion').css('display', 'block');
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-body-care').hover(function () {
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'flex');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
+            }, function () {
+                $('#menu-drop-new2').show();                
+                $('.submenu.submenut-two-countouring').css('display', 'none');
+                $('.submenu.submenut-two-infusion').css('display', 'none');
+                $('.submenu.submenut-two-body-care').css('display', 'block');
+                $('.submenu.submenut-two-threadlift').css('display', 'none');
+                $('.submenu.submenut-two-face-care').css('display', 'none');
+                $('.submenu.submenut-two-hair-care').css('display', 'none');
             });
 
             $('#carousel-profile').owlCarousel({
