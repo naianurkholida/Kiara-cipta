@@ -1,4 +1,4 @@
-<header id="header" class="full-header clearfix">
+<header id="header" class="full-header clearfix" style="z-index::99999999999999999999999999999999999;">  
 
 	<div id="header-wrap">
 		<div class="container" id="header_luar">
@@ -295,3 +295,4 @@
         </div>
 
     </header>
+                                    

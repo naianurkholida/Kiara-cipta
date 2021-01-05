@@ -463,6 +463,17 @@
         <!-- End gtag -->
 
         <script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    $(".menu-drop-new").css('margin-top', '59px');
+                } else {
+                    $(".menu-drop-new").css('margin-top', '80px');
+                }
+            }   
+
             $(document).ready(function () {
                 $(".pop-container").hide();
                 setTimeout(function () {
