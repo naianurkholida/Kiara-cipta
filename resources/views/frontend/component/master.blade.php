@@ -520,9 +520,9 @@
             $('.owl-prev').hide();
 
             $('.menu-header.produk').hover(function(){
-                $('#detail-submenu2').css('display', 'flex');
+                $('#detail-submenu6').css('display', 'flex');
             }, function(){
-                $('#detail-submenu2').css('display', 'none');
+                $('#detail-submenu6').css('display', 'none');
             })
 
             $('.menu-header.treatment').hover(function(){
@@ -535,6 +535,8 @@
                 $('.submenu.submenut-two-body-care').css('display', 'none');
 
                 $('#detail-submenut-hair-removal').css('display', 'flex');
+
+                $('#detail-submenut0').css('display', 'flex');
             }, function(){
                 $('#menu-drop-new2').show();
                 $('.submenu.submenut-two-face-care').css('display', 'none');
@@ -544,6 +546,8 @@
                 $('.submenu.submenut-two-body-care').css('display', 'none');
 
                 $('#detail-submenut-hair-removal').css('display', 'none');
+
+                $('#detail-submenut0').css('display', 'none');
             })
 
             $('.menu-header.jurnal').hover(function(){

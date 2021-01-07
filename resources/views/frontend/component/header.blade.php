@@ -122,9 +122,8 @@
                                         <?php foreach (Helper::getJurnal() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenuts{{$key}}">
 
-                                                @foreach($value->getMedia('posting') as $row)
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
-                                                @endforeach
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('posting') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+
                                                 <div class="desc-detail">
                                                     <h2>
                                                     {{ $value->getPostingLanguage->judul }}
@@ -252,9 +251,8 @@
                                         <?php foreach (Helper::getJurnal() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenuts{{$key}}">
 
-                                                @foreach($value->getMedia('posting') as $row)
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
-                                                @endforeach
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('posting') }}}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+
                                                 <div class="desc-detail">
                                                     <h2>
                                                         {{ $value->getPostingLanguage->judul }}
