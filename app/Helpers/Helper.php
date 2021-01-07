@@ -161,7 +161,7 @@ class Helper
     
     public static function slider()
 	{
-		$data = Slider::orderBy('order_num', 'ASC')->get();
+		$data = Slider::orderBy('order_num', 'ASC')->where('status', True)->get();
 		return $data;
 	}
 

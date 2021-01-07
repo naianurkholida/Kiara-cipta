@@ -1,4 +1,4 @@
-<header id="header" class="full-header clearfix">
+<header id="header" class="full-header clearfix" style="z-index::99999999999999999999999999999999999;">  
 
     <div id="header-wrap">
         <div class="container" id="header_luar">
@@ -49,17 +49,33 @@
                                        
                                     </li>
                                     <div class="menu-drop-new">
-                                        <div class="scroller-detail">
-                                            <?php foreach(Helper::treatment() as $key => $row){ ?>
-                                                <div class="submenu" id="submenut{{$key}}">
-                                                    <span>{{$row->getTreatmentLanguage->judul}}</span>
+                                        <div class="scroller-detail" style="width:20% !important">
+                                            <?php foreach (Helper::childFrontPage(3) as $key => $treat) { ?>
+
+                                                <div class="submenu" id="submenut-{{$treat->url}}">
+                                                    <span>{{ Helper::getLanguageJudul($treat->id) }}</span>
                                                 </div>
+
                                             <?php } ?>
                                         </div>
 
-                                        <?php foreach (Helper::treatment() as $key => $value) { ?>
-                                            <div class="detail-submenu" id="detail-submenut{{$key}}">
+                                        <div id="menu-drop-new" style="width:20% !important">
+                                            <div class="scroller-detail" style="width: 100%">
+                                                <?php foreach (Helper::childFrontPageArray([19, 20, 21, 22, 23, 24]) as $key => $treat) { 
+                                                    $url = explode('/', $treat->url);
+                                                    ?>
+                                                    <div class="submenu submenut-two-{{$url[0]}}" id="submenu-{{$url[1]}}">
+                                                        @if($url == 'face-care')
+                                                        <span class="badge badge-success">{{ $treat->category->category }}</span>
+                                                        @endif
+                                                        <span>{{ Helper::getLanguageJudul($treat->id) }}</span>
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
 
+                                        <?php foreach (Helper::treatment() as $key => $value) { ?>
+                                            <div class="detail-submenu" id="detail-submenut-{{$value->getTreatmentLanguage->seo}}" style="width:60% !important">
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 <div class="desc-detail">
                                                     <h2>
@@ -279,3 +295,4 @@
         </div>
 
     </header>
+                                    

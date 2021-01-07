@@ -37,39 +37,32 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- {!! $content->konten_page !!} -->
-                        <h1 class="text-center">Lokasi Derma Express</h1><br>
+                        <h3 class="text-center">Lokasi Derma Express</h3><br>
 
                         <b>Tawakal</b><br><br>
                         Jl. Tawakal Ujung No.C-1. Tomang, Petamburan, Jakarta Barat.<br> 
                         <i class="icon-phone-sign"></i> 02121251383<br>
-                        <i class="icon-whatsapp-square"></i> 082260027800<br><br>
+                        <i class="icon-whatsapp-square"></i> 082260027800<br>
+                        <i class="icon-clock"></i> Senin - Minggu : 10:00 - 17.00 WIB<br><br>
 
                         <b>Utan Kayu</b><br><br>
                         Jl. Utan Kayu Raya No.79B dan 79C, Jakarta Timur.<br>
                         <i class="icon-phone-sign"></i> 02122897879<br>
                         <i class="icon-phone-sign"></i> 02122895170<br>
-                        <i class="icon-whatsapp-square"></i> 0821 33554191<br><br>
+                        <i class="icon-whatsapp-square"></i> 0821 33554191<br>
+                        <i class="icon-clock"></i> Senin – Minggu : 10:00 - 17:00 WIB<br><br>
 
                         <b>GadingSerpong</b><br><br>
-                        Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,Pakulonan Barat, Kelapa dua Kota Tangerang, Banten.<br>
+                        Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, <br>
+                        Gading Serpong, Pakulonan Barat, Kelapa dua Kota Tangerang, Banten.<br>
                         <i class="icon-phone-sign"></i> 02154214764<br>
                         <i class="icon-phone-sign"></i> 02154214756<br>
                         <i class="icon-phone-sign"></i> 02154214758<br>
-                        <i class="icon-whatsapp-square"></i> 0821 33554192<br><br>
+                        <i class="icon-whatsapp-square"></i> 0821 33554192<br>
+                        <i class="icon-clock"></i> Senin - Jumat : 11:00 - 19:00 WIB & Sabtu - Minggu : 10:00 - 18:00 WIB<br><br>
 
                         <b>Kontak Kami</b><br>
                         <i class="icon-whatsapp-square"></i> 0822 58883050<br><br>
-                        
-                        <b>Jam Operasional</b><br><br>
-                        <b>Tawakal</b><br>
-                        Senin - Minggu : 10:00 - 17.00 WIB<br><br>
-
-                        <b>Utan kayu</b><br>
-                        Senin – Minggu : 10:00 - 17:00 WIB<br><br>
-
-                        <b>Serpong</b><br>
-                        Senin - Jumat : 11:00 - 19:00 WIB<br>
-                        Sabtu - Minggu : 10:00 - 18:00 WIB<br>
                     </div>
                 </div>
             </div>
