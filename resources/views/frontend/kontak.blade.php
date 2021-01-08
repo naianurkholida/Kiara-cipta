@@ -52,14 +52,15 @@
                         <i class="icon-whatsapp-square"></i> 0821 33554191<br>
                         <i class="icon-clock"></i> Senin – Minggu : 10:00 - 17:00 WIB<br><br>
 
-                        <b>GadingSerpong</b><br><br>
+                        <b>Gading Serpong</b><br><br>
                         Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, <br>
                         Gading Serpong, Pakulonan Barat, Kelapa dua Kota Tangerang, Banten.<br>
                         <i class="icon-phone-sign"></i> 02154214764<br>
                         <i class="icon-phone-sign"></i> 02154214756<br>
                         <i class="icon-phone-sign"></i> 02154214758<br>
                         <i class="icon-whatsapp-square"></i> 0821 33554192<br>
-                        <i class="icon-clock"></i> Senin - Jumat : 11:00 - 19:00 WIB & Sabtu - Minggu : 10:00 - 18:00 WIB<br><br>
+                        <i class="icon-clock"></i> Senin - Jumat : 11:00 - 19:00 WIB<br>
+                        <i class="icon-clock"></i> Sabtu - Minggu : 10:00 - 18:00 WIB<br><br>
 
                         <b>Kontak Kami</b><br>
                         <i class="icon-whatsapp-square"></i> 0822 58883050<br><br>
