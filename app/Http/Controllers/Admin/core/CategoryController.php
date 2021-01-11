@@ -214,7 +214,7 @@ class CategoryController extends Controller
     	// }
 
     	// Gambar::where('id_relasi', $id)->delete();
-    	$dataCat = Category::where('id', $id);
+    	$dataCat = Category::where('id', $id)->first();
 
     	$language = MenuFrontPageLanguage::where('judul_menu', $dataCat->category);
     	$languageFirst = MenuFrontPage::where('id', $language[0]->id_menu_front_page)->delete();
