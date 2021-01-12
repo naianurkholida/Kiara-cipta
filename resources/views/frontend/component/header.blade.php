@@ -130,7 +130,6 @@
                                                     <h2>
                                                     {{ $value->getPostingLanguage->judul }}
                                                     </h2>
-                                                    {{ Helper::removeTags($value->getPostingLanguage->content) }}
                                                     <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%;">Find Out More</a>
                                                 </div>
                                             </div>
@@ -263,7 +262,6 @@
                                                     <h2>
                                                         {{ $value->getPostingLanguage->judul }}
                                                     </h2>
-                                                    {{ Helper::removeTags($value->getPostingLanguage->content) }}
                                                     <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%;">Find Out More</a>
                                                 </div>
                                             </div>
