@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Page with empty content">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="_globalsign-domain-verification" content="faYUt9pHF1Oqq4zNeoIbmo5lX9cck5K_tdXhwpvmK-" />
 
     <!-- Stylesheets
     	============================================= -->
