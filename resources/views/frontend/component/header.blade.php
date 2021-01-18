@@ -100,7 +100,7 @@
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">{{ $value->getProdukLanguage->judul }}</a>
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -232,7 +232,7 @@
                                                     </h2>
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
                                                     <br><br><br>
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">{{ $value->getProdukLanguage->judul }}</a>
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">See More</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
