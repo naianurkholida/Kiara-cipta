@@ -53,11 +53,12 @@ class TreatmentController extends Controller
         if($request->trigger == 1){
 			foreach ($request->judul as $key => $value) {
 				$treatment_language = new TreatmentLanguage;
-                $treatment_language->seo            = Str::slug($request->judul[0]);
+                $treatment_language->seo              = Str::slug($request->judul[0]);
                 $treatment_language->id_treatment     = $treatment->id;
-				$treatment_language->id_language    = $request->language[$key];
-				$treatment_language->judul 	      = $request->judul[0];
-				$treatment_language->deskripsi 	  = $request->deskripsi[0];
+				$treatment_language->id_language      = $request->language[$key];
+				$treatment_language->judul 	          = $request->judul[0];
+				$treatment_language->resume           = $request->resume[0];
+				$treatment_language->deskripsi 	      = $request->deskripsi[0];
                 $treatment_language->save();
 			}
 		}else{
@@ -65,10 +66,11 @@ class TreatmentController extends Controller
 				if($request->judul[$key] != null){
 					$treatment_language = new TreatmentLanguage;
                     $treatment_language->seo            = Str::slug($request->judul[$key]);
-                    $treatment_language->id_treatment     = $treatment->id;
+                    $treatment_language->id_treatment   = $treatment->id;
 					$treatment_language->id_language    = $request->language[$key];
-					$treatment_language->judul 	      = $request->judul[$key];
-					$treatment_language->deskripsi 	  = $request->deskripsi[$key];
+					$treatment_language->judul 	      	= $request->judul[$key];
+					$treatment_language->resume         = $request->resume[$key];
+					$treatment_language->deskripsi 	  	= $request->deskripsi[$key];
                     $treatment_language->save();
 				}
 			}
@@ -107,17 +109,19 @@ class TreatmentController extends Controller
 					$treatment_language = TreatmentLanguage::where('id', $request->idl[$key])->first();
 					$treatment_language->seo 			  = Str::slug($request->judul[0]);
 					$treatment_language->id_treatment     = $treatment->id;
-					$treatment_language->id_language    = $request->language[$key];
-					$treatment_language->judul 	      = $request->judul[0];
-					$treatment_language->deskripsi 	  = $request->deskripsi[0];		
+					$treatment_language->id_language      = $request->language[$key];
+					$treatment_language->judul 	      	  = $request->judul[0];
+					$treatment_language->resume           = $request->resume[0];
+					$treatment_language->deskripsi 	      = $request->deskripsi[0];		
 					$treatment_language->save();
 				}else{
 					$treatment_language = new TreatmentLanguage;
 					$treatment_language->seo 			  = Str::slug($request->judul[0]);	
 					$treatment_language->id_treatment     = $treatment->id;
-					$treatment_language->id_language    = $request->language[$key];
-					$treatment_language->judul 	      = $request->judul[0];
-					$treatment_language->deskripsi 	  = $request->deskripsi[0];		
+					$treatment_language->id_language      = $request->language[$key];
+					$treatment_language->judul 	          = $request->judul[0];
+					$treatment_language->resume           = $request->resume[0];
+					$treatment_language->deskripsi 	      = $request->deskripsi[0];		
 					$treatment_language->save();
 				}
 			}
@@ -129,17 +133,19 @@ class TreatmentController extends Controller
 						$treatment_language = TreatmentLanguage::where('id', $request->idl[$key])->first();
 						$treatment_language->seo 			  = Str::slug($request->judul[$key]);	
 						$treatment_language->id_treatment     = $treatment->id;
-						$treatment_language->id_language    = $request->language[$key];
-						$treatment_language->judul 	      = $request->judul[$key];
-						$treatment_language->deskripsi 	  = $request->deskripsi[$key];		
+						$treatment_language->id_language      = $request->language[$key];
+						$treatment_language->judul 	          = $request->judul[$key];
+						$treatment_language->resume           = $request->resume[$key];
+						$treatment_language->deskripsi 	      = $request->deskripsi[$key];		
 						$treatment_language->save();
 					}else{
 						$treatment_language = new TreatmentLanguage;
 						$treatment_language->seo 			  = Str::slug($request->judul[$key]);	
 						$treatment_language->id_treatment     = $treatment->id;
-						$treatment_language->id_language    = $request->language[$key];
-						$treatment_language->judul 	      = $request->judul[$key];
-						$treatment_language->deskripsi 	  = $request->deskripsi[$key];		
+						$treatment_language->id_language      = $request->language[$key];
+						$treatment_language->judul 	          = $request->judul[$key];
+						$treatment_language->resume           = $request->resume[$key];
+						$treatment_language->deskripsi 	      = $request->deskripsi[$key];		
 						$treatment_language->save();
 					}
 				}

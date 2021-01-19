@@ -42,7 +42,8 @@
 			@if($lang->id == $pl->id_language)
 			<?php 
 			$found   = 1; 
-			$judul   = $pl->judul; 
+			$judul   = $pl->judul;
+			$resume  = $pl->resume; 
 			$content = $pl->deskripsi;
 			$idl     = $pl->id;
 			?>
@@ -61,6 +62,10 @@
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" value="{{$judul}}">
 				</div>
 				<div class="col-md-12">
+					<label for="">Resume</label>
+					<textarea id="resume[<?=$key?>]" class="form-control" name="resume[]">{{$resume}}</textarea>
+				</div>
+				<div class="col-md-12">
 					<label for="">content</label>
 					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1">{{$content}}</textarea>
 				</div>
@@ -75,6 +80,10 @@
 				<div class="col-md-12">
 					<label for="">Title</label>
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control">
+				</div>
+				<div class="col-md-12">
+					<label for="">Resume</label>
+					<textarea id="resume[<?=$key?>]" class="form-control" name="resume[]"></textarea>
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>

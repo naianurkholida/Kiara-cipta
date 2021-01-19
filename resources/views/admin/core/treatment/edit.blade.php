@@ -43,6 +43,7 @@
 			<?php 
 			$found   = 1; 
 			$judul   = $pl->judul; 
+			$resume  = $pl->resume;
 			$content = $pl->deskripsi;
 			$idl     = $pl->id;
 			?>
@@ -61,6 +62,10 @@
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" value="{{$judul}}" required="">
 				</div>
 				<div class="col-md-12">
+					<label>Resume</label>
+					<textarea class="form-control" id="resume[<?=$key?>]" name="resume" rows="5">{{ $resume }}</textarea>
+				</div>
+				<div class="col-md-12">
 					<label for="">content</label>
 					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1" required="">{{$content}}</textarea>
 				</div>
@@ -75,6 +80,10 @@
 				<div class="col-md-12">
 					<label for="">Title</label>
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" required="">
+				</div>
+				<div class="col-md-12">
+					<label>Resume</label>
+					<textarea class="form-control" id="resume[<?=$key?>]" name="resume" rows="5"></textarea>
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>

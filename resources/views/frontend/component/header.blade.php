@@ -67,9 +67,13 @@
                                                     <h2>
                                                     {{ $value->getTreatmentLanguage->judul }}
                                                     </h2>
+                                                    @if($value->getTreatmentLanguage->resume != null)
+                                                    {{ Helper::removeTags($value->getTreatmentLanguage->resume) }}
+                                                    @else
                                                     {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
+                                                    @endif
                                                     <br>
-                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">{{ $value->getTreatmentLanguage->judul }}</a>
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">See More</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -99,7 +103,11 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }}
                                                     </h2>
+                                                    @if($value->getProdukLanguage->resume != null)
+                                                    {{ Helper::removeTags($value->getProdukLanguage->resume) }}
+                                                    @else
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    @endif
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
                                                 </div>
                                             </div>
@@ -197,9 +205,13 @@
                                                     <h2>
                                                     {{ $value->getTreatmentLanguage->judul }}
                                                     </h2>
+                                                    @if($value->getTreatmentLanguage->resume != null)
+                                                    {{ Helper::removeTags($value->getTreatmentLanguage->resume) }}
+                                                    @else
                                                     {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
+                                                    @endif
                                                     <br>
-                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">{{ $value->getTreatmentLanguage->judul }}</a>
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">See More</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -230,7 +242,11 @@
                                                     <h2>
                                                     {{ $value->getProdukLanguage->judul }} test
                                                     </h2>
+                                                    @if($value->getProdukLanguage->resume != null)
+                                                    {{ Helper::removeTags($value->getProdukLanguage->resume) }}
+                                                    @else
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    @endif
                                                     <br><br><br>
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">See More</a>
                                                 </div>

@@ -47,6 +47,10 @@
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" required>
 				</div>
 				<div class="col-md-12">
+					<label>Resume</label>
+					<textarea class="form-control" name="resume[]" id="resume[<?=$key?>]" rows="5"></textarea>
+				</div>
+				<div class="col-md-12">
 					<label for="">content</label>
 					<textarea id="content[<?=$key?>]" name="deskripsi[]" cols="30" rows="10" class="summernote" id="kt_summernote_1" required></textarea>
 				</div>

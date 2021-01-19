@@ -49,10 +49,11 @@ class ProdukController extends Controller
         if($request->trigger == 1){
 			foreach ($request->judul as $key => $value) {
 				$produk_language = new ProdukLanguage;
-                $produk_language->seo            = Str::slug($request->judul[0]);
-                $produk_language->id_produk     = $produk->id;
-				$produk_language->id_language    = $request->language[$key];
+                $produk_language->seo             = Str::slug($request->judul[0]);
+                $produk_language->id_produk       = $produk->id;
+				$produk_language->id_language     = $request->language[$key];
 				$produk_language->judul 	      = $request->judul[0];
+				$produk_language->resume          = $request->resume[0];
 				$produk_language->deskripsi 	  = $request->deskripsi[0];
                 $produk_language->save();
 			}
@@ -60,10 +61,11 @@ class ProdukController extends Controller
 			foreach($request->judul as $key => $value){
 				if($request->judul[$key] != null){
 					$produk_language = new ProdukLanguage;
-                    $produk_language->seo            = Str::slug($request->judul[$key]);
-                    $produk_language->id_produk     = $produk->id;
-					$produk_language->id_language    = $request->language[$key];
+                    $produk_language->seo             = Str::slug($request->judul[$key]);
+                    $produk_language->id_produk       = $produk->id;
+					$produk_language->id_language     = $request->language[$key];
 					$produk_language->judul 	      = $request->judul[$key];
+					$produk_language->resume          = $request->resume[$key];
 					$produk_language->deskripsi 	  = $request->deskripsi[$key];
                     $produk_language->save();
 				}
@@ -102,17 +104,19 @@ class ProdukController extends Controller
 				if($ceker == 1){
 					$produk_language = ProdukLanguage::where('id', $request->idl[$key])->first();
 					$produk_language->seo 			  = Str::slug($request->judul[0]);
-					$produk_language->id_produk     = $produk->id;
-					$produk_language->id_language    = $request->language[$key];
+					$produk_language->id_produk       = $produk->id;
+					$produk_language->id_language     = $request->language[$key];
 					$produk_language->judul 	      = $request->judul[0];
+					$produk_language->resume          = $request->resume[0];
 					$produk_language->deskripsi 	  = $request->deskripsi[0];		
 					$produk_language->save();
 				}else{
 					$produk_language = new ProdukLanguage;
 					$produk_language->seo 			  = Str::slug($request->judul[0]);	
-					$produk_language->id_produk     = $produk->id;
-					$produk_language->id_language    = $request->language[$key];
+					$produk_language->id_produk       = $produk->id;
+					$produk_language->id_language     = $request->language[$key];
 					$produk_language->judul 	      = $request->judul[0];
+					$produk_language->resume          = $request->resume[0];
 					$produk_language->deskripsi 	  = $request->deskripsi[0];		
 					$produk_language->save();
 				}
@@ -124,17 +128,19 @@ class ProdukController extends Controller
 					if($ceker == 1){
 						$produk_language = ProdukLanguage::where('id', $request->idl[$key])->first();
 						$produk_language->seo 			  = Str::slug($request->judul[$key]);	
-						$produk_language->id_produk     = $produk->id;
-						$produk_language->id_language    = $request->language[$key];
+						$produk_language->id_produk       = $produk->id;
+						$produk_language->id_language     = $request->language[$key];
 						$produk_language->judul 	      = $request->judul[$key];
+						$produk_language->resume          = $request->resume[$key];
 						$produk_language->deskripsi 	  = $request->deskripsi[$key];		
 						$produk_language->save();
 					}else{
 						$produk_language = new ProdukLanguage;
 						$produk_language->seo 			  = Str::slug($request->judul[$key]);	
-						$produk_language->id_produk     = $produk->id;
-						$produk_language->id_language    = $request->language[$key];
+						$produk_language->id_produk       = $produk->id;
+						$produk_language->id_language     = $request->language[$key];
 						$produk_language->judul 	      = $request->judul[$key];
+						$produk_language->resume          = $request->resume[$key];
 						$produk_language->deskripsi 	  = $request->deskripsi[$key];		
 						$produk_language->save();
 					}
