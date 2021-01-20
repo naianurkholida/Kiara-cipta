@@ -99,7 +99,7 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail text-center" style="font-size: 18px; align-items: center; justify-content: space-between; height: 300px;">
+                                                <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
@@ -235,7 +235,7 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail text-center" style="font-size: 18px; align-items: center; justify-content: space-between; height: 300px;">
+                                                <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
