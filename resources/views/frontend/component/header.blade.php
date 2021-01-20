@@ -99,11 +99,11 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail text-center" style="font-size: 18px;">
+                                                <div class="desc-detail text-center" style="font-size: 18px; align-items: center; justify-content: space-between; height: 300px;">
                                                     @if($value->getProdukLanguage->resume != null)
-                                                    {{ $value->getProdukLanguage->resume }}
+                                                    <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
-                                                    {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
                                                 </div>
@@ -235,11 +235,11 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail text-center" style="font-size: 18px;">
+                                                <div class="desc-detail text-center" style="font-size: 18px; align-items: center; justify-content: space-between; height: 300px;">
                                                     @if($value->getProdukLanguage->resume != null)
-                                                    {{ $value->getProdukLanguage->resume }}
+                                                    <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
-                                                    {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
+                                                    <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br><br><br>
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">See More</a>
