@@ -99,10 +99,7 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail">
-                                                    <h2>
-                                                    {{ $value->getProdukLanguage->judul }}
-                                                    </h2>
+                                                <div class="desc-detail text-center">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     {{ Helper::removeTags($value->getProdukLanguage->resume) }}
                                                     @else
@@ -238,10 +235,7 @@
                                                 @foreach($value->getMedia('produk') as $row)
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $row->getUrl() }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 @endforeach
-                                                <div class="desc-detail">
-                                                    <h2>
-                                                    {{ $value->getProdukLanguage->judul }} test
-                                                    </h2>
+                                                <div class="desc-detail text-center">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     {{ Helper::removeTags($value->getProdukLanguage->resume) }}
                                                     @else
