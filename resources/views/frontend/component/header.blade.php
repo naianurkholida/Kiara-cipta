@@ -101,7 +101,7 @@
                                                 @endforeach
                                                 <div class="desc-detail text-center">
                                                     @if($value->getProdukLanguage->resume != null)
-                                                    {{ Helper::removeTags($value->getProdukLanguage->resume) }}
+                                                    {{ $value->getProdukLanguage->resume }}
                                                     @else
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
                                                     @endif
@@ -237,7 +237,7 @@
                                                 @endforeach
                                                 <div class="desc-detail text-center">
                                                     @if($value->getProdukLanguage->resume != null)
-                                                    {{ Helper::removeTags($value->getProdukLanguage->resume) }}
+                                                    {{ $value->getProdukLanguage->resume }}
                                                     @else
                                                     {{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}
                                                     @endif
