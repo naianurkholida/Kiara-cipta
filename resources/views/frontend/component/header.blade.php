@@ -63,14 +63,11 @@
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
 
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
-                                                <div class="desc-detail">
-                                                    <h2>
-                                                    {{ $value->getTreatmentLanguage->judul }}
-                                                    </h2>
+                                                <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getTreatmentLanguage->resume != null)
-                                                    {{ Helper::removeTags($value->getTreatmentLanguage->resume) }}
+                                                    <p>{{ $value->getTreatmentLanguage->resume }}</p>
                                                     @else
-                                                    {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
+                                                    <p>{{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br>
                                                     <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">See More</a>
@@ -198,14 +195,11 @@
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
                                                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
-                                                <div class="desc-detail">
-                                                    <h2>
-                                                    {{ $value->getTreatmentLanguage->judul }}
-                                                    </h2>
+                                                <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getTreatmentLanguage->resume != null)
-                                                    {{ Helper::removeTags($value->getTreatmentLanguage->resume) }}
+                                                    <p>{{ $value->getTreatmentLanguage->resume }}</p>
                                                     @else
-                                                    {{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}
+                                                    <p>{{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br>
                                                     <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">See More</a>
