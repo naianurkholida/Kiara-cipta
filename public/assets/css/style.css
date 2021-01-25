@@ -16752,7 +16752,7 @@ body:not(.no-transition) #wrapper,
     }
 
     .box-pop{
-        width: 80% !important;
+        max-width: 95% !important;
         height: 30vh !important;
         background-color: white;
         border-radius: 20px;
@@ -17072,3 +17072,54 @@ body:not(.no-transition) #wrapper,
     }
     
 }
+
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box-dokter{
+    width: 24%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.filter-box{
+    width: 50% !important;
+    display: flex;
+    justify-content: space-between;
+}
+.box-kontak{
+    width: 60% ;
+}
+.item-kontak{
+    width: 24% !important;
+}
+@media (max-width: 425px) {
+    .box-dokter{
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .filter-box{
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+    }
+    .box-kontak{
+        width: 100%;
+    }
+    .item-kontak{
+        width: 100% !important;
+    }
+}
+
+.container-gallery{
+    display: flex;
+    justify-content: center;
+}
+
+.container-kontak{
+    display: flex;
+    justify-content: center;
+}
+

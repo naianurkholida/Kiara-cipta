@@ -5,7 +5,7 @@
 
 <link rel="canonical" href="http://derma-express.com/">
 
-<title>Dashboard</title>
+<title>Home | Derma Express</title>
 @endsection
 
 @section('content')

@@ -10,11 +10,11 @@
 
 @section('content')
 <div class="section nobg nobottommargin clearfix">
-    <div class="container clearfix">
+    <div class="container clearfix container-gallery">
 
         <!-- Portfolio Filter
         ============================================= -->
-        <ul class="portfolio-filter style-2 center clearfix" data-container="#portfolio" style="margin-left:25%;" id="boxmenu">
+        <div class="portfolio-filter style-2 center clearfix filter-box" data-container="#portfolio" id="boxmenu">
 
             <!-- <li class="activeFilter" id="menu-item-gallery"><a href="#" data-filter="*">Show All</a></li> -->
             @foreach($category as $row)
@@ -23,7 +23,7 @@
                 @endif
             @endforeach
 
-        </ul>
+        </div>
         <!-- #portfolio-filter end -->
     </div>
 
