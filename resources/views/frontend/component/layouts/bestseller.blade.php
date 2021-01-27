@@ -16,7 +16,6 @@
             <div class="overlay-bestseller">
                 <div class="container-overlay">
                     <div>
-                        <!-- <p style="margin-bottom:0px !important; margin-left:10px; font-size:20px">{{$row->getCategory->category}}</p><br> -->
                         <?php $icon = Helper::iconProdukBestSeller($row->id); ?>
                         @foreach($icon as $val)
                         <img src="{{ asset('assets/admin/assets/media/icons/') }}/{{ $val->icon }}" alt="" style="width: 50px;">
