@@ -17,11 +17,11 @@
     </div>
     <div class="container-flex container">
         @foreach($data as $row)
-                <div class="box-dokter" style="height: 414px;">
-                    <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('produk') }});"></div>
-                    <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
-                    <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getProdukLanguage->deskripsi) !!}</p>
-                </div>
+        <div class="box-dokter" style="height: 414px;">
+            <div class="img-dokter" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}});" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
+            <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
+            <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getProdukLanguage->deskripsi) !!}</p>
+        </div>
         @endforeach
     </div>
 
@@ -29,13 +29,13 @@
 @endsection
 
 @section('js')
-    <script>
-        
-        if (window.matchMedia('(max-width: 425px)'))
-        {
-            $( "#container_dalem" ).removeClass("container");
-        } else {
-            $( "#container_dalem" ).addClass("container");
-        }
-    </script>
+<script>
+    
+    if (window.matchMedia('(max-width: 425px)'))
+    {
+        $( "#container_dalem" ).removeClass("container");
+    } else {
+        $( "#container_dalem" ).addClass("container");
+    }
+</script>
 @endsection
