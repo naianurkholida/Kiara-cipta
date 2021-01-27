@@ -62,7 +62,7 @@
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
 
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getTreatmentLanguage->resume != null)
                                                     <p>{{ $value->getTreatmentLanguage->resume }}</p>
@@ -194,7 +194,7 @@
 
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ $value->getFirstMediaUrl('treatment') }}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getTreatmentLanguage->resume != null)
                                                     <p>{{ $value->getTreatmentLanguage->resume }}</p>
