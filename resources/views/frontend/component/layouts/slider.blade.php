@@ -9,7 +9,7 @@
           $code_warna = "#dedede;";
         }?>
         <div class="item" data-hash="{{$key+1}}">
-            <img src="{{ $row->getFirstMediaUrl('slider') }}" alt="Derma Express">
+            <img src="{{ asset('assets/admin/assets/media/slider') }}/{{$slide->image}}" alt="Derma Express">
             @if($row->link != null && $row->link != '-')
             <a href="{{ $row->link }}" class="btn btn-info button-slider" style="position: absolute; bottom: 50px; left: 39%; width: 300px; font-size: 25px;" target="blank">
                 {{ $row->title_button }}
