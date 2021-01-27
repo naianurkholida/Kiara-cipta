@@ -11,9 +11,7 @@
     <div class="box-bestseller">
         @foreach(Helper::produkListBestSeller() as $row)
         <div class="item-bestseller">
-            @foreach($row->getMedia('produk') as $val)
-            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$val->image}})" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
-            @endforeach
+            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}})" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
             <div class="btn-bestseller"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
             <div class="overlay-bestseller">
                 <div class="container-overlay">
