@@ -346,8 +346,8 @@
                 <div id="post-list-footer">
                     <div class="spost clearfix">
                         <div class="entry-c">
-                            <a href="{{ Helper::cwhatsapp() }}"><i
-                                class="icon-whatsapp-square"></i> 0822 58883050
+                            <a href="https://wa.me/message/NWV7N73Q5VWDD1" target="blank"><i
+                                class="icon-whatsapp-square"></i> 082258883050
                             </a>
                         </div>
                         <br>
@@ -357,14 +357,16 @@
                             </div>
                             <ul class="entry-meta">
                                 <strong>Utan kayu</strong><br>
-                                <span>Senin – Minggu : 10:00 -17:00 WIB</span><br><br>
+                                <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
+                                <span>Sabtu - Minggu : 10:00 - 17:00 WIB</span><br><br>
 
                                 <strong>Serpong</strong><br>
                                 <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
-                                <span>Sabtu - Minggu : 10:00 - 18:00 WIB</span><br><br>
+                                <span>Sabtu - Minggu : 10:00 - 17:00 WIB</span><br><br>
 
                                 <strong>Tawakal</strong><br>
-                                <span>Senin – Minggu : 10:00 -17:00 WIB</span><br><br>
+                                <span>Senin - Jumat : 11:00 - 19:00 WIB</span><br>
+                                <span>Sabtu - Minggu : 10:00 - 17:00 WIB</span><br><br>
                             </ul>
                         </div>
                     </div>
