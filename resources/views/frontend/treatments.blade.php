@@ -18,7 +18,7 @@
     <div class="container container-flex">
         @foreach($data as $row)
             <div class="box-dokter" style="min-height: 441px;">
-                <div class="img-dokter" style="background-image: url({{ $row->getFirstMediaUrl('treatment') }});"></div>
+                <div class="img-dokter" style="background-image: url({{ asset('assets/admin/assets/media/derma_treatment') }}/{{$row->image}});"></div>
                 <a href="{{ route('dermaster.treatments.show', $row->getTreatmentLanguage->seo) }}">
                     <p id="dokter-name">
                         {{ $row->getTreatmentLanguage->judul }}
