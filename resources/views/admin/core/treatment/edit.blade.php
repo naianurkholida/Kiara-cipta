@@ -72,7 +72,7 @@
 				</div>
 				<div class="col-md-12">
 					<label>Resume</label>
-					<textarea class="form-control" id="resume[<?=$key?>]" name="resume" rows="5">{{ $resume }}</textarea>
+					<textarea class="form-control" id="resume[<?=$key?>]" name="resume[]" rows="5">{{ $resume }}</textarea>
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-md-12">
 					<label>Resume</label>
-					<textarea class="form-control" id="resume[<?=$key?>]" name="resume" rows="5"></textarea>
+					<textarea class="form-control" id="resume[<?=$key?>]" name="resume[]" rows="5"></textarea>
 				</div>
 				<div class="col-md-12">
 					<label for="">content</label>
