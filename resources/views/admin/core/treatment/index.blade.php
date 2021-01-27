@@ -19,7 +19,7 @@
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
 						<th>Title</th>
-						<th>Content</th>
+						<th>Image</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -35,9 +35,7 @@
 							@endif
 						</td>
 						<td>
-							@if($row->getTreatmentLanguage)
-							{!! $row->getTreatmentLanguage->deskripsi !!}
-							@endif
+							<a href="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$row->image}}" target="blank">{{ $row->image }}</a>
 						</td>
 						<td class="text-center">
 							<a href="{{Route('treatment.edit',$row->id)}}" class="btn btn-sm btn-primary">
