@@ -39,8 +39,8 @@
 
                             <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
                                 <div class="portfolio-image">
-                                    <a href="{{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$row->image}}" data-lightbox="gallery">
-                                        <div id="item-gallery" style ="background-image:url({{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$row->image}})"></div>
+                                    <a href="{{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$item->image}}" data-lightbox="gallery">
+                                        <div id="item-gallery" style ="background-image:url({{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$item->image}})"></div>
                                         <div class="portfolio-overlay">
                                             <div class="portfolio-desc">
                                                 <h3>Open image</h3>
