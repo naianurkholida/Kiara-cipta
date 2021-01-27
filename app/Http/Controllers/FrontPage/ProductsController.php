@@ -75,7 +75,6 @@ class ProductsController extends Controller
 
         $data = Produk::findOrFail($dataLanguage->id_produk);
 
-
         return view('frontend.products-detail', compact('data'));
     }
 
