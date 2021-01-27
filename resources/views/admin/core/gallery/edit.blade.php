@@ -77,8 +77,8 @@
 
 				<div class="col-lg-12" id="image">
 					<label>Gambar</label><br>
-					<div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
-						<div class="kt-avatar__holder" style="width: 300px; height:300px; background-image: url({{ asset($gallery->embed == NULL ? $data : 'public/image/default/placeholder.png') }})"></div>
+					<div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 300px;">
+						<div class="kt-avatar__holder" style="width: 100%; height:300px; background-image: url({{ asset('assets/admin/assets/media/derma_gallery') }}/{{ $gallery->image  }})"></div>
 						<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 							<i class="fa fa-pen"></i>
 							<input type="file" name="image" accept=".png, .jpg, .jpeg">

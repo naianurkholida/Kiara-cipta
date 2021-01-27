@@ -73,9 +73,6 @@
             <div class="col-md-6">
                 <h3>Posting</h3>
             </div>
-            <!-- <div class="col-md-6">
-                <button type="button" class="btn btn-primary pull-right" onclick="cek_simpan()">Simpan</button>
-            </div> -->
         </div>
 	</div>
 	<div class="card-body">
@@ -83,6 +80,22 @@
 			<form action="{{Route('posting.post')}}" method="post" id="form" enctype="multipart/form-data">
             {{csrf_field()}}
                 <input type="hidden" name="id_posting_related" id="id_posting_related">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label>Cover</label><br>
+                        <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 300px;">
+                            <div class="kt-avatar__holder" style="width: 100%; height:300px; background-image: url({{ asset('assets/admin/assets/media/posting') }})"></div>
+                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                                <i class="fa fa-pen"></i>
+                                <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                            </label>
+                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                                <i class="fa fa-times"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="">Kategori</label>
@@ -92,24 +105,6 @@
                                 <option value="{{$category->id}}">{{$category->category}}</option>
                             @endforeach
                         </select>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <label>Cover</label><br>
-                        <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
-                            <div class="kt-avatar__holder" style="width: 300px; height:300px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
-                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                <i class="fa fa-pen"></i>
-                                <input type="file" name="image" accept=".png, .jpg, .jpeg">
-                            </label>
-                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                <i class="fa fa-times"></i>
-                            </span>
-                        </div>
                     </div>
                 </div>
                 <hr>

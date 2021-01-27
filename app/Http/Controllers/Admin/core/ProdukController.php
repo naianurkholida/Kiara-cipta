@@ -14,9 +14,20 @@ use App\Entities\Admin\core\Role as Role;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\ProdukLanguage;
 use Carbon\Carbon;
+use Image;
+use File;
+use DB;
 
 class ProdukController extends Controller
 {
+	public function __construct()
+	{
+        //Definisi PATH Foto
+		$this->path =  'assets/admin/assets/media/derma_produk';
+        //Definisi Dimensi Foto
+		$this->dimensions = ['500'];
+	}
+
     public function index()
     {
         $data = Produk::with('getProdukLanguage')->where('deleted_at', NULL)->get();
@@ -35,16 +46,68 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
+    	#upload foto to database
+		$file = $request->file('image');
+
+        #JIKA FOLDERNYA BELUM ADA
+		if (!File::isDirectory($this->path)) {
+            #MAKA FOLDER TERSEBUT AKAN DIBUAT
+			File::makeDirectory($this->path);
+		}
+
+        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+		$fileName = 'Produk' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+		$size   = getimagesize($file);
+		$width  = $size[0];
+		$height = $size[1];
+
+		if($width > $height){
+			$size = ($width/$height);
+		}else{
+			$size = ($height/$width);
+		}
+
+        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+		Image::make($file)->save($this->path . '/' . $fileName);
+		foreach ($this->dimensions as $row) {
+            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+			if($width < $height){
+				$canvas = Image::canvas($row, ceil($row*$size));
+				$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+					$constraint->aspectRatio();
+				});
+			}else{
+				$canvas = Image::canvas(($row*$size), $row);
+				$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+					$constraint->aspectRatio();
+				});
+			}
+
+            #CEK JIKA FOLDERNYA BELUM ADA
+			if (!File::isDirectory($this->path . '/' . $row)) {
+                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+				File::makeDirectory($this->path . '/' . $row);
+			}
+
+            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+			$canvas->insert($resizeImage, 'center');
+            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+          
+			$canvas->save($this->path . '/500/' . $fileName);
+		}
+
         $data = [
             'id_category'   => $request->kategori_produk,
-            'is_created'    => \Session::get('id')
+            'is_created'    => \Session::get('id'),
+            'image'         => $fileName,
         ];
 
         $produk = Produk::create($data);
 
-        foreach ($request->input('document', []) as $file) {
-            $produk->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('produk');
-        }
+        // foreach ($request->input('document', []) as $file) {
+        //     $produk->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('produk');
+        // }
 
         if($request->trigger == 1){
 			foreach ($request->judul as $key => $value) {
@@ -91,11 +154,67 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id)
     {
+    	#upload foto to database
+		$file = $request->file('image');
+
+        #JIKA FOLDERNYA BELUM ADA
+		if (!File::isDirectory($this->path)) {
+            #MAKA FOLDER TERSEBUT AKAN DIBUAT
+			File::makeDirectory($this->path);
+		}
+
+        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+		$fileName = 'Produk' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+		$size   = getimagesize($file);
+		$width  = $size[0];
+		$height = $size[1];
+
+		if($width > $height){
+			$size = ($width/$height);
+		}else{
+			$size = ($height/$width);
+		}
+
+        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+		Image::make($file)->save($this->path . '/' . $fileName);
+		foreach ($this->dimensions as $row) {
+            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+			if($width < $height){
+				$canvas = Image::canvas($row, ceil($row*$size));
+				$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+					$constraint->aspectRatio();
+				});
+			}else{
+				$canvas = Image::canvas(($row*$size), $row);
+				$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+					$constraint->aspectRatio();
+				});
+			}
+
+            #CEK JIKA FOLDERNYA BELUM ADA
+			if (!File::isDirectory($this->path . '/' . $row)) {
+                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+				File::makeDirectory($this->path . '/' . $row);
+			}
+
+            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+			$canvas->insert($resizeImage, 'center');
+            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+          
+			$canvas->save($this->path . '/500/' . $fileName);
+		}
+
         $data = [
-            'id_category'   => $request->kategori_produk
+            'id_category'   => $request->kategori_produk,
+            'image'         => $fileName
         ];
 
         $produk = Produk::findOrFail($id);
+
+        File::delete($this->path.'/'.$produk->image);
+        File::delete($this->path.'/500/'.$produk->image);
+
         $produk->update($data);
 
         if($request->trigger == 1){
@@ -148,21 +267,21 @@ class ProdukController extends Controller
 			}
         }
 
-        if (count($produk->getMedia('produk')) > 0) {
-            foreach ($produk->getMedia('produk') as $media) {
-                if (!in_array($media->file_name, $request->input('document', []))) {
-                    $media->delete();
-                }
-            }
-        }
+        // if (count($produk->getMedia('produk')) > 0) {
+        //     foreach ($produk->getMedia('produk') as $media) {
+        //         if (!in_array($media->file_name, $request->input('document', []))) {
+        //             $media->delete();
+        //         }
+        //     }
+        // }
 
-        $media = $produk->getMedia('produk')->pluck('file_name')->toArray();
+        // $media = $produk->getMedia('produk')->pluck('file_name')->toArray();
 
-        foreach ($request->input('document', []) as $file) {
-            if (count($media) === 0 || !in_array($file, $media)) {
-                $produk->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('produk');
-            }
-        }
+        // foreach ($request->input('document', []) as $file) {
+        //     if (count($media) === 0 || !in_array($file, $media)) {
+        //         $produk->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('produk');
+        //     }
+        // }
 
         return redirect()->route('produk.index')->with('info', 'Data Berhasil di Update');
 	}

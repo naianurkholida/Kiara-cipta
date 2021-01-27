@@ -75,6 +75,10 @@ class BestSellerController extends Controller
 
     	$produk = Produk::with('getProdukLanguage')->where('id_category', 57)->get();
 
+        if(count($produk) < 1){
+            return redirect()->back()->with('danger', 'Produk tidak Tersedia');
+        }
+
     	return view('admin.core.produk.best_seller.insert', compact('top_bar', 'produk'));
     }
 

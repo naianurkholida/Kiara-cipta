@@ -46,38 +46,10 @@
        <form action="{{Route('posting.update', $posting->id)}}" method="post" id="form" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="row">
-            <!-- <div class="col-md-12">
-                <center>
-                    <img src="{{asset('admin\assets\media\posting')}}\{{$posting->image}}" alt="" width="50%">
-                </center>
-            </div> -->
-
-            <div class="col-md-12">
-                <label for="">Kategori</label>
-                <select name="kategori" id="kategori" class="form-control" required="">
-                    <option value="" selected="selected">-- Pilih Kategori--</option>
-                    @foreach($category as $category)
-                    <option value="{{$category->id}}" <?php if($posting->id_category == $category->id){ ?> selected="selected" <?php } ?>>{{$category->category}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <label for="">Status</label>
-                <select class="form-control" name="status">
-                    <option value="1" <?php if($posting->status == '1'){ ?> selected="selected" <?php } ?>>Active</option>
-                    <option value="0" <?php if($posting->status == '0'){ ?> selected="selected" <?php } ?>>Non Active</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-lg-12">
                 <label>Gambar</label><br>
-                <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
-                    <div class="kt-avatar__holder" style="width: 300px; height:300px; background-image: url({{ asset($posting->getFirstMediaUrl('posting') == NULL ? 'public/image/default/placeholder.png' : $data) }})"></div>
+                <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 300px;">
+                    <div class="kt-avatar__holder" style="width: 100%; height:300px; background-image: url({{ asset('assets/admin/assets/media/posting/') }}/{{$posting->image}})"></div>
                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                         <i class="fa fa-pen"></i>
                         <input type="file" name="image" accept=".png, .jpg, .jpeg">
@@ -88,6 +60,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="">Kategori</label>
+                <select name="kategori" id="kategori" class="form-control" required="">
+                    <option value="" selected="selected">-- Pilih Kategori--</option>
+                    @foreach($category as $category)
+                    <option value="{{$category->id}}" <?php if($posting->id_category == $category->id){ ?> selected="selected" <?php } ?>>{{$category->category}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="">Status</label>
+                <select class="form-control" name="status">
+                    <option value="1" <?php if($posting->status == '1'){ ?> selected="selected" <?php } ?>>Active</option>
+                    <option value="0" <?php if($posting->status == '0'){ ?> selected="selected" <?php } ?>>Non Active</option>
+                </select>
+            </div>
+        </div>
+
         <hr>
         <input type="checkbox" onchange="cek_bahasa()" id="all_id"> Bahasa Indonesia Semua
         <input type="hidden" name="trigger" id="hasil_all_id">

@@ -9,6 +9,9 @@ use App\Entities\Admin\core\Gallery;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Language;
+use Image;
+use File;
+use DB;
 
 class GalleryController extends Controller
 {

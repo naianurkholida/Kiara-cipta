@@ -1,10 +1,10 @@
 @extends('component.layouts.master')
 
 @section('button')
-	<a href="{{Route('slider.index')}}" class="btn btn-info">
-		<i class="flaticon-reply"></i>
-		<span>{{ Helper::baseLabelPage() }}</span>
-	</a>
+<a href="{{Route('slider.index')}}" class="btn btn-info">
+  <i class="flaticon-reply"></i>
+  <span>{{ Helper::baseLabelPage() }}</span>
+</a>
 @endsection
 
 <style>
@@ -57,20 +57,20 @@
 		<form action="{{Route('slider.post')}}" method="post" id="form" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="row">
-                    <div class="col-lg-12">
-                        <label>Cover</label><br>
-                        <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%;">
-                            <div class="kt-avatar__holder" style="width: 100%; height:450px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
-                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                <i class="fa fa-pen"></i>
-                                <input type="file" name="image" accept=".png, .jpg, .jpeg">
-                            </label>
-                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                <i class="fa fa-times"></i>
-                            </span>
-                        </div>
+                <div class="col-lg-12">
+                    <label>Cover</label><br>
+                    <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 450px;">
+                        <div class="kt-avatar__holder" style="width: 100%; height:450px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
+                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                            <i class="fa fa-pen"></i>
+                            <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                        </label>
+                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                            <i class="fa fa-times"></i>
+                        </span>
                     </div>
                 </div>
+            </div>
 
             <br>
 
@@ -125,67 +125,25 @@
                 </div>
             </div>
         </form>
-        <!-- <form action="#">
-        	<div class="image-editor">
-        		<input type="file" class="cropit-image-input">
-        		<div class="cropit-preview" style="width:1000px; height:667px;"></div>
-        		<div class="image-size-label">
-        			Resize image
-        		</div>
-        		<input type="range" class="cropit-image-zoom-input">
-        		<input type="hidden" name="image-data" class="hidden-image-data" />
-        		<button type="submit">Submit</button>
-        	</div>
-        </form>
-
-        <div id="result">
-        	<code>$form.serialize() =</code>
-        	<code id="result-data"></code>
-        </div> -->
     </div>
 </div>
 @endsection
 
 @section('js')
 
-<!-- cropit -->
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script>
-        var jquery = jQuery.noConflict(true);
-    </script> -->
-    <script src="{{asset('js/cropit.js')}}"></script>
-    <!-- end cropit -->
+<script src="{{asset('js/cropit.js')}}"></script>
+<script>
+   function cek_simpan(){
+      $("#form").submit()
+  }
 
-    <script>
-    	
-    	$(function() {
-    		$('.image-editor').cropit({'minZoom' : 2});
-
-    		$('form').submit(function() {
-            // Move cropped image data to hidden input
-            var imageData = $('.image-editor').cropit('export');
-            $('.hidden-image-data').val(imageData);
-
-            // Print HTTP request params
-            var formValue = $(this).serialize();
-            $('#result-data').text(formValue);
-
-            // Prevent the form from actually submitting
-            return false;
-        });
-    	});
-
-    	function cek_simpan(){
-    		$("#form").submit()
-    	}
-
-        function cek_bahasa(){
-            var trigger = $("#all_id:checked").length
-            if (trigger > 0) {
-                $("#hasil_all_id").val(1)
-            }else{
-                $("#hasil_all_id").val(0)
-            }
-        }
-    </script>
-    @endsection
+  function cek_bahasa(){
+    var trigger = $("#all_id:checked").length
+    if (trigger > 0) {
+        $("#hasil_all_id").val(1)
+    }else{
+        $("#hasil_all_id").val(0)
+    }
+}
+</script>
+@endsection

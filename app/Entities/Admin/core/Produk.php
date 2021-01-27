@@ -15,6 +15,7 @@ class Produk extends Model implements HasMedia
 	protected $primaryKey = 'id';
 	protected $fillable = [
         'id_category',
+        'image',
         'is_created',
         'deleted_at'
     ];

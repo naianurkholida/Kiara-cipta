@@ -14,7 +14,8 @@ class Gallery extends Model implements HasMedia
         'id_category',
         'is_created',
         'deleted_at',
-        'embed'
+        'embed',
+        'image'
     ];
     
     use HasMediaTrait;

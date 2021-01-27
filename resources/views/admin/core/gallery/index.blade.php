@@ -30,7 +30,17 @@
 					<tr>
 						<td>{{$no}}</td>
 						<td>{{ $row->getFirstMedia('gallery') != NULL || $row->embed == NULL ? 'image' : 'video' }}</td>
-						<td>@if($row->embed != NULL) <a href="{{ $row->embed }}" target="blank">{{ $row->embed }}</a> @else <a href="{{ $row->getFirstMediaUrl('gallery') != NULL ? $row->getFirstMediaUrl('gallery') : '#' }}" target="{{ $row->getFirstMediaUrl('gallery') != NULL ? 'blank' : '_parent' }}">{{ $row->getFirstMediaUrl('gallery') != NULL ? $row->getFirstMediaUrl('gallery') : 'image not set' }}</a> @endif</td>
+						<td>
+							@if($row->embed != NULL) 
+								<a href="{{ $row->embed }}" target="blank">{{ $row->embed }}</a> 
+							@else 
+								@if($row->image)
+								<a href="{{ asset('assets/admin/assets/media/derma_gallery') }}/{{ $row->image }}" target="blank">{{ $row->image }}</a> 
+								@else
+								Image Not Set
+								@endif
+							@endif 
+						</td>
 						<td class="text-center">
 							<a href="{{Route('gallery.edit',$row->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>
