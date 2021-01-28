@@ -16,8 +16,6 @@
 <meta property="article:publisher" content="https://www.facebook.com/dermaxpress/" />
 <meta property="article:tag" content="{{$data->getProdukLanguage->judul}}" />
 <meta property="article:tag" content="Beauty" />
-<meta property="article:tag" content="jerawat" />
-<meta property="article:tag" content="rekomendasi acne cream" />
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
 
