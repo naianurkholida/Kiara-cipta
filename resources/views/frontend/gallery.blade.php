@@ -2,10 +2,14 @@
 
 @section('header')
 <meta name="description" content="Gallery Derma Express.">
-
 <link rel="canonical" href="http://derma-express.com/gallery/show">
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/gallery/show" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Yuk Check Suasana dan Perawatan Derma di Sini." />
 
-<title>Gallery</title>
+<title>Derma Express - Gallery</title>
 @endsection
 
 @section('content')

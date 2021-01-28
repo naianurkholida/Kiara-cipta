@@ -2,8 +2,13 @@
 
 @section('header')
 <meta name="description" content="Kemitraan atau Reseller Derma Express.">
+<link rel="canonical" href="https://derma-express.com/kemitraan">
 
-<link rel="canonical" href="http://derma-express.com/kemitraan">
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/kemitraan" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Kamu Bisa Jadi Reseller Derma, Ayo Daftarkan Data Diri Anda." />
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <title>Reseller</title>

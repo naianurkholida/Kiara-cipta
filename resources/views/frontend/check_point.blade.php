@@ -2,8 +2,14 @@
 
 @section('header')
 <meta name="description" content="Check Point Derma Express.">
+<link rel="canonical" href="https://derma-express.com/checkpoint">
 
-<link rel="canonical" href="http://derma-express.com/checkpoint">
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/checkpoint" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Yuk Check Point Derma Kamu di Sini" />
+
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 <title>Check Point</title>
 @endsection

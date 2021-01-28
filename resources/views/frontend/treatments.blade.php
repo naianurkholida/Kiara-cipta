@@ -2,8 +2,13 @@
 
 @section('header')
 <meta name="description" content="Treatments List Derma Express.">
-
 <link rel="canonical" href="https://derma-express.com/treatments">
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/treatments" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Kamu Bisa Cek Treatment Apa Saja yang Tersedia di Derma Express." />
 
 <title>Treatments List Derma Express</title>
 @endsection

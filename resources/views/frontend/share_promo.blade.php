@@ -1,5 +1,13 @@
 @extends('frontend.component.master')
 
+<meta name="description" content="Promo Derma Express">
+<link rel="canonical" href="https://derma-express.com/promosi/{{$seo}}">
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/promosi/{{$seo}}" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Yuk Check Promo Apa Aja Nih yang Ada di Derma Express." />
+
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0px; padding-top: 10px;">
  

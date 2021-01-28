@@ -3,6 +3,13 @@
 <meta name="description" content="Profil Derma Express - A Company by Dermaster Clinic.">
 <link rel="canonical" href="https://derma-express.com/profile">
 
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/profile" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Yuk Check Profile Derma di Sini." />
+
 <title>Derma Express - A Company by Dermaster Clinic</title>
 @endsection
 @section('content')
