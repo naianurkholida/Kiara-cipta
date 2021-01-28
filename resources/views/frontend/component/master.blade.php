@@ -10,7 +10,7 @@
     <!-- Stylesheets
     	============================================= -->
         <link
-        href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i"
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i"
         rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
@@ -473,8 +473,8 @@
       </script> -->
 
       <!-- JS Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK5BKMT"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK5BKMT"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
         <!-- End Google Tag Manager (noscript) -->
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
