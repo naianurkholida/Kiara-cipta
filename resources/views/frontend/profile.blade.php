@@ -1,6 +1,6 @@
 @extends('frontend.component.master')
 @section('header')
-<meta name="description" content="Profil eDerma Express - A Company by Dermaster Clinic.">
+<meta name="description" content="Profil Derma Express - A Company by Dermaster Clinic.">
 <link rel="canonical" href="https://derma-express.com/profile">
 
 <title>Derma Express - A Company by Dermaster Clinic</title>
@@ -13,7 +13,7 @@
                 @if($val->embed != Null)
                     <iframe width="100%" height="600px" src="{{ $val->embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                 @else
-                    <img src="{{ asset('assets/admin/assets/media/posting') }}/{{$val->image}}" style="height: 600px; width: 100%;">
+                    <img src="{{ asset('assets/admin/assets/media/derma_gallery') }}/{{$val->image}}" style="height: 600px; width: 100%;">
                 @endif
             @endforeach
         @endforeach

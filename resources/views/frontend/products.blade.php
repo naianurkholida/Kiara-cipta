@@ -2,9 +2,7 @@
 
 @section('header')
 <meta name="description" content="Products List Derma Express.">
-
-<link rel="canonical" href="http://derma-express.com/products">
-
+<link rel="canonical" href="https://derma-express.com/products">
 <title>Products List Derma Express</title>
 @endsection
 
