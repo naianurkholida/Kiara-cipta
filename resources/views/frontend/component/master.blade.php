@@ -40,14 +40,14 @@
         @yield('header')
 
         <!-- Document Title
-    	============================================= -->
-        <title>Home | Derma Express</title>
-        @php
-        $next = asset('assets/image/next.png');
-        $prev = asset('assets/image/prev.png');
-        $close = asset('assets/image/close.png');
-        @endphp
-        <style>
+           ============================================= -->
+           <title>Home | Derma Express</title>
+           @php
+           $next = asset('assets/image/next.png');
+           $prev = asset('assets/image/prev.png');
+           $close = asset('assets/image/close.png');
+           @endphp
+           <style>
             .lb-nav a.lb-prev {
                 background: url(<?= $prev ?>) left 48% no-repeat;
                 background-size: 50px;
@@ -64,6 +64,14 @@
             }
 
         </style>
+
+        <!-- Head Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TK5BKMT');</script>
+        <!-- End Google Tag Manager -->
     </head>
 
     <body class="stretched">
@@ -199,8 +207,8 @@
 
                 <div class="container">
                 <!-- Footer Widgets
-                 ============================================= -->
-                 <div class="footer-widgets-wrap clearfix">
+                   ============================================= -->
+                   <div class="footer-widgets-wrap clearfix">
                     <div class="col_two_third">
 
                         <div class="col_one_third">
@@ -304,12 +312,12 @@
                                             </a>
                                         </div>
                                         {{-- <ul class="entry-meta">
-                                         <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
-                                     </ul> --}}
-                                 </div>
-                             </div>
+                                           <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
+                                       </ul> --}}
+                                   </div>
+                               </div>
 
-                             <div class="">
+                               <div class="">
                                 <div class="entry-c">
                                     <div class="entry-title">
                                         <a href="https://g.co/kgs/1c6QKP" target="blank">
@@ -317,11 +325,11 @@
                                         </a>
                                     </div>
                                     {{-- <ul class="entry-meta">
-                                     <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
-                                 </ul> --}}
-                             </div>
+                                       <li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
+                                   </ul> --}}
+                               </div>
 
-                             <div class="">
+                               <div class="">
                                 <div class="entry-c">
                                     <div class="entry-title">
                                         <a href="https://shorturl.at/ySWX9" target="blank">
@@ -329,16 +337,16 @@
                                         </a>
                                     </div>
                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-             </div>
+            </div>
 
-         </div>
+        </div>
 
-         <div class="col_one_third col_last">
+        <div class="col_one_third col_last">
 
             <div class="widget clearfix">
                 <h4>Kontak Kami</h4>
@@ -455,17 +463,33 @@
         <!--End of Tawk.to Script-->
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179474592-1"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179474592-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'UA-179474592-1');
-        </script>
-        <!-- End gtag -->
+      </script> -->
 
+      <!-- JS Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK5BKMT"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-112H1YC1N4"></script>
         <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-112H1YC1N4');
+      </script>
+
+      <!-- End gtag -->
+
+      <script>
             // When the user scrolls down 50px from the top of the document, resize the header's font size
             window.onscroll = function() {scrollFunction()};
 
@@ -567,7 +591,7 @@
                     dataType: 'Json',
                 })
                 .done(function (res) {
-                   
+
 
                     $.each(res, function (index, val) {
                         $("#submenu"+index).hover(function(){
