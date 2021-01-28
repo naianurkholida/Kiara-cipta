@@ -9,7 +9,7 @@
 <meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/derma_produk/500/{{$data->image}}" />
 <meta property="og:type" content="article"/>
 <link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
-<title>{{$program->judul}}</title>
+<title>{{$data->getProdukLanguage->judul}}</title>
 @endsection
 
 @section('content')
