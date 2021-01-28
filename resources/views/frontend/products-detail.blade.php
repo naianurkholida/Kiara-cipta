@@ -1,9 +1,15 @@
 @extends('frontend.component.master')
 
-@section('css')
-    <style>
+@section('header')
 
-    </style>
+<meta property="og:url" content="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}" />
+<meta property="og:title" content="{{$data->getProdukLanguage->judul}}" />
+<meta property="og:description" content="{{$data->getProdukLanguage->judul}}" />
+<meta name="description" content="Product {{$data->getProdukLanguage->judul}} Derma Express">
+<meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/derma_produk/500/{{$data->image}}" />
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
+<title>{{$program->judul}}</title>
 @endsection
 
 @section('content')
@@ -33,15 +39,15 @@
 @endsection
 
 @section('js')
-    <script>
-        
-        if (window.matchMedia('(max-width: 425px)'))
-        {
-            $( "#container_dalem" ).removeClass("container");
-            $( "#container_luar" ).removeClass("container").addClass("container-fluid");
-        } else {
-            $( "#container_dalem" ).addClass("container");
-            $( "#container_luar" ).removeClass("container-fluid").addClass("container");
-        }
-    </script>
+<script>
+
+    if (window.matchMedia('(max-width: 425px)'))
+    {
+        $( "#container_dalem" ).removeClass("container");
+        $( "#container_luar" ).removeClass("container").addClass("container-fluid");
+    } else {
+        $( "#container_dalem" ).addClass("container");
+        $( "#container_luar" ).removeClass("container-fluid").addClass("container");
+    }
+</script>
 @endsection

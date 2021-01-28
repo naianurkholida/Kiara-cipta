@@ -1,7 +1,7 @@
 @extends('frontend.component.master')
 @section('header')
-<meta name="description" content="Jurnal Derma Express.">
 
+<meta name="description" content="List Jurnal Derma Express.">
 <link rel="canonical" href="https://derma-express.com/jurnal">
 
 <title>Jurnal</title>
