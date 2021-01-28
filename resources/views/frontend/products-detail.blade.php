@@ -2,13 +2,25 @@
 
 @section('header')
 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Product {{$data->getProdukLanguage->judul}} Derma Express">
+<link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
 <meta property="og:url" content="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}" />
 <meta property="og:title" content="{{$data->getProdukLanguage->judul}}" />
-<meta property="og:description" content="{{$data->getProdukLanguage->judul}}" />
-<meta name="description" content="Product {{$data->getProdukLanguage->judul}} Derma Express">
+<meta property="og:description" content="{{$data->getProdukLanguage->resume}}" />
 <meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/derma_produk/500/{{$data->image}}" />
-<meta property="og:type" content="article"/>
-<link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
+<meta property="article:publisher" content="https://www.facebook.com/dermaxpress/" />
+<meta property="article:tag" content="{{$data->getProdukLanguage->judul}}" />
+<meta property="article:tag" content="Beauty" />
+<meta property="article:tag" content="jerawat" />
+<meta property="article:tag" content="rekomendasi acne cream" />
+<meta property="article:tag" content="rekomendasi produk" />
+<meta property="article:section" content="Beauty &amp; health" />
+
 <title>{{$data->getProdukLanguage->judul}}</title>
 @endsection
 
