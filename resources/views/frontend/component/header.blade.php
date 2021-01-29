@@ -61,9 +61,8 @@
 
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
-
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}"></div>
-                                                
+                                                <img src="{{asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}">
+                                                 
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getTreatmentLanguage->resume != null)
                                                     <p>{{ $value->getTreatmentLanguage->resume }}</p>
@@ -94,8 +93,9 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}"></div>
-                                                <div class="desc-detail text-center" style="font-size: 20px;">
+                                                <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
+                                                
+                                               <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
