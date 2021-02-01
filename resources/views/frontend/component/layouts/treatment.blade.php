@@ -3,11 +3,7 @@
     <div class="container clearfix">
         <center>
             <h2>
-                @if(Session::get('locale') == 2)
-                Our Treatments
-                @else
-                Treatment Kami
-                @endif
+                Treatments
             </h2>
         </center>
         <br><br>
