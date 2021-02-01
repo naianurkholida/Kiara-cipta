@@ -41,7 +41,6 @@
 
         <!-- Document Title
         	============================================= -->
-        	<title>Home | Derma Express</title>
         	@php
         	$next = asset('assets/image/next.png');
         	$prev = asset('assets/image/prev.png');
