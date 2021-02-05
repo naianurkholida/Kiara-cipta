@@ -236,53 +236,53 @@
                                 </abbr><br>
                             </address>
 
-                            <a href="https://www.facebook.com/dermaxpress" target="blank" class="social-icon si-small si-rounded topmargin-sm si-facebook">
+                            <a href="https://www.facebook.com/dermaxpress" target="blank" class="social-icon si-small si-rounded topmargin-sm si-facebook" title="Facebook">
                                 <i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i>
                             </a>
 
-                            <a href="https://twitter.com/derma_express" target="blank" class="social-icon si-small si-rounded topmargin-sm si-twitter">
+                            <a href="https://twitter.com/derma_express" target="blank" class="social-icon si-small si-rounded topmargin-sm si-twitter" title="Twitter">
                                 <i class="icon-twitter"></i>
                                 <i class="icon-twitter"></i>
                             </a>
 
-                            <a href="https://www.instagram.com/derma_express" target="blank" class="social-icon si-small si-rounded topmargin-sm si-instagram">
+                            <a href="https://www.instagram.com/derma_express" target="blank" class="social-icon si-small si-rounded topmargin-sm si-instagram" title="Instagram">
                                 <i class="icon-instagram"></i>
                                 <i class="icon-instagram"></i>
                             </a>
 
-                            <a href="https://api.whatsapp.com/send?text=Klinik%20Kecantikan%20dan%20Dokter%20Estetika%20Terbaik%20di%20Indonesia%20https://www.derma-express.com/" target="blank" class="social-icon si-small si-rounded topmargin-sm si-whatsapp">
+                            <a href="https://api.whatsapp.com/send?text=Klinik%20Kecantikan%20dan%20Dokter%20Estetika%20Terbaik%20di%20Indonesia%20https://www.derma-express.com/" target="blank" class="social-icon si-small si-rounded topmargin-sm si-whatsapp" title="Whatsapp">
                                 <i class="icon-whatsapp"></i>
                                 <i class="icon-whatsapp"></i>
                             </a>
 
-                            <a href="admin@derma_express.com" target="blank" class="social-icon si-small si-rounded topmargin-sm si-email3">
+                            <a href="admin@derma_express.com" target="blank" class="social-icon si-small si-rounded topmargin-sm si-email3" title="Mail">
                                 <i class="icon-email3"></i>
                                 <i class="icon-email3"></i>
                             </a>
 
-                            <a href="https://www.youtube.com/channel/UCHKueCTC7pmEFDfgjsOzQdw" target="blank" class="social-icon si-small si-rounded topmargin-sm si-youtube">
+                            <a href="https://www.youtube.com/channel/UCHKueCTC7pmEFDfgjsOzQdw" target="blank" class="social-icon si-small si-rounded topmargin-sm si-youtube" title="Youtube">
                                 <i class="icon-youtube"></i>
                                 <i class="icon-youtube"></i>
                             </a>
 
-                            <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm">
+                            <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee">
                                 <img src="{{ asset('assets/image/shopee.png') }}">
                             </a>
 
-                            <a href="https://tokopedia.link/8WuUYJSWA7" target="blank" class="social-icon si-small si-square topmargin-sm">
+                            <a href="https://tokopedia.link/8WuUYJSWA7" target="blank" class="social-icon si-small si-square topmargin-sm" title="Tokopedia">
                                 <img src="{{ asset('assets/image/tokopedia.png') }}">
                             </a>
 
-                            <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm">
+                            <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="Lazada">
                                 <img src="{{ asset('assets/image/lazada.png') }}">
                             </a>
 
-                            <a href="https://www.bukalapak.com/u/dermaexpress" target="blank" class="social-icon si-small si-square topmargin-sm">
+                            <a href="https://www.bukalapak.com/u/dermaexpress" target="blank" class="social-icon si-small si-square topmargin-sm" title="Bukalapak">
                                 <img src="{{ asset('assets/image/bukalapak.png') }}">
                             </a>
 
-                            <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm">
+                            <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="ILotte">
                                 <img src="{{ asset('assets/image/ilotte.jpg') }}">
                             </a>
                         </div>
