@@ -275,23 +275,23 @@
                                 </address>
 
                                 <div class="clearfix">
-                                    <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee" style="width: 50px; height: 50px;">
+                                    <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/shopee.png') }}">
                                     </a>
 
-                                    <a href="https://tokopedia.link/8WuUYJSWA7" target="blank" class="social-icon si-small si-square topmargin-sm" title="Tokopedia" style="width: 50px; height: 50px;">
+                                    <a href="https://tokopedia.link/8WuUYJSWA7" target="blank" class="social-icon si-small si-square topmargin-sm" title="Tokopedia" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/tokopedia.png') }}">
                                     </a>
 
-                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="Lazada" style="width: 50px; height: 50px;">
+                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="Lazada" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/lazada.png') }}">
                                     </a>
 
-                                    <a href="https://www.bukalapak.com/u/dermaexpress" target="blank" class="social-icon si-small si-square topmargin-sm" title="Bukalapak" style="width: 50px; height: 50px;">
+                                    <a href="https://www.bukalapak.com/u/dermaexpress" target="blank" class="social-icon si-small si-square topmargin-sm" title="Bukalapak" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/bukalapak.png') }}">
                                     </a>
 
-                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="ILotte" style="width: 50px; height: 50px;">
+                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="ILotte" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/ilotte.jpg') }}">
                                     </a>
                                 </div>
