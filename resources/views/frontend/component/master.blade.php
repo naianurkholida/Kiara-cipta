@@ -39,7 +39,7 @@
     	<link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
 
         <link rel="canonical" href="https://derma-express.com/">
-        <meta name="description" content="Derma Express, klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
+        <meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
         <title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
     	@yield('header')
 
