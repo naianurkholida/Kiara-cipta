@@ -28,7 +28,17 @@
 				<div class="col-lg-12">
 					<div class="form-group">
 						<label for="document">Image</label>
-						<div class="needsclick dropzone" id="document-dropzone"></div>
+						<!-- <div class="needsclick dropzone" id="document-dropzone"></div> -->
+						<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar" style="width: 100%;">
+							<div class="kt-avatar__holder" style="width: 100%; background-image: url('{{ asset('assets/admin/assets/media/derma_produk') }}/{{$produk->image}}')"></div>
+							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+								<i class="fa fa-pen"></i>
+								<input type="file" name="image" id="image" required="">
+							</label>
+							<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+								<i class="fa fa-times"></i>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,7 +52,8 @@
 			@if($lang->id == $pl->id_language)
 			<?php 
 			$found   = 1; 
-			$judul   = $pl->judul; 
+			$judul   = $pl->judul;
+			$resume  = $pl->resume; 
 			$content = $pl->deskripsi;
 			$idl     = $pl->id;
 			?>
@@ -61,6 +72,10 @@
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control" value="{{$judul}}">
 				</div>
 				<div class="col-md-12">
+					<label for="">Resume</label>
+					<textarea id="resume[<?=$key?>]" class="form-control" name="resume[]">{{$resume}}</textarea>
+				</div>
+				<div class="col-md-12">
 					<label for="">content</label>
 					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1">{{$content}}</textarea>
 				</div>
@@ -77,6 +92,10 @@
 					<input type="text" id="judul[<?=$key?>]" name="judul[]" class="form-control">
 				</div>
 				<div class="col-md-12">
+					<label for="">Resume</label>
+					<textarea id="resume[<?=$key?>]" class="form-control" name="resume[]"></textarea>
+				</div>
+				<div class="col-md-12">
 					<label for="">content</label>
 					<textarea id="content[<?=$key?>]" name="deskripsi[]" id="" class="summernote" id="kt_summernote_1"></textarea>
 				</div>
@@ -90,22 +109,11 @@
 @endsection
 
 @section('js')
+<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>	
 <script type="text/javascript">
 
 	function simpan() {
-
-		var validation = 0;
-        var validationText = "";
-
-
-        // if($("#penggagas").val()==''){ validation++; validationText = validationText + "Penggagas tidak boleh kosong\n"; }
-        // if($("#gambar").val()==''){ validation++; validationText = validationText + "Gambar tidak boleh kosong\n"; }
-
-        if(validation>0){
-        	alert(validationText);
-        }else{
-        	$('#form_menu').submit();
-        }
+		$('#form_menu').submit();
 	}
 
 	function cek_bahasa(){
@@ -115,56 +123,6 @@
 		}else{
 			$("#hasil_all_id").val(0)
 		}
-	}
-
-	var rupiah = document.getElementById('dana_target');
-	rupiah.addEventListener('keyup', function(e){
-		// tambahkan 'Rp.' pada saat form di ketik
-		// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-		rupiah.value = formatRupiah(this.value, 'Rp. ');
-	});
-
-	/* Fungsi formatRupiah */
-	function formatRupiah(angka, prefix){
-		var number_string = angka.replace(/[^,\d]/g, '').toString(),
-		split   		= number_string.split(','),
-		sisa     		= split[0].length % 3,
-		rupiah     		= split[0].substr(0, sisa),
-		ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
-
-		// tambahkan titik jika yang di input sudah menjadi angka ribuan
-		if(ribuan){
-			separator = sisa ? '.' : '';
-			rupiah += separator + ribuan.join('.');
-		}
-
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-	}
-
-	var rupiah_1 = document.getElementById('dana_terkumpul');
-	rupiah_1.addEventListener('keyup', function(e){
-		// tambahkan 'Rp.' pada saat form di ketik
-		// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-		rupiah_1.value = formatRupiah_1(this.value, 'Rp. ');
-	});
-
-	/* Fungsi formatRupiah */
-	function formatRupiah_1(angka, prefix){
-		var number_string = angka.replace(/[^,\d]/g, '').toString(),
-		split   		= number_string.split(','),
-		sisa     		= split[0].length % 3,
-		rupiah     		= split[0].substr(0, sisa),
-		ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
-
-		// tambahkan titik jika yang di input sudah menjadi angka ribuan
-		if(ribuan){
-			separator = sisa ? '.' : '';
-			rupiah += separator + ribuan.join('.');
-		}
-
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 	}
 </script>
 @endsection

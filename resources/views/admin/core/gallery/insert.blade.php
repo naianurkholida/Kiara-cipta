@@ -1,10 +1,10 @@
 @extends('component.layouts.master')
 
 @section('button')
-	<a href="{{Route('produk.index')}}" class="btn btn-info">
-		<i class="flaticon-reply"></i>
-		<span>{{ Helper::baseLabelPage() }}</span>
-	</a>
+<a href="{{Route('produk.index')}}" class="btn btn-info">
+	<i class="flaticon-reply"></i>
+	<span>{{ Helper::baseLabelPage() }}</span>
+</a>
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 		<h4><i class="flaticon-plus"></i> {{ Helper::baseLabelPage() }}</h4>
 	</div>
 	<div class="card-body">
-	<form action="{{Route('gallery.store')}}" method="POST" enctype="multipart/form-data" id="form_menu">
+		<form action="{{Route('gallery.store')}}" method="POST" enctype="multipart/form-data" id="form_menu">
 			{{csrf_field()}}
 			<div class="row">
 				<div class="col-lg-12">
@@ -21,13 +21,13 @@
 					<select class="form-control" name="kategori_produk" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
 						@foreach($category as $key => $val)
-							<option value="{{$val->id}}">{{$val->category}}</option>
+						<option value="{{$val->id}}">{{$val->category}}</option>
 						@endforeach
 					</select>
 				</div>
 
 				<div class="col-lg-6" style="margin-top: 10px">
-				<label>Type</label>
+					<label>Type</label>
 					<label class="kt-option">
 						<span class="kt-option__control">
 							<span class="kt-radio">
@@ -77,8 +77,8 @@
 
 				<div class="col-lg-12" id="image">
 					<label>Gambar</label><br>
-					<div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1">
-						<div class="kt-avatar__holder" style="width: 300px; height:300px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
+					<div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 300px;">
+						<div class="kt-avatar__holder" style="width: 100%; height:300px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
 						<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 							<i class="fa fa-pen"></i>
 							<input type="file" name="image" accept=".png, .jpg, .jpeg">
@@ -101,7 +101,7 @@
 
 			<div class="kt-portlet__foot">
 				<div class="kt-form__actions">
-				<button type="button" class="btn btn-info" onclick="simpan()">Simpan</button>
+					<button type="button" class="btn btn-info" onclick="simpan()">Simpan</button>
 				</div>
 			</div>
 		</form>
@@ -113,19 +113,7 @@
 <script type="text/javascript">
 
 	function simpan() {
-
-		var validation = 0;
-        var validationText = "";
-
-
-        if($("#penggagas").val()==''){ validation++; validationText = validationText + "Penggagas tidak boleh kosong\n"; }
-        // if($("#gambar").val()==''){ validation++; validationText = validationText + "Gambar tidak boleh kosong\n"; }
-
-        if(validation>0){
-        	alert(validationText);
-        }else{
-        	$('#form_menu').submit();
-        }
+		$('#form_menu').submit();
 	}
 
 	function cek_bahasa(){
@@ -135,56 +123,6 @@
 		}else{
 			$("#hasil_all_id").val(0)
 		}
-	}
-
-	var rupiah = document.getElementById('dana_target');
-	rupiah.addEventListener('keyup', function(e){
-		// tambahkan 'Rp.' pada saat form di ketik
-		// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-		rupiah.value = formatRupiah(this.value, 'Rp. ');
-	});
-
-	/* Fungsi formatRupiah */
-	function formatRupiah(angka, prefix){
-		var number_string = angka.replace(/[^,\d]/g, '').toString(),
-		split   		= number_string.split(','),
-		sisa     		= split[0].length % 3,
-		rupiah     		= split[0].substr(0, sisa),
-		ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
-
-		// tambahkan titik jika yang di input sudah menjadi angka ribuan
-		if(ribuan){
-			separator = sisa ? '.' : '';
-			rupiah += separator + ribuan.join('.');
-		}
-
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-	}
-
-	var rupiah_1 = document.getElementById('dana_terkumpul');
-	rupiah_1.addEventListener('keyup', function(e){
-		// tambahkan 'Rp.' pada saat form di ketik
-		// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-		rupiah_1.value = formatRupiah_1(this.value, 'Rp. ');
-	});
-
-	/* Fungsi formatRupiah */
-	function formatRupiah_1(angka, prefix){
-		var number_string = angka.replace(/[^,\d]/g, '').toString(),
-		split   		= number_string.split(','),
-		sisa     		= split[0].length % 3,
-		rupiah     		= split[0].substr(0, sisa),
-		ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
-
-		// tambahkan titik jika yang di input sudah menjadi angka ribuan
-		if(ribuan){
-			separator = sisa ? '.' : '';
-			rupiah += separator + ribuan.join('.');
-		}
-
-		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 	}
 </script>
 @endsection

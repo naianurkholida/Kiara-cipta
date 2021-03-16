@@ -1,9 +1,25 @@
 @extends('frontend.component.master')
 
-@section('css')
-    <style>
+@section('header')
 
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Product {{$data->getProdukLanguage->judul}} Derma Express">
+<link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}" />
+<meta property="og:title" content="{{$data->getProdukLanguage->judul}}" />
+<meta property="og:description" content="{{$data->getProdukLanguage->resume}}" />
+<meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/derma_produk/500/{{$data->image}}" />
+<meta property="article:publisher" content="https://www.facebook.com/dermaxpress/" />
+<meta property="article:tag" content="{{$data->getProdukLanguage->judul}}" />
+<meta property="article:tag" content="Beauty" />
+<meta property="article:tag" content="rekomendasi produk" />
+<meta property="article:section" content="Beauty &amp; health" />
+
+<title>{{$data->getProdukLanguage->judul}}</title>
 @endsection
 
 @section('content')
@@ -15,22 +31,33 @@
     </div>
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem">
-            @include('frontend.component.layouts.item-detail', ['related' => 'getProdukLanguage', 'column' => 'deskripsi','image' => 'produk'])
+            <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; padding-top: 0 !important">
+                <div class="container" id="container_detail">
+                    <div class="row" style="margin-top: 70px;">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url('{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}'); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            {!! $data->getProdukLanguage->deskripsi !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 @endsection
 
 @section('js')
-    <script>
-        
-        if (window.matchMedia('(max-width: 425px)'))
-        {
-            $( "#container_dalem" ).removeClass("container");
-            $( "#container_luar" ).removeClass("container").addClass("container-fluid");
-        } else {
-            $( "#container_dalem" ).addClass("container");
-            $( "#container_luar" ).removeClass("container-fluid").addClass("container");
-        }
-    </script>
+<script>
+
+    if (window.matchMedia('(max-width: 425px)'))
+    {
+        $( "#container_dalem" ).removeClass("container");
+        $( "#container_luar" ).removeClass("container").addClass("container-fluid");
+    } else {
+        $( "#container_dalem" ).addClass("container");
+        $( "#container_luar" ).removeClass("container-fluid").addClass("container");
+    }
+</script>
 @endsection

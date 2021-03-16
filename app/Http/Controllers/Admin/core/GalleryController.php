@@ -7,9 +7,20 @@ use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Gallery;
 use Carbon\Carbon;
+use Image;
+use File;
+use DB;
 
 class GalleryController extends Controller
 {
+    public function __Construct()
+    {
+        //Definisi PATH Foto
+        $this->path =  'assets/admin/assets/media/derma_gallery';
+        //Definisi Dimensi Foto
+        $this->dimensions = ['500'];
+    }
+
     public function index()
     {
         $data = Gallery::where('deleted_at', NULL)->get();
@@ -27,19 +38,65 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
+        #upload foto to database
+        $file = $request->file('image');
+
+        #JIKA FOLDERNYA BELUM ADA
+        if (!File::isDirectory($this->path)) {
+            #MAKA FOLDER TERSEBUT AKAN DIBUAT
+            File::makeDirectory($this->path);
+        }
+
+        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+        $fileName = 'Gallery' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+        $size   = getimagesize($file);
+        $width  = $size[0];
+        $height = $size[1];
+
+        if($width > $height){
+            $size = ($width/$height);
+        }else{
+            $size = ($height/$width);
+        }
+
+        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+        Image::make($file)->save($this->path . '/' . $fileName);
+        foreach ($this->dimensions as $row) {
+            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+            if($width < $height){
+                $canvas = Image::canvas($row, ceil($row*$size));
+                $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }else{
+                $canvas = Image::canvas(($row*$size), $row);
+                $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+
+            #CEK JIKA FOLDERNYA BELUM ADA
+            if (!File::isDirectory($this->path . '/' . $row)) {
+                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                File::makeDirectory($this->path . '/' . $row);
+            }
+
+            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+            $canvas->insert($resizeImage, 'center');
+            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+          
+            $canvas->save($this->path . '/500/' . $fileName);
+        }
+
         $data = [
             'id_category'   => $request->kategori_produk,
             'is_created'    => \Session::get('id'),
-            'embed'         => $request->link
+            'embed'         => $request->link,
+            'image'         => $fileName
         ];
 
         $gallery = Gallery::create($data);
-
-        if ($request->option == 'image') {
-            if ($request->image != NULL) {
-                $gallery->addMedia($request->image)->toMediaCollection('gallery');
-            }
-        }
 
         return redirect()->route('gallery.index')->with('success', 'Data Berhasil di Simpan');
     }
@@ -68,34 +125,70 @@ class GalleryController extends Controller
             $embed = $request->link;
         }
 
+        #upload foto to database
+        $file = $request->file('image');
+
+        #JIKA FOLDERNYA BELUM ADA
+        if (!File::isDirectory($this->path)) {
+            #MAKA FOLDER TERSEBUT AKAN DIBUAT
+            File::makeDirectory($this->path);
+        }
+
+        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+        $fileName = 'Gallery' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+        $size   = getimagesize($file);
+        $width  = $size[0];
+        $height = $size[1];
+
+        if($width > $height){
+            $size = ($width/$height);
+        }else{
+            $size = ($height/$width);
+        }
+
+        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+        Image::make($file)->save($this->path . '/' . $fileName);
+        foreach ($this->dimensions as $row) {
+            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+            if($width < $height){
+                $canvas = Image::canvas($row, ceil($row*$size));
+                $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }else{
+                $canvas = Image::canvas(($row*$size), $row);
+                $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+
+            #CEK JIKA FOLDERNYA BELUM ADA
+            if (!File::isDirectory($this->path . '/' . $row)) {
+                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                File::makeDirectory($this->path . '/' . $row);
+            }
+
+            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+            $canvas->insert($resizeImage, 'center');
+            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+          
+            $canvas->save($this->path . '/500/' . $fileName);
+        }
+
         $data = [
             'id_category'   => $request->kategori_produk,
             'is_created'    => \Session::get('id'),
-            'embed'         => $embed
+            'embed'         => $embed,
+            'image'         => $fileName
         ];
 
         $gallery = Gallery::findOrFail($id);
-        $gallery->update($data);
 
-        if ($request->option == 'image') {
-            if ($request->image != NULL) {
-                if (count($gallery->getMedia('gallery')) > 0) {
-                    foreach ($gallery->getMedia('gallery') as $media) {
-                        $media->delete();
-                    }
-                }
-    
-                $gallery->addMedia($request->image)->toMediaCollection('gallery');
-            }
-        } else {
-            if ($embed != NULL) {
-                if (count($gallery->getMedia('gallery')) > 0) {
-                    foreach ($gallery->getMedia('gallery') as $media) {
-                        $media->delete();
-                    }
-                }
-            }
-        } 
+        File::delete($this->path.'/'.$gallery->image);
+        File::delete($this->path.'/500/'.$gallery->image);
+
+        $gallery->update($data);
 
         return redirect()->route('gallery.index')->with('info', 'Data Berhasil di Update');
 	}

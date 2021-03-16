@@ -2,13 +2,18 @@
 <html dir="ltr" lang="en-US">
 
 <head>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta name="description" content="Page with empty content">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="_globalsign-domain-verification" content="faYUt9pHF1Oqq4zNeoIbmo5lX9cck5K_tdXhwpvmK-" />
 
     <!-- Stylesheets
     	============================================= -->
-    	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i" rel="stylesheet" type="text/css" />
+    	<link
+    	href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i"
+    	rel="stylesheet" type="text/css" />
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap"
+    	rel="stylesheet">
     	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" />
@@ -29,29 +34,46 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     	<link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    	type="text/css" />
     	<link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
-    <!-- Document Title
-    	============================================= -->
-    	<title>Home | Derma Express</title>
-    	@php
-    	$next = asset('assets/image/next.png');
-    	$prev = asset('assets/image/prev.png');
-    	$close = asset('assets/image/close.png');
-    	@endphp
-    	<style>
-    		.lb-nav a.lb-prev {
-    			background: url(<?= $prev ?>) left 48% no-repeat;
-    			background-size: 50px;
-    		}
-    		.lb-nav a.lb-next {
-    			background: url(<?= $next ?>) right 48% no-repeat;
-    			background-size: 50px;
-    		}
-    		.lb-data .lb-close {
-    			background: url(<?= $close ?>) top right no-repeat;
-    			background-size: 20px;
-    		}
-    	</style>
+
+        <link rel="canonical" href="https://derma-express.com/">
+        <meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
+        <title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
+        @yield('header')
+
+        <!-- Document Title
+        	============================================= -->
+        	@php
+        	$next = asset('assets/image/next.png');
+        	$prev = asset('assets/image/prev.png');
+        	$close = asset('assets/image/close.png');
+        	@endphp
+        	<style>
+        		.lb-nav a.lb-prev {
+        			background: url(<?= $prev ?>) left 48% no-repeat;
+        			background-size: 50px;
+        		}
+
+        		.lb-nav a.lb-next {
+        			background: url(<?= $next ?>) right 48% no-repeat;
+        			background-size: 50px;
+        		}
+
+        		.lb-data .lb-close {
+        			background: url(<?= $close ?>) top right no-repeat;
+        			background-size: 20px;
+        		}
+
+        	</style>
+        	<!-- Google Tag Manager -->
+        	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TK5BKMT');</script>
+        <!-- End Google Tag Manager -->
     </head>
 
     <body class="stretched">
@@ -67,18 +89,23 @@
     				</div>
     				<div class="card-body divcenter py-5" style="max-width: 70%;">
 
-    					<a href="#" class="button button-large btn-block si-colored si-facebook nott t400 ls0 center nomargin"><i class="icon-facebook-sign"></i> Log in with Facebook</a>
+    					<a href="#"
+    					class="button button-large btn-block si-colored si-facebook nott t400 ls0 center nomargin"><i
+    					class="icon-facebook-sign"></i> Log in with Facebook</a>
 
-    					<div class="divider divider-center"><span class="position-relative" style="top: -2px">OR</span></div>
+    					<div class="divider divider-center"><span class="position-relative" style="top: -2px">OR</span>
+    					</div>
 
     					<form id="login-form" name="login-form" class="nobottommargin row" action="#" method="post">
 
     						<div class="col-12">
-    							<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control not-dark" placeholder="Username" />
+    							<input type="text" id="login-form-username" name="login-form-username" value=""
+    							class="form-control not-dark" placeholder="Username" />
     						</div>
 
     						<div class="col-12 mt-4">
-    							<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control not-dark" placeholder="Password" />
+    							<input type="password" id="login-form-password" name="login-form-password" value=""
+    							class="form-control not-dark" placeholder="Password" />
     						</div>
 
     						<div class="col-12">
@@ -86,7 +113,8 @@
     						</div>
 
     						<div class="col-12 mt-4">
-    							<button class="button btn-block nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+    							<button class="button btn-block nomargin" id="login-form-submit" name="login-form-submit"
+    							value="login">Login</button>
     						</div>
     					</form>
     				</div>
@@ -119,38 +147,50 @@
                         				<ul>
                         					@foreach(Helper::language() as $row)
                         					<li>
-                        						<a href="{{ route('language.switch', $row->code) }}"><img src="{{ $row->getFirstMediaUrl('language') }}"> {{ $row->code }}</a> 
-                        					</li>
-                        					@endforeach
-                        				</ul>
-                        			</li>
-                        		</ul>
-                        	</div>
-                        	<!-- .top-links end -->
+                        						<a href="{{ route('language.switch', $row->code) }}"><img
+                        							src="{{ $row->getFirstMediaUrl('language') }}"> {{ $row->code }}</a>
+                        						</li>
+                        						@endforeach
+                        					</ul>
+                        				</li>
+                        			</ul>
+                        		</div>
+                        		<!-- .top-links end -->
 
                         <!-- Top Social
                         	============================================= -->
                         	<div id="top-social">
                         		<ul>
-                        			<li><a href="{{ Helper::cfacebook() }}" class="si-facebook" target="_blank"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
+                        			<li><a href="{{ Helper::cfacebook() }}" class="si-facebook" target="_blank"><span
+                        				class="ts-icon"><i class="icon-facebook"></i></span><span
+                        				class="ts-text">Facebook</span></a></li>
 
-                        			<li><a href="{{ Helper::cinstagram() }}" class="si-instagram" target="_blank"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
+                        				<li><a href="{{ Helper::cinstagram() }}" class="si-instagram" target="_blank"><span
+                        					class="ts-icon"><i class="icon-instagram2"></i></span><span
+                        					class="ts-text">Instagram</span></a></li>
 
-                        			<li><a href="{{ Helper::ctwitter() }}" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
+                        					<li><a href="{{ Helper::ctwitter() }}" class="si-twitter"><span class="ts-icon"><i
+                        						class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a>
+                        					</li>
 
-                        			<li><a href="{{ Helper::cwhatsapp() }}" target="_blank" rel="noopener" class="si-whatsapp"><span class="ts-icon"><i class="icon-whatsapp"></i></span><span class="ts-text">Whatsapp</span></a></li>
+                        					<li><a href="{{ Helper::cwhatsapp() }}" target="_blank" rel="noopener"
+                        						class="si-whatsapp"><span class="ts-icon"><i
+                        							class="icon-whatsapp"></i></span><span
+                        							class="ts-text">Whatsapp</span></a></li>
 
-                        			<li><a href="{{ Helper::cemail() }}" class="si-email3" target="_blank"><span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text">Email</span></a></li>
-                        		</ul>
-                        	</div>
-                        	<!-- #top-social end -->
+                        							<li><a href="{{ Helper::cemail() }}" class="si-email3" target="_blank"><span
+                        								class="ts-icon"><i class="icon-envelope-alt"></i></span><span
+                        								class="ts-text">Email</span></a></li>
+                        							</ul>
+                        						</div>
+                        						<!-- #top-social end -->
 
-                        </div>
-                    </div>
+                        					</div>
+                        				</div>
 
-                </div>
+                        			</div>
 
-            </div>
+                        		</div>
 
         <!-- Header
         	============================================= -->
@@ -162,169 +202,220 @@
 
         	<!-- end yt -->
 
-        	<div class="section topmargin nobottommargin nobottomborder" style="padding: 25px 0;margin: 0 !important; background-color: #f9f9f9 !important; ">
-        		<div class="container" id="footer-sosmed">
-        			<center>
-        				<a href="{{ Helper::cfacebook() }}" class="fb-ic" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-facebook" ></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Facebook</span></a>
 
-        				<a href="{{ Helper::cinstagram() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-instagram2"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Instagram</span></a>
+            <!-- Footer ============================================= -->
+            <div id="footer">
 
-        				<a href="{{ Helper::ctwitter() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-twitter"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Twitter</span></a>
+                <div class="container">
 
-        				<a href="{{ Helper::cwhatsapp() }}" target="_blank" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;"><i class="icon-whatsapp"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Whatsapp</span></a>
+                    <div class="footer-widgets-wrap clearfix">
 
-        				<a href="{{ Helper::cemail() }}" style="padding:10px" id="sosmed-a"><span class="ts-icon" style="margin-right: 10px;" target="_blank"><i class="icon-mail"></i></span><span class="ts-text" style="margin-right: 10px;" id="text-sosmed">Mail</span></a>
-        			</center>
-        		</div>
-        	</div>
-        <!-- Footer
-        	============================================= -->
-        	<footer id="footer">
+                        <div class="col_half">
 
-        		<div class="container">
-				<!-- Footer Widgets
-					============================================= -->
-					<div class="footer-widgets-wrap clearfix">
-						<p>Anda dapat menghubungi kami untuk mendapatkan informasi lebih lanjut mengenai Derma Express dengan cara menghubungi nomer di bawah ini.</p>
-						<div class="col_two_third">
+                            <div class="widget clearfix">
 
-							<div class="col_one_third">
+                                <!-- <img src="images/footer-widget-logo.png" alt="" class="footer-logo"> -->
 
-								<div class="widget clearfix">
+                                <strong>Derma Express</strong> 
+                                <p>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</p>
 
-									<h4>Kontak Kami</h4>
-									<div>
-										<strong>UTAN KAYU</strong><br>
-										<abbr title="Phone Number"><strong><i class="icon-phone-sign"></i></strong></abbr> 02122897879<br>
-										<abbr title="Fax"><strong><i class="icon-phone-sign"></i></strong></abbr> 02122895170 <br>
-										<abbr title="Email Address"><strong><i class="icon-whatsapp-square"></i></strong></abbr> 0821 33554191
-									</div>
-									<br>
-									<div>
-										<strong>GADING SERPONG</strong><br>
-										<abbr title="Phone Number"><strong><i class="icon-phone-sign"></i></strong></abbr>  02154214764<br>
-										<abbr title="Fax"><strong><i class="icon-phone-sign"></i></strong></abbr> 02154214756 <br>
-										<abbr title="Email Address"><strong><i class="icon-phone-sign"></i></strong></abbr> 02154214758 <br>
-										<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0821 33554192 </abbr>
-									</div>
-								</div>
+                                <div class="clearfix" style="padding: 10px 0;">
+                                    <div class="col_half">
+                                        <address class="nobottommargin">
+                                            <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                                <strong>Kontak Kami:</strong>
+                                            </abbr><br>
+                                            082258883050<br>
+                                        </address>
+                                    </div>
+                                </div>
 
-							</div>
+                                <address class="nobottommargin" style="margin-top: 10px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                        <strong>Follow Us:</strong>
+                                    </abbr><br>
+                                </address>
 
-							<div class="col_one_third">
+                                <div class="clearfix">
+                                    <a href="{{ Helper::cfacebook() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-facebook" title="Facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
 
-								<div class="widget widget_links clearfix">
+                                    <a href="{{ Helper::ctwitter() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-twitter" title="Twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
 
-									<h4>Online Store</h4>
+                                    <a href="{{ Helper::cinstagram() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-instagram" title="Instagram">
+                                        <i class="icon-instagram"></i>
+                                        <i class="icon-instagram"></i>
+                                    </a>
 
-									<ul>
-										<li><a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3"><img src="{{asset('assets/image/logo/shopee.png')}}" style="width: 20px;"> <strong>Shopee</strong></a></li>
-										<li><a href="https://tokopedia.link/8WuUYJSWA7"><img src="{{asset('assets/image/logo/tokopedia.png')}}" style="width: 20px;"> <strong>Tokopedia</strong></a></li>
-										<li><a href="https://www.bukalapak.com/u/dermaexpress"><img src="{{asset('assets/image/logo/bukalapak.png')}}" style="width: 20px;"> <strong>Bukalapak</strong></a></li>
-										<li><a href="https://s.lazada.co.id/s.b7283"><img src="{{asset('assets/image/logo/lazada.png')}}" style="width: 30px;"><strong>Lazada</strong></a></li>
-									</ul>
+                                    <a href="{{ Helper::cwhatsapp() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-whatsapp" title="Whatsapp">
+                                        <i class="icon-whatsapp"></i>
+                                        <i class="icon-whatsapp"></i>
+                                    </a>
 
-								</div>
+                                    <a href="{{ Helper::cemail() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-email3" title="Mail">
+                                        <i class="icon-email3"></i>
+                                        <i class="icon-email3"></i>
+                                    </a>
 
-							</div>
+                                    <a href="{{ Helper::cyoutube() }}" target="blank" class="social-icon si-small si-rounded topmargin-sm si-youtube" title="Youtube">
+                                        <i class="icon-youtube"></i>
+                                        <i class="icon-youtube"></i>
+                                    </a>
+                                </div>
 
-							<div class="col_one_third col_last">
+                                <address class="nobottommargin" style="margin-top: 10px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                        <strong>Online Store:</strong>
+                                    </abbr><br>
+                                </address>
 
-								<div class="widget clearfix">
-									<h4>Klinik Kami</h4>
+                                <div class="clearfix">
+                                    <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset('assets/image/shopee.png') }}">
+                                    </a>
 
-									<div id="post-list-footer">
-										<div class="spost clearfix">
-											<div class="entry-c">
-												<div class="entry-title">
-													<h4>UTAN KAYU</h4>
-												</div>
-												<ul class="entry-meta">
-													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/xfrpoV" target="blank"> Jl. Utan Kayu Raya No. 79B dan 79C Jakarta Timur.</a></li>
-												</ul>
-											</div>
-										</div>
+                                    <a href="https://tokopedia.link/8WuUYJSWA7" target="blank" class="social-icon si-small si-square topmargin-sm" title="Tokopedia" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset('assets/image/tokopedia.png') }}">
+                                    </a>
 
-										<div class="spost clearfix">
-											<div class="entry-c">
-												<div class="entry-title">
-													<h4>GADING SERPONG</h4>
-												</div>
-												<ul class="entry-meta">
-													<li><i class="icon-pushpin"></i> <a href="https://g.co/kgs/1c6QKP" target="blank"> Ruko Diamond III No 12-15, Jl. Gading Golf Boulevard, Gading Serpong,  Pakulonan Barat, Kelapa dua Kota Tangerang, Banten. </a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="Lazada" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset('assets/image/lazada.png') }}">
+                                    </a>
 
-							</div>
+                                    <a href="https://www.bukalapak.com/u/dermaexpress" target="blank" class="social-icon si-small si-square topmargin-sm" title="Bukalapak" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset('assets/image/bukalapak.png') }}">
+                                    </a>
 
-						</div>
+                                    <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="ILotte" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset('assets/image/ilotte.jpg') }}">
+                                    </a>
+                                </div>
+                            </div>
 
-						<div class="col_one_third col_last">
+                        </div>
 
-							<div class="widget clearfix">
-								<h4>Kritik dan Saran</h4>
+                        <div class="col_one_fourth">
 
-								<div id="post-list-footer">
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<abbr title=""><strong><i class="icon-whatsapp-square"></i></strong> 0822 58883050  </abbr>
-										</div>
-									</div>
+                            <div class="widget clearfix">
+                                <h4>Klinik Kami</h4>
 
-									<div class="spost clearfix">
-										<div class="entry-c">
-											<div class="entry-title">
-												<h4>Jam Operasional</h4>
-											</div>
-											<ul class="entry-meta">
-												<strong>Senin - Jumat: 11:30 - 19:30 WIB</strong> <br>
-												<strong>Sabtu - Minggu: 10:00 - 18:00 WIB </strong>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
+                                <div id="post-list-footer">
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://g.co/kgs/xfrpoV" target="blank">Utan Kayu</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li>Jl. Utan Kayu Raya dan No.79B, RT.1/RW.8, Utan Kayu Utara, Jakarta, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13120</li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-						</div>
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://g.co/kgs/1c6QKP" target="blank">Gading Serpong</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li>Jl. Gading Golf Boulevard Ruko Diamond III No.12-15, Pakulonan Bar., Kec. Klp. Dua, Tangerang, Banten 15810</li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-					</div><!-- .footer-widgets-wrap end -->
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://shorturl.at/ySWX9" target="blank">Tawakal</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li>Jl. Tawakal Ujung No.C-1, Tomang, Kec. Grogol petamburan, Jakarta, Daerah Khusus Ibukota Jakarta 11440</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-				</div>
+                            </div>
 
-			<!-- Copyrights
-				============================================= -->
-				<!-- <div id="copyrights">
-					<div class="container clearfix"> -->
-						<!-- <div class="col_half"> -->
-							<!-- <div class="mapouter">
-								<div class="gmap_canvas">
-									<iframe width="1000" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=jl.kh%20wahid%20hasyim%20no.47%2C%20gondangdia%2C%20Jakarta%20Pusat&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" >
-									</iframe>
-								</div>
-							</div> -->
-						<!-- </div> -->
-					<!-- </div>
-				</div> -->
-				<div id="copyrights">
+                        </div>
 
-					<div class="container clearfix">
+                        <div class="col_one_fourth col_last">
 
-						<div class="col_half">
-							Copyrights © <?=date('Y')?> Derma Express<br>
-						</div>
+                            <div class="widget clearfix">
+                                <h4>Jam Operasional</h4>
 
-					</div>
+                                <div id="post-list-footer">
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://g.co/kgs/xfrpoV" target="blank">Utan Kayu</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                Senin - Jumat : 11:00 - 19:00 WIB<br>
+                                                Sabtu - Minggu : 10:00 - 17:00 WIB
+                                            </ul>
+                                        </div>
+                                    </div>
 
-				</div><!-- #copyrights end -->
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://g.co/kgs/1c6QKP" target="blank">Gading Serpong</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                Senin - Jumat : 11:00 - 19:00 WIB<br>
+                                                Sabtu - Minggu : 10:00 - 17:00 WIB
+                                            </ul>
+                                        </div>
+                                    </div>
 
-			</footer>
-			<!-- #footer end -->
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="https://shorturl.at/ySWX9" target="blank">Tawakal</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                Senin - Jumat : 11:00 - 19:00 WIB<br>
+                                                Sabtu - Minggu : 10:00 - 17:00 WIB
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-		</div>
-		<!-- #wrapper end -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="copyrights">
+
+                    <div class="container clearfix">
+
+                        <div class="col_full nobottommargin center">
+                            <div class="copyrights-menu copyright-links clearfix">
+                                <a href="https://derma-express.com">Home</a>/
+                                <a href="https://derma-express.com/profile">About</a>/
+                                <a href="https://derma-express.com/kontak">Contact</a>
+                            </div>
+                            Copyrights &copy; 2020 All Rights Reserved by Derma Express.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- #footer end -->
+
+        </div>
+        <!-- #wrapper end -->
 
     <!-- Go To Top
     	============================================= -->
@@ -335,6 +426,8 @@
     	<script src="{{asset('assets/js/jquery.js')}}"></script>
     	<script src="{{asset('assets/js/plugins.js')}}"></script>
     	<script src="{{asset('assets/js/lightbox.js')}}"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
     <!-- Footer Scripts
     	============================================= -->
@@ -342,7 +435,7 @@
 
     	<!-- ADD-ONS JS FILES -->
     	<script>
-    		window.onscroll = function() {
+    		window.onscroll = function () {
     			var slider = $('#slider');
     			if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
     				slider.addClass("scrolled-slider");
@@ -350,34 +443,356 @@
     				slider.removeClass("scrolled-slider");
     			}
     		}
+
     	</script>
 
-    	<script type="text/javascript">
-    		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    		(function(){
-    			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    			s1.async=true;
-    			s1.src='https://embed.tawk.to/5e5ce427298c395d1ceaab3c/default';
-    			s1.charset='UTF-8';
-    			s1.setAttribute('crossorigin','*');
-    			s0.parentNode.insertBefore(s1,s0);
-    		})();
-    	</script>
-    	<script>
-    		if (window.matchMedia('(max-width: 425px)'))
-    		{
-    			$( "#header_dalem" ).removeClass("container");
-    			$( "#footer-sosmed" ).removeClass("container");
-    			$( "#header_luar" ).removeClass("container").addClass("container-fluid");
-    			$( "#header_detail" ).removeClass("container");
-    		} else {
-    			$( "#header_dalem" ).addClass("container");
-    			$( "#footer-sosmed" ).addClass("container");
-    			$( "#header_detail" ).addClass("container");
-    			$( "#header_luar" ).removeClass("container-fluid").addClass("container");
-    		}
-    	</script>
-    	@yield('js')
+       <!--  <script type="text/javascript">
+            var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5e5ce427298c395d1ceaab3c/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script> -->
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        	(function(){
+        		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        		s1.async=true;
+        		s1.src='https://embed.tawk.to/5f7ae677f0e7167d00163720/default';
+        		s1.charset='UTF-8';
+        		s1.setAttribute('crossorigin','*');
+        		s0.parentNode.insertBefore(s1,s0);
+        	})();
+        </script>
+        <!--End of Tawk.to Script-->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179474592-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-179474592-1');
+      </script> -->
+
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK5BKMT"
+      	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      	<!-- End Google Tag Manager (noscript) -->
+
+      	<!-- Global site tag (gtag.js) - Google Analytics -->
+      	<script async src="https://www.googletagmanager.com/gtag/js?id=G-112H1YC1N4"></script>
+      	<script>
+      		window.dataLayer = window.dataLayer || [];
+      		function gtag(){dataLayer.push(arguments);}
+      		gtag('js', new Date());
+
+      		gtag('config', 'G-112H1YC1N4');
+      	</script>
+
+      	<!-- End gtag -->
+
+      	<script>
+            // When the user scrolls down 50px from the top of the document, resize the header's font size
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            		$(".menu-drop-new").css('margin-top', '59px');
+            	} else {
+            		$(".menu-drop-new").css('margin-top', '80px');
+            	}
+            }   
+
+            $(document).ready(function () {
+            	$(".pop-container").hide();
+            	setTimeout(function () {
+            		$(".pop-container").show();
+            		console.log('show');
+            }, 7000); // 5000 to load it after 5 seconds from page load
+            });
+
+            if (window.matchMedia('(max-width: 425px)')) {
+            	$("#header_dalem").removeClass("container");
+            	$("#footer-sosmed").removeClass("container");
+            	$("#header_luar").removeClass("container").addClass("container-fluid");
+            	$("#header_detail").removeClass("container");
+            } else {
+            	$("#header_dalem").addClass("container");
+            	$("#footer-sosmed").addClass("container");
+            	$("#header_detail").addClass("container");
+            	$("#header_luar").removeClass("container-fluid").addClass("container");
+            }
+            $(".close-pop").click(function () {
+            	$(".pop-container").hide();
+            });
+            $('#slider-owl').owlCarousel({
+            	loop: true,
+            	nav: true,
+            	dots: false,
+            	autoplay: true,
+            	URLhashListener: true,
+            	autoplayTimeout: 5000,
+            	autoplayHoverPause: true,
+            	responsive: {
+            		0: {
+            			items: 1
+            		},
+            		600: {
+            			items: 1
+            		},
+            		1000: {
+            			items: 1
+            		}
+            	}
+            })
+            $('.owl-next').hide();
+            $('.owl-prev').hide();
+
+            $('.menu-header.produk').hover(function(){
+            	$('#detail-submenu6').css('display', 'flex');
+            }, function(){
+            	$('#detail-submenu6').css('display', 'none');
+            })
+
+            $('.menu-header.treatment').hover(function(){
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-hair-care').css('display', 'flex');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');    
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+
+            	$('#detail-submenut-hair-removal').css('display', 'flex');
+
+            	$('#detail-submenut0').css('display', 'flex');
+            }, function(){
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+
+            	$('#detail-submenut-hair-removal').css('display', 'none');
+
+            	$('#detail-submenut0').css('display', 'none');
+            })
+
+            $('.menu-header.jurnal').hover(function(){
+            	$('#detail-submenuts0').css('display', 'flex');
+            }, function(){
+            	$('#detail-submenuts0').css('display', 'none');
+
+            })
+
+            $(function () {
+            	$.ajax({
+            		url: '{{ url("ajax-produk") }}',
+            		type: 'GET',
+            		dataType: 'Json',
+            	})
+            	.done(function (res) {
+
+
+            		$.each(res, function (index, val) {
+            			$("#submenu"+index).hover(function(){
+            				$('#detail-submenu2').css('display', 'none');
+            				$('#detail-submenu' + index).css('display', 'flex');
+            			}, function(){
+            				$('#detail-submenu' + index).css('display', 'none');
+            			});
+            		});
+            	});
+            });
+
+            $(function () {
+            	$.ajax({
+            		url: '{{ url("ajax-treatment") }}',
+            		type: 'GET',
+            		dataType: 'Json',
+            	})
+            	.done(function (res) {
+            		$.each(res, function (index, val) {
+            			$('#submenut' + index).hover(function () {
+            				$('#detail-submenut' + index).css('display', 'flex');
+            			}, function () {
+            				$('#detail-submenut' + index).css('display', 'none');
+            			});
+            		});
+            	});
+            });
+
+            $(function () {
+            	$.ajax({
+            		url: '{{ url("ajax-jurnal") }}',
+            		type: 'GET',
+            		dataType: 'Json',
+            	})
+            	.done(function (res) {
+            		$.each(res, function (index, val) {
+            			$('#submenuts' + index).hover(function () {
+            				$('#detail-submenuts' + index).css('display', 'flex');
+            			}, function () {
+            				$('#detail-submenuts' + index).css('display', 'none');
+            			});
+            		});
+            	});
+            });
+
+            $(function () {
+            	$.ajax({
+            		url: '{{ url("ajax-sub-menu") }}',
+            		type: 'GET',
+            		dataType: 'Json',
+            	})
+            	.done(function (res) {
+            		$.each(res, function (index, val) {
+            			var url = val.url.split('/');
+            			$('#submenu-'+url[1]).hover(function() {
+            				$('.submenu.submenut-two-'+url[1]).css('display', 'flex');
+            				$('#detail-submenut-'+url[1]).css('display', 'flex');
+            			}, function() {
+            				$('#detail-submenut-'+url[1]).css('display', 'none');
+            				$('.submenu.submenut-two-'+url[1]).css('display', 'none');
+            			});
+            		});
+            	});
+            });
+
+            $('#submenut-hair-care').hover(function () {
+            	$('.submenu.submenut-two-hair-care').css('display', 'flex');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');                
+            }, function () {
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-hair-care').css('display', 'block');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-face-care').hover(function () {
+            	$('.submenu.submenut-two-face-care').css('display', 'flex');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-face-care').css('display', 'block');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-threadlift').hover(function () {
+            	$('.submenu.submenut-two-threadlift').css('display', 'flex');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-threadlift').css('display', 'block');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-countouring').hover(function () {
+            	$('.submenu.submenut-two-countouring').css('display', 'flex');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-countouring').css('display', 'block');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-infusion').hover(function () {
+            	$('.submenu.submenut-two-infusion').css('display', 'flex');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            }, function () {
+            	$('#menu-drop-new2').show();
+            	$('.submenu.submenut-two-infusion').css('display', 'block');
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'none');
+            });
+
+            $('#submenut-body-care').hover(function () {
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'flex');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            }, function () {
+            	$('#menu-drop-new2').show();                
+            	$('.submenu.submenut-two-countouring').css('display', 'none');
+            	$('.submenu.submenut-two-infusion').css('display', 'none');
+            	$('.submenu.submenut-two-body-care').css('display', 'block');
+            	$('.submenu.submenut-two-threadlift').css('display', 'none');
+            	$('.submenu.submenut-two-face-care').css('display', 'none');
+            	$('.submenu.submenut-two-hair-care').css('display', 'none');
+            });
+
+            $('#carousel-profile').owlCarousel({
+            	loop: true,
+            	nav: true,
+            	autoplay: true,
+            	autoplayTimeout: 5000,
+            	autoplayHoverPause: true,
+            	responsive: {
+            		0: {
+            			items: 1
+            		},
+            		600: {
+            			items: 1
+            		},
+            		1000: {
+            			items: 1
+            		}
+            	}
+            })
+        </script>
+        @yield('js')
 
     </body>
 

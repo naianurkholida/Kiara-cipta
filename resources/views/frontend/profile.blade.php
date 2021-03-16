@@ -1,22 +1,30 @@
 @extends('frontend.component.master')
+@section('header')
+<meta name="description" content="Profil Derma Express - A Company by Dermaster Clinic.">
+<link rel="canonical" href="https://derma-express.com/profile">
 
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/profile" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Yuk Check Profile Derma di Sini." />
+
+<title>Derma Express - A Company by Dermaster Clinic</title>
+@endsection
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-    <div class="container clearfix">
-        <div class="heading-block center noborder" data-heading="O">
-            <h3 class="nott ls0">Profile</h3>
-        </div>
+<div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
+    <div id="carousel-profile" class="owl-carousel owl-theme">
+        @foreach($category as $row)
+            @foreach($row->getGallery as $val)
+                @if($val->embed != Null)
+                    <iframe width="100%" height="600px" src="{{ $val->embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                @else
+                    <img src="{{ asset('assets/admin/assets/media/derma_gallery') }}/{{$val->image}}" style="height: 600px; width: 100%;">
+                @endif
+            @endforeach
+        @endforeach
     </div>
-    <div class="container" id="container_luar">
-        <div class="container" id="container_dalem">
-            <div class="row">
-                <div class="col-lg-12">
-                    {!! $content->konten_page !!}
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 @endsection
 

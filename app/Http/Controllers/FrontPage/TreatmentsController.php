@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Entities\Admin\core\Category;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class TreatmentsController extends Controller
 {
@@ -16,12 +18,20 @@ class TreatmentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function __construct(Request $request)
     {
-        $category = Category::where('category', str_replace('-', ' ', $id))->first();
+        $language = Language::first()->id;
 
-        $data = Treatment::where('id_category', $category->id)->get();
-        // $data = Treatment::where('id_category', $id)->get();
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
+    public function index()
+    {
+        $data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
 
         return view('frontend.treatments', compact('data'));
     }

@@ -10,10 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 #new front page route
 
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
+	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
+	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');
+	Route::get('/ajax-jurnal', 'FrontPage\HomeController@jurnalListJson');
+	Route::get('/ajax-sub-menu', 'FrontPage\HomeController@getSubMenuById');
+
+	Route::group(['prefix' => 'jurnal'], function(){
+		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
+		Route::get('/blog', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.blog');
+		Route::get('/media', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.media');
+		Route::get('/show/{id}', 'FrontPage\JurnalController@show')->name('dermaster.jurnal.show');
+	});
 
 	Route::group(['prefix' => 'dokter'], function(){
 		Route::get('/', 'FrontPage\DokterController@index')->name('dermaster.dokter');
@@ -30,7 +42,7 @@
 	});
 
 	Route::group(['prefix' => 'treatments'], function(){
-		Route::get('/{id}', 'FrontPage\TreatmentsController@index')->name('dermaster.treatments');
+		Route::get('/', 'FrontPage\TreatmentsController@index')->name('dermaster.treatments');
 		Route::get('/show/{id}', 'FrontPage\TreatmentsController@show')->name('dermaster.treatments.show');
 	});
 
@@ -50,6 +62,8 @@
 
 	#cek point
 	Route::get('/checkpoint', 'FrontPage\CheckPointController@index')->name('dermaster.check-point');
+	Route::post('/checkpoint-store', 'FrontPage\CheckPointController@store')->name('dermaster.checkpoint.store');
+	Route::get('/checkpoint-report/{idtrx}/{no_hp}', 'FrontPage\CheckPointController@report')->name('dermaster.checkpoint.report');
 
 	#kontak
 	Route::get('/kontak', 'FrontPage\KontakController@index')->name('dermaster.kontak');
@@ -62,6 +76,7 @@
 
 	#kemitraan
 	Route::get('/kemitraan', 'FrontPage\KemitraanController@index')->name('dermaster.kemitraan');
+	Route::post('/store-kemitraan', 'FrontPage\KemitraanController@store')->name('dermaster.kemitraan.store');
 #end new front page route
 
 #language route
@@ -154,6 +169,14 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/update/{id}', 'Admin\core\ProdukController@update')->name('produk.update');
 		Route::get('/delete/{id}', 'Admin\core\ProdukController@delete')->name('produk.delete');
 		Route::get('/history/{id}', 'Admin\core\ProdukController@history')->name('produk.history');
+
+		#icon best seller
+		Route::get('/best_seller', 'Admin\core\BestSellerController@index')->name('produk.best_seller');
+		Route::get('/best_seller_insert', 'Admin\core\BestSellerController@insert')->name('produk.best_seller.insert');
+		Route::post('/best_seller_store', 'Admin\core\BestSellerController@store')->name('produk.best_seller.store');
+		Route::get('/best_seller_edit/{id}', 'Admin\core\BestSellerController@edit')->name('produk.best_seller.edit');
+		Route::post('/best_seller_update/{id}', 'Admin\core\BestSellerController@update')->name('produk.best_seller.update');
+		Route::get('/best_seller_delete/{id}', 'Admin\core\BestSellerController@delete')->name('produk.best_seller.delete');
 	});
 
 	#sosmed admin
@@ -347,4 +370,21 @@ Route::group(['prefix' => 'language'], function(){
 	#upload wysiwyg
 	Route::post('/uploadimagewysywig', 'Admin\core\UploadImageBase64@uploadImage');
 	Route::post('/deleteimagewysywig', 'Admin\core\UploadImageBase64@deleteImage');
+
+	#promo
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'promo'
+	], function(){
+		Route::get('', 'Admin\core\PromoController@index')->name('promo.index');
+		Route::get('/insert', 'Admin\core\PromoController@insert')->name('promo.insert');
+		Route::post('/store', 'Admin\core\PromoController@store')->name('promo.store');
+		Route::get('/edit/{id}', 'Admin\core\PromoController@edit')->name('promo.edit');
+		Route::post('/update/{id}', 'Admin\core\PromoController@update')->name('promo.update');
+		Route::get('/delete/{id}', 'Admin\core\PromoController@delete')->name('promo.delete');
+
+	});
+	
+	#share
+	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');
 #end route backend

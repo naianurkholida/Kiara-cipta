@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Gallery;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
+use Image;
+use File;
+use DB;
 
 class GalleryController extends Controller
 {
@@ -15,6 +20,17 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
     public function index()
     {
         $data = Gallery::where('deleted_at', NULL)->get();

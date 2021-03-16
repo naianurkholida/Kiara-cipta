@@ -14,6 +14,9 @@ use App\Entities\Admin\core\Slider;
 use App\Entities\Admin\core\SlideLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
+use App\Entities\Admin\core\Produk;
+use App\Entities\Admin\core\Posting;
+use App\Entities\Admin\core\BestSellerIcon;
 use DB;
 
 class Helper
@@ -23,6 +26,57 @@ class Helper
 		$data = Session::get('locale');
 
 		return $data;
+	}
+
+	public static function iklan()
+	{
+		$data = Parameter::where('key', 'iklan')->first();
+
+		$img = 'assets/admin/assets/media/img/'.$data->value;
+		return $img;
+	}
+	
+	public static function produkList()
+	{
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
+	
+		return $data;
+	}
+
+	public static function produkListBestSeller()
+	{
+		$data = Produk::with('getProdukLanguage','getCategory')->where('deleted_at', null)
+				->whereHas('getCategory', function($q){
+					$q->where('category', 'Best Seller');
+				})
+				->orderBy('order_num', 'ASC')
+				->get();
+	
+		return $data;
+	}
+
+	public static function iconProdukBestSeller($id)
+	{
+		$data = BestSellerIcon::where('product_id', $id)->get();
+
+		return $data;
+	}
+
+	public static function produkListId()
+	{
+		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
+		
+		return count($data);
 	}
 
 	public static function baseLanguageName()
@@ -107,8 +161,7 @@ class Helper
     
     public static function slider()
 	{
-		$data = Slider::all();
-
+		$data = Slider::orderBy('order_num', 'ASC')->where('status', True)->get();
 		return $data;
 	}
 
@@ -121,7 +174,14 @@ class Helper
 
 	public static function treatment()
 	{
-		$data = Treatment::where('deleted_at', NULL)->get();
+		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
+
+		return $data;
+	}
+
+	public static function treatmentPage()
+	{
+		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->limit(3)->get();
 
 		return $data;
 	}
@@ -180,16 +240,38 @@ class Helper
         return $data->value;
 	}
 
+	public static function cyoutube()
+	{
+		$data = Parameter::where('key', 'youtube')->first();
+
+        return $data->value;
+	}
+
 	public static function descHome()
 	{
 		$data = Parameter::where('key', 'deskripsi_home')->first();
 
 		return $data->value;
+		
 	}
 
 	public static function MenuFrontPage()
 	{
 		$data = MenuFrontPage::where('id_sub_menu', 0)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
+
+		return $data;
+	}
+
+	public static function MenuJurnal()
+	{
+		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
+
+		return $data;
+	}
+
+	public static function getJurnal()
+	{
+		$data = Posting::with('getPostingLanguage', 'category')->whereIn('id_category', [58,51])->get();
 
 		return $data;
 	}
@@ -201,10 +283,66 @@ class Helper
 		return $data;
 	}
 
+	public static function childFrontPageArray($id)
+	{
+		$data = MenuFrontPage::whereIn('id_sub_menu', $id)->where('is_active', 0)->get();
+		return $data;
+	}
+
 	public static function getLanguageJudul($id)
 	{
 		$data = MenuFrontPageLanguage::where('id_menu_front_page', $id)->where('id_language', Session::get('locale'))->first();
 	
 		return $data->judul_menu;
+	}
+
+	public static function tanggal_indonesia($tgl, $tampil_hari=true){
+		$nama_hari=array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu");
+		$nama_bulan = array (
+			1 => "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+			"September", "Oktober", "November", "Desember");
+		$tahun=substr($tgl,0,4);
+		$bulan=$nama_bulan[(int)substr($tgl,5,2)];
+		$tanggal=substr($tgl,8,2);
+		$text="";
+		if ($tampil_hari) {
+			$urutan_hari=date('w', mktime(0,0,0, substr($tgl,5,2), $tanggal, $tahun));
+			$hari=$nama_hari[$urutan_hari];
+			$text .= $hari.", ";
+		}
+		$text .=$tanggal ." ". $bulan ." ". $tahun;
+		return $text;
+	}
+
+	public static function posting()
+	{
+		$data = Posting::with('getPostingLanguage')
+				->where('id_category', 58)
+				->get();
+
+		return $data;
+	}
+
+	public static function getCity()
+	{
+		// persiapkan curl
+        $ch = curl_init(); 
+
+        // set url 
+        curl_setopt($ch, CURLOPT_URL, "http://103.11.134.45:8087/city");
+
+        // return the transfer as a string 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+        // $output contains the output string 
+        $output = curl_exec($ch); 
+
+        // tutup curl 
+        curl_close($ch);      
+
+        // menampilkan hasil curl
+        $data = json_decode($output);
+
+        return $data;
 	}
 }

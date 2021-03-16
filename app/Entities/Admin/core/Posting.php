@@ -20,7 +20,7 @@ class Posting extends Model implements HasMedia
 
     public function category()
     {
-        return $this->hasOne('App\Entities\Admin\core\category','id','id_category');
+        return $this->hasOne('App\Entities\Admin\core\Category','id','id_category');
     }
 
     public function getPostingLanguage()

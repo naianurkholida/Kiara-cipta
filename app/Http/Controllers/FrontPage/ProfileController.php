@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
+use App\Entities\Admin\core\Gallery;
+use App\Entities\Admin\core\Category;
+use App\Entities\Admin\core\Language;
 
 class ProfileController extends Controller
 {
@@ -15,15 +19,30 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
+
     public function index()
     {
-        $content = Pages::select('*')
-                ->join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
-                ->join('parameter', 'parameter.value', '=', 'pages.id')
-                ->where('parameter.key', 'content_profile')
-                ->first();
+        $data = Gallery::where('gallery.deleted_at', NULL)
+                ->join('category', 'category.id', '=', 'gallery.id_category')
+                ->where('category.category', 'profile')
+                ->where('category.id_parent', '!=', '0')
+                ->get();
 
-        return view('frontend.profile', compact('content'));
+        $category = Category::where('category', 'Profile')->get();
+
+        return view('frontend.profile', compact('data','category'));
     }
 
     /**

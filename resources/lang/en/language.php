@@ -4,6 +4,7 @@ return [
 	'judul' 		  => "Welcome",
 	'jabatan'		  => "Web Developer",
 	'tempat_kerja'    => "Bara Enterprise",
+	'treatment'       => "Our Treatments",
 
 	#page
 	'titleMenu' 		  => "Menu",

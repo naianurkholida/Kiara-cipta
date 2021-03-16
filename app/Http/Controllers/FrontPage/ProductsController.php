@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Language;
 
 class ProductsController extends Controller
 {
@@ -15,9 +17,27 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
     public function index()
     {
-        $data      = Produk::where('deleted_at', NULL)->get();
+        $data = Produk::with('getProdukLanguage')
+                ->where('deleted_at', NULL)
+                ->get();
+
+                $data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
 
         return view('frontend.products', compact('data'));
     }
@@ -54,7 +74,6 @@ class ProductsController extends Controller
         $dataLanguage = ProdukLanguage::where('seo', $id)->firstOrFail();
 
         $data = Produk::findOrFail($dataLanguage->id_produk);
-
 
         return view('frontend.products-detail', compact('data'));
     }

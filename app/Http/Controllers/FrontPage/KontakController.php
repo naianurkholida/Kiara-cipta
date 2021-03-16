@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\PagesLanguage;
+use App\Entities\Admin\core\Language;
+
 
 class KontakController extends Controller
 {
@@ -15,6 +18,17 @@ class KontakController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Request $request)
+    {
+        $language = Language::first()->id;
+
+        $locale = Session::get('locale');
+
+        if ($locale == NULL) {
+            $locale = Session::put('locale', $language);
+        }
+    }
+
     public function index()
     {
         $content = Pages::select('*')

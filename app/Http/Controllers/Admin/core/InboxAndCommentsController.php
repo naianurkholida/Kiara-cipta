@@ -8,6 +8,8 @@ use App\Entities\FrontPage\Inbox;
 use App\Entities\FrontPage\Comments;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Http\Controllers\Controller;
+use App\Mail\Email\InboxEmail;
+use Illuminate\Support\Facades\Mail;
 
 class InboxAndCommentsController extends Controller
 {
@@ -57,18 +59,27 @@ class InboxAndCommentsController extends Controller
     }
 
     public function post_inbox(Request $request){
-        
         $inbox = new Inbox;
         $inbox->nama = $request->name;
         $inbox->email = $request->email;
         $inbox->inbox = $request->inbox;
         $inbox->save();
 
-        return redirect()->back()->with('success', 'Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
+        try{
+            Mail::send('email', ['nama' => $request->name, 'pesan' => $request->inbox], function ($message) use ($request)
+            {
+                $message->subject('Customer Help');
+                $message->from($request->email, $request->name);
+                $message->to('media@derma-express.com');
+            });
+            return redirect()->back()->with('alert-success','Terima kasih telah menghubungi kami. Salah satu staff kami akan membalas pesan Anda secepatnya');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
     }
 
     public function post_comment(Request $request){
-        // dd($request->all());
         
         $comment = new Comments;
         $comment->nama = $request->nama;

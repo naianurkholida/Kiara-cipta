@@ -73,7 +73,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
 	function simpan() {
 		var validation = 0;
