@@ -221,8 +221,10 @@ class ProdukController extends Controller
 
         $produk = Produk::findOrFail($id);
 
-        File::delete($this->path.'/'.$produk->image);
-        File::delete($this->path.'/500/'.$produk->image);
+		if ($file) {
+			File::delete($this->path.'/'.$produk->image);
+			File::delete($this->path.'/500/'.$produk->image);
+		}
 
         $produk->update($data);
 
