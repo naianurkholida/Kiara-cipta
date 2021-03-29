@@ -40,14 +40,25 @@
                 @foreach($category as $row)
                     @if($row->category != "Profile")
                         @foreach($row->getGallery as $item)
+                            @php
+                                if ($item->image != null) {
+                                    $url_asset = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
+                                    $thumbnail = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
+                                    $hover_text = "Open Image";
+                                } else {
+                                    $url_asset = $item->embed;
+                                    $thumbnail = "http://img.youtube.com/vi/".explode("v=",$item->embed)[1]."/mqdefault.jpg";
+                                    $hover_text = "Watch Video";
+                                }
+                            @endphp
 
                             <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
                                 <div class="portfolio-image">
-                                    <a href="{{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$item->image}}" data-lightbox="gallery">
-                                        <div id="item-gallery" style ="background-image:url({{ asset('assets/admin/assets/media/derma_gallery/') }}/{{$item->image}})"></div>
+                                    <a href="{{ $url_asset }}" data-lightbox="gallery">
+                                        <div id="item-gallery" style ="background-image:url({{ $thumbnail }})"></div>
                                         <div class="portfolio-overlay">
                                             <div class="portfolio-desc">
-                                                <h3>Open image</h3>
+                                                <h3>{{ $hover_text }}</h3>
                                             </div>
                                         </div>    
                                     </a>
