@@ -102,6 +102,7 @@ class ProdukController extends Controller
 
         $data = [
             'id_category'   => $request->kategori_produk,
+			'label'			=> $request->label,
             'is_created'    => \Session::get('id'),
         ];
 
@@ -213,7 +214,8 @@ class ProdukController extends Controller
 		}
 
         $data = [
-            'id_category'   => $request->kategori_produk
+            'id_category'   => $request->kategori_produk,
+			'label'			=> $request->label,
         ];
 
 		if ($file)

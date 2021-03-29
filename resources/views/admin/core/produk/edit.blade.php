@@ -16,7 +16,7 @@
 		<form action="{{Route('produk.update', $produk->id)}}" method="POST" enctype="multipart/form-data" id="form_menu">
 			{{csrf_field()}}
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-lg-6">
 					<label>Kategori Produk</label>
 					<select class="form-control" name="kategori_produk" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
@@ -24,6 +24,10 @@
 							<option value="{{$val->id}}" {{ $produk->id_category == $val->id ? 'selected' : '' }}>{{$val->category}}</option>
 						@endforeach
 					</select>
+				</div>
+				<div class="col-lg-6">
+					<label>Label Produk</label>
+					<input type="text" id="label" name="label" class="form-control">
 				</div>
 				<div class="col-lg-12">
 					<div class="form-group">
