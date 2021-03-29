@@ -54,53 +54,57 @@ class TreatmentController extends Controller
 			File::makeDirectory($this->path);
 		}
 
-        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-		$fileName = 'Treatment' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
-
-		$size   = getimagesize($file);
-		$width  = $size[0];
-		$height = $size[1];
-
-		if($width > $height){
-			$size = ($width/$height);
-		}else{
-			$size = ($height/$width);
-		}
-
-        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
-		Image::make($file)->save($this->path . '/' . $fileName);
-		foreach ($this->dimensions as $row) {
-            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
-			if($width < $height){
-				$canvas = Image::canvas($row, ceil($row*$size));
-				$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-					$constraint->aspectRatio();
-				});
+		if ($file) {
+			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+			$fileName = 'Treatment' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+	
+			$size   = getimagesize($file);
+			$width  = $size[0];
+			$height = $size[1];
+	
+			if($width > $height){
+				$size = ($width/$height);
 			}else{
-				$canvas = Image::canvas(($row*$size), $row);
-				$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-					$constraint->aspectRatio();
-				});
+				$size = ($height/$width);
 			}
-
-            #CEK JIKA FOLDERNYA BELUM ADA
-			if (!File::isDirectory($this->path . '/' . $row)) {
-                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
-				File::makeDirectory($this->path . '/' . $row);
+	
+			#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+			Image::make($file)->save($this->path . '/' . $fileName);
+			foreach ($this->dimensions as $row) {
+				#MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+				if($width < $height){
+					$canvas = Image::canvas($row, ceil($row*$size));
+					$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}else{
+					$canvas = Image::canvas(($row*$size), $row);
+					$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}
+	
+				#CEK JIKA FOLDERNYA BELUM ADA
+				if (!File::isDirectory($this->path . '/' . $row)) {
+					#MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+					File::makeDirectory($this->path . '/' . $row);
+				}
+	
+				#MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+				$canvas->insert($resizeImage, 'center');
+				#SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+			  
+				$canvas->save($this->path . '/500/' . $fileName);
 			}
-
-            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
-			$canvas->insert($resizeImage, 'center');
-            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-          
-			$canvas->save($this->path . '/500/' . $fileName);
 		}
 
 		$data = [
             'id_category'   => $request->kategori_treatment,
             'is_created'    => \Session::get('id'),
-            'image'			=> $fileName
         ];
+
+		if ($file)
+			$data['image'] = $fileName;
 
         $treatment = Treatment::create($data);
 
@@ -158,57 +162,63 @@ class TreatmentController extends Controller
 			File::makeDirectory($this->path);
 		}
 
-        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-		$fileName = 'Treatment' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
-
-		$size   = getimagesize($file);
-		$width  = $size[0];
-		$height = $size[1];
-
-		if($width > $height){
-			$size = ($width/$height);
-		}else{
-			$size = ($height/$width);
-		}
-
-        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
-		Image::make($file)->save($this->path . '/' . $fileName);
-		foreach ($this->dimensions as $row) {
-            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
-			if($width < $height){
-				$canvas = Image::canvas($row, ceil($row*$size));
-				$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-					$constraint->aspectRatio();
-				});
+		if ($file) {
+			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+			$fileName = 'Treatment' . '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+	
+			$size   = getimagesize($file);
+			$width  = $size[0];
+			$height = $size[1];
+	
+			if($width > $height){
+				$size = ($width/$height);
 			}else{
-				$canvas = Image::canvas(($row*$size), $row);
-				$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-					$constraint->aspectRatio();
-				});
+				$size = ($height/$width);
 			}
-
-            #CEK JIKA FOLDERNYA BELUM ADA
-			if (!File::isDirectory($this->path . '/' . $row)) {
-                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
-				File::makeDirectory($this->path . '/' . $row);
+	
+			#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+			Image::make($file)->save($this->path . '/' . $fileName);
+			foreach ($this->dimensions as $row) {
+				#MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+				if($width < $height){
+					$canvas = Image::canvas($row, ceil($row*$size));
+					$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}else{
+					$canvas = Image::canvas(($row*$size), $row);
+					$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}
+	
+				#CEK JIKA FOLDERNYA BELUM ADA
+				if (!File::isDirectory($this->path . '/' . $row)) {
+					#MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+					File::makeDirectory($this->path . '/' . $row);
+				}
+	
+				#MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+				$canvas->insert($resizeImage, 'center');
+				#SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+			  
+				$canvas->save($this->path . '/500/' . $fileName);
 			}
-
-            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
-			$canvas->insert($resizeImage, 'center');
-            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-          
-			$canvas->save($this->path . '/500/' . $fileName);
 		}
 
         $data = [
             'id_category'   => $request->kategori_treatment,
-            'image'         => $fileName
         ];
+
+		if ($file)
+			$data['image'] = $fileName;
 
         $treatment = treatment::findOrFail($id);
 
-        File::delete($this->path.'/'.$treatment->image);
-        File::delete($this->path.'/500/'.$treatment->image);
+		if ($file) {
+			File::delete($this->path.'/'.$treatment->image);
+			File::delete($this->path.'/500/'.$treatment->image);
+		}
 
         $treatment->update($data);
 
