@@ -101,8 +101,11 @@
 
                             <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
                                 <div class="portfolio-image">
-                                    <!-- <a href="{{ $url_asset }}" data-lightbox="gallery"> -->
+                                @if($type == "image")
+                                    <a href="{{ $url_asset }}" data-lightbox="gallery">
+                                @else
                                     <a onclick="open_modal('{{ $url_asset }}','{{ $type }}')">
+                                @endif
                                         <div id="item-gallery" style ="background-image:url({{ $thumbnail }})"></div>
                                         <div class="portfolio-overlay">
                                             <div class="portfolio-desc">
