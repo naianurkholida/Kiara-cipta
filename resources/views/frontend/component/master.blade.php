@@ -506,13 +506,26 @@
             // When the user scrolls down 50px from the top of the document, resize the header's font size
             window.onscroll = function() {scrollFunction()};
 
+
+			// indicator for detail-submenu
+			var latest_sm_index = 0;
+			var latest_smt_index = 0;
+			var latest_smts_index = 0;
+
+
             function scrollFunction() {
             	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             		$(".menu-drop-new").css('margin-top', '59px');
             	} else {
             		$(".menu-drop-new").css('margin-top', '80px');
             	}
-            }   
+            }  
+			
+			function hide_detail_submenu() {
+				$('#detail-submenu' + latest_sm_index).css('display', 'none');
+				$('#detail-submenut' + latest_smt_index).css('display', 'none');
+				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+			}
 
             $(document).ready(function () {
             	$(".pop-container").hide();
@@ -560,9 +573,11 @@
             $('.owl-prev').hide();
 
             $('.menu-header.produk').hover(function(){
+				hide_detail_submenu()
+				latest_sm_index = 6;
             	$('#detail-submenu6').css('display', 'flex');
             }, function(){
-            	$('#detail-submenu6').css('display', 'none');
+            	// $('#detail-submenu6').css('display', 'none');
             })
 
             $('.menu-header.treatment').hover(function(){
@@ -576,6 +591,8 @@
 
             	$('#detail-submenut-hair-removal').css('display', 'flex');
 
+				hide_detail_submenu()
+				latest_smt_index = 0;
             	$('#detail-submenut0').css('display', 'flex');
             }, function(){
             	$('#menu-drop-new2').show();
@@ -587,29 +604,28 @@
 
             	$('#detail-submenut-hair-removal').css('display', 'none');
 
-            	$('#detail-submenut0').css('display', 'none');
+            	// $('#detail-submenut0').css('display', 'none');
             })
 
             $('.menu-header.jurnal').hover(function(){
+				hide_detail_submenu()
+				lates_smts_index = 0;
             	$('#detail-submenuts0').css('display', 'flex');
             }, function(){
-            	$('#detail-submenuts0').css('display', 'none');
+            	// $('#detail-submenuts0').css('display', 'none');
 
             })
 
-			
-			// indicator for detail-submenu
-			var latest_sm_index = 0;
-			var latest_smt_index = 0;
-			var latest_smts_index = 0;
 
 			// hover leave header
 			$(".menu-drop-new").hover(function(){
 
 			}, function(){
-				$('#detail-submenu' + latest_sm_index).css('display', 'none');
-				$('#detail-submenut' + latest_smt_index).css('display', 'none');
-				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+				hide_detail_submenu();
+			});
+			
+			$("#top-bar").hover(function(){
+				hide_detail_submenu();
 			});
 
             $(function () {
