@@ -597,6 +597,21 @@
 
             })
 
+			
+			// indicator for detail-submenu
+			var latest_sm_index = 0;
+			var latest_smt_index = 0;
+			var latest_smts_index = 0;
+
+			// hover leave header
+			$(".menu-drop-new").hover(function(){
+
+			}, function(){
+				$('#detail-submenu' + latest_sm_index).css('display', 'none');
+				$('#detail-submenut' + latest_smt_index).css('display', 'none');
+				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+			});
+
             $(function () {
             	$.ajax({
             		url: '{{ url("ajax-produk") }}',
@@ -608,10 +623,14 @@
 
             		$.each(res, function (index, val) {
             			$("#submenu"+index).hover(function(){
+							// hide hovered before
+            				$('#detail-submenu' + latest_sm_index).css('display', 'none');
+							latest_sm_index = index;
+
             				$('#detail-submenu2').css('display', 'none');
             				$('#detail-submenu' + index).css('display', 'flex');
             			}, function(){
-            				$('#detail-submenu' + index).css('display', 'none');
+            				// $('#detail-submenu' + index).css('display', 'none');
             			});
             		});
             	});
@@ -626,9 +645,13 @@
             	.done(function (res) {
             		$.each(res, function (index, val) {
             			$('#submenut' + index).hover(function () {
+							// hide hovered before
+            				$('#detail-submenut' + latest_smt_index).css('display', 'none');
+							latest_smt_index = index;
+
             				$('#detail-submenut' + index).css('display', 'flex');
             			}, function () {
-            				$('#detail-submenut' + index).css('display', 'none');
+            				// $('#detail-submenut' + index).css('display', 'none');
             			});
             		});
             	});
@@ -643,9 +666,13 @@
             	.done(function (res) {
             		$.each(res, function (index, val) {
             			$('#submenuts' + index).hover(function () {
+							// hide hovered before
+            				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+							latest_smts_index = index;
+
             				$('#detail-submenuts' + index).css('display', 'flex');
             			}, function () {
-            				$('#detail-submenuts' + index).css('display', 'none');
+            				// $('#detail-submenuts' + index).css('display', 'none');
             			});
             		});
             	});
