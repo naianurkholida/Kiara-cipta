@@ -301,13 +301,18 @@ class ProdukController extends Controller
 	
 	public function delete($id)
 	{
-		$produk = Produk::findOrFail($id);
-
 		$data = [
 			'deleted_at'	=> Carbon::now()
 		];
 
+		$produk = Produk::findOrFail($id);
 		$produk->update($data);
+
+		$produk_language = ProdukLanguage::where('id_produk',$produk->id)->get();
+		foreach ($produk_language as $key => $value) {
+			$pl = ProdukLanguage::findOrFail($value->id);
+			$pl->update($data);
+		}
 
 		return redirect()->route('produk.index')->with('danger', 'Data Berhasil di Hapus');
 	}

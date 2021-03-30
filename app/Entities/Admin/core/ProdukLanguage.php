@@ -14,6 +14,7 @@ class ProdukLanguage extends Model
         'seo',
 		'id_language',
 		'judul',
-		'deskripsi'
+		'deskripsi',
+		'deleted_at'
 	];
 }
