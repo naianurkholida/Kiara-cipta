@@ -27,7 +27,7 @@
 				</div>
 				<div class="col-lg-6">
 					<label>Label Produk</label>
-					<input type="text" id="label" name="label" class="form-control" value="{{$val->label}}">
+					<input type="text" id="label" name="label" class="form-control">
 				</div>
 				<div class="col-lg-12">
 					<div class="form-group">
