@@ -33,7 +33,7 @@ class GalleryController extends Controller
 
     public function index()
     {
-        $data = Gallery::where('deleted_at', NULL)->orderBy('updated_at','desc')->get();
+        $data = Gallery::with('category')->where('deleted_at', NULL)->orderBy('updated_at','desc')->get();
         $category = Category::where('id_parent', 39)->get();
 
         return view('frontend.gallery', compact('data', 'category'));

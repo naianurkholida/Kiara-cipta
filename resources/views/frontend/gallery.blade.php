@@ -82,43 +82,44 @@
         <div class="container">
             <div id="portfolio" class="portfolio grid-container portfolio-nomargin clearfix">
 
-                @foreach($category as $row)
-                    @if($row->category != "Profile")
-                        @foreach($row->getGallery as $item)
-                            @php
-                                if ($item->image != null) {
-                                    $type = "image";
-                                    $url_asset = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
-                                    $thumbnail = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
-                                    $hover_text = "Open Image";
-                                } else {
-                                    $type = "video";
-                                    $url_asset = "https://www.youtube.com/embed/".explode("=",$item->embed)[1];
-                                    $thumbnail = "https://img.youtube.com/vi/".explode("=",$item->embed)[1]."/mqdefault.jpg";
-                                    $hover_text = "Watch Video";
-                                }
-                            @endphp
+                {{--@foreach($category as $row)--}}
+                    {{--@if($row->category != "Profile")--}}
+                        @foreach($data as $item)
+                            @if($item->category->category != "Profile")
+                                @php
+                                    if ($item->image != null) {
+                                        $type = "image";
+                                        $url_asset = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
+                                        $thumbnail = asset('assets/admin/assets/media/derma_gallery/') ."/". $item->image;
+                                        $hover_text = "Open Image";
+                                    } else {
+                                        $type = "video";
+                                        $url_asset = "https://www.youtube.com/embed/".explode("=",$item->embed)[1];
+                                        $thumbnail = "https://img.youtube.com/vi/".explode("=",$item->embed)[1]."/mqdefault.jpg";
+                                        $hover_text = "Watch Video";
+                                    }
+                                @endphp
 
-                            <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $row->category) }}" style="border: 1px solid rgb(101, 181, 170);">
-                                <div class="portfolio-image">
-                                @if($type == "image")
-                                    <a href="{{ $url_asset }}" data-lightbox="gallery">
-                                @else
-                                    <a onclick="open_modal('{{ $url_asset }}','{{ $type }}')">
-                                @endif
-                                        <div id="item-gallery" style ="background-image:url({{ $thumbnail }})"></div>
-                                        <div class="portfolio-overlay">
-                                            <div class="portfolio-desc">
-                                                <h3>{{ $hover_text }}</h3>
-                                            </div>
-                                        </div>    
-                                    </a>
-                                </div>
-                            </article>
-
+                                <article class="portfolio-item pf-media pf-{{ str_replace(' ', '-', $item->category->category) }}" style="border: 1px solid rgb(101, 181, 170);">
+                                    <div class="portfolio-image">
+                                    @if($type == "image")
+                                        <a href="{{ $url_asset }}" data-lightbox="gallery">
+                                    @else
+                                        <a onclick="open_modal('{{ $url_asset }}','{{ $type }}')">
+                                    @endif
+                                            <div id="item-gallery" style ="background-image:url({{ $thumbnail }})"></div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-desc">
+                                                    <h3>{{ $hover_text }}</h3>
+                                                </div>
+                                            </div>    
+                                        </a>
+                                    </div>
+                                </article>
+                            @endif
                         @endforeach
-                    @endif
-                @endforeach
+                    {{--@endif--}}
+                {{--@endforeach--}}
         
             </div>
         </div>
