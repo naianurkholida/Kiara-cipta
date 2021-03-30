@@ -86,7 +86,9 @@
                                         <div class="scroller-detail">
                                             <?php foreach(Helper::produkList() as $key => $row){ ?>
                                                 <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
-                                                    <span class="badge badge-success">{{$row->label}}</span><br>
+                                                    @if ($row->label != null && $row->label != "")
+                                                        <span class="badge badge-success">{{$row->label}}</span><br>
+                                                    @endif
                                                     <span>{{$row->getProdukLanguage->judul}}</span>
                                                 </div>
                                             <?php } ?>
