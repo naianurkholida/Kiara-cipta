@@ -533,7 +533,7 @@
 					hide_detail_submenu()
             		$(".pop-container").show();
             		// console.log('show');
-            }, 7000); // 5000 to load it after 5 seconds from page load
+            	}, 7000); // 5000 to load it after 5 seconds from page load
             });
 
             if (window.matchMedia('(max-width: 425px)')) {
