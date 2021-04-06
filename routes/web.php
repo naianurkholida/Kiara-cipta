@@ -384,6 +384,19 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/delete/{id}', 'Admin\core\PromoController@delete')->name('promo.delete');
 
 	});
+
+	#online store
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'online_store'
+	], function(){
+		Route::get('/', 'Admin\core\OnlineStoreController@index')->name('online_store.index');
+		Route::get('/insert', 'Admin\core\OnlineStoreController@insert')->name('online_store.insert');
+		Route::post('/store', 'Admin\core\OnlineStoreController@store')->name('online_store.store');
+		Route::get('/edit/{id}', 'Admin\core\OnlineStoreController@edit')->name('online_store.edit');
+		Route::post('/update/{id}', 'Admin\core\OnlineStoreController@update')->name('online_store.update');
+		Route::get('/delete/{id}', 'Admin\core\OnlineStoreController@delete')->name('online_store.delete');
+	});
 	
 	#share
 	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');

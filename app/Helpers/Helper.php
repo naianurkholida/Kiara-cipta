@@ -17,6 +17,7 @@ use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\BestSellerIcon;
+use App\Entities\Admin\core\OnlineStore;
 use DB;
 
 class Helper
@@ -344,5 +345,14 @@ class Helper
         $data = json_decode($output);
 
         return $data;
+	}
+
+	public static function online_store()
+	{
+		$data = OnlineStore::where('deleted_at', NULL)
+				->orderBy('updated_at', 'desc')
+				->get();
+
+		return $data;
 	}
 }

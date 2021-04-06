@@ -275,7 +275,12 @@
                                 </address>
 
                                 <div class="clearfix">
-                                    <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee" style="width: 50px; height: 50px; border: none;">
+									@foreach (Helper::online_store() as $row)
+                                    <a href="{{$row->link}}" target="blank" class="social-icon si-small si-square topmargin-sm" title="{{$row->name}}" style="width: 50px; height: 50px; border: none;">
+                                        <img src="{{ asset($row->icon) }}">
+                                    </a>
+									@endforeach
+                                    <!-- <a href="https://shopee.co.id/dermaexpress?v=795&smtt=0.0.3" target="blank" class="social-icon si-small si-square topmargin-sm" title="Shopee" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/shopee.png') }}">
                                     </a>
 
@@ -293,7 +298,7 @@
 
                                     <a href="https://s.lazada.co.id/s.b7283" target="blank" class="social-icon si-small si-square topmargin-sm" title="ILotte" style="width: 50px; height: 50px; border: none;">
                                         <img src="{{ asset('assets/image/ilotte.jpg') }}">
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
 
