@@ -154,7 +154,7 @@
                             @foreach(Helper::MenuFrontPage() as $key => $row)
                                 @if($key > 3)
                                     @if($row->url != "treatments" && $row->url != "products" && $row->url != 'jurnal')
-                                    <li class="menu-header">
+                                    <li class="menu-header menu-non-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
                                             <div>{{ $row->getMenuFrontPageLanguage->judul_menu }}</div>
                                         </a>

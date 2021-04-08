@@ -582,6 +582,9 @@
 			$('.menu-header.menu-non-hover').hover(function(){
 				hide_detail_submenu()
 			})
+			$('.logo-desktop').hover(function(){
+				hide_detail_submenu()
+			})
 
             $('.menu-header.produk').hover(function(){
 				hide_detail_submenu()
