@@ -161,36 +161,50 @@
                         	============================================= -->
                         	<div id="top-social">
                         		<ul>
-                        			<li><a href="{{ Helper::cfacebook() }}" class="si-facebook" target="_blank"><span
-                        				class="ts-icon"><i class="icon-facebook"></i></span><span
-                        				class="ts-text">Facebook</span></a></li>
+                        			<li>
+										<a href="{{ Helper::cfacebook() }}" class="si-facebook" target="_blank">
+											<span class="ts-icon"><i class="icon-facebook"></i></span>
+											<span class="ts-text">Facebook</span>
+										</a>
+									</li>
 
-                        				<li><a href="{{ Helper::cinstagram() }}" class="si-instagram" target="_blank"><span
-                        					class="ts-icon"><i class="icon-instagram2"></i></span><span
-                        					class="ts-text">Instagram</span></a></li>
+									<li>
+										<a href="{{ Helper::cinstagram() }}" class="si-instagram" target="_blank">
+											<span class="ts-icon"><i class="icon-instagram2"></i></span>
+											<span class="ts-text">Instagram</span>
+										</a>
+									</li>
 
-                        					<li><a href="{{ Helper::ctwitter() }}" class="si-twitter"><span class="ts-icon"><i
-                        						class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a>
-                        					</li>
+									<li>
+										<a href="{{ Helper::ctwitter() }}" class="si-twitter">
+											<span class="ts-icon"><i class="icon-twitter"></i></span>
+											<span class="ts-text">Twitter</span>
+										</a>
+									</li>
 
-                        					<li><a href="{{ Helper::cwhatsapp() }}" target="_blank" rel="noopener"
-                        						class="si-whatsapp"><span class="ts-icon"><i
-                        							class="icon-whatsapp"></i></span><span
-                        							class="ts-text">Whatsapp</span></a></li>
+									<li>
+										<a href="{{ Helper::cwhatsapp() }}" target="_blank" rel="noopener" class="si-whatsapp">
+											<span class="ts-icon"><i class="icon-whatsapp"></i></span>
+											<span class="ts-text">Whatsapp</span>
+										</a>
+									</li>
 
-                        							<li><a href="{{ Helper::cemail() }}" class="si-email3" target="_blank"><span
-                        								class="ts-icon"><i class="icon-envelope-alt"></i></span><span
-                        								class="ts-text">Email</span></a></li>
-                        							</ul>
-                        						</div>
-                        						<!-- #top-social end -->
+									<li>
+										<a href="{{ Helper::cemail() }}" class="si-email3" target="_blank">
+											<span class="ts-icon"><i class="icon-envelope-alt"></i></span>
+											<span class="ts-text">Email</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- #top-social end -->
 
-                        					</div>
-                        				</div>
+						</div>
+					</div>
 
-                        			</div>
+				</div>
 
-                        		</div>
+			</div>
 
         <!-- Header
         	============================================= -->
@@ -511,8 +525,8 @@
             // When the user scrolls down 50px from the top of the document, resize the header's font size
             window.onscroll = function() {scrollFunction()};
 
-
 			// indicator for detail-submenu
+			var latest_pointer = "";
 			var latest_sm_index = 0;
 			var latest_smt_index = 0;
 			var latest_smts_index = 0;
@@ -579,6 +593,22 @@
             $('.owl-prev').hide();
 
 
+			$('.menu-header').hover(function(){
+				
+			}, function(){
+				hide_detail_submenu()
+			})
+			$('.menu-drop-new').hover(function(){
+				if (latest_pointer == "sm") {
+					$('#detail-submenu2').css('display', 'none');
+					$('#detail-submenu' + latest_sm_index).css('display', 'flex');
+				} else if (latest_pointer == "smt") {
+					$('#detail-submenut' + latest_smt_index).css('display', 'flex');
+				} else if (latest_pointer == "smts") {
+					$('#detail-submenuts' + latest_smts_index).css('display', 'flex');
+				}
+			})
+
 			$('.menu-header.menu-non-hover').hover(function(){
 				hide_detail_submenu()
 			})
@@ -588,6 +618,7 @@
 
             $('.menu-header.produk').hover(function(){
 				hide_detail_submenu()
+				latest_pointer = "sm";
 				latest_sm_index = 6;
             	$('#detail-submenu6').css('display', 'flex');
             }, function(){
@@ -606,6 +637,7 @@
             	$('#detail-submenut-hair-removal').css('display', 'flex');
 
 				hide_detail_submenu()
+				latest_pointer = "smt";
 				latest_smt_index = 0;
             	$('#detail-submenut0').css('display', 'flex');
             }, function(){
@@ -623,7 +655,8 @@
 
             $('.menu-header.jurnal').hover(function(){
 				hide_detail_submenu()
-				lates_smts_index = 0;
+				latest_pointer = "smts";
+				latest_smts_index = 0;
             	$('#detail-submenuts0').css('display', 'flex');
             }, function(){
             	// $('#detail-submenuts0').css('display', 'none');
@@ -655,6 +688,7 @@
             			$("#submenu"+index).hover(function(){
 							// hide hovered before
             				$('#detail-submenu' + latest_sm_index).css('display', 'none');
+							latest_pointer = "sm";
 							latest_sm_index = index;
 
             				$('#detail-submenu2').css('display', 'none');
@@ -677,6 +711,7 @@
             			$('#submenut' + index).hover(function () {
 							// hide hovered before
             				$('#detail-submenut' + latest_smt_index).css('display', 'none');
+							latest_pointer = "smt";
 							latest_smt_index = index;
 
             				$('#detail-submenut' + index).css('display', 'flex');
@@ -698,6 +733,7 @@
             			$('#submenuts' + index).hover(function () {
 							// hide hovered before
             				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+							latest_pointer = "smts";
 							latest_smts_index = index;
 
             				$('#detail-submenuts' + index).css('display', 'flex');
