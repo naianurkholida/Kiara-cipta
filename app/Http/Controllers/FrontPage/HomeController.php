@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Treatment;
@@ -60,6 +61,16 @@ class HomeController extends Controller
     public function produkListJson()
     {
         $data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+    
+        return response()->json($data);
+    }
+
+    public function kategoriProdukListJson () 
+    {
+		$data = Category::where('id_parent',36)
+						->where('deleted_at', null)
+						->orderBy('order_num', 'asc')
+						->get();
     
         return response()->json($data);
     }

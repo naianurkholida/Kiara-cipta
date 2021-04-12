@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
@@ -76,6 +77,22 @@ class ProductsController extends Controller
         $data = Produk::where('deleted_at',null)->findOrFail($dataLanguage->id_produk);
 
         return view('frontend.products-detail', compact('data'));
+    }
+
+    public function showByCategory ($category) 
+    {
+        $category = Category::where('seo',$category)->first();
+        $data = Produk::with('getProdukLanguage')
+                    ->where('deleted_at', NULL)
+                    ->where('id_category', $category->id)
+                    ->get();
+
+        $data = $data->sortBy(function ($data, $key)
+        {
+            return $data->getProdukLanguage->judul;
+        });
+
+        return view('frontend.products', compact('data','category'));
     }
 
     /**

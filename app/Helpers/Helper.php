@@ -36,6 +36,16 @@ class Helper
 		$img = 'assets/admin/assets/media/img/'.$data->value;
 		return $img;
 	}
+
+	public static function kategoriProdukList()
+	{
+		$data = Category::where('id_parent',36)
+						->where('deleted_at', null)
+						->orderBy('order_num', 'asc')
+						->get();
+
+		return $data;
+	}
 	
 	public static function produkList()
 	{

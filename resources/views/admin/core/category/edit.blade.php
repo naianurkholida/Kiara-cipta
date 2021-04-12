@@ -36,10 +36,17 @@
                     <label for="">Kategori</label>
                     <input type="text" class="form-control" name="kategori" id="kategori" value="{{$category->category}}" required="">
                 </div>
+
                 <div class="col-md-6">
                     <label>Order Num</label>
                     <input type="text" name="order_num" class="form-control" value="{{$category->order_num}}" required="">
                 </div>
+
+                <div class="col-md-12">
+                    <label for="">Deskripsi</label>
+					<textarea class="form-control" name="description" id="description" value="{{$category->description}}" required=""></textarea>
+                </div>
+
                 @if($cek_kat != null)
                 <div class="col-md-12"><br>
                     <label>Icon</label>

@@ -10,7 +10,11 @@
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
+            @if ($category)
+            <h3 class="nott ls0">{{$category->category}}</h3>
+            @else
             <h3 class="nott ls0">Product</h3>
+            @endif
         </div>
     </div>
     <div class="container-flex container">

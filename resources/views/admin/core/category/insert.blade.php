@@ -51,6 +51,11 @@
                     <label>Order Num</label>
                     <input type="number" name="order_num" class="form-control" required="">
                 </div>
+
+                <div class="col-md-12">
+                    <label for="">Deskripsi</label>
+					<textarea class="form-control" name="description" id="description" required=""></textarea>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12"><br>

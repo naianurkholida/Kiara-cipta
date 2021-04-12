@@ -16,6 +16,7 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 
 	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
+	Route::get('/ajax-kategori-produk', 'FrontPage\HomeController@kategoriProdukListJson');
 	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');
 	Route::get('/ajax-jurnal', 'FrontPage\HomeController@jurnalListJson');
 	Route::get('/ajax-sub-menu', 'FrontPage\HomeController@getSubMenuById');
@@ -39,6 +40,7 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	Route::group(['prefix' => 'products'], function(){
 		Route::get('/', 'FrontPage\ProductsController@index')->name('dermaster.products');
 		Route::get('/show/{id}', 'FrontPage\ProductsController@show')->name('dermaster.products.show');
+		Route::get('/{category}', 'FrontPage\ProductsController@showByCategory')->name('dermaster.products.category');
 	});
 
 	Route::group(['prefix' => 'treatments'], function(){

@@ -619,8 +619,8 @@
             $('.menu-header.produk').hover(function(){
 				hide_detail_submenu()
 				latest_pointer = "sm";
-				latest_sm_index = 6;
-            	$('#detail-submenu6').css('display', 'flex');
+				latest_sm_index = 0;
+            	$('#detail-submenu0').css('display', 'flex');
             }, function(){
             	// $('#detail-submenu6').css('display', 'none');
             })
@@ -677,7 +677,8 @@
 
             $(function () {
             	$.ajax({
-            		url: '{{ url("ajax-produk") }}',
+            		// url: '{{ url("ajax-produk") }}',
+            		url: '{{ url("ajax-kategori-produk") }}',
             		type: 'GET',
             		dataType: 'Json',
             	})

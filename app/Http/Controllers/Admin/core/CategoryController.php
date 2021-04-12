@@ -94,7 +94,9 @@ class CategoryController extends Controller
     	$category = new Category;
     	$category->id_parent = $request->tipe;
     	$category->id_language = 1;
+    	$category->seo = strtolower(str_replace(" ","-",$request->kategori));
     	$category->category = $request->kategori;
+    	$category->description = $request->description;
     	$category->order_num = $request->order_num;
     	$category->is_created = Session::get('id');
     	$category->save();
@@ -163,7 +165,9 @@ class CategoryController extends Controller
     		File::delete('admin/assets/media/icon-kategori/'.$category->gambar);
     	}
 
+    	$category->seo = strtolower(str_replace(" ","-",$request->kategori));
     	$category->category = $request->kategori;
+    	$category->description = $request->description;
     	$category->order_num = $request->order_num;
     	$category->is_created = Session::get('id');
     	$category->save();

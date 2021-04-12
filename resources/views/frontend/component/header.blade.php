@@ -84,27 +84,41 @@
                                     </li>
                                     <div class="menu-drop-new">
                                         <div class="scroller-detail">
-                                            <?php foreach(Helper::produkList() as $key => $row){ ?>
+                                            <?php // foreach(Helper::produkList() as $key => $row){ ?>
+                                            <?php foreach(Helper::kategoriProdukList() as $key => $row){ ?>
                                                 <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
+                                                    {{--
                                                     @if ($row->label != null && $row->label != "")
                                                         <span class="badge badge-success">{{$row->label}}</span><br>
                                                     @endif
                                                     <span>{{$row->getProdukLanguage->judul}}</span>
+                                                    --}}
+                                                    <span>{{$row->category}}</span>
                                                 </div>
                                             <?php } ?>
                                         </div>
 
-                                        <?php foreach (Helper::produkList() as $key => $value) { ?>
+                                        <?php // foreach (Helper::produkList() as $key => $value) { ?>
+                                        <?php foreach (Helper::kategoriProdukList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
+                                                {{--
                                                 <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
-                                                
-                                               <div class="desc-detail text-center" style="font-size: 20px;">
+                                                --}}
+
+                                                <div class="desc-detail text-center" style="font-size: 20px; min-width: 100%;">
+                                                {{--
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
                                                     @else
                                                     <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
+                                                --}}
+
+                                                    <div style="margin:auto; width:50%;">
+                                                        <p>{{ $value->description ?? " " }}</p>
+                                                        <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         <?php } ?>
