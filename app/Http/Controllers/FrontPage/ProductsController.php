@@ -31,6 +31,7 @@ class ProductsController extends Controller
 
     public function index()
     {
+        $category = null;
         $data = Produk::with('getProdukLanguage')
                 ->where('deleted_at', NULL)
                 ->get();
@@ -40,7 +41,7 @@ class ProductsController extends Controller
                     return $data->getProdukLanguage->judul;
                 });
 
-        return view('frontend.products', compact('data'));
+        return view('frontend.products', compact('data', 'category'));
     }
 
     /**
