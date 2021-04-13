@@ -44,7 +44,6 @@
     function magnify(imgID, zoom) {
         var img, glass, w, h, bw;
         img = document.getElementById(imgID);
-        console.log(img.width, img.height)
         /*create magnifier glass:*/
         glass = document.createElement("DIV");
         glass.setAttribute("class", "img-magnifier-glass");
@@ -113,7 +112,7 @@
                     <div class="row" style="margin-top: 70px;">
                         <div class="col-md-4 col-sm-12">
                             <div class="img-magnifier-container">
-                                <img class="img-home" id="img-home" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
+                                <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
                             </div>
                         </div>
                         <div class="col-md-8 col-sm-12">
@@ -129,10 +128,11 @@
 
 @section('js')
 <script>
-    getOriginImageSize();
-    setTimeout(function() {
+    $(".img-magnifier-container").hover(function() {
         magnify("img-home", 2);
-    }, 1000);
+    }, function() {
+        $(".img-magnifier-glass").remove();
+    })
 
     if (window.matchMedia('(max-width: 425px)'))
     {
@@ -141,16 +141,6 @@
     } else {
         $( "#container_dalem" ).addClass("container");
         $( "#container_luar" ).removeClass("container-fluid").addClass("container");
-    }
-
-    function getOriginImageSize() {
-        var img = new Image();
-        img.src = "{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}";
-
-        var eleImg = document.getElementById("img-home");
-        img.onload = function() { 
-            eleImg.width = this.width;
-        }
     }
 </script>
 @endsection
