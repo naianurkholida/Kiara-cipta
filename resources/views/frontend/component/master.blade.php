@@ -374,7 +374,8 @@
                                                 <h4><a href="https://g.co/kgs/xfrpoV" target="blank">Utan Kayu</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                Senin - Minggu : 09:30 - 17:30 WIB
+                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
+                                                Minggu : 10:00 - 17:00 WIB
                                             </ul>
                                         </div>
                                     </div>
@@ -385,7 +386,8 @@
                                                 <h4><a href="https://g.co/kgs/1c6QKP" target="blank">Gading Serpong</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                Senin - Minggu : 09:30 - 17:30 WIB
+                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
+                                                Minggu : 10:00 - 17:00 WIB
                                             </ul>
                                         </div>
                                     </div>
@@ -396,7 +398,8 @@
                                                 <h4><a href="https://shorturl.at/ySWX9" target="blank">Tawakal</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                Senin - Minggu : 09:30 - 17:30 WIB
+                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
+                                                Minggu : 10:00 - 17:00 WIB
                                             </ul>
                                         </div>
                                     </div>
