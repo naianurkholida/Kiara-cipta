@@ -47,7 +47,7 @@
                         Jl. Tawakal Ujung No.C-1. Tomang, Petamburan, Jakarta Barat.<br> 
                         <i class="icon-phone-sign"></i> 02121251383<br>
                         <i class="icon-whatsapp-square"></i> 082260027800<br>
-                        <i class="icon-clock"></i> Senin - Minggu : 10:00 - 17.00 WIB<br><br>
+                        <i class="icon-clock"></i> Senin - Minggu : 09:30 - 17.30 WIB<br><br>
                         </div>
                         <div class="item-kontak">
                         <b>Utan Kayu</b><br><br>
@@ -55,7 +55,7 @@
                         <i class="icon-phone-sign"></i> 02122897879<br>
                         <i class="icon-phone-sign"></i> 02122895170<br>
                         <i class="icon-whatsapp-square"></i> 0821 33554191<br>
-                        <i class="icon-clock"></i> Senin – Minggu : 10:00 - 17:00 WIB<br><br>
+                        <i class="icon-clock"></i> Senin – Minggu : 09:30 - 17:30 WIB<br><br>
                         </div>
                         <div class="item-kontak">
                         <b>Gading Serpong</b><br><br>
@@ -65,8 +65,7 @@
                         <i class="icon-phone-sign"></i> 02154214756<br>
                         <i class="icon-phone-sign"></i> 02154214758<br>
                         <i class="icon-whatsapp-square"></i> 0821 33554192<br>
-                        <i class="icon-clock"></i> Senin - Jumat : 11:00 - 19:00 WIB<br>
-                        <i class="icon-clock"></i> Sabtu - Minggu : 10:00 - 18:00 WIB<br><br>
+                        <i class="icon-clock"></i> Senin - Minggu : 09:30 - 17:30 WIB<br><br>
                         </div>
                         <div class="item-kontak">
                         <b>Kontak Kami</b><br>
