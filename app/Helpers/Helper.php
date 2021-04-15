@@ -18,6 +18,7 @@ use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\BestSellerIcon;
 use App\Entities\Admin\core\OnlineStore;
+use App\Entities\Admin\core\ProfileCabang;
 use DB;
 
 class Helper
@@ -362,6 +363,15 @@ class Helper
 		$data = OnlineStore::where('deleted_at', NULL)
 				->orderBy('updated_at', 'desc')
 				->get();
+
+		return $data;
+	}
+
+	public static function profile_cabang()
+	{
+		$data = ProfileCabang::with('detail')
+							->where('deleted_at', null)
+							->get();
 
 		return $data;
 	}

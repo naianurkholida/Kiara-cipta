@@ -28,6 +28,7 @@ class ProfileCabangController extends Controller
             'name' => $req->pc_name,
             'is_active' => $req->pc_status,
             'address' => $req->pc_address,
+            'link' => $req->pc_link,
         ]);
 
         foreach ($req->pc_detail_type as $key => $value) {
@@ -37,13 +38,13 @@ class ProfileCabangController extends Controller
                 'value' => $req->pc_detail_value[$key],
             ]);
         }
-        
+
         return redirect()->route('profile_cabang.index')->with('info', 'Data Berhasil disimpan!');
     }
 
     public function edit ($id) 
     {
-        $data = null;
+        $data = ProfileCabang::with('detail')->find($id);
 
         return view('admin.core.profile_cabang.edit', compact('data'));
     }

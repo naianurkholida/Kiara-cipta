@@ -324,38 +324,18 @@
                                 <h4>Klinik Kami</h4>
 
                                 <div id="post-list-footer">
+								@foreach(Helper::profile_cabang() as $value)
                                     <div class="spost clearfix">
                                         <div class="entry-c">
                                             <div class="entry-title">
-                                                <h4><a href="https://g.co/kgs/xfrpoV" target="blank">Utan Kayu</a></h4>
+                                                <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                <li>Jl. Utan Kayu Raya dan No.79B, RT.1/RW.8, Utan Kayu Utara, Jakarta, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13120</li>
+                                                <li>{{ $value->address }}</li>
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <div class="spost clearfix">
-                                        <div class="entry-c">
-                                            <div class="entry-title">
-                                                <h4><a href="https://g.co/kgs/1c6QKP" target="blank">Gading Serpong</a></h4>
-                                            </div>
-                                            <ul class="entry-meta">
-                                                <li>Jl. Gading Golf Boulevard Ruko Diamond III No.12-15, Pakulonan Bar., Kec. Klp. Dua, Tangerang, Banten 15810</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="spost clearfix">
-                                        <div class="entry-c">
-                                            <div class="entry-title">
-                                                <h4><a href="https://shorturl.at/ySWX9" target="blank">Tawakal</a></h4>
-                                            </div>
-                                            <ul class="entry-meta">
-                                                <li>Jl. Tawakal Ujung No.C-1, Tomang, Kec. Grogol petamburan, Jakarta, Daerah Khusus Ibukota Jakarta 11440</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+								@endforeach
                                 </div>
 
                             </div>
@@ -368,41 +348,22 @@
                                 <h4>Jam Operasional</h4>
 
                                 <div id="post-list-footer">
+								@foreach(Helper::profile_cabang() as $value)
                                     <div class="spost clearfix">
                                         <div class="entry-c">
                                             <div class="entry-title">
-                                                <h4><a href="https://g.co/kgs/xfrpoV" target="blank">Utan Kayu</a></h4>
+                                                <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
-                                                Minggu : 10:00 - 17:00 WIB
+											@foreach($value->detail as $detail)
+												@if ($detail->type == 'operational')
+													{{ $detail->value }}<br>
+												@endif
+											@endforeach
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <div class="spost clearfix">
-                                        <div class="entry-c">
-                                            <div class="entry-title">
-                                                <h4><a href="https://g.co/kgs/1c6QKP" target="blank">Gading Serpong</a></h4>
-                                            </div>
-                                            <ul class="entry-meta">
-                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
-                                                Minggu : 10:00 - 17:00 WIB
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="spost clearfix">
-                                        <div class="entry-c">
-                                            <div class="entry-title">
-                                                <h4><a href="https://shorturl.at/ySWX9" target="blank">Tawakal</a></h4>
-                                            </div>
-                                            <ul class="entry-meta">
-                                                Senin - Sabtu : 11:00 - 20:00 WIB<br>
-                                                Minggu : 10:00 - 17:00 WIB
-                                            </ul>
-                                        </div>
-                                    </div>
+								@endforeach
                                 </div>
 
                             </div>

@@ -16,15 +16,19 @@
 	    <form action="{{Route('profile_cabang.store')}}" method="POST" enctype="multipart/form-data" id="form_menu">
 			{{csrf_field()}}
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-4">
 					<label>Name</label>
 					<input type="text" id="pc_name" name="pc_name" class="form-control" required>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-4">
+					<label>Link</label>
+					<input type="text" id="pc_link" name="pc_link" class="form-control" required>
+				</div>
+				<div class="col-lg-4">
 					<label>Status</label>
 					<select id="pc_status" name="pc_status" class="form-control" required>
                     @foreach(config("enums.status_active") as $key => $value)
-                        <option value="{{ $value }} ">{{ $key }}</option>
+                        <option value="{{ $value }}">{{ $key }}</option>
                     @endforeach
                     </select>
 				</div>
