@@ -399,6 +399,19 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/update/{id}', 'Admin\core\OnlineStoreController@update')->name('online_store.update');
 		Route::get('/delete/{id}', 'Admin\core\OnlineStoreController@delete')->name('online_store.delete');
 	});
+
+	#profile cabang
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'profile_cabang'
+	], function(){
+		Route::get('/', 'Admin\core\ProfileCabangController@index')->name('profile_cabang.index');
+		Route::get('/insert', 'Admin\core\ProfileCabangController@insert')->name('profile_cabang.insert');
+		Route::post('/store', 'Admin\core\ProfileCabangController@store')->name('profile_cabang.store');
+		Route::get('/edit/{id}', 'Admin\core\ProfileCabangController@edit')->name('profile_cabang.edit');
+		Route::post('/update/{id}', 'Admin\core\ProfileCabangController@update')->name('profile_cabang.update');
+		Route::get('/delete/{id}', 'Admin\core\ProfileCabangController@delete')->name('profile_cabang.delete');
+	});
 	
 	#share
 	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');
