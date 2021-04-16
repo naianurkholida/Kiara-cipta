@@ -370,6 +370,7 @@ class Helper
 	public static function profile_cabang()
 	{
 		$data = ProfileCabang::with('detail')
+							->where('is_active', 1)
 							->where('deleted_at', null)
 							->get();
 
