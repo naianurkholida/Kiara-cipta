@@ -77,9 +77,7 @@
 <script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>	
 <script type="text/javascript">
     var detail_index = 0;
-    setTimeout(function(){
-        setDetail(); 
-    }, 500);
+    setDetail(); 
 
 	function simpan() {
 		$('#form_menu').submit();
@@ -87,24 +85,20 @@
 
     function setDetail() {
         var detail = JSON.parse($('<textarea />').html("{{ $data->detail }}").text())
+        // console.log(detail)
         detail.forEach(element => {
             $('#form_detail').append(''+
                 '<div class="col-sm-4" id="fd_type_'+detail_index+'">'+
                     '<label>Type</label>'+
-                    '<select id="pc_detail_type[]" name="pc_detail_type[]" class="form-control" required>'+
+                    '<select id="pc_detail_type['+detail_index+']" name="'+element.id+'_pc_detail_type" class="form-control" required>'+
                     '@foreach(config("enums.profile_cabang_types") as $key => $value)'+
-                        '@if ($value == '+element.type+')'+
-                        '<option value="{{ $value }}" selected>'+
-                        '@else'+
-                        '<option value="{{ $value }}" >'+
-                        '@endif'+
-                        '{{ $key }}</option>'+
+                        '<option value="{{ $value }}">{{ $key }}</option>'+
                     '@endforeach'+
                     '</select>'+
                 '</div>'+
                 '<div class="col-sm-7" id="fd_value_'+detail_index+'">'+
                     '<label>Value</label>'+
-                    '<input type="text" name="pc_detail_value[]" id="pc_detail_value[]" class="form-control" value="'+element.value+'">'+
+                    '<input type="text" name="'+element.id+'_pc_detail_value" id="pc_detail_value['+detail_index+']" class="form-control" value="'+element.value+'">'+
                 '</div>'+
                 '<div class="col-sm-1" id="fd_action_'+detail_index+'">'+
                     '<label style="color: white;">Action</label>'+
@@ -114,6 +108,7 @@
                 '</div>'+
             '')
 
+            document.getElementById('pc_detail_type['+detail_index+']').value = element.type
             detail_index++
         });
     }
