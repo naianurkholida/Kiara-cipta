@@ -77,9 +77,12 @@
 
                                     </div>
                                     @elseif($row->url == "products" && $row->url != 'treatment' && $row->url != 'jurnal')
+                                        @php
+                                            $judul_menu = $row->getMenuFrontPageLanguage->judul_menu;
+                                        @endphp
                                         <li class="menu-header produk prod-web" id="menu-hover">
                                                 <a href="{{ route('dermaster.'.$row->url) }}">
-                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                    <div>{{ $judul_menu }}</div>
                                                 </a>
                                             </li>
                                             <div class="menu-drop-new">
@@ -125,7 +128,7 @@
                                             </div>
                                             <li class="prod-mobile">
                                                 <a href="#">
-                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                    <div>{{ $judul_menu }}</div>
                                                 </a>
                                                 
                                                 <div class="mega-menu-content style-2 clearfix">
