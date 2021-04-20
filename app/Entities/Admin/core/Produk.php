@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use App\Entities\Admin\core\ProdukLanguage;
+use App\Entities\Admin\core\ProdukSpecification as ProdukSpec;
 use App\Entities\Admin\core\Category;
 
 class Produk extends Model implements HasMedia
@@ -35,5 +36,10 @@ class Produk extends Model implements HasMedia
     public function getCategory()
     {
         return $this->hasOne(Category::class, 'id', 'id_category');
+    }
+
+    public function getSpec()
+    {
+        return $this->hasMany(ProdukSpec::class, 'id_produk', 'id');
     }
 }

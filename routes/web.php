@@ -179,6 +179,17 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/best_seller_edit/{id}', 'Admin\core\BestSellerController@edit')->name('produk.best_seller.edit');
 		Route::post('/best_seller_update/{id}', 'Admin\core\BestSellerController@update')->name('produk.best_seller.update');
 		Route::get('/best_seller_delete/{id}', 'Admin\core\BestSellerController@delete')->name('produk.best_seller.delete');
+
+		Route::group([
+			'prefix' => 'spec'
+		], function(){
+			Route::get('/{id_produk}', 'Admin\core\ProdukSpecificationController@index')->name('produk.spec.index');
+			Route::get('/insert/{id_produk}', 'Admin\core\ProdukSpecificationController@insert')->name('produk.spec.insert');
+			Route::post('/store/{id_produk}', 'Admin\core\ProdukSpecificationController@store')->name('produk.spec.store');
+			Route::get('/edit/{id}', 'Admin\core\ProdukSpecificationController@edit')->name('produk.spec.edit');
+			Route::post('/update/{id}', 'Admin\core\ProdukSpecificationController@update')->name('produk.spec.update');
+			Route::get('/delete/{id}', 'Admin\core\ProdukSpecificationController@delete')->name('produk.spec.delete');
+		});
 	});
 
 	#sosmed admin

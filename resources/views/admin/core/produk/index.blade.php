@@ -34,6 +34,9 @@
 							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}" target="blank">{{ $row->image }}</a>
 						</td>
 						<td class="text-center">
+							<a href="{{Route('produk.spec.index',$row->id)}}" class="btn btn-sm btn-info" title="Spesifikasi">
+								<i class="la la-gear"></i>
+							</a>
 							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>
 							</a>
