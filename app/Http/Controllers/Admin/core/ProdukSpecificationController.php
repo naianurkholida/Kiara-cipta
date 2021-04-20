@@ -25,9 +25,7 @@ class ProdukSpecificationController extends Controller
         $produk = Produk::with('getProdukLanguage')
                         ->findOrFail($id_produk);
 
-        $status = config('enums.status_active');
 		$data = ProdukSpec::where('id_produk',$id_produk)
-						->where('is_active',$status['ACTIVE'])
 						->get();
 
         $img_path = $this->path;
@@ -104,6 +102,8 @@ class ProdukSpecificationController extends Controller
                 'id_produk'     => $id_produk,
                 'specification' => $req->specification[$key],
                 'is_active'     => $req->status[$key],
+                'created_at'    => date("Y-m-d h:i:s"),
+                'updated_at'    => date("Y-m-d h:i:s"),
             ];
     
             if ($file)
@@ -118,8 +118,10 @@ class ProdukSpecificationController extends Controller
     public function edit ($id) 
     {
         $data = ProdukSpec::findOrFail($id);
+        $produk = Produk::with('getProdukLanguage')
+                        ->findOrFail($data->id_produk);
 
-        return view('admin.core.produk.spec.edit', compact('data'));
+        return view('admin.core.produk.spec.edit', compact('data','produk'));
     }
 
     public function update (Request $req, $id) 
@@ -205,10 +207,8 @@ class ProdukSpecificationController extends Controller
         $spec = ProdukSpec::findOrFail($id);
         $id_produk = Produk::find($spec->id_produk)->id;
 
-		if ($file) {
-			File::delete($this->path.'/'.$spec->icon);
-			File::delete($this->path.'/500/'.$spec->icon);
-		}
+        File::delete($this->path.'/'.$spec->icon);
+        File::delete($this->path.'/500/'.$spec->icon);
 
         $spec->delete();
 
