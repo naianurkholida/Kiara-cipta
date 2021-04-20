@@ -105,11 +105,17 @@
     .container {
         max-width: 750px;
     }
+    .prod-mobile{
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
     .prod-mobile {
-        width: 100%;
+        width: 100% !important;
+    }
+    .prod-web{
+        display: none;
     }
 }
 
