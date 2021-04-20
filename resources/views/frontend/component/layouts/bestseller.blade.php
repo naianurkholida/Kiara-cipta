@@ -25,9 +25,11 @@
             <div class="overlay-bestseller">
                 <div class="container-overlay">
                     <div>
-                        <?php $icon = Helper::iconProdukBestSeller($row->id); ?>
-                        @foreach($icon as $val)
-                        <img src="{{ asset('assets/admin/assets/media/icons/') }}/{{ $val->icon }}" alt="" style="width: 50px;">
+                        <?php //$icon = Helper::iconProdukBestSeller($row->id); ?>
+                        @foreach($row->getSpec as $val)
+                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon }}" alt="" style="width: 50px;">
+                        <span>{{ $val->specification }}</span>
+                        <br><br>
                         @endforeach
                     </div>
                 </div>

@@ -32,7 +32,7 @@ class ProductsController extends Controller
     public function index()
     {
         $category = null;
-        $data = Produk::with('getProdukLanguage')
+        $data = Produk::with('getProdukLanguage','getSpec')
                 ->where('deleted_at', NULL)
                 ->get();
 

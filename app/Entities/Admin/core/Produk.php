@@ -40,6 +40,6 @@ class Produk extends Model implements HasMedia
 
     public function getSpec()
     {
-        return $this->hasMany(ProdukSpec::class, 'id_produk', 'id');
+        return $this->hasMany(ProdukSpec::class, 'id_produk', 'id')->where('is_active', 1);
     }
 }

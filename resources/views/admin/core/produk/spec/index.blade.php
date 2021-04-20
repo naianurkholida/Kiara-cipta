@@ -1,6 +1,11 @@
 @extends('component.layouts.master')
 
 @section('button')
+	<a href="{{Route('produk.index')}}" class="btn btn-info">
+		<i class="flaticon-reply"></i>
+		<span>Produk</span>
+	</a>
+
 	<a href="{{Route('produk.spec.insert', $id_produk)}}" class="btn btn-info">
 		<i class="flaticon-plus"></i>
 		<span>Spesifikasi</span>
