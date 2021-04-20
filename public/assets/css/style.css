@@ -107,6 +107,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .prod-mobile {
+        width: 100%;
+    }
+}
+
 @media (min-width: 992px) {
     .container {
         max-width: 970px;
