@@ -37,7 +37,10 @@ class ProdukSpecificationController extends Controller
 
     public function insert ($id_produk) 
     {   
-		return view('admin.core.produk.spec.insert', compact('id_produk'));
+        $produk = Produk::with('getProdukLanguage')
+                        ->findOrFail($id_produk);
+
+		return view('admin.core.produk.spec.insert', compact('id_produk','produk'));
     }
 
     public function store (Request $req, $id_produk) 
@@ -45,7 +48,7 @@ class ProdukSpecificationController extends Controller
         $data = [];
         foreach ($req->specification as $key => $value) {
             #upload foto to database
-            $file = $request->file('image')[$key];
+            $file = $req->file('image')[$key];
     
             #JIKA FOLDERNYA BELUM ADA
             if (!File::isDirectory($this->path)) {
@@ -107,9 +110,9 @@ class ProdukSpecificationController extends Controller
                 $data[$key]['icon'] = $fileName;
         }
 
-        $spec = ProdukSpec::create($data);
+        $spec = ProdukSpec::insert($data);
 
-        return redirect()->route('produk.spec.index')->with('success', 'Data Berhasil di Simpan');
+        return redirect()->route('produk.spec.index',$id_produk)->with('success', 'Data Berhasil di Simpan');
     }
 
     public function edit ($id) 
@@ -122,7 +125,7 @@ class ProdukSpecificationController extends Controller
     public function update (Request $req, $id) 
     {
     	#upload foto to database
-		$file = $request->file('image');
+		$file = $req->file('image');
 
         #JIKA FOLDERNYA BELUM ADA
 		if (!File::isDirectory($this->path)) {
@@ -191,13 +194,16 @@ class ProdukSpecificationController extends Controller
 
         $spec->update($data);
 
-        return redirect()->route('produk.spec.index')->with('info', 'Data Berhasil di Update');
+        $id_produk = Produk::find($spec->id_produk)->id;
+
+        return redirect()->route('produk.spec.index',$id_produk)->with('info', 'Data Berhasil di Update');
     }
     
     public function delete ($id) 
     {
 
         $spec = ProdukSpec::findOrFail($id);
+        $id_produk = Produk::find($spec->id_produk)->id;
 
 		if ($file) {
 			File::delete($this->path.'/'.$spec->icon);
@@ -206,6 +212,6 @@ class ProdukSpecificationController extends Controller
 
         $spec->delete();
 
-		return redirect()->route('produk.spec.index')->with('danger', 'Data Berhasil di Hapus');
+		return redirect()->route('produk.spec.index',$id_produk)->with('danger', 'Data Berhasil di Hapus');
     }
 }

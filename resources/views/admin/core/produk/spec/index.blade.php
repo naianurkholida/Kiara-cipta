@@ -29,9 +29,11 @@
 					<?php $no=1?>
 					@foreach($data as $row)
 					<tr>
-						<td>{{$no}}</td>
-						<td style="background-color: rgba(0, 128, 128, 0.521);">
-							<img src="{{ asset($img_path . '/' . $row->icon) }}" style="width: 50px; height: 50px; border: none;">
+						<td><center>{{$no}}</center></td>
+						<td class="list-icon">
+							<center>
+								<img src="{{ asset($img_path . '/' . $row->icon) }}" style="width: 50px; height: 50px; border: none;">
+							</center>
 						</td>
 						<td>{{ $row->specification }}</td>
 						<td>{{ $row->is_active == 1 ? "Active" : "Inactive" }}</td>
@@ -54,5 +56,12 @@
 @endsection
 
 @section('js')
-
+<script>
+	$(".list-icon").hover(function(){
+		$(".list-icon").css("background-color","rgba(0, 128, 128, 0.521)")
+	}, function(){
+		$(".list-icon").css("background-color","")
+	});
+	// background-color: rgba(0, 128, 128, 0.521);
+</script>
 @endsection
