@@ -846,6 +846,18 @@
             		}
             	}
             })
+
+			if( $(window).width() > 768 )
+			{
+				$('.prod-mobile').css('display', 'none');
+            	$('.prod-web').css('display', 'block');
+			}
+
+			if( $(window).width() < 768 )
+			{
+				$('.prod-mobile').css('display', 'block');
+            	$('.prod-web').css('display', 'none');
+			}
         </script>
         @yield('js')
 

@@ -77,52 +77,74 @@
 
                                     </div>
                                     @elseif($row->url == "products" && $row->url != 'treatment' && $row->url != 'jurnal')
-                                    <li class="menu-header produk" id="menu-hover">
-                                        <a href="{{ route('dermaster.'.$row->url) }}">
-                                            <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
-                                        </a>
-                                    </li>
-                                    <div class="menu-drop-new">
-                                        <div class="scroller-detail">
-                                            <?php // foreach(Helper::produkList() as $key => $row){ ?>
-                                            <?php foreach(Helper::kategoriProdukList() as $key => $row){ ?>
-                                                <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
-                                                    {{--
-                                                    @if ($row->label != null && $row->label != "")
-                                                        <span class="badge badge-success">{{$row->label}}</span><br>
-                                                    @endif
-                                                    <span>{{$row->getProdukLanguage->judul}}</span>
-                                                    --}}
-                                                    <span>{{$row->category}}</span>
+                                    
+                                            <li class="menu-header produk prod-web" id="menu-hover">
+                                                <a href="{{ route('dermaster.'.$row->url) }}">
+                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                </a>
+                                            </li>
+                                            <div class="menu-drop-new">
+                                                <div class="scroller-detail">
+                                                    <?php // foreach(Helper::produkList() as $key => $row){ ?>
+                                                    <?php foreach(Helper::kategoriProdukList() as $key => $row){ ?>
+                                                        <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
+                                                            {{--
+                                                            @if ($row->label != null && $row->label != "")
+                                                                <span class="badge badge-success">{{$row->label}}</span><br>
+                                                            @endif
+                                                            <span>{{$row->getProdukLanguage->judul}}</span>
+                                                            --}}
+                                                            <span>{{$row->category}}</span>
+                                                        </div>
+                                                    <?php } ?>
                                                 </div>
-                                            <?php } ?>
-                                        </div>
 
-                                        <?php // foreach (Helper::produkList() as $key => $value) { ?>
-                                        <?php foreach (Helper::kategoriProdukList() as $key => $value) { ?>
-                                            <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                {{--
-                                                <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
-                                                --}}
+                                                <?php // foreach (Helper::produkList() as $key => $value) { ?>
+                                                <?php foreach (Helper::kategoriProdukList() as $key => $value) { ?>
+                                                    <div class="detail-submenu" id="detail-submenu{{$key}}">
+                                                        {{--
+                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
+                                                        --}}
 
-                                                <div class="desc-detail text-center" style="font-size: 20px; min-width: 100%;">
-                                                {{--
-                                                    @if($value->getProdukLanguage->resume != null)
-                                                    <p>{{ $value->getProdukLanguage->resume }}</p>
-                                                    @else
-                                                    <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
-                                                    @endif
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
-                                                --}}
+                                                        <div class="desc-detail text-center" style="font-size: 20px; min-width: 100%;">
+                                                        {{--
+                                                            @if($value->getProdukLanguage->resume != null)
+                                                            <p>{{ $value->getProdukLanguage->resume }}</p>
+                                                            @else
+                                                            <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
+                                                            @endif
+                                                            <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
+                                                        --}}
 
-                                                    <div style="margin:auto; width:50%;">
-                                                        <p>{{ $value->description ?? " " }}</p>
-                                                        <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
+                                                            <div style="margin:auto; width:50%;">
+                                                                <p>{{ $value->description ?? " " }}</p>
+                                                                <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                <?php } ?>
                                             </div>
-                                        <?php } ?>
-                                    </div>
+                                            <li class="prod-mobile">
+                                                <a href="#">
+                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                </a>
+                                                
+                                                <div class="mega-menu-content style-2 clearfix">
+                                                    <ul class="mega-menu-column col-lg-12">
+                                                        <li class="mega-menu-title">
+                                                            <ul style="display: none;">
+                                                                <li class="sub-menu" style="width: 100% !important;">
+                                                                <?php foreach(Helper::kategoriProdukList() as $key => $row){ 
+                                                                    ?>
+                                                                    <a href="" class="sf-with-ul">{{$row->category}}</a>
+                                                                <?php } ?>
+                                                                
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
                                     @else
                                     <li class="menu-header jurnal" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
@@ -227,7 +249,7 @@
                                     @elseif($row->url == 'products' && $row->url != "treatments")
                                     <li class="menu-header produk" id="menu-hover">
                                         <a href="{{ route('dermaster.'.$row->url) }}">
-                                            <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                            <div> {{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
                                        
                                     </li>
