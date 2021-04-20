@@ -12,12 +12,10 @@
 	<div class="card-header">
 		<h4><i class="flaticon-plus"></i> Spesifikasi {{ $produk->getProdukLanguage->judul }}</h4>
 
-        <div class="col-sm-12">
-            <a href="#" class="btn btn-info" onclick="add_spec()" style="float: right; margin-top:-30px;">
-                <i class="flaticon-plus"></i>
-                <span>Add</span>
-            </a>
-        </div>
+        <a href="#" class="btn btn-info" onclick="add_spec()" style="float: right; margin-top:-30px;">
+            <i class="flaticon-plus"></i>
+            <span>Add</span>
+        </a>
 	</div>
 	<div class="card-body">
 	    <form action="{{Route('produk.spec.store',$id_produk)}}" method="POST" enctype="multipart/form-data" id="form_menu">

@@ -62,12 +62,13 @@ class Helper
 
 	public static function produkListBestSeller()
 	{
-		$data = Produk::with('getProdukLanguage','getCategory')->where('deleted_at', null)
-				->whereHas('getCategory', function($q){
-					$q->where('category', 'Best Seller');
-				})
-				->orderBy('order_num', 'ASC')
-				->get();
+		$data = Produk::with('getProdukLanguage','getCategory','getSpec')
+					->where('deleted_at', null)
+					->whereHas('getCategory', function($q){
+						$q->where('seo', 'best-seller');
+					})
+					->orderBy('order_num', 'ASC')
+					->get();
 	
 		return $data;
 	}
