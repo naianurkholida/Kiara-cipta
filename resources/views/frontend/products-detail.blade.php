@@ -37,6 +37,28 @@
         width: 200px;
         height: 200px;
     }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    table td, table th {
+        border: 1px solid #c4cdd5;
+    }
+    table tr:first-child td {
+        border-top: 0;
+    }
+    table tr:last-child td {
+        border-bottom: 0;
+    }
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left: 0;
+    }
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: 0;
+    }
 </style>
 
 <script>
@@ -117,6 +139,37 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             {!! $data->getProdukLanguage->deskripsi !!}
+                            <br>
+
+                            <table class="detail-spec-web" style="text-align: center;">
+                            @foreach($data->getSpec as $key => $val)
+                                @if(($key % 2) == 0)
+                                <tr>
+                                @endif
+                                    @if($key == (count($data->getSpec)-1))
+                                    <td width="50%" colspan="2">
+                                    @else
+                                    <td width="50%">
+                                    @endif
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <span>{{$val->specification}}</span>
+                                    </td>
+                                @if(($key % 2) != 0 || $key == (count($data->getSpec)-1))
+                                </tr>
+                                @endif
+                            @endforeach
+                            </table>
+
+                            <table class="detail-spec-mobile">
+                            @foreach($data->getSpec as $key => $val)
+                                <tr>
+                                    <td>
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <span>{{$val->specification}}</span>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </table>
                         </div>
                     </div>
                 </div>

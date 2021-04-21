@@ -108,6 +108,9 @@
     .prod-mobile{
         display: none;
     }
+    .detail-spec-mobile{
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -115,6 +118,9 @@
         width: 100% !important;
     }
     .prod-web{
+        display: none;
+    }
+    .detail-spec-web{
         display: none;
     }
 }
