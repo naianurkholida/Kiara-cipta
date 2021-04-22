@@ -23,7 +23,8 @@
 				<thead class="m-datatable__head">
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
-						<th>Icon</th>
+						<th>Icon Light</th>
+						<th>Icon Dark</th>
 						<th>Specification</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -37,7 +38,12 @@
 						<td><center>{{$no}}</center></td>
 						<td class="list-icon">
 							<center>
-								<img src="{{ asset($img_path . '/' . $row->icon) }}" style="width: 50px; height: 50px; border: none;">
+								<img src="{{ asset($img_path . '/' . $row->icon_light) }}" style="width: 50px; height: 50px; border: none;">
+							</center>
+						</td>
+						<td>
+							<center>
+								<img src="{{ asset($img_path . '/' . $row->icon_dark) }}" style="width: 50px; height: 50px; border: none;">
 							</center>
 						</td>
 						<td>{{ $row->specification }}</td>

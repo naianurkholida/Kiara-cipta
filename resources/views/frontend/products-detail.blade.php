@@ -151,7 +151,7 @@
                                     @else
                                     <td width="50%">
                                     @endif
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
                                         <span>{{$val->specification}}</span>
                                     </td>
                                 @if(($key % 2) != 0 || $key == (count($data->getSpec)-1))
@@ -164,7 +164,7 @@
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
                                         <span>{{$val->specification}}</span>
                                     </td>
                                 </tr>
