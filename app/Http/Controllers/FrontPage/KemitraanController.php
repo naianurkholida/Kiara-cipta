@@ -53,7 +53,7 @@ class KemitraanController extends Controller
     public function store(Request $request)
     {
         $ch = curl_init(); 
-        curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/reseller/?name='.$request->name.'&email='.$request->email.'&hp='.$request->no_hp.'&city='.$request->city);
+        curl_setopt($ch, CURLOPT_URL, 'http://103.11.135.246:1506/reseller/?name='.$request->name.'&email='.$request->email.'&hp='.$request->no_hp.'&city='.$request->city);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         $output = curl_exec($ch); 

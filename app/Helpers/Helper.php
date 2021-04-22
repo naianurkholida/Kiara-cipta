@@ -342,7 +342,7 @@ class Helper
         $ch = curl_init(); 
 
         // set url 
-        curl_setopt($ch, CURLOPT_URL, "http://103.11.134.45:8087/city");
+        curl_setopt($ch, CURLOPT_URL, "http://103.11.135.246:1506/city");
 
         // return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
