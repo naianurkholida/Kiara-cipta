@@ -17131,6 +17131,7 @@ body:not(.no-transition) #wrapper,
     .item-kontak{
         width: 100% !important;
     }
+    
 }
 
 .container-gallery{
@@ -17143,3 +17144,20 @@ body:not(.no-transition) #wrapper,
     justify-content: center;
 }
 
+.card-checkpoint{
+    width: 50% !important;
+}
+
+@media (max-width: 768px) {
+   .card-checkpoint{
+       width: 80% !important;
+   }
+    
+}
+
+@media (max-width: 500px) {
+    .card-checkpoint{
+        width: 100% !important;
+    }
+     
+ }
