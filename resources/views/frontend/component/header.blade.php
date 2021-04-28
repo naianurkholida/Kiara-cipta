@@ -119,6 +119,13 @@
                                                         --}}
 
                                                             <div style="margin:auto; width:50%;">
+                                                                @if ($value->category == "Cleanser")
+                                                                    <img src="{{asset('assets/image/Cleanser-Series-100.jpg')}}" alt="Cleanser Series" width="100%">
+                                                                @elseif ($value->category == "Serum")
+                                                                    <img src="{{asset('assets/image/Serum-Series-100.jpg')}}" alt="Serum Series" width="100%">
+                                                                @elseif ($value->category == "Cream")
+                                                                    <img src="{{asset('assets/image/Cream-Series-100.jpg')}}" alt="Cream Series" width="100%">
+                                                                @endif
                                                                 <p>{{ $value->description ?? " " }}</p>
                                                                 <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
                                                             </div>
