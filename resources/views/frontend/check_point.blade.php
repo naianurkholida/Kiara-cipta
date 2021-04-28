@@ -21,7 +21,7 @@
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:1" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:3" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 
-			<div class="card card-kemitraan" style="border-radius: 10px;">
+			<div class="card card-kemitraan card-checkpoint" style="border-radius: 10px;">
 				<div class="card-body">
 					<h2>Checkpoint</h2>
 					@if(session()->has('message'))
@@ -69,7 +69,7 @@
 							<a href="{{ Route('dermaster.checkpoint.report', [$data[0], 'report_customer_'.$no_hp]) }}" class="btn btn-info btn-sm" target="blank" style="float: right;">Export</a>
 						</div>
 
-						<div class="col-lg-12"><br>
+						<div class="col-lg-12" style="overflow-x: scroll;"><br>
 							<table class="table table-bordered table-striped" id="datatablesHistory">
 								<thead>
 									<tr class="text-center">
