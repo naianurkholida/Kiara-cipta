@@ -2,7 +2,8 @@
     <div class="container clearfix">
        <center>
             <h2>
-                Best Seller
+                <!-- Best Seller -->
+                Dropping Now
             </h2>
         </center>
     </div>
