@@ -1,6 +1,10 @@
 @extends('component.layouts.master')
 
 @section('button')
+	<a href="{{Route('produk.best_seller')}}" class="btn btn-info">
+		<i class="flaticon-eye"></i>
+		<span>Produk Best Seller</span>
+	</a>
 	<a href="{{Route('produk.insert')}}" class="btn btn-info">
 		<i class="flaticon-plus"></i>
 		<span>{{ Helper::baseLabelPage() }}</span>
