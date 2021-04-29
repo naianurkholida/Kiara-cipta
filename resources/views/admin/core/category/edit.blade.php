@@ -32,14 +32,19 @@
         <form action="{{Route('category.update', $category->id)}}" method="post" id="form" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="">Kategori</label>
                     <input type="text" class="form-control" name="kategori" id="kategori" value="{{$category->category}}" required="">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label>Order Num</label>
                     <input type="text" name="order_num" class="form-control" value="{{$category->order_num}}" required="">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Banner (optional)</label>
+                    <input type="file" name="banner" class="form-control" accept=".png, .jpg, .jpeg">
                 </div>
 
                 <div class="col-md-12">

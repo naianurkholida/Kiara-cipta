@@ -20,7 +20,7 @@ class CategoryController extends Controller
 	public function __construct()
 	{
         //Definisi PATH Foto
-		$this->path =  'admin/assets/media/icon-kategori';
+		$this->path =  'assets/admin/assets/media/icon-kategori';
         //Definisi Dimensi Foto
 		$this->dimensions = ['245', '300', '500'];
 	}
@@ -99,6 +99,30 @@ class CategoryController extends Controller
     	$category->description = $request->description;
     	$category->order_num = $request->order_num;
     	$category->is_created = Session::get('id');
+
+    	if($request->file('banner') != null){
+    		// $gambar = Gambar::where('id_relasi', $category->id)->first();
+    		// $gambar->id_relasi = $category->id;
+    		// $gambar->deskripsi = $request->deskripsi;
+
+    		#upload foto to database
+    		$file = $request->file('banner');
+
+	    	#JIKA FOLDERNYA BELUM ADA
+    		if (!File::isDirectory($this->path)) {
+	    		#MAKA FOLDER TERSEBUT AKAN DIBUAT
+    			File::makeDirectory($this->path);
+    		}
+
+	    	#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+    		$fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+
+	    	#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+    		Image::make($file)->save($this->path.'/'. $fileName);
+
+	    	#SIMPAN DATA IMAGE YANG TELAH DI-UPLOAD
+    		$category->banner = $fileName;
+    	}
     	$category->save();
 
     	$menu = new MenuFrontPage;
@@ -161,45 +185,46 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
     	$category = Category::find($id);
-    	if($request->file('gambar') != null){
-    		File::delete('admin/assets/media/icon-kategori/'.$category->gambar);
-    	}
 
     	$category->seo = strtolower(str_replace(" ","-",$request->kategori));
     	$category->category = $request->kategori;
     	$category->description = $request->description;
     	$category->order_num = $request->order_num;
     	$category->is_created = Session::get('id');
-    	$category->save();
 
        // $id_cek  = Parameter::where('key', 'kategori_program')->first();
        // $cek_kat = Category::where('id_parent', $id_cek->value)->where('id', $category->id)->first();
 
     	$cek_kat = '';
 
-    	if($cek_kat != null && $request->file('gambar') != null){
+    	if($request->file('banner') != null){
     		// $gambar = Gambar::where('id_relasi', $category->id)->first();
     		// $gambar->id_relasi = $category->id;
     		// $gambar->deskripsi = $request->deskripsi;
-    		// #upload foto to database
-    		// $file = $request->file('gambar');
 
-	    	// #JIKA FOLDERNYA BELUM ADA
-    		// if (!File::isDirectory($this->path)) {
-	    	// 	#MAKA FOLDER TERSEBUT AKAN DIBUAT
-    		// 	File::makeDirectory($this->path);
-    		// }
+			#delete old banner
+			if ($category->banner)
+    			File::delete($this->path.'/'.$category->banner);
 
-	    	// #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-    		// $fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+    		#upload foto to database
+    		$file = $request->file('banner');
 
-	    	// #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
-    		// Image::make($file)->save($this->path.'/'. $fileName);
+	    	#JIKA FOLDERNYA BELUM ADA
+    		if (!File::isDirectory($this->path)) {
+	    		#MAKA FOLDER TERSEBUT AKAN DIBUAT
+    			File::makeDirectory($this->path);
+    		}
 
-	    	// #SIMPAN DATA IMAGE YANG TELAH DI-UPLOAD
-    		// $gambar->gambar = $fileName;
-    		// $gambar->save();
+	    	#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+    		$fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+
+	    	#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+    		Image::make($file)->save($this->path.'/'. $fileName);
+
+	    	#SIMPAN DATA IMAGE YANG TELAH DI-UPLOAD
+    		$category->banner = $fileName;
     	}
+    	$category->save();
 
     	return redirect('category')->with('info', 'Data Berhasil di Update');
     }
@@ -220,8 +245,12 @@ class CategoryController extends Controller
     	// Gambar::where('id_relasi', $id)->delete();
     	$dataCat = Category::where('id', $id)->first();
 
+    	if($dataCat->banner != null){
+    		File::delete($this->path.'/'.$dataCat->banner);
+    	}
+
     	$language = MenuFrontPageLanguage::where('judul_menu', $dataCat->category)->first();
-    	$languageFirst = MenuFrontPage::where('id', $language[0]->id_menu_front_page)->delete();
+    	$languageFirst = MenuFrontPage::where('id', $language->id_menu_front_page)->delete();
 
     	$dataCat->delete();
     	$language->delete();

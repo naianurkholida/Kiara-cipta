@@ -29,10 +29,10 @@
     </div>
     <div class="card-body">
       <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
-        <form action="{{Route('category.post')}}" method="post" id="form">
+        <form action="{{Route('category.post')}}" method="post" id="form" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="">Tipe</label>
                     <select name="tipe" id="tipe" class="form-control" required="">
                         <option value="0">Main Tipe</option>
@@ -42,14 +42,19 @@
                     </select>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="">Kategori</label>
                     <input type="text" class="form-control" name="kategori" id="kategori" required="">
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label>Order Num</label>
                     <input type="number" name="order_num" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Banner (optional)</label>
+                    <input type="file" name="banner" class="form-control" accept=".png, .jpg, .jpeg">
                 </div>
 
                 <div class="col-md-12">
