@@ -49,7 +49,7 @@
 
                 <div class="col-md-12">
                     <label for="">Deskripsi</label>
-					<textarea class="form-control" name="description" id="description" value="{{$category->description}}" required=""></textarea>
+					<textarea class="form-control" name="description" id="description" required="">{{$category->description}}</textarea>
                 </div>
 
                 @if($cek_kat != null)
