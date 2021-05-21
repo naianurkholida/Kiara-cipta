@@ -3,6 +3,7 @@
 @section('header')
 <link rel="canonical" href="https://derma-express.com/">
 <meta name="description" content="Derma Express, klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
+<meta name="facebook-domain-verification" content="7gok7ljicai2ven06osijpt0ide58a" />
 <title>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
 @endsection
 

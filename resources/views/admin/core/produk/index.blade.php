@@ -1,6 +1,10 @@
 @extends('component.layouts.master')
 
 @section('button')
+	<a href="{{Route('produk.best_seller')}}" class="btn btn-info">
+		<i class="flaticon-eye"></i>
+		<span>Produk Best Seller</span>
+	</a>
 	<a href="{{Route('produk.insert')}}" class="btn btn-info">
 		<i class="flaticon-plus"></i>
 		<span>{{ Helper::baseLabelPage() }}</span>
@@ -34,6 +38,9 @@
 							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}" target="blank">{{ $row->image }}</a>
 						</td>
 						<td class="text-center">
+							<a href="{{Route('produk.spec.index',$row->id)}}" class="btn btn-sm btn-info" title="Spesifikasi">
+								<i class="la la-gear"></i>
+							</a>
 							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>
 							</a>

@@ -73,7 +73,7 @@ class BestSellerController extends Controller
     {
     	$top_bar = $this->top_bar();
 
-    	$produk = Produk::with('getProdukLanguage')->where('id_category', 57)->get();
+    	$produk = Produk::with('getProdukLanguage')->get();
 
         if(count($produk) < 1){
             return redirect()->back()->with('danger', 'Produk tidak Tersedia');
@@ -84,22 +84,22 @@ class BestSellerController extends Controller
 
     public function store(Request $request)
     {
-    	if($request->file('icon') != null){
-    		$data = new BestSellerIcon;
-    		$data->product_id = $request->best_seller;
-            $file = $request->file('icon');
+		$data = new BestSellerIcon;
+		$data->product_id = $request->best_seller;
+		$file = $request->file('icon');
 
-            if (!File::isDirectory($this->path)) {
-                File::makeDirectory($this->path);
-            }
+		if (!File::isDirectory($this->path)) {
+			File::makeDirectory($this->path);
+		}
 
-            $fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-            Image::make($file)->save($this->path.'/'. $fileName);
-            $data->icon = $fileName;
-            $data->save();
-        }
+		if ($file) {
+			$fileName = 'Icon'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+			Image::make($file)->save($this->path.'/'. $fileName);
+			$data->icon = $fileName;
+		}
+		$data->save();
 
-        return redirect('produk/best_seller')->with('success', 'Icon Berhasil di Tambahkan');
+        return redirect('produk/best_seller')->with('success', 'Best Seller Berhasil di Tambahkan');
     }
 
     public function edit(Request $request, $id)
@@ -107,7 +107,7 @@ class BestSellerController extends Controller
     	$top_bar = $this->top_bar();
     	$best_seller = BestSellerIcon::findOrFail($id);
 
-    	$produk = Produk::with('getProdukLanguage')->where('id_category', 57)->get();
+    	$produk = Produk::with('getProdukLanguage')->get();
 
     	return view('admin.core.produk.best_seller.edit', compact('id', 'top_bar', 'best_seller', 'produk'));
     }
@@ -129,7 +129,7 @@ class BestSellerController extends Controller
     	}
     	$data->save();
 
-    	return redirect('produk/best_seller')->with('success', 'Icon Berhasil di Update');
+    	return redirect('produk/best_seller')->with('success', 'Best Seller Berhasil di Update');
     }
 
     public function delete($id)
@@ -139,6 +139,6 @@ class BestSellerController extends Controller
 
     	BestSellerIcon::where('id', $id)->delete();
 
-    	return redirect()->back()->with('success', 'Icon Berhasil di Hapus');
+    	return redirect()->back()->with('success', 'Best Seller Berhasil di Hapus');
     }
 }

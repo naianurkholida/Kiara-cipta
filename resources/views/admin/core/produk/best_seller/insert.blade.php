@@ -3,7 +3,7 @@
 @section('button')
 <a href="{{Route('produk.best_seller')}}" class="btn btn-info">
 	<i class="flaticon-reply"></i>
-	<span>{{ Helper::baseLabelPage() }}</span>
+	<span>Best Seller</span>
 </a>
 @endsection
 
@@ -27,7 +27,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<label>Icon</label><br>
+					<!-- <label>Icon</label><br>
 					<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar" style="width: 100%;">
 						<div class="kt-avatar__holder" style="width: 100%; background-image: url('{{ asset('assets/admin/assets/media/icons/')  }}/{{$value->icon}}')"></div>
 						<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
@@ -37,7 +37,7 @@
 						<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
 							<i class="fa fa-times"></i>
 						</span>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="row">

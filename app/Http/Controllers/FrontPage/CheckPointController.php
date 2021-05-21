@@ -30,7 +30,7 @@ class CheckPointController extends Controller
     {
         if($request->no_hp){
             $ch = curl_init(); 
-            curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/customer/?id='.$request->no_hp);
+            curl_setopt($ch, CURLOPT_URL, 'http://103.11.135.246:1506/customer/?id='.$request->no_hp);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
             $output = curl_exec($ch); 
@@ -41,7 +41,7 @@ class CheckPointController extends Controller
             $data   = $output[0];
 
             $chs = curl_init(); 
-            curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$data[0]);
+            curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$data[0]);
             curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
             $outputs = curl_exec($chs); 
@@ -62,7 +62,7 @@ class CheckPointController extends Controller
     public function report($idTrx, $no_hp)
     {
         $chs = curl_init(); 
-        curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$idTrx);
+        curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$idTrx);
         curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
         $outputs = curl_exec($chs); 

@@ -179,6 +179,17 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/best_seller_edit/{id}', 'Admin\core\BestSellerController@edit')->name('produk.best_seller.edit');
 		Route::post('/best_seller_update/{id}', 'Admin\core\BestSellerController@update')->name('produk.best_seller.update');
 		Route::get('/best_seller_delete/{id}', 'Admin\core\BestSellerController@delete')->name('produk.best_seller.delete');
+
+		Route::group([
+			'prefix' => 'spec'
+		], function(){
+			Route::get('/{id_produk}', 'Admin\core\ProdukSpecificationController@index')->name('produk.spec.index');
+			Route::get('/insert/{id_produk}', 'Admin\core\ProdukSpecificationController@insert')->name('produk.spec.insert');
+			Route::post('/store/{id_produk}', 'Admin\core\ProdukSpecificationController@store')->name('produk.spec.store');
+			Route::get('/edit/{id}', 'Admin\core\ProdukSpecificationController@edit')->name('produk.spec.edit');
+			Route::post('/update/{id}', 'Admin\core\ProdukSpecificationController@update')->name('produk.spec.update');
+			Route::get('/delete/{id}', 'Admin\core\ProdukSpecificationController@delete')->name('produk.spec.delete');
+		});
 	});
 
 	#sosmed admin
@@ -398,6 +409,19 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/edit/{id}', 'Admin\core\OnlineStoreController@edit')->name('online_store.edit');
 		Route::post('/update/{id}', 'Admin\core\OnlineStoreController@update')->name('online_store.update');
 		Route::get('/delete/{id}', 'Admin\core\OnlineStoreController@delete')->name('online_store.delete');
+	});
+
+	#profile cabang
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'profile_cabang'
+	], function(){
+		Route::get('/', 'Admin\core\ProfileCabangController@index')->name('profile_cabang.index');
+		Route::get('/insert', 'Admin\core\ProfileCabangController@insert')->name('profile_cabang.insert');
+		Route::post('/store', 'Admin\core\ProfileCabangController@store')->name('profile_cabang.store');
+		Route::get('/edit/{id}', 'Admin\core\ProfileCabangController@edit')->name('profile_cabang.edit');
+		Route::post('/update/{id}', 'Admin\core\ProfileCabangController@update')->name('profile_cabang.update');
+		Route::get('/delete/{id}', 'Admin\core\ProfileCabangController@delete')->name('profile_cabang.delete');
 	});
 	
 	#share

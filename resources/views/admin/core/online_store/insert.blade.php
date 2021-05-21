@@ -32,7 +32,7 @@
 							<div class="kt-avatar__holder" style="width: 100%; background-image: url('')"></div>
 							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 								<i class="fa fa-pen"></i>
-								<input type="file" name="image" id="image" required="">
+								<input type="file" name="image" id="image" required="" accept=".png, .jpg, .jpeg">
 							</label>
 							<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
 								<i class="fa fa-times"></i>

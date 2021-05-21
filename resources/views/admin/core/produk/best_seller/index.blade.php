@@ -1,16 +1,20 @@
 @extends('component.layouts.master')
 
 @section('button')
+	<a href="{{ Route('produk.index') }}" class="btn btn-info">
+		<i class="flaticon-reply"></i>
+		<span>Produk</span>
+	</a>
 	<a href="{{ Route('produk.best_seller.insert') }}" class="btn btn-info">
 		<i class="flaticon-plus"></i>
-		<span>{{ Helper::baseLabelPage() }}</span>
+		<span>Best Seller</span>
 	</a>
 @endsection
 
 @section('content')
 <div class="card">
 	<div class="card-header">
-		<h3>{{ Helper::baseLabelPage() }}</h3>
+		<h3>Best Seller</h3>
 	</div>
 	<div class="card-body">
 		<div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
@@ -19,7 +23,7 @@
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
 						<th>Best Seller</th>
-						<th>Icon</th>
+						<!-- <th>Icon</th> -->
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -29,7 +33,7 @@
 						<tr>
 							<td>{{ $key+1 }}</td>
 							<td>{{ $val->produk->getProdukLanguage->judul }}</td>
-							<td>{{ $val->icon }}</td>
+							<!-- <td>{{-- $val->icon --}}</td> -->
 							<td>
 								<a href="{{ Route('produk.best_seller.edit', $val->id) }}" class="btn btn-success btn-sm">
 									<i class="la la-edit"></i>

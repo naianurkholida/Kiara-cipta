@@ -18,6 +18,7 @@ use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\BestSellerIcon;
 use App\Entities\Admin\core\OnlineStore;
+use App\Entities\Admin\core\ProfileCabang;
 use DB;
 
 class Helper
@@ -61,13 +62,10 @@ class Helper
 
 	public static function produkListBestSeller()
 	{
-		$data = Produk::with('getProdukLanguage','getCategory')->where('deleted_at', null)
-				->whereHas('getCategory', function($q){
-					$q->where('category', 'Best Seller');
-				})
-				->orderBy('order_num', 'ASC')
-				->get();
-	
+		$data = BestSellerIcon::with('produk','produk.getProdukLanguage','produk.getCategory','produk.getSpec')
+							->where('deleted_at', null)
+							->get();
+		
 		return $data;
 	}
 
@@ -340,7 +338,7 @@ class Helper
         $ch = curl_init(); 
 
         // set url 
-        curl_setopt($ch, CURLOPT_URL, "http://103.11.134.45:8087/city");
+        curl_setopt($ch, CURLOPT_URL, "http://103.11.135.246:1506/city");
 
         // return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
@@ -362,6 +360,16 @@ class Helper
 		$data = OnlineStore::where('deleted_at', NULL)
 				->orderBy('updated_at', 'desc')
 				->get();
+
+		return $data;
+	}
+
+	public static function profile_cabang()
+	{
+		$data = ProfileCabang::with('detail')
+							->where('is_active', 1)
+							->where('deleted_at', null)
+							->get();
 
 		return $data;
 	}
