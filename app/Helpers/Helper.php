@@ -165,7 +165,7 @@ class Helper
 	
 	public static function removeTags($tags)
 	{
-		$data = str_replace('&nbsp;','',substr(strip_tags($tags), 0, 140)) . '...';
+		$data = str_replace('&nbsp;',' ',substr(strip_tags($tags), 0, 140)) . '...';
 
 		return $data;
 	}
