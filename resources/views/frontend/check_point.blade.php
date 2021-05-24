@@ -23,7 +23,9 @@
 
 			<div class="card card-kemitraan card-checkpoint" style="border-radius: 10px;">
 				<div class="card-body">
-					<h2>Cek Point</h2>
+					<h2>
+						<center>Cek Poin</center>
+					</h2>
 					@if(session()->has('message'))
 					<div class="alert alert-success">
 						{{ session()->get('message') }}
@@ -32,7 +34,9 @@
 					<form action="{{ Route('dermaster.check-point') }}" method="get">
 						<div class="row">
 							<div class="col-lg-12">
+								<center>
 								<label>No Handphone <span style="color: red;">*</span></label>
+								</center>
 								<input type="text" name="no_hp" class="form-control" required="" placeholder="No Handphone"><br>
 							</div>
 							<br>
