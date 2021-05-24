@@ -26,6 +26,7 @@
 					<h2>
 						<center>Cek Poin</center>
 					</h2>
+					<br>
 					@if(session()->has('message'))
 					<div class="alert alert-success">
 						{{ session()->get('message') }}
@@ -34,14 +35,11 @@
 					<form action="{{ Route('dermaster.check-point') }}" method="get">
 						<div class="row">
 							<div class="col-lg-12">
-								<center>
-								<label>No Handphone <span style="color: red;">*</span></label>
-								</center>
-								<input type="text" name="no_hp" class="form-control" required="" placeholder="No Handphone"><br>
+								<input type="text" name="no_hp" class="form-control" required="" placeholder="No.Handphone*"><br>
 							</div>
 							<br>
 							<div class="col-lg-12">
-								<button type="submit" class="btn btn-info" style="width: 100%;">Check Point</button>
+								<button type="submit" class="btn btn-info" style="width: 100%;">Cek Poin</button>
 							</div>
 						</div>
 					</form>

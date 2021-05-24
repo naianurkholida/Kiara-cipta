@@ -17145,12 +17145,12 @@ body:not(.no-transition) #wrapper,
 }
 
 .card-checkpoint{
-    width: 50% !important;
+    width: 30% !important;
 }
 
 @media (max-width: 768px) {
    .card-checkpoint{
-       width: 80% !important;
+       width: 50% !important;
    }
     
 }
