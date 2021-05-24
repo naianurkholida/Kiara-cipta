@@ -46,6 +46,12 @@
 					@if($no_hp)
 					<br><br>
 					<div class="row">
+						@if (!$data)
+						<div class="col-lg-12">
+							<label>Data Customer</label>
+							<p>⚠️ &nbsp;&nbsp; Nomor Handphone belum terdaftar.&nbsp; ⚠️</p>
+						</div>
+						@else
 						<div class="col-lg-12">
 							<label>Data Customer</label>
 							<table class="table table-bordered table-striped">
@@ -96,6 +102,7 @@
 								</tbody>
 							</table>
 						</div>
+						@endif
 					</div>
 					@endif
 				</div>

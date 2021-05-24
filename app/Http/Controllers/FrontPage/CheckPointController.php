@@ -37,17 +37,22 @@ class CheckPointController extends Controller
             curl_close($ch);
 
             $output = json_decode($output);
-
-            $data   = $output[0];
-
-            $chs = curl_init(); 
-            curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$data[0]);
-            curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
-            curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
-            $outputs = curl_exec($chs); 
-            curl_close($chs);
-
-            $history = json_decode($outputs);
+            // dd($output);
+            if ($output) {
+                $data   = $output[0];
+    
+                $chs = curl_init(); 
+                curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$data[0]);
+                curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
+                curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
+                $outputs = curl_exec($chs); 
+                curl_close($chs);
+    
+                $history = json_decode($outputs);
+            } else {
+                $data = null;
+                $history = null;
+            }
 
             $no_hp = $request->no_hp;
         }else{
