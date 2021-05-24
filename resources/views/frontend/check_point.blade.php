@@ -23,7 +23,7 @@
 
 			<div class="card card-kemitraan card-checkpoint" style="border-radius: 10px;">
 				<div class="card-body">
-					<h2>Checkpoint</h2>
+					<h2>Cek Point</h2>
 					@if(session()->has('message'))
 					<div class="alert alert-success">
 						{{ session()->get('message') }}
