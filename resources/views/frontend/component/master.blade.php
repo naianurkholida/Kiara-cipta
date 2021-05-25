@@ -233,7 +233,7 @@
                                 <!-- <strong>Derma Express</strong>  -->
                                 <!-- <p>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</p> -->
 
-                                <div class="clearfix" style="padding: 10px 0;">
+                                <div class="clearfix" style="">
                                     <div class="col_half">
                                         <address class="nobottommargin">
                                             <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
