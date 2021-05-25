@@ -236,7 +236,7 @@
                                 <div class="clearfix" style="">
                                     <div class="col_half">
                                         <address class="nobottommargin">
-                                            <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                            <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;cursor: default;">
                                                 <strong>Kontak Kami:</strong>
                                             </abbr><br>
                                             082258883050<br>
@@ -245,7 +245,7 @@
                                 </div>
 
                                 <address class="nobottommargin" style="margin-top: 10px;">
-                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;cursor: default;">
                                         <strong>Follow Us:</strong>
                                     </abbr><br>
                                 </address>
@@ -283,7 +283,7 @@
                                 </div>
 
                                 <address class="nobottommargin" style="margin-top: 10px;">
-                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;	cursor: default;">
                                         <strong>Online Store:</strong>
                                     </abbr><br>
                                 </address>
