@@ -17163,10 +17163,14 @@ body:not(.no-transition) #wrapper,
  }
 
 
- .spost{
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+ @media (min-width: 768px) {
+    .spost{
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+     }
+     
  }
+
