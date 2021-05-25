@@ -230,7 +230,7 @@
 
                                 <!-- <img src="images/footer-widget-logo.png" alt="" class="footer-logo"> -->
 
-                                <strong>Derma Express</strong> 
+                                <!-- <strong>Derma Express</strong>  -->
                                 <!-- <p>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</p> -->
 
                                 <div class="clearfix" style="padding: 10px 0;">
