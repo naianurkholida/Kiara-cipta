@@ -371,7 +371,9 @@
                         </div>
 
                     </div>
-
+					<center>
+						<h5>Cakep Terjangkau #dermaexpressaja</h5>
+					</center>
                 </div>
 
                 <div id="copyrights">
