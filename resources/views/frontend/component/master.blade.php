@@ -509,6 +509,11 @@
 				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
 			}
 
+			function goToLink(link) {
+				// console.log(link);
+				window.location = link;
+			}
+
             $(document).ready(function () {
             	$(".pop-container").hide();
             	setTimeout(function () {
