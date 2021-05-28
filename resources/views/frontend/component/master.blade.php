@@ -645,8 +645,8 @@
 
             $(function () {
             	$.ajax({
-            		// url: '{{ url("ajax-produk") }}',
-            		url: '{{ url("ajax-kategori-produk") }}',
+            		url: '{{ url("ajax-produk") }}',
+            		// url: '{{ url("ajax-kategori-produk") }}',
             		type: 'GET',
             		dataType: 'Json',
             	})
