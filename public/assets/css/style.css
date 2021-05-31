@@ -16988,6 +16988,7 @@ body:not(.no-transition) #wrapper,
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    overflow: hidden;
 }
 
 #submenu1:hover ~ .detail-submenu{

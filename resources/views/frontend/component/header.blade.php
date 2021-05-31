@@ -106,7 +106,7 @@
                                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
                                                         <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
 
-                                                        <div class="desc-detail text-center" style="font-size: 20px; min-width: 50%;">
+                                                        <div class="desc-detail text-center" style="font-size: 20px; width: 50% !important;">
                                                             @if($value->getProdukLanguage->resume != null)
                                                             <p>{{ $value->getProdukLanguage->resume }}</p>
                                                             @else
