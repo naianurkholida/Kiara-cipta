@@ -35,7 +35,7 @@
 						<td>{{$no}}</td>
 						<td>{{ $row->getProdukLanguage->judul }}</td>
 						<td>
-							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}" target="blank">{{ $row->image }}</a>
+							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->banner}}" target="blank">{{ $row->banner }}</a>
 						</td>
 						<td class="text-center">
 							<a href="{{Route('produk.spec.index',$row->id)}}" class="btn btn-sm btn-info" title="Spesifikasi">

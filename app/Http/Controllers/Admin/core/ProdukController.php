@@ -48,6 +48,7 @@ class ProdukController extends Controller
     {
     	#upload foto to database
 		$file = $request->file('image');
+		$banner = $request->file('banner');
 
         #JIKA FOLDERNYA BELUM ADA
 		if (!File::isDirectory($this->path)) {
@@ -98,22 +99,66 @@ class ProdukController extends Controller
 				$canvas->save($this->path . '/500/' . $fileName);
 			}
 		}
-        
 
+		if ($banner) {
+			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+			$fileNameBanner = 'Produk' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
+
+			$size   = getimagesize($banner);
+			$width  = $size[0];
+			$height = $size[1];
+
+			if($width > $height){
+				$size = ($width/$height);
+			}else{
+				$size = ($height/$width);
+			}
+
+			#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+			Image::make($banner)->save($this->path . '/' . $fileNameBanner);
+			foreach ($this->dimensions as $row) {
+				#MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+				if($width < $height){
+					$canvas = Image::canvas($row, ceil($row*$size));
+					$resizeImage  = Image::make($banner)->resize($row, ceil($row*$size), function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}else{
+					$canvas = Image::canvas(($row*$size), $row);
+					$resizeImage  = Image::make($banner)->resize(ceil($row*$size), $row, function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}
+
+				#CEK JIKA FOLDERNYA BELUM ADA
+				if (!File::isDirectory($this->path . '/' . $row)) {
+					#MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+					File::makeDirectory($this->path . '/' . $row);
+				}
+
+				#MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+				$canvas->insert($resizeImage, 'center');
+				#SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+			
+				$canvas->save($this->path . '/500/' . $fileNameBanner);
+			}
+		}
+       
         $data = [
             'id_category'   => $request->kategori_produk,
 			'label'			=> $request->label,
             'is_created'    => \Session::get('id'),
         ];
 
-		if ($file)
+		if ($file){
 			$data['image'] = $fileName;
+		}
+
+		if ($banner){
+			$data['banner'] = $fileNameBanner;
+		}
 
         $produk = Produk::create($data);
-
-        // foreach ($request->input('document', []) as $file) {
-        //     $produk->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('produk');
-        // }
 
         if($request->trigger == 1){
 			foreach ($request->judul as $key => $value) {
@@ -162,6 +207,7 @@ class ProdukController extends Controller
     {
     	#upload foto to database
 		$file = $request->file('image');
+		$banner = $request->file('banner');
 
         #JIKA FOLDERNYA BELUM ADA
 		if (!File::isDirectory($this->path)) {
@@ -213,13 +259,62 @@ class ProdukController extends Controller
 			}
 		}
 
+		if ($banner) {
+			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+			$fileNameBanner = 'Produk' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
+
+			$size   = getimagesize($banner);
+			$width  = $size[0];
+			$height = $size[1];
+
+			if($width > $height){
+				$size = ($width/$height);
+			}else{
+				$size = ($height/$width);
+			}
+
+			#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+			Image::make($banner)->save($this->path . '/' . $fileNameBanner);
+			foreach ($this->dimensions as $row) {
+				#MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+				if($width < $height){
+					$canvas = Image::canvas($row, ceil($row*$size));
+					$resizeImage  = Image::make($banner)->resize($row, ceil($row*$size), function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}else{
+					$canvas = Image::canvas(($row*$size), $row);
+					$resizeImage  = Image::make($banner)->resize(ceil($row*$size), $row, function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}
+
+				#CEK JIKA FOLDERNYA BELUM ADA
+				if (!File::isDirectory($this->path . '/' . $row)) {
+					#MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+					File::makeDirectory($this->path . '/' . $row);
+				}
+
+				#MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+				$canvas->insert($resizeImage, 'center');
+				#SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+
+				$canvas->save($this->path . '/500/' . $fileNameBanner);
+			}
+		}
+
         $data = [
             'id_category'   => $request->kategori_produk,
 			'label'			=> $request->label,
         ];
 
-		if ($file)
+		if ($file){
 			$data['image'] = $fileName;
+		}
+
+		if ($banner){
+			$data['banner'] = $fileNameBanner;
+		}
 
         $produk = Produk::findOrFail($id);
 

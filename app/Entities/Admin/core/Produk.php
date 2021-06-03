@@ -18,6 +18,7 @@ class Produk extends Model implements HasMedia
         'id_category',
         'label',
         'image',
+        'banner',
         'is_created',
         'deleted_at'
     ];

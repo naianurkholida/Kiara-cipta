@@ -105,7 +105,7 @@
                                                 <?php foreach (Helper::kategoriProdukList() as $key => $value) { ?>
                                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
                                                         {{--
-                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
+                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}">
                                                         --}}
 
                                                         <div class="desc-detail text-center" style="font-size: 20px; min-width: 100%;">
@@ -269,7 +269,7 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}"></div>
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}"></div>
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
