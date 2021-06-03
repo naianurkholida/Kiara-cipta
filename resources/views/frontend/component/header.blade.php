@@ -104,9 +104,8 @@
                                                 <?php foreach (Helper::produkList() as $key => $value) { ?>
                                                 <?php // foreach (Helper::kategoriProdukList() as $key => $value) { ?>
                                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                        {{--
+                                                        
                                                         <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}">
-                                                        --}}
 
                                                         <div class="desc-detail text-center" style="font-size: 20px; width: 50% !important;">
                                                             @if($value->getProdukLanguage->resume != null)
