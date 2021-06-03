@@ -66,6 +66,10 @@
         			background-size: 20px;
         		}
 
+                .owl-carousel:hover .owl-nav .owl-next {
+                     display: block !important; 
+                }
+
         	</style>
         	<!-- Google Tag Manager -->
         	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
