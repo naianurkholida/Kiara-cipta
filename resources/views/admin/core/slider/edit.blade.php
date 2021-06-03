@@ -37,21 +37,24 @@
             <div class="row">
                 <div class="col-md-12">
                     <label for="">Link</label>
-                    <input type="text" name="link" class="form-control" required value="{{$slider->link}}">
+                    <input type="text" name="link" class="form-control" required value="{{$slider->link}}"><br>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <label for="">Title Button</label>
                     <input type="text" name="title_button" class="form-control" value="{{$slider->title_button}}"><br>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <label for="">Code Warna</label>
-                    <input type="text" name="code_warna" class="form-control" value="{{$slider->code_warna}}">
+                    <input type="text" name="code_warna" class="form-control" value="{{$slider->code_warna}}"><br>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Order Num</label>
+                    <input type="text" name="order_num" class="form-control" value="{{$slider->order_num}}"><br>
                 </div>
             </div>
 

@@ -139,6 +139,7 @@ class SliderController extends Controller
     	$slider->status = 1;
     	$slider->image = $fileName;
     	$slider->is_created = \Session::get('id');
+    	$slider->order_num = $request->order_num;
     	$slider->save();
 
     	if($request->trigger == 1){
@@ -267,6 +268,7 @@ class SliderController extends Controller
     	$slider->status = 1;
     	$slider->image = $fileName;
     	$slider->is_created = \Session::get('id');
+    	$slider->order_num = $request->order_num;
     	$slider->save();
 
     	if($request->trigger == 1){

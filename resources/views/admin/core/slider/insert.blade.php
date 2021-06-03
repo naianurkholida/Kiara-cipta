@@ -77,21 +77,24 @@
             <div class="row">
                 <div class="col-md-12">
                     <label for="">Link</label>
-                    <input type="text" name="link" class="form-control" required>
+                    <input type="text" name="link" class="form-control" required><br>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <label for="">Code Warna</label>
-                    <input type="text" name="code_warna" class="form-control" required>
+                    <input type="text" name="code_warna" class="form-control" required><br>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <label for="">Title Button</label>
                     <input type="text" name="title_button" class="form-control" required=""><br>
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Order Num</label>
+                    <input type="text" name="order_num" class="form-control" required=""><br>
                 </div>
             </div>
 
