@@ -14,6 +14,7 @@
 @endsection
 @section('content')
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
+    {!! $pages->konten_page !!}
     <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($category as $row)
             @foreach($row->getGallery as $val)
