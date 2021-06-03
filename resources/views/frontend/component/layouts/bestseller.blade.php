@@ -39,7 +39,7 @@
         </div>
         @endforeach
 
-        <div class="owl-carousel owl-theme" id="carousel-product">
+        <div class="owl-carousel owl-theme" id="carousel-product" style="margin-top: 20px; margin-bottom: 20px;">
             @foreach(Helper::produkList() as $item)
             <div class="item">
                 <img src="{{ asset('assets/admin/assets/media/derma_produk') }}/{{ $item->banner }}" alt="">
