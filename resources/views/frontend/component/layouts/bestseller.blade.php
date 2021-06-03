@@ -38,7 +38,8 @@
             </div>
         </div>
         @endforeach
-        <div class="entry-box-shadow" style="background-color: #ffffff;    border: 4px solid #ddd;min-height: 400px;">
+        
+        <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
             <div class="owl-carousel owl-theme" id="carousel-product" style="margin-top: 20px; margin-bottom: 20px;">
                 @foreach(Helper::produkList() as $item)
                 <div class="item">

@@ -1,5 +1,4 @@
-<div id="section-articles" class="section page-section nomargin bgcolor clearfix"
-    style="padding-top: 100px;background-color: #f9f9f9 !important;">
+<div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
     <div class="container clearfix">
         <center>
             <h2>
