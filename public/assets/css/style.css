@@ -16988,6 +16988,7 @@ body:not(.no-transition) #wrapper,
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    overflow: hidden;
 }
 
 #submenu1:hover ~ .detail-submenu{
@@ -17145,12 +17146,12 @@ body:not(.no-transition) #wrapper,
 }
 
 .card-checkpoint{
-    width: 50% !important;
+    width: 30% !important;
 }
 
 @media (max-width: 768px) {
    .card-checkpoint{
-       width: 80% !important;
+       width: 50% !important;
    }
     
 }
@@ -17161,3 +17162,15 @@ body:not(.no-transition) #wrapper,
     }
      
  }
+
+
+ @media (min-width: 768px) {
+    .spost{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+     }
+     
+ }
+

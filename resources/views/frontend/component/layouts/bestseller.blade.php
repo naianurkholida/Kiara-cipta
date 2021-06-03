@@ -3,7 +3,7 @@
        <center>
             <h2>
                 <!-- Best Seller -->
-                Dropping Now
+                Best Seller
             </h2>
         </center>
     </div>

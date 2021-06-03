@@ -230,13 +230,13 @@
 
                                 <!-- <img src="images/footer-widget-logo.png" alt="" class="footer-logo"> -->
 
-                                <strong>Derma Express</strong> 
-                                <p>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</p>
+                                <!-- <strong>Derma Express</strong>  -->
+                                <!-- <p>Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</p> -->
 
-                                <div class="clearfix" style="padding: 10px 0;">
+                                <div class="clearfix" style="">
                                     <div class="col_half">
                                         <address class="nobottommargin">
-                                            <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                            <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;cursor: default;">
                                                 <strong>Kontak Kami:</strong>
                                             </abbr><br>
                                             082258883050<br>
@@ -245,7 +245,7 @@
                                 </div>
 
                                 <address class="nobottommargin" style="margin-top: 10px;">
-                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;cursor: default;">
                                         <strong>Follow Us:</strong>
                                     </abbr><br>
                                 </address>
@@ -283,7 +283,7 @@
                                 </div>
 
                                 <address class="nobottommargin" style="margin-top: 10px;">
-                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;">
+                                    <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;	cursor: default;">
                                         <strong>Online Store:</strong>
                                     </abbr><br>
                                 </address>
@@ -371,7 +371,9 @@
                         </div>
 
                     </div>
-
+					<center>
+						<h5>Cakep Terjangkau #dermaexpressaja</h5>
+					</center>
                 </div>
 
                 <div id="copyrights">
@@ -426,6 +428,24 @@
 
     	</script>
 
+		<!-- Facebook Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '809881186313498');
+		fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=809881186313498&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
+		
        <!--  <script type="text/javascript">
             var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
@@ -505,6 +525,11 @@
 				$('#detail-submenu' + latest_sm_index).css('display', 'none');
 				$('#detail-submenut' + latest_smt_index).css('display', 'none');
 				$('#detail-submenuts' + latest_smts_index).css('display', 'none');
+			}
+
+			function goToLink(link) {
+				// console.log(link);
+				window.location = link;
 			}
 
             $(document).ready(function () {
@@ -638,8 +663,8 @@
 
             $(function () {
             	$.ajax({
-            		// url: '{{ url("ajax-produk") }}',
-            		url: '{{ url("ajax-kategori-produk") }}',
+            		url: '{{ url("ajax-produk") }}',
+            		// url: '{{ url("ajax-kategori-produk") }}',
             		type: 'GET',
             		dataType: 'Json',
             	})

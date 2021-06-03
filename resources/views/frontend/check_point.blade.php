@@ -23,7 +23,10 @@
 
 			<div class="card card-kemitraan card-checkpoint" style="border-radius: 10px;">
 				<div class="card-body">
-					<h2>Checkpoint</h2>
+					<h2>
+						<center>Cek Poin</center>
+					</h2>
+					<br>
 					@if(session()->has('message'))
 					<div class="alert alert-success">
 						{{ session()->get('message') }}
@@ -32,18 +35,23 @@
 					<form action="{{ Route('dermaster.check-point') }}" method="get">
 						<div class="row">
 							<div class="col-lg-12">
-								<label>No Handphone <span style="color: red;">*</span></label>
-								<input type="text" name="no_hp" class="form-control" required="" placeholder="No Handphone"><br>
+								<input type="text" name="no_hp" class="form-control" required="" placeholder="No.Handphone*"><br>
 							</div>
 							<br>
 							<div class="col-lg-12">
-								<button type="submit" class="btn btn-info" style="width: 100%;">Check Point</button>
+								<button type="submit" class="btn btn-info" style="width: 100%;">Cek Poin</button>
 							</div>
 						</div>
 					</form>
 					@if($no_hp)
 					<br><br>
 					<div class="row">
+						@if (!$data)
+						<div class="col-lg-12">
+							<label>Data Customer</label>
+							<p>⚠️ &nbsp;&nbsp; Nomor Handphone belum terdaftar.&nbsp; ⚠️</p>
+						</div>
+						@else
 						<div class="col-lg-12">
 							<label>Data Customer</label>
 							<table class="table table-bordered table-striped">
@@ -94,6 +102,7 @@
 								</tbody>
 							</table>
 						</div>
+						@endif
 					</div>
 					@endif
 				</div>
