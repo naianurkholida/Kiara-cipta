@@ -17,6 +17,8 @@
 
 @include('frontend.component.layouts.bestseller')
 
+@include('frontend.component.layouts.slider_product')
+
 <div class="pop-container">
     <div class="box-pop">
         <div class="close-pop">X</div>
