@@ -257,23 +257,23 @@ class SliderController extends Controller
 	          
 				$canvas->save($this->path . '/500/' . $fileName);
 			}
+		}
 
-	    	$slider = Slider::find($id);
+		$slider = Slider::find($id);
 
-	    	File::delete($this->path.'/'.$slider->image);
-	    	File::delete($this->path.'/500/'.$slider->image);
+		File::delete($this->path.'/'.$slider->image);
+		File::delete($this->path.'/500/'.$slider->image);
 
-	    	$slider->code_warna = $request->code_warna;
-	    	$slider->title_button = $request->title_button;
-	    	$slider->link = $request->link;
-	    	$slider->status = 1;
-	    	if ($file) {
-	    		$slider->image = $fileName;
-	    	}
-	    	$slider->is_created = \Session::get('id');
-	    	$slider->order_num = $request->order_num;
-	    	$slider->save();
-	    }
+		$slider->code_warna = $request->code_warna;
+		$slider->title_button = $request->title_button;
+		$slider->link = $request->link;
+		$slider->status = 1;
+		if ($file) {
+			$slider->image = $fileName;
+		}
+		$slider->is_created = \Session::get('id');
+		$slider->order_num = $request->order_num;
+		$slider->save();
 
     	if($request->trigger == 1){
     		foreach ($request->judul as $key => $value) {
