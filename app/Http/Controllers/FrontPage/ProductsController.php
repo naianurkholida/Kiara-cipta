@@ -73,7 +73,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $dataLanguage = ProdukLanguage::where('seo', $id)->where('deleted_at',null)->firstOrFail();
+        $dataLanguage = ProdukLanguage::where('seo', $id)->where('deleted_at',null)->first();
 
         $data = Produk::where('deleted_at',null)->findOrFail($dataLanguage->id_produk);
 
