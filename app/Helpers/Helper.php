@@ -12,6 +12,8 @@ use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Sosmed;
 use App\Entities\Admin\core\Slider;
 use App\Entities\Admin\core\SlideLanguage;
+use App\Entities\Admin\core\SliderProduk;
+use App\Entities\Admin\core\SliderProdukLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
@@ -171,6 +173,13 @@ class Helper
     public static function slider()
 	{
 		$data = Slider::orderBy('order_num', 'ASC')->where('status', True)->get();
+		return $data;
+	}
+
+	public static function sliderProduk()
+	{
+		$data = sliderProduk::with('descriptionJoin')->orderBy('order_num', 'ASC')->get();
+		
 		return $data;
 	}
 

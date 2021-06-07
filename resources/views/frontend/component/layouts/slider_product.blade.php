@@ -2,9 +2,11 @@
 	<div class="container clearfix">
 
 		<div class="owl-carousel owl-theme" id="carousel-product">
-			@foreach(Helper::produkList() as $item)
+			@foreach(Helper::sliderProduk() as $item)
 			<div class="item">
-				<img src="{{ asset('assets/admin/assets/media/derma_produk') }}/{{ $item->banner }}" alt="{{ $item->getProdukLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
+				<a href="">
+					<img src="{{ asset('assets/admin/assets/media/slider') }}/{{ $item->banner }}" alt="{{ $item->descriptionJoin->title }}" style="padding: 5px; border-radius: 5%;">
+				</a>
 			</div>
 			@endforeach
 		</div>
