@@ -92,8 +92,6 @@
 			</div>
 			<hr>
 			@endforeach
-			<button type="button" class="btn btn-info" onclick="simpan()">Simpan</button>
-
 			<button type="submit" class="btn btn-info pull-right">Simpan</button>
 		</form>
 	</div>
