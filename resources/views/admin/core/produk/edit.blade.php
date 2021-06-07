@@ -29,6 +29,10 @@
 					<label>Label Produk</label>
 					<input type="text" id="label" name="label" class="form-control" value="{{$produk->label}}"><br>
 				</div>
+				<div class="col-lg-3">
+					<label>Harga</label>
+					<input type="number" name="harga" class="form-control" value="{{$produk->harga}}" id="harga" required="">
+				</div>
 				<div class="col-lg-12">
 					<div class="form-group">
 						<label for="document">Banner</label>

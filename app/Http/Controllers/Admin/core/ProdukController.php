@@ -145,6 +145,7 @@ class ProdukController extends Controller
 		}
        
         $data = [
+        	'harga'         => $request->harga;
             'id_category'   => $request->kategori_produk,
 			'label'			=> $request->label,
             'is_created'    => \Session::get('id'),
@@ -304,6 +305,7 @@ class ProdukController extends Controller
 		}
 
         $data = [
+        	'harga'         => $request->harga,
             'id_category'   => $request->kategori_produk,
 			'label'			=> $request->label,
         ];

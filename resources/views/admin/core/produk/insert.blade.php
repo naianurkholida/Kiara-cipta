@@ -25,9 +25,14 @@
 						@endforeach
 					</select>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<label>Label Produk</label>
-					<input type="text" id="label" name="label" class="form-control"><br>
+					<input type="text" id="label" name="label" class="form-control" required=""><br>
+				</div>
+
+				<div class="col-lg-3">
+					<label>Harga</label>
+					<input type="number" name="harga" class="form-control" id="harga" required="">
 				</div>
 
 				<div class="col-lg-12">
