@@ -138,12 +138,9 @@
                                                         <li class="mega-menu-title">
                                                             <ul style="display: none;">
                                                                 <li class="sub-menu" style="width: 100% !important;">
-                                                                <?php foreach(Helper::produkList() as $key => $row){ ?>
-                                                                    <!-- <a href="{{ route('dermaster.products.category', $row->seo) }}" class="sf-with-ul">{{$row->category}}</a> -->
-
-                                                                    <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" class="btn-submenu">
-                                                                        {{ $row->getProdukLanguage->judul }}
-                                                                    </a>
+                                                                <?php foreach(Helper::kategoriProdukList() as $key => $row){ 
+                                                                    ?>
+                                                                    <a href="{{ route('dermaster.products.category', $row->seo) }}" class="sf-with-ul">{{$row->category}}</a>
                                                                 <?php } ?>
                                                                 
                                                                 </li>
@@ -264,7 +261,7 @@
                                         <div class="scroller-detail">
                                             <?php foreach(Helper::produkList() as $key => $row){ ?>
                                                 <div class="submenu" id="submenu{{$key}}">
-                                                    <span>{{$row->getProdukLanguage->juduljudul}}</span>
+                                                    <span>{{$row->getProdukLanguage->judul}}</span>
                                                 </div>
                                             <?php } ?>
                                         </div>
