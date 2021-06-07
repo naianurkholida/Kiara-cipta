@@ -385,6 +385,8 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/produk/edit/{id}', 'Admin\core\SliderProdukController@edit')->name('slider.produk.edit');
 		Route::post('/produk/update/{id}', 'Admin\core\SliderProdukController@update')->name('slider.produk.update');
 		Route::get('/produk/delete/{id}', 'Admin\core\SliderProdukController@delete')->name('slider.produk.delete');
+
+		Route::get('/produk/show/{seo}', 'Admin\core\SliderProdukController@show')->name('slider.produk.show');
 	});
 
 	#upload wysiwyg

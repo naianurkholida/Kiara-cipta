@@ -173,9 +173,13 @@ class SliderProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($seo)
     {
-        //
+        //for frontpage
+
+        $data = SliderProduk::with('descriptionJoin')->where('seo', $seo)->first();
+
+        return view('frontend.slider_produk', compact('data'));
     }
 
     /**
