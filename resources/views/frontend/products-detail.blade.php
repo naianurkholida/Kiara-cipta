@@ -137,7 +137,11 @@
                                 <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
                             </div>
                             <hr>
-                            <h4 class="text-center">Rp. {{ number_format($data->harga) }}</h4>
+                            <h4 class="text-center">
+                                @if($data->harga != 0)
+                                    Rp. {{ number_format($data->harga) }}
+                                @endif
+                            </h4>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             {!! $data->getProdukLanguage->deskripsi !!}
