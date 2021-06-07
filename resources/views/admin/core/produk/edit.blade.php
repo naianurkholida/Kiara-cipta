@@ -25,7 +25,7 @@
 						@endforeach
 					</select>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<label>Label Produk</label>
 					<input type="text" id="label" name="label" class="form-control" value="{{$produk->label}}"><br>
 				</div>
