@@ -137,7 +137,7 @@
                                                     <ul class="mega-menu-column col-lg-12">
                                                         <li class="mega-menu-title">
                                                             <ul style="display: none;">
-                                                                <li class="sub-menu" style="width: 100% !important;">
+                                                                <li class="sub-menu" style="width: max-content !important;">
                                                                <!--  <?php foreach(Helper::kategoriProdukList() as $key => $row){ 
                                                                     ?>
                                                                     <a href="{{ route('dermaster.products.category', $row->seo) }}" class="sf-with-ul">{{$row->category}}</a>
