@@ -123,7 +123,7 @@
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
-        <div class="heading-block center noborder" data-heading="O">
+        <div class="heading-block center noborder" data-heading="O" style="margin-bottom: 0px !important"> 
             <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
         </div>
     </div>
@@ -138,11 +138,11 @@
                             </div>
                         </div>
                         <div class="col-md-8 col-sm-12">
-                            <span>
+                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace;">
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
-                            </span>
+                            </span><hr>
                             {!! $data->getProdukLanguage->deskripsi !!}
                             <br>
 
