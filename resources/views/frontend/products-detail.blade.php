@@ -138,11 +138,11 @@
                             </div>
                         </div>
                         <div class="col-md-8 col-sm-12">
-                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace;">
+                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
-                            </span><hr>
+                            </span>
                             {!! $data->getProdukLanguage->deskripsi !!}
                             <br>
 
