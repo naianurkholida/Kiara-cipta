@@ -124,13 +124,7 @@
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
-            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
-            <hr>
-            <h4 class="text-center">
-                @if($data->harga != 0)
-                Rp. {{ number_format($data->harga) }}
-                @endif
-            </h4>
+            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>            
         </div>
     </div>
     <div class="container" id="container_luar">
@@ -139,11 +133,15 @@
                 <div class="container" id="container_detail">
                     <div class="row" style="margin-top: 70px;">
                         <div class="col-md-4 col-sm-12">
-                            <div class="img-magnifier-container">
                                 <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
                             </div>
                         </div>
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-md-8 col-sm-12"><hr>
+                            <h5 class="text-center">
+                                @if($data->harga != 0)
+                                Rp. {{ number_format($data->harga) }}
+                                @endif
+                            </h5>
                             {!! $data->getProdukLanguage->deskripsi !!}
                             <br>
 
