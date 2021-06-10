@@ -147,7 +147,7 @@
                             {!! $data->getProdukLanguage->deskripsi !!}
                             <br>
 
-                            <table class="detail-spec-web" style="text-align: center;">
+                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3;">
                             @foreach($data->getSpec as $key => $val)
                                 @if(($key % 2) == 0)
                                 <tr>
