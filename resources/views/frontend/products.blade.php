@@ -44,7 +44,7 @@
                     <div>
                         <?php //$icon = Helper::iconProdukBestSeller($row->id); ?>
                         @foreach($row->getSpec as $val)
-                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 25%;">
+                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%;">
                         <span>{{ $val->specification }}</span>
                         <br><br>
                         @endforeach
