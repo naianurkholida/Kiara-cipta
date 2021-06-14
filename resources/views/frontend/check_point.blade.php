@@ -35,7 +35,7 @@
 					<form action="{{ Route('dermaster.check-point') }}" method="get">
 						<div class="row">
 							<div class="col-lg-12">
-								<input type="text" name="no_hp" class="form-control" required="" placeholder="No.Handphone*"><br>
+								<input type="text" name="no_hp" class="form-control" required="" placeholder="No.Handphone*" value="{{ $no_hp }}"><br>
 							</div>
 							<br>
 							<div class="col-lg-12">
@@ -59,11 +59,13 @@
 									<th>ID</th>
 									<th>Name</th>
 									<th>Point</th>
+									<th>Member</th>
 								</tr>
 								<tr>
 									<td>{{ $data[0] }}</td>
 									<td>{{ $data[1] }}</td>
 									<td style="text-align: right;">{{ $data[2] }}</td>
+									<td>{{ $data[3] }}</td>
 								</tr>
 							</table>
 						</div>
