@@ -166,7 +166,7 @@
                             @endforeach
                             </table>
 
-                            <table class="detail-spec-mobile">
+                            <table class="detail-spec-mobile" style="text-align: center; background-color: #92cac3;">
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td>
