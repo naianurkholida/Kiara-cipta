@@ -166,11 +166,13 @@
                             @endforeach
                             </table>
 
-                            <table class="detail-spec-mobile" style="text-align: center; background-color: #92cac3;">
+                            <table class="detail-spec-mobile" style="background-color: #92cac3;">
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td>
                                         <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                    </td>
+                                    <td align="center">
                                         <span>{{$val->specification}}</span>
                                     </td>
                                 </tr>
