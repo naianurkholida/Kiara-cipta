@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\Language;
 
 class CheckPointController extends Controller
@@ -61,7 +62,13 @@ class CheckPointController extends Controller
             $no_hp = null;
         }
 
-        return view('frontend.check_point', compact('data', 'history', 'no_hp'));
+        $info_member = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
+                       ->join('category', 'category.id', '=', 'pages.id_category')
+                       ->where('category.seo', 'info-member')
+                       ->where('pages_language.id_language', 1)
+                       ->first();
+
+        return view('frontend.check_point', compact('data', 'history', 'no_hp', 'info_member'));
     }
 
     public function report($idTrx, $no_hp)

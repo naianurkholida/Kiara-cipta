@@ -44,8 +44,13 @@
 						</div>
 					</form>
 					@if($no_hp)
-					<br><br>
+					
 					<div class="row">
+						<div class="col-lg-12">
+							<label>Info Member</label>
+							<div style="margin-left: 20px;"> {!! $info_member->konten_page !!}</div>
+						    <span>TOTAL TRX <?=Helper::tanggal_indonesia(date('Y-m-d'))?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('+1 year')));?> :</span>
+						</div>
 						@if (!$data)
 						<div class="col-lg-12">
 							<label>Data Customer</label>
@@ -54,7 +59,7 @@
 						@else
 						<div class="col-lg-12">
 							<label>Data Customer</label>
-							<table class="table table-bordered table-striped">
+							<table class="table table-striped">
 								<tr class="text-center">
 									<th>ID</th>
 									<th>Name</th>
