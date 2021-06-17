@@ -49,7 +49,6 @@
 						<div class="col-lg-12">
 							<label>Info Member</label>
 							<div style="margin-left: 20px;"> {!! $info_member->konten_page !!}</div>
-						    <span>TOTAL TRX <?=Helper::tanggal_indonesia(date('Y-m-d'))?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('+1 year')));?> :</span>
 						</div>
 						@if (!$data)
 						<div class="col-lg-12">
@@ -58,7 +57,8 @@
 						</div>
 						@else
 						<div class="col-lg-12">
-							<label>Data Customer</label>
+							<label>Data Customer</label><br>
+							<span>Total Trx <?=Helper::tanggal_indonesia(date('Y-m-d'))?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('+1 year')));?> : <b>{{ number_format($data[4]) }}</b></span>
 							<table class="table table-striped">
 								<tr class="text-center">
 									<th>ID</th>
@@ -73,7 +73,7 @@
 									<td>{{ $data[3] }}</td>
 								</tr>
 							</table>
-						</div>
+						</div>						
 						<hr>
 
 						<div class="col-lg-6"><br>
