@@ -23,7 +23,7 @@
             </p>
         </div>
         <div class="btn-bestseller"><a href="{{ route('dermaster.products.show', $row->produk->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->produk->getProdukLanguage->judul}}</a></div>
-        <div class="overlay-bestseller">
+        <div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
             <div class="container-overlay">
                 <div>
                     <?php //$icon = Helper::iconProdukBestSeller($row->produk->id); ?>
