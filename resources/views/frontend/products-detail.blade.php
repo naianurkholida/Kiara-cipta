@@ -159,8 +159,8 @@
                                     @else
                                     <td width="50%">
                                     @endif
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
-                                        <span style="color: white; font-size: 20px; font-family: ui-sans-serif;">{{$val->specification}}</span>
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 30px; margin: 16px 30px 22px 24px;">
+                                        <span style="color: white; font-size: 15px; font-family: ui-sans-serif;">{{$val->specification}}</span>
                                     </td>
                                 @if(($key % 2) != 0 || $key == (count($data->getSpec)-1))
                                 </tr>
@@ -172,9 +172,9 @@
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td align="center">
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 30px; margin: 16px 30px 22px 24px;">
                                     </td>
-                                    <td align="center" style="color: white; font-size: 20px; font-family: ui-sans-serif;">
+                                    <td align="center" style="color: white; font-size: 15px; font-family: ui-sans-serif;">
                                         <span>{{$val->specification}}</span>
                                     </td>
                                 </tr>
