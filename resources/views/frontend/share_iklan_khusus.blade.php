@@ -85,7 +85,7 @@
 	$(document).ready(function() {
 		setTimeout(function(){ 
 			$('#iklan').modal('show')
-		}, 5000);
+		}, 3000);
 
 		$('#popup_iklan').click(function(){
 			$('#iklan').modal('show')
