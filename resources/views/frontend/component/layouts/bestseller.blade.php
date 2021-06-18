@@ -15,7 +15,7 @@
             <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->produk->image}}">
                 <p id="badge-product" style="
                 border-radius: 4px; 
-                background-color: #65b5aa; 
+                background-color: #67b6ab; 
                 color: white;
                 padding: 8px;
                 width: fit-content;">
