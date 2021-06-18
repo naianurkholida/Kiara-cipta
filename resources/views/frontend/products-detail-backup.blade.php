@@ -122,26 +122,32 @@
 
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
+    <div class="container clearfix">
+        <div class="heading-block center noborder" data-heading="O" style="margin-bottom: 0px !important"> 
+            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
+        </div>
+    </div>
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem">
             <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; padding-top: 0 !important">
-            	<div class="container" id="container_detail">
-            		<div class="row">
-            			<div class="col-lg-6 col-sm-12" style="border: 3px solid #f3f3f396; box-shadow: 1px 1px 4px rgb(0 0 0 / 80%); border-radius: 5px; margin-bottom: 10px;">
-            				<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
-            			</div>
-
-            			<div class="col-lg-6 col-sm-12" style="font-size: 18px;">
-            				<h1>{{$data->getProdukLanguage->judul}}</h1>
-            				<span style="font-size: 25px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
+                <div class="container" id="container_detail">
+                    <div class="row" style="margin-top: 70px;">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="img-magnifier-container">
+                                <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
-                            </span><br>
+                            </span><br><br>
                             
                             {!! $data->getProdukLanguage->deskripsi !!}
+                            <br>
 
-                            <hr>
+                            <h4 style="font-weight: 800;">Spesifikasi :</h4>
 
                             <table class="detail-spec-web" style="text-align: center; background-color: #92cac3;">
                             @foreach($data->getSpec as $key => $val)
@@ -174,9 +180,9 @@
                                 </tr>
                             @endforeach
                             </table>
-            			</div>
-            		</div>
-            	</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
