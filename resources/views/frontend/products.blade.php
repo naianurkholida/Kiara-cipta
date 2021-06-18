@@ -34,7 +34,7 @@
                     {{ $row->label }}
                 </p>
                 @endif
-                <div class="img-dokter" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}});" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
+                <div class="img-dokter" style="margin-top:100px; background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}});" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
                 <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
                 <!-- <p style="margin-bottom:10 !important;">{{-- Helper::removeTags($row->getProdukLanguage->deskripsi) --}}</p> -->
                 <!-- <p style="margin-bottom:10 !important;">{{ $row->getProdukLanguage->resume }}</p> -->
