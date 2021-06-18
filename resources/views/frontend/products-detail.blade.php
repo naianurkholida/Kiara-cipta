@@ -128,7 +128,9 @@
             	<div class="container" id="container_detail">
             		<div class="row">
             			<div class="col-lg-6 col-sm-12" style="border-radius: 5px; margin-bottom: 10px;">
-            				<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
+            				<div class="img-magnifier-container">
+            					<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
+            				</div>
             			</div>
 
             			<div class="col-lg-6 col-sm-12" style="font-size: 18px;">
