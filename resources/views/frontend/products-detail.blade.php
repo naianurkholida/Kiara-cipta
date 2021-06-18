@@ -134,12 +134,12 @@
             			</div>
 
             			<div class="col-lg-6 col-sm-12" style="font-size: 18px;">
-            				<h1>{{$data->getProdukLanguage->judul}}</h1>
+            				<h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
             				<span style="font-size: 25px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
-                            </span><br>
+                            </span><br><br><br>
                             
                             {!! $data->getProdukLanguage->deskripsi !!}
 

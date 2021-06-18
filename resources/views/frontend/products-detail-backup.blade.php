@@ -142,7 +142,8 @@
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
-                            </span><br><br>
+                            </span>
+                            <br><br><br>
                             
                             {!! $data->getProdukLanguage->deskripsi !!}
                             <br>
