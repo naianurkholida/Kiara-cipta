@@ -39,7 +39,7 @@
                 <!-- <p style="margin-bottom:10 !important;">{{-- Helper::removeTags($row->getProdukLanguage->deskripsi) --}}</p> -->
                 <p style="margin-bottom:10 !important;">{{ $row->getProdukLanguage->resume }}</p>
             </div>
-            <div class="overlay-bestseller" style="border: 3px solid #67b6ab;">
+            <div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
                 <div class="container-overlay">
                     <div>
                         <?php //$icon = Helper::iconProdukBestSeller($row->id); ?>
