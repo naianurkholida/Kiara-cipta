@@ -127,7 +127,7 @@
             <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; padding-top: 0 !important">
             	<div class="container" id="container_detail">
             		<div class="row">
-            			<div class="col-lg-6 col-sm-12" style="border: 3px solid #f3f3f396; box-shadow: 1px 1px 4px rgb(0 0 0 / 80%); border-radius: 5px; margin-bottom: 10px;">
+            			<div class="col-lg-6 col-sm-12" style="border-radius: 5px; margin-bottom: 10px;">
             				<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
             			</div>
 
