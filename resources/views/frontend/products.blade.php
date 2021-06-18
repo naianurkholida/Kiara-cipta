@@ -37,7 +37,7 @@
                 <div class="img-dokter" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}});" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}"></div>
                 <a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}"><p id="dokter-name">{{ $row->getProdukLanguage->judul }}</p></a>
                 <!-- <p style="margin-bottom:10 !important;">{{-- Helper::removeTags($row->getProdukLanguage->deskripsi) --}}</p> -->
-                <p style="margin-bottom:10 !important;">{{ $row->getProdukLanguage->resume }}</p>
+                <!-- <p style="margin-bottom:10 !important;">{{ $row->getProdukLanguage->resume }}</p> -->
             </div>
             <div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
                 <div class="container-overlay">
