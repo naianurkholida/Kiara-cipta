@@ -57,7 +57,7 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-lg-6">
-							<img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$info_desc->image}}" style="width: 100%;">
+							<img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$info_desc->image}}" style="width: 100%; height: 380px;">
 						</div>
 
 						<div class="col-lg-6">
