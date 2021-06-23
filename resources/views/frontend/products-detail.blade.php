@@ -177,7 +177,7 @@
                             @endforeach
                             </table>
 
-                            <a href="https://wa.me/+6282260030880/?text=Pesanan Kamu {{$data->getProdukLanguage->judul}}, Silahkan melakukan proses check out." class="btn btn-info" style="background-color: rgb(16, 158, 158); width: 100%;" target="_blank">Show Now</a>
+                            <a href="https://wa.me/+6282260030880/?text=Pesanan Kamu {{$data->getProdukLanguage->judul}}, Silahkan melakukan proses check out." class="btn btn-info" style="background-color: rgb(16, 158, 158); width: 100%;" target="_blank">Shop Now</a>
             			</div>
             		</div>
             	</div>
