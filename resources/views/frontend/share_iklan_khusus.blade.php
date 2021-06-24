@@ -115,7 +115,7 @@
 		}else{
 
 			$.ajax({
-				url: 'https://103.11.135.246:1506/subscribe?email='+email,
+				url: 'http://103.11.135.246:1506/subscribe?email='+email,
 				type: 'POST',
 				dataType: 'json',
 			})
