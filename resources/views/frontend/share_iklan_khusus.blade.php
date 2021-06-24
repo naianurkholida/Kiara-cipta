@@ -7,7 +7,7 @@
 <meta property="og:url" content="https://derma-express.com/share/update/iklan/diskon" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Promo Iklan Apa Aja Nih yang Ada di Derma Express." />
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 <style type="text/css">
 .modal-dialog {
 	width: 80% !important;
