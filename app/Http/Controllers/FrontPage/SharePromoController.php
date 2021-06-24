@@ -54,4 +54,17 @@ class SharePromoController extends Controller
 
         return view('frontend.share_iklan_khusus', compact('info_desc'));
     }
+
+    public function store(Request $request)
+    {
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, 'http://103.11.135.246:1506/subscribe/?email='.$request->email);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);
+
+        $data = 'Email Berhasil di Kirim !';
+        return redirect()->back()->with('message', $data);
+    }
 }

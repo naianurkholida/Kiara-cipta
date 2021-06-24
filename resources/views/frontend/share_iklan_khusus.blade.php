@@ -7,7 +7,6 @@
 <meta property="og:url" content="https://derma-express.com/share/update/iklan/diskon" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Promo Iklan Apa Aja Nih yang Ada di Derma Express." />
-<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 <style type="text/css">
 .modal-dialog {
 	width: 80% !important;
@@ -54,6 +53,11 @@
 		<div class="container" id="container_dalem">
 			<div class="row">
 				<div class="col-lg-12">
+					@if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 					<img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$info_desc->image}}" id="popup_iklan">
 				</div>
 			</div>
@@ -70,15 +74,23 @@
 						</div>
 
 						<div class="col-lg-6">
+							@if(session()->has('message'))
+							<div class="alert alert-success">
+								{{ session()->get('message') }}
+							</div>
+							@endif
 							<h2 class="text-center" style="margin: 30px;">{{ $info_desc->judul }}</h2>
 							<div class="text-set" style="text-align: center; margin: 30px;"> {!! $info_desc->content !!} </div>
 
-							<div class="input-group mb-3" style="margin-top: 20px; height: 50px;">
-								<input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" style="height: 50px; margin-left: 30px;" required="" id="email">
-								<div class="input-group-append">
-									<button onclick="sendEmail()" class="btn btn-outline-success" type="button" style="margin-right: 30px;">Send</button>
+							<form action="{{ url('share/update/iklan/diskon/post') }}" method="POST">
+								{{csrf_field()}}
+								<div class="input-group mb-3" style="margin-top: 20px; height: 50px;">
+									<input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" style="height: 50px; margin-left: 30px;" required="" id="email">
+									<div class="input-group-append">
+										<button class="btn btn-outline-success" type="submit" style="margin-right: 30px;">Send</button>
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -107,23 +119,5 @@
 			$('#iklan').modal('show')
 		})
 	});
-
-	function sendEmail() {
-		var email = $('#email').val();
-
-		if(email == null || email == ''){
-			$.notify("Email is Required", 'error');
-		}else{
-
-			$.ajax({
-				url: 'http://103.11.135.246:1506/subscribe?email='+email,
-				type: 'POST',
-				dataType: 'json',
-			})
-			.done(function(res) {
-				$.notify("Email Berhasil di Kirim", 'success');
-			});
-		}
-	}
 </script>
 @endsection

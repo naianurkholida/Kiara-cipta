@@ -436,4 +436,5 @@ Route::group(['prefix' => 'language'], function(){
 	#share
 	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');
 	Route::get('/share/update/iklan/diskon', 'FrontPage\SharePromoController@iklan');
+	Route::post('/share/update/iklan/diskon/post', 'FrontPage\SharePromoController@store');
 #end route backend
