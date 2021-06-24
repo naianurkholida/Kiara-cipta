@@ -52,7 +52,9 @@ class SharePromoController extends Controller
                        ->where('posting_language.id_language', 1)
                        ->first();
 
-        return view('frontend.share_iklan_khusus', compact('info_desc'));
+        $email = $request->email;
+
+        return view('frontend.share_iklan_khusus', compact('info_desc', 'email'));
     }
 
     public function store(Request $request)

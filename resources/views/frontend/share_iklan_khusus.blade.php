@@ -85,7 +85,7 @@
 							<form action="{{ url('share/update/iklan/diskon/post') }}" method="POST">
 								{{csrf_field()}}
 								<div class="input-group mb-3" style="margin-top: 20px; height: 50px;">
-									<input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" style="height: 50px; margin-left: 30px;" required="" id="email">
+									<input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" style="height: 50px; margin-left: 30px;" required="" id="email" value="{{ $email }}">
 									<div class="input-group-append">
 										<button class="btn btn-outline-success" type="submit" style="margin-right: 30px;">Send</button>
 									</div>
