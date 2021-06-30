@@ -75,7 +75,7 @@
 
         	</style>
         	<!-- Google Tag Manager -->
-        	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        	<script async="">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -83,7 +83,7 @@
         <!-- End Google Tag Manager -->
 
         <!-- Facebook Pixel Code -->
-        <script>
+        <script async="">
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -430,16 +430,16 @@
 
     <!-- External JavaScripts
     	============================================= -->
-    	<script src="{{asset('assets/js/jquery.js')}}"></script>
-    	<script src="{{asset('assets/js/plugins.js')}}"></script>
-    	<script src="{{asset('assets/js/lightbox.js')}}"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script src="{{asset('assets/js/notify.min.js')}}"></script>
+    	<script async="" src="{{asset('assets/js/jquery.js')}}"></script>
+    	<script async="" src="{{asset('assets/js/plugins.js')}}"></script>
+    	<script async="" src="{{asset('assets/js/lightbox.js')}}"></script>
+    	<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script async="" src="{{asset('assets/js/notify.min.js')}}"></script>
 
 
     <!-- Footer Scripts
     	============================================= -->
-    	<script src="{{asset('assets/js/functions.js')}}"></script>
+    	<script async="" src="{{asset('assets/js/functions.js')}}"></script>
 
     	<!-- ADD-ONS JS FILES -->
     	<script>
