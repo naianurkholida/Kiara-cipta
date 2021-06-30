@@ -61,7 +61,7 @@
 
                                         <?php foreach (Helper::treatment() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
-                                                <img src="{{asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}">
+                                                <img src="{{asset('assets/admin/assets/media/derma_treatment/500') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_treatment/500') }}/{{$value->image}}">
                                                  
                                                 <div class="desc-detail text-center" style="font-size: 20px;width: 50% !important;">
                                                     @if($value->getTreatmentLanguage->resume != null)
@@ -105,7 +105,7 @@
                                                 <?php // foreach (Helper::kategoriProdukList() as $key => $value) { ?>
                                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
                                                         
-                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}">
+                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$value->banner}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$value->banner}}">
 
                                                         <div class="desc-detail text-center" style="font-size: 20px; width: 50% !important;">
                                                             @if($value->getProdukLanguage->resume != null)
@@ -270,7 +270,7 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}"></div>
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$value->banner}}"></div>
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
