@@ -12,7 +12,7 @@
     <div class="box-bestseller">
         @foreach(Helper::produkListBestSeller() as $row)
         <div class="item-bestseller">
-            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->produk->image}}">
+            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ $row->produk->getProdukLanguage->judul }}">
                 <p id="badge-product" style="
                 border-radius: 4px; 
                 background-color: #67b6ab; 
