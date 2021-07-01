@@ -19,7 +19,7 @@ class SliderController extends Controller
         //Definisi PATH Foto
 		$this->path =  'assets/admin/assets/media/slider';
         //Definisi Dimensi Foto
-		$this->dimensions = ['500'];
+		$this->dimensions = ['500','300'];
 	}
 
 	public function top_bar()
@@ -130,6 +130,7 @@ class SliderController extends Controller
             #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
           
 			$canvas->save($this->path . '/500/' . $fileName);
+			$canvas->save($this->path . '/300/' . $fileName);
 		}
 
     	$slider = new Slider;
@@ -256,6 +257,7 @@ class SliderController extends Controller
 	            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
 	          
 				$canvas->save($this->path . '/500/' . $fileName);
+				$canvas->save($this->path . '/300/' . $fileName);
 			}
 		}
 
@@ -263,6 +265,7 @@ class SliderController extends Controller
 
 		File::delete($this->path.'/'.$slider->image);
 		File::delete($this->path.'/500/'.$slider->image);
+		File::delete($this->path.'/300/'.$slider->image);
 
 		$slider->code_warna = $request->code_warna;
 		$slider->title_button = $request->title_button;
