@@ -431,10 +431,11 @@
     <!-- External JavaScripts
     	============================================= -->
     	<script src="{{asset('assets/js/jquery.js')}}"></script>
-    	<script src="{{asset('assets/js/plugins.js')}}"></script>
-    	<script src="{{asset('assets/js/lightbox.js')}}"></script>
+    	<script src="{{asset('assets/js/plugins.js')}}" async></script>
+    	<script src="{{asset('assets/js/lightbox.js')}}" async></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script src="{{asset('assets/js/notify.min.js')}}"></script>
+        <script src="{{asset('assets/js/notify.min.js')}}" async></script>
+        <script src="{{asset('assets/js/lazyload.min.js')}}" async></script>
 
 
     <!-- Footer Scripts
