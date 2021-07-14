@@ -12,7 +12,7 @@
     <div class="box-bestseller">
         @foreach(Helper::produkListBestSeller() as $row)
         <div class="item-bestseller">
-            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ $row->produk->getProdukLanguage->judul }}">
+            <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ $row->produk->getProdukLanguage->judul }}" class="lazyload">
                 <p id="badge-product" style="
                 border-radius: 4px; 
                 background-color: #67b6ab; 
@@ -28,7 +28,7 @@
                 <div>
                     <?php //$icon = Helper::iconProdukBestSeller($row->produk->id); ?>
                     @foreach($row->produk->getSpec as $val)
-                    <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%; margin-right: 15px;">
+                    <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%; margin-right: 15px;" class="lazyload">
                     <span>{{ $val->specification }}</span>
                     <br><br>
                     @endforeach
