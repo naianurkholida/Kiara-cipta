@@ -238,22 +238,22 @@ class SliderController extends Controller
 				if($width < $height){
 					if($row == 300){
 
-						$canvas = Image::canvas(300, ceil($row*$size));
-						$resizeImage  = Image::make($file)->resize(300, ceil($row*$size), function($constraint) {
+						$canvas = Image::canvas(300, ceil(300*$size));
+						$resizeImage  = Image::make($file)->resize(300, ceil(300*$size), function($constraint) {
 							$constraint->aspectRatio();
 						});
 
 					}else if($row == 500){
 
-						$canvas = Image::canvas(500, ceil($row*$size));
-						$resizeImage  = Image::make($file)->resize(500, ceil($row*$size), function($constraint) {
+						$canvas = Image::canvas(500, ceil(500*$size));
+						$resizeImage  = Image::make($file)->resize(500, ceil(500*$size), function($constraint) {
 							$constraint->aspectRatio();
 						});
 
 					}else if($row == 700){
 
-						$canvas = Image::canvas(700, ceil($row*$size));
-						$resizeImage  = Image::make($file)->resize(700, ceil($row*$size), function($constraint) {
+						$canvas = Image::canvas(700, ceil(700*$size));
+						$resizeImage  = Image::make($file)->resize(700, ceil(700*$size), function($constraint) {
 							$constraint->aspectRatio();
 						});
 
@@ -261,23 +261,23 @@ class SliderController extends Controller
 				}else{
 					if($row == 300){
 
-						$canvas = Image::canvas(ceil($row*$size),300);
-						$resizeImage  = Image::make($file)->resize(ceil($row*$size), 300, function($constraint) {
+						$canvas = Image::canvas(ceil(300*$size),300);
+						$resizeImage  = Image::make($file)->resize(ceil(300*$size), 300, function($constraint) {
 							$constraint->aspectRatio();
 						});
 
 
 					}else if($row == 500){
 
-						$canvas = Image::canvas(ceil($row*$size), 500);
-						$resizeImage  = Image::make($file)->resize(ceil($row*$size), 500, function($constraint) {
+						$canvas = Image::canvas(ceil(500*$size), 500);
+						$resizeImage  = Image::make($file)->resize(ceil(500*$size), 500, function($constraint) {
 							$constraint->aspectRatio();
 						});
 
 					}else if($row == 700){
 
-						$canvas = Image::canvas(($row*$size), 700);
-						$resizeImage  = Image::make($file)->resize(ceil($row*$size), 700, function($constraint) {
+						$canvas = Image::canvas((700*$size), 700);
+						$resizeImage  = Image::make($file)->resize(ceil(700*$size), 700, function($constraint) {
 							$constraint->aspectRatio();
 						});
 
