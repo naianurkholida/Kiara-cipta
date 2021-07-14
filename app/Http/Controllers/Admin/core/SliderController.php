@@ -234,8 +234,10 @@ class SliderController extends Controller
 	        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
 			Image::make($file)->save($this->path . '/' . $fileName);
 			foreach ($this->dimensions as $row) {
+				
 	            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
 				if($width < $height){
+
 					if($row == 300){
 
 						$canvas = Image::canvas(300, ceil(300*$size));
@@ -250,7 +252,7 @@ class SliderController extends Controller
 							$constraint->aspectRatio();
 						});
 
-					}else if($row == 700){
+					}else{
 
 						$canvas = Image::canvas(700, ceil(700*$size));
 						$resizeImage  = Image::make($file)->resize(700, ceil(700*$size), function($constraint) {
@@ -266,7 +268,6 @@ class SliderController extends Controller
 							$constraint->aspectRatio();
 						});
 
-
 					}else if($row == 500){
 
 						$canvas = Image::canvas(ceil(500*$size), 500);
@@ -274,13 +275,12 @@ class SliderController extends Controller
 							$constraint->aspectRatio();
 						});
 
-					}else if($row == 700){
+					}else{
 
 						$canvas = Image::canvas((700*$size), 700);
 						$resizeImage  = Image::make($file)->resize(ceil(700*$size), 700, function($constraint) {
 							$constraint->aspectRatio();
 						});
-
 					}
 				}
 
@@ -294,9 +294,13 @@ class SliderController extends Controller
 				$canvas->insert($resizeImage, 'center');
 	            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
 
-	            $canvas->save($this->path . '/700/' . $fileName);
-				$canvas->save($this->path . '/500/' . $fileName);
-				$canvas->save($this->path . '/300/' . $fileName);
+				if($row == 300){
+    				$canvas->save($this->path . '/300/' . $fileName);
+    			}else if($row == 500){
+    				$canvas->save($this->path . '/500/' . $fileName);
+    			}else{
+    				$canvas->save($this->path . '/700/' . $fileName);
+    			}
 			}
 		}
 
