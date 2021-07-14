@@ -236,15 +236,52 @@ class SliderController extends Controller
 			foreach ($this->dimensions as $row) {
 	            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
 				if($width < $height){
-					$canvas = Image::canvas($row, ceil($row*$size));
-					$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-						$constraint->aspectRatio();
-					});
+					if($row == 300){
+
+						$canvas = Image::canvas($row, ceil($row*$size));
+						$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+					}else if($row == 500){
+
+						$canvas = Image::canvas($row, ceil($row*$size));
+						$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+					}else if($row == 700){
+
+						$canvas = Image::canvas($row, ceil($row*$size));
+						$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+					}
 				}else{
-					$canvas = Image::canvas(($row*$size), $row);
-					$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-						$constraint->aspectRatio();
-					});
+					if($row == 300){
+
+						$canvas = Image::canvas(ceil($row*$size), $row);
+						$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+
+					}else if($row == 500){
+
+						$canvas = Image::canvas(ceil($row*$size), $row);
+						$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+					}else if($row == 700){
+
+						$canvas = Image::canvas(($row*$size), $row);
+						$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+							$constraint->aspectRatio();
+						});
+
+					}
 				}
 
 	            #CEK JIKA FOLDERNYA BELUM ADA
