@@ -6,8 +6,8 @@
 	<meta name="description" content="Page with empty content">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="_globalsign-domain-verification" content="faYUt9pHF1Oqq4zNeoIbmo5lX9cck5K_tdXhwpvmK-" />
-	<meta name="facebook-domain-verification" content="b54r9im3ln73mt00zmhkl1i2bcn1qp" />
-    <meta name="facebook-domain-verification" content="2owbzol2qc7qbpaxp3i84lfrt3uhxb" />
+	<!-- <meta name="facebook-domain-verification" content="b54r9im3ln73mt00zmhkl1i2bcn1qp" />
+    <meta name="facebook-domain-verification" content="2owbzol2qc7qbpaxp3i84lfrt3uhxb" /> -->
     <meta name="facebook-domain-verification" content="b54r9im3ln73mt00zmhkl1i2bcn1qp" />
 
     <!-- Stylesheets
@@ -454,6 +454,16 @@
     		}
 
     	</script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204519156-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-204519156-1');
+      </script>
 
 		<!-- Facebook Pixel Code -->
 		<script>
