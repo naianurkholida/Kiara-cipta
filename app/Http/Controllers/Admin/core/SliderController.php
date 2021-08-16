@@ -129,7 +129,7 @@ class SliderController extends Controller
 			$canvas->insert($resizeImage, 'center');
             #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
           
-			$canvas->save($this->path . '/700/' . $fileName);
+			$canvas->save($this->path . '/600/' . $fileName);
 			$canvas->save($this->path . '/500/' . $fileName);
 			$canvas->save($this->path . '/300/' . $fileName);
 		}
@@ -269,7 +269,7 @@ class SliderController extends Controller
 		$slider = Slider::find($id);
 
 		File::delete($this->path.'/'.$slider->image);
-		File::delete($this->path.'/700/'.$slider->image);
+		File::delete($this->path.'/600/'.$slider->image);
 		File::delete($this->path.'/500/'.$slider->image);
 		File::delete($this->path.'/300/'.$slider->image);
 
@@ -342,7 +342,7 @@ class SliderController extends Controller
     	$slider->save();
 
     	File::delete($this->path.'/'.$slider->image);
-    	File::delete($this->path.'/700/'.$slider->image);
+    	File::delete($this->path.'/600/'.$slider->image);
     	File::delete($this->path.'/500/'.$slider->image);
     	File::delete($this->path.'/300/'.$slider->image);
 
