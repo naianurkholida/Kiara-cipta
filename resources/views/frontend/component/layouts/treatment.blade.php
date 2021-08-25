@@ -19,7 +19,7 @@
                     @endforeach
                     <div class="entry-meta-wrapper">
                         <div class="entry-title clearfix">
-                            <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px;"><a
+                            <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px; text-align: center;"><a
                                     href="{{ route('dermaster.treatments.show', $row->getTreatmentLanguage->seo) }}"
                                     style="color:#65b5aa;">{{ $row->getTreatmentLanguage->judul }}</a></h2>
                         </div>
