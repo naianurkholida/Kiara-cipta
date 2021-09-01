@@ -164,7 +164,7 @@
                             @endforeach
                             </table>
 
-                            <table class="detail-spec-mobile" style="background-color: #92cac3;">
+                            <table class="detail-spec-mobile" style="background-color: #92cac3; border-radius: 7px;">
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td align="center">
@@ -177,7 +177,7 @@
                             @endforeach
                             </table>
 
-                            <a href="https://wa.me/+6282260030880/?text=Pesanan Kamu {{$data->getProdukLanguage->judul}}, Silahkan melakukan proses check out." class="btn btn-info" style="background-color: rgb(16, 158, 158); width: 100%;" target="_blank">SHOP NOW</a>
+                            <a href="https://wa.me/+6282260030880/?text=Pesanan Kamu {{$data->getProdukLanguage->judul}}, Silahkan melakukan proses check out." class="btn btn-info" style="background-color: rgb(16, 158, 158); width: 100%;" target="_blank">Miliki Sekarang</a>
             			</div>
             		</div>
             	</div>
