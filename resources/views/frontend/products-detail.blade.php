@@ -145,7 +145,7 @@
 
                             <hr>
 
-                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3;">
+                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3; border-radius: 7px;">
                             @foreach($data->getSpec as $key => $val)
                                 @if(($key % 2) == 0)
                                 <tr>
