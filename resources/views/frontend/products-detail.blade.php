@@ -19,7 +19,7 @@
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
 
-<title>{{$data->getProdukLanguage->judul}}</title>
+<title>Derma Express - {{$data->getProdukLanguage->judul}}</title>
 
 <style>
     * {box-sizing: border-box;}

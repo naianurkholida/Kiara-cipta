@@ -18,7 +18,7 @@
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
 
-<title>{{ $data->getTreatmentLanguage->judul }}</title>
+<title>Derma Express - {{ $data->getTreatmentLanguage->judul }}</title>
 @endsection
 
 @section('content')
