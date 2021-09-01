@@ -1,4 +1,4 @@
-@extends('frontend.component.master')
+@extends('frontend.component.master_product_and_treatment')
 
 @section('header')
 

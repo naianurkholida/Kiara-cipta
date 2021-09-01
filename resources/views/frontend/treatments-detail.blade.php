@@ -1,4 +1,4 @@
-@extends('frontend.component.master')
+@extends('frontend.component.master_product_and_treatment')
 
 @section('header')
 <meta charset="UTF-8" />
@@ -17,6 +17,8 @@
 <meta property="article:tag" content="Beauty" />
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
+
+<title>{{ $data->getTreatmentLanguage->judul }}</title>
 @endsection
 
 @section('content')
