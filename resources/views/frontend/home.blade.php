@@ -18,7 +18,7 @@
 }
 
 .modal-content {
-    /*height: auto;*/
+    height: auto;
     min-height: 50% !important;
     border-radius: 0;
     margin-left: 15%;
@@ -31,7 +31,7 @@
     }
 
     .modal-content {
-        /*height: auto;*/
+        height: auto;
         min-height: 50% !important;
         border-radius: 0;
         margin-left: 0% !important;
@@ -81,7 +81,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-8">
-                            <img src="{{ Helper::iklan() }}" style="width: 100%; height: 380px;" class="img-set">
+                            <img src="{{ Helper::iklan() }}" style="width: 100%;" class="img-set">
                         </div>
 
                         <div class="col-lg-4">
