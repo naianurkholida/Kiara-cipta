@@ -104,7 +104,7 @@
     $(document).ready(function() {
         setTimeout(function(){ 
             $('#iklan').modal('show')
-        }, 9000);
+        }, 5000);
     });
 </script>
 @endsection
