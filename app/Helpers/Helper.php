@@ -40,6 +40,13 @@ class Helper
 		return $img;
 	}
 
+	public static function desc_iklan()
+	{
+		$data = Parameter::where('key', 'desc_iklan')->first()->value;
+
+		return $data;
+	}
+
 	public static function kategoriProdukList()
 	{
 		$data = Category::where('id_parent',36)

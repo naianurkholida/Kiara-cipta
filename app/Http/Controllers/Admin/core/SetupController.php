@@ -119,9 +119,10 @@ class SetupController extends Controller
         #selected desc
         $desc = Parameter::where('key', 'deskripsi_home')->first();
 
+        $desc_iklan = Parameter::where('key', 'desc_iklan')->first();
         $iklan = Parameter::where('key', 'iklan')->first();
 
-        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak','desc','iklan'));
+        return view('admin.core.setup.settings.index', compact('top_bar', 'pages','kategori_all', 'content_profile', 'youtube', 'content_privacy', 'ketentuan_privacy', 'syarat_ketentuan', 'content_syarat', 'kantor', 'content_kantor', 'facebook', 'instagram', 'twitter','whatsapp','email','content_kontak','desc','desc_iklan','iklan'));
     }
 
     public function store_settings(Request $request)
@@ -173,6 +174,10 @@ class SetupController extends Controller
         $desc = Parameter::where('key', 'deskripsi_home')->first();
         $desc->value = $request->desc;
         $desc->save();
+
+        $desc_iklan = Parameter::where('key', 'desc_iklan')->first();
+        $desc_iklan->value = $request->deskripsi_iklan;
+        $desc_iklan->save();
 
         if($request->file('iklan') != null){
             $iklan = Parameter::where('key', 'iklan')->first();
