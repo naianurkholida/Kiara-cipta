@@ -18,7 +18,7 @@
 }
 
 .modal-content {
-    height: auto;
+    /*height: auto;*/
     min-height: 50% !important;
     border-radius: 0;
     margin-left: 15%;
@@ -31,7 +31,7 @@
     }
 
     .modal-content {
-        height: auto;
+        /*height: auto;*/
         min-height: 50% !important;
         border-radius: 0;
         margin-left: 0% !important;
@@ -104,7 +104,7 @@
     $(document).ready(function() {
         setTimeout(function(){ 
             $('#iklan').modal('show')
-        }, 5000);
+        }, 3000);
     });
 </script>
 @endsection
