@@ -74,22 +74,34 @@
         <img src="{{ Helper::iklan() }}" style="border-radius: 20px;">
     </div>
 </div> -->
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0px; padding-top: 10px;">
-    <div class="modal" tabindex="-1" id="iklan">
-        <div class="modal-dialog">
-            <div class="modal-content">              
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <img src="{{ Helper::iklan() }}" style="width: 100%;" class="img-set">
-                        </div>
 
-                        <div class="col-lg-4">
-                           <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                            <div class="text-set" style="text-align: center; margin: 30px; font-size: 18px;">{{ Helper::desc_iklan() }}</div>
+<div class="modal" tabindex="-1" id="iklan">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{Helper::info_desc()->image}}" style="width: 100%; height: 380px;" class="img-set">
+                    </div>
+
+                    <div class="col-lg-6">
+                        @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
                         </div>
+                        @endif
+                        <h2 class="text-center" style="margin: 30px;">{{ Helper::info_desc()->judul }}</h2>
+                        <div class="text-set" style="text-align: center; margin: 30px;"> {!! Helper::info_desc()->content !!} </div>
+
+                        <form action="{{ url('share/update/iklan/diskon/post') }}" method="POST">
+                            {{csrf_field()}}
+                            <div class="input-group mb-3" style="margin-top: 20px; height: 50px;">
+                                <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" style="height: 50px; margin-left: 30px;" required="" id="email" value="">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-success" type="submit" style="margin-right: 30px;">Send</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

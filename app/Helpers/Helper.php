@@ -32,6 +32,16 @@ class Helper
 		return $data;
 	}
 
+	public static function info_desc(){
+		$info_desc = Posting::join('posting_language', 'posting_language.id_posting', '=', 'posting.id')
+                       ->join('category', 'category.id', '=', 'posting.id_category')
+                       ->where('category.seo', 'popup-iklan')
+                       ->where('posting_language.id_language', 1)
+                       ->first();
+
+        return $info_desc;
+	}
+
 	public static function iklan()
 	{
 		$data = Parameter::where('key', 'iklan')->first();
