@@ -398,6 +398,7 @@
                     </div>
 					<center>
 						<h5>Cakep Terjangkau #dermaexpressaja</h5>
+                        <h5 class="text-center">#skincareforeveryone</h5>
 					</center>
                 </div>
 
