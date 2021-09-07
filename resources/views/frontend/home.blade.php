@@ -77,7 +77,7 @@
 
 <div class="modal" tabindex="-1" id="iklan">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-6">
