@@ -70,7 +70,7 @@
                                                     <p>{{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br>
-                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">Selengkapnya</a>
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu" style="border-radius: 5px;">Selengkapnya</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -113,7 +113,7 @@
                                                             @else
                                                             <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                             @endif
-                                                            <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">Selengkapnya</a>
+                                                            <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%; border-radius: 5px;">Selengkapnya</a>
 
                                                         {{--
                                                             <div style="margin:auto; width:50%;">
@@ -121,7 +121,7 @@
                                                                     <img src="{{asset('assets/admin/assets/media/icon-kategori')}}/{{$value->banner}}" alt="$value->category" width="100%">
                                                                 @endif
                                                                 <p>{{ $value->description ?? " " }}</p>
-                                                                <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">Selengkapnya</a>
+                                                                <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%; border-radius: 5px;">Selengkapnya</a>
                                                             </div>
                                                         --}}
                                                         </div>
@@ -246,7 +246,7 @@
                                                     <p>{{ Helper::removeTags($value->getTreatmentLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br>
-                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu">Selengkapnya</a>
+                                                    <a href="{{ route('dermaster.treatments.show', $value->getTreatmentLanguage->seo) }}" class="btn-submenu" style="border-radius: 5px;">Selengkapnya</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -278,7 +278,7 @@
                                                     <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                     @endif
                                                     <br><br><br>
-                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu">Selengkapnya</a>
+                                                    <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="border-radius: 5px;">Selengkapnya</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
