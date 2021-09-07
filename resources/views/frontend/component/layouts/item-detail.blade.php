@@ -8,7 +8,7 @@
                     @endif
                 @endforeach -->
 
-                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url('{{ $data->image }}'); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
+                 <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px; background-color: #ffffff; background-image: url('https://derma-express.com/assets/admin/assets/media/derma_treatment/{{ $data->image }}'); background-size: contain;background-repeat: no-repeat;   background-position: center;"></div>
             </div>
             <div class="col-md-8 col-sm-12">
                 {!! $data->$related->$column !!}
