@@ -99,6 +99,16 @@
                 src="https://www.facebook.com/tr?id=5649171165125533&ev=PageView&noscript=1"
                 /></noscript>
                 <!-- End Facebook Pixel Code -->
+
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204519156-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'UA-204519156-1');
+              </script>
     </head>
 
     <body class="stretched">
@@ -455,17 +465,7 @@
     		}
 
     	</script>
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204519156-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-204519156-1');
-      </script>
-
+        
 		<!-- Facebook Pixel Code -->
 		<script>
 		!function(f,b,e,v,n,t,s)
