@@ -17,6 +17,24 @@ var KTUserAdd = function () {
     };
 }();
 
+// Class definition
+var KTUserAdd2 = function () {
+    // Base elements
+    var avatar;
+     
+    var initUserForm = function() {
+        avatar = new KTAvatar('kt_user_add_avatar_two');
+    }   
+
+    return {
+        // public functions
+        init: function() {
+            initUserForm(); 
+        }
+    };
+}();
+
 jQuery(document).ready(function() { 
     KTUserAdd.init();
+    KTUserAdd2.init();
 });

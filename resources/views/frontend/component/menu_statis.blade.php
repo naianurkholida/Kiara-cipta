@@ -41,7 +41,7 @@
  	</li>
  	<li>
  		<a href="{{route('dermaster.checkpoint')}}">
- 			<div>Check Point</div>
+ 			<div>Cek Poin</div>
  		</a>
  	</li>
  	<li>

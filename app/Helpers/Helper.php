@@ -12,6 +12,8 @@ use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Sosmed;
 use App\Entities\Admin\core\Slider;
 use App\Entities\Admin\core\SlideLanguage;
+use App\Entities\Admin\core\SliderProduk;
+use App\Entities\Admin\core\SliderProdukLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
@@ -50,7 +52,7 @@ class Helper
 	
 	public static function produkList()
 	{
-		$data = Produk::with('getProdukLanguage')->where('deleted_at', null)->get();
+		$data = Produk::with('getProdukLanguage', 'getCategory')->where('deleted_at', null)->get();
 
 				$data = $data->sortBy(function ($data, $key)
                 {
@@ -62,14 +64,10 @@ class Helper
 
 	public static function produkListBestSeller()
 	{
-		$data = Produk::with('getProdukLanguage','getCategory','getSpec')
-					->where('deleted_at', null)
-					->whereHas('getCategory', function($q){
-						$q->where('seo', 'best-seller');
-					})
-					->orderBy('order_num', 'ASC')
-					->get();
-	
+		$data = BestSellerIcon::with('produk','produk.getProdukLanguage','produk.getCategory','produk.getSpec')
+							->where('deleted_at', null)
+							->get();
+		
 		return $data;
 	}
 
@@ -167,7 +165,7 @@ class Helper
 	
 	public static function removeTags($tags)
 	{
-		$data = str_replace('&nbsp;','',substr(strip_tags($tags), 0, 140)) . '...';
+		$data = str_replace('&nbsp;',' ',substr(strip_tags($tags), 0, 140)) . '...';
 
 		return $data;
 	}
@@ -175,6 +173,13 @@ class Helper
     public static function slider()
 	{
 		$data = Slider::orderBy('order_num', 'ASC')->where('status', True)->get();
+		return $data;
+	}
+
+	public static function sliderProduk()
+	{
+		$data = sliderProduk::with('descriptionJoin')->orderBy('order_num', 'ASC')->get();
+		
 		return $data;
 	}
 
@@ -342,7 +347,7 @@ class Helper
         $ch = curl_init(); 
 
         // set url 
-        curl_setopt($ch, CURLOPT_URL, "http://103.11.134.45:8087/city");
+        curl_setopt($ch, CURLOPT_URL, "http://103.11.135.246:1506/city");
 
         // return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 

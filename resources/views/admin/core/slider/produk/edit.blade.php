@@ -54,13 +54,13 @@
 		<h3>{{ Helper::baseLabelPage() }}</h3>
 	</div>
 	<div class="card-body">
-		<form action="{{Route('slider.post')}}" method="post" id="form" enctype="multipart/form-data">
+		<form action="{{Route('slider.produk.update', $slider->id)}}" method="post" id="form" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="row">
                 <div class="col-lg-12">
-                    <label>Cover</label><br>
+                    <label>Banner</label><br>
                     <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_avatar_1" style="width: 100%; height: 450px;">
-                        <div class="kt-avatar__holder" style="width: 100%; height:450px; background-image: url({{ asset('public/image/default/placeholder.png') }})"></div>
+                        <div class="kt-avatar__holder" style="width: 100%; height:450px; background-image: url({{ asset('assets/admin/assets/media/slider') }}/{{$slider->banner}})"></div>
                         <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                             <i class="fa fa-pen"></i>
                             <input type="file" name="image" accept=".png, .jpg, .jpeg">
@@ -70,32 +70,25 @@
                         </span>
                     </div>
                 </div>
-            </div>
-
-            <br>
+            </div><br>
 
             <div class="row">
-                <div class="col-md-12">
-                    <label for="">Link</label>
-                    <input type="text" name="link" class="form-control" required><br>
-                </div>
-            </div>
+            	<div class="col-lg-8">
+					<label>Kategori Produk</label>
+					<select class="form-control" name="kategori_produk">
+						<option value="" selected="" disabled="">- Kategori -</option>
+						@foreach($category as $key => $val)
+							<option value="{{$val->id}}" <?php if($slider->category_id == $val->id){ ?> selected <?php } ?> >{{$val->category}}</option>
+						@endforeach
+					</select>
+				</div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="">Code Warna</label>
-                    <input type="text" name="code_warna" class="form-control" required><br>
-                </div>
-
-                <div class="col-md-4">
-                    <label for="">Title Button</label>
-                    <input type="text" name="title_button" class="form-control" required=""><br>
-                </div>
-                
-                <div class="col-md-4">
-                    <label>Order Num</label>
-                    <input type="text" name="order_num" class="form-control" required=""><br>
-                </div>
+				<div class="col-md-4">
+            		<div class="form-group">
+            			<label>Order Num</label>
+            			<input type="number" name="order_num" class="form-control" required="" value="{{ $slider->order_num }}"><br>
+            		</div>
+            	</div>
             </div>
 
             <div class="row">
@@ -107,18 +100,31 @@
                 </div>
             </div>
             <div class="row"> 
+            	<?php $found = 0; $judul = ""; $content; $idl = "";?>
                 @foreach($language as $key => $lang)
+                @foreach($slider_language as $key2 => $pl)
+                @if($lang->id == $pl->id_language)
+                <?php 
+                $found   = 1; 
+                $judul   = $pl->title; 
+                $content = $pl->desc;
+                $idl     = $pl->id;
+                ?>
+                @break
+                @endif
+                @endforeach
                 <div class="col-md-12">
                     <center><h3>{{$lang->judul_language}}</h3></center><br>
                     <input type="hidden" id="language[<?=$key?>]" name="language[]" class="form-control" readonly="" value="{{$lang->id}}">
+                    <input type="hidden" name="idl[<?=$key?>]" value="{{ $idl }}">
                 </div>
                 <div class="col-md-12">
                     <label for="">Judul</label>
-                    <input type="text" name="judul[]" id="judul[<?=$key?>]" class="form-control"><br>
+                    <input type="text" name="judul[]" id="judul[<?=$key?>]" class="form-control" value="{{ $judul }}"><br>
                 </div>
                 <div class="col-md-12">
                     <label for="">Deskripsi</label>
-                    <textarea name="deskripsi[]" id="deskripsi[<?=$key?>]" class="form-control" cols="30" rows="10"></textarea><br>
+                    <textarea name="deskripsi[]" id="deskripsi[<?=$key?>]" class="form-control" cols="30" rows="10">{{ $content }}</textarea><br>
                 </div>
                 @endforeach
 

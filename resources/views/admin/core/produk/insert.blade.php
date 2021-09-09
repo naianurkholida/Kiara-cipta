@@ -25,14 +25,35 @@
 						@endforeach
 					</select>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<label>Label Produk</label>
-					<input type="text" id="label" name="label" class="form-control">
+					<input type="text" id="label" name="label" class="form-control" required=""><br>
 				</div>
+
+				<div class="col-lg-3">
+					<label>Harga</label>
+					<input type="number" name="harga" class="form-control" id="harga" required="">
+				</div>
+
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label for="document">Banner Menu</label>
+						<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar_two" style="width: 100%;">
+							<div class="kt-avatar__holder" style="width: 100%; background-image: url('')"></div>
+							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+								<i class="fa fa-pen"></i>
+								<input type="file" name="banner" id="banner" required="">
+							</label>
+							<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+								<i class="fa fa-times"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+
 				<div class="col-lg-12">
 					<div class="form-group">
 						<label for="document">Image</label>
-						<!-- <div class="needsclick dropzone" id="document-dropzone"></div> -->
 						<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar" style="width: 100%;">
 							<div class="kt-avatar__holder" style="width: 100%; background-image: url('')"></div>
 							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
@@ -71,7 +92,7 @@
 			</div>
 			<hr>
 			@endforeach
-			<button type="button" class="btn btn-info" onclick="simpan()">Simpan</button>
+			<button type="submit" class="btn btn-info pull-right">Simpan</button>
 		</form>
 	</div>
 </div>

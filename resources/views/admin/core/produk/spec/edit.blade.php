@@ -17,15 +17,19 @@
 			{{csrf_field()}}
 			<div class="row" id="form_spec">
 
-                <div class="col-sm-4" id="icon_0">
-                    <label>Icon</label>
-                    <input type="file" name="image" id="image" class="form-control" accept="image/*">
+                <div class="col-sm-3" id="icon_0">
+                    <label>Icon Light</label>
+                    <input type="file" name="image-light" id="image-light" class="form-control" accept="image/*">
                 </div>
-                <div class="col-sm-4" id="spec_0">
+                <div class="col-sm-3" id="icon2_0">
+                    <label>Icon Dark</label>
+                    <input type="file" name="image-dark" id="image-dark" class="form-control" accept="image/*">
+                </div>
+                <div class="col-sm-3" id="spec_0">
                     <label>Specification</label>
                     <input type="text" name="specification" id="specification" class="form-control" value="{{ $data->specification }}">
                 </div>
-                <div class="col-sm-4" id="status_0">
+                <div class="col-sm-3" id="status_0">
                     <label>Status</label>
                     <select id="status" name="status" class="form-control" required>
                     @foreach(config("enums.status_active") as $key => $value)

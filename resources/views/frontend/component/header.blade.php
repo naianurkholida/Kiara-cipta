@@ -63,7 +63,7 @@
                                             <div class="detail-submenu" id="detail-submenut{{$key}}">
                                                 <img src="{{asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$value->image}}">
                                                  
-                                                <div class="desc-detail text-center" style="font-size: 20px;">
+                                                <div class="desc-detail text-center" style="font-size: 20px;width: 50% !important;">
                                                     @if($value->getTreatmentLanguage->resume != null)
                                                     <p>{{ $value->getTreatmentLanguage->resume }}</p>
                                                     @else
@@ -77,68 +77,74 @@
 
                                     </div>
                                     @elseif($row->url == "products" && $row->url != 'treatment' && $row->url != 'jurnal')
-                                    
-                                            <li class="menu-header produk prod-web" id="menu-hover">
+                                        @php
+                                            $judul_menu = $row->getMenuFrontPageLanguage->judul_menu;
+                                        @endphp
+                                        <li class="menu-header produk prod-web" id="menu-hover">
                                                 <a href="{{ route('dermaster.'.$row->url) }}">
-                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                    <div>{{ $judul_menu }}</div>
                                                 </a>
                                             </li>
                                             <div class="menu-drop-new">
                                                 <div class="scroller-detail">
-                                                    <?php // foreach(Helper::produkList() as $key => $row){ ?>
-                                                    <?php foreach(Helper::kategoriProdukList() as $key => $row){ ?>
-                                                        <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}">
-                                                            {{--
+                                                    <?php foreach(Helper::produkList() as $key => $row){ ?>
+                                                    <?php // foreach(Helper::kategoriProdukList() as $key => $row){ ?>
+                                                        <div class="submenu" id="submenu{{$key}}" value="{{$row->id}}"  onclick="goToLink(`{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}`)">
                                                             @if ($row->label != null && $row->label != "")
                                                                 <span class="badge badge-success">{{$row->label}}</span><br>
                                                             @endif
                                                             <span>{{$row->getProdukLanguage->judul}}</span>
-                                                            --}}
+                                                            {{--
                                                             <span>{{$row->category}}</span>
+                                                            --}}
                                                         </div>
                                                     <?php } ?>
                                                 </div>
 
-                                                <?php // foreach (Helper::produkList() as $key => $value) { ?>
-                                                <?php foreach (Helper::kategoriProdukList() as $key => $value) { ?>
+                                                <?php foreach (Helper::produkList() as $key => $value) { ?>
+                                                <?php // foreach (Helper::kategoriProdukList() as $key => $value) { ?>
                                                     <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                        {{--
-                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}">
-                                                        --}}
+                                                        
+                                                        <img src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}" style="width: 50%;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}">
 
-                                                        <div class="desc-detail text-center" style="font-size: 20px; min-width: 100%;">
-                                                        {{--
+                                                        <div class="desc-detail text-center" style="font-size: 20px; width: 50% !important;">
                                                             @if($value->getProdukLanguage->resume != null)
                                                             <p>{{ $value->getProdukLanguage->resume }}</p>
                                                             @else
                                                             <p>{{ Helper::removeTags($value->getProdukLanguage->deskripsi) }}</p>
                                                             @endif
                                                             <a href="{{ route('dermaster.products.show', $value->getProdukLanguage->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
-                                                        --}}
 
+                                                        {{--
                                                             <div style="margin:auto; width:50%;">
+                                                                @if ($value->banner)
+                                                                    <img src="{{asset('assets/admin/assets/media/icon-kategori')}}/{{$value->banner}}" alt="$value->category" width="100%">
+                                                                @endif
                                                                 <p>{{ $value->description ?? " " }}</p>
                                                                 <a href="{{ route('dermaster.products.category', $value->seo) }}" class="btn-submenu" style="width: 100%;">See More</a>
                                                             </div>
+                                                        --}}
                                                         </div>
                                                     </div>
                                                 <?php } ?>
                                             </div>
                                             <li class="prod-mobile">
                                                 <a href="#">
-                                                    <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
+                                                    <div>{{ $judul_menu }}</div>
                                                 </a>
                                                 
                                                 <div class="mega-menu-content style-2 clearfix">
                                                     <ul class="mega-menu-column col-lg-12">
                                                         <li class="mega-menu-title">
                                                             <ul style="display: none;">
-                                                                <li class="sub-menu" style="width: 100% !important;">
-                                                                <?php foreach(Helper::kategoriProdukList() as $key => $row){ 
+                                                                <li class="sub-menu" style="width: max-content !important;">
+                                                               <!--  <?php foreach(Helper::kategoriProdukList() as $key => $row){ 
                                                                     ?>
-                                                                    <a href="" class="sf-with-ul">{{$row->category}}</a>
-                                                                <?php } ?>
-                                                                
+                                                                    <a href="{{ route('dermaster.products.category', $row->seo) }}" class="sf-with-ul">{{$row->category}}</a>
+                                                                <?php } ?> -->
+                                                                @foreach(Helper::produkList() as $item)
+                                                                <a href="{{ route('dermaster.products.show', $item->getProdukLanguage->seo) }}" class="sf-with-ul">{{ $item->getProdukLanguage->judul }}</a>
+                                                                @endforeach
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -170,7 +176,7 @@
                                                     <h2>
                                                     {{ $value->getPostingLanguage->judul }}
                                                     </h2>
-                                                    <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%;">Find Out More</a>
+                                                    <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%; border-radius:5px">Selengkapnya</a>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -264,7 +270,7 @@
 
                                         <?php foreach (Helper::produkList() as $key => $value) { ?>
                                             <div class="detail-submenu" id="detail-submenu{{$key}}">
-                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->image}}"></div>
+                                                <div class="img-home" style="margin-bottom:20px;width: 100%; height: 300px;background-image: url({{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}); background-size: contain;background-repeat: no-repeat;   background-position: center;" alt="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$value->banner}}"></div>
                                                 <div class="desc-detail text-center" style="font-size: 20px;">
                                                     @if($value->getProdukLanguage->resume != null)
                                                     <p>{{ $value->getProdukLanguage->resume }}</p>
@@ -302,7 +308,7 @@
                                                     <h2>
                                                         {{ $value->getPostingLanguage->judul }}
                                                     </h2>
-                                                    <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%;">Find Out More</a>
+                                                    <a href="{{ route('dermaster.jurnal.show', $value->getPostingLanguage->seo) }}" class="btn-submenu" style="width: 100%;border-radius:5px">Selengkapnya</a>
                                                 </div>
                                             </div>
                                         <?php } ?>

@@ -15,14 +15,17 @@
 
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-    <div class="container container-flex">
+    <div class="container">
         @foreach($data as $row)
-        <div class="box-dokter" style="min-height: 441px;">
-            <div class="img-dokter" style="background-image: url({{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}});" alt="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}"></div>
+        <div class="box-jurnal">
+            <img class="img-jurnal" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}" alt="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}">
             <a href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
                <p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
            </a>
            <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
+           <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+               Read More
+           </a>
        </div>
        @endforeach
    </div>

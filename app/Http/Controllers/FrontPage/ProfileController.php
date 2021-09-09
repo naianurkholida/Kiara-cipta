@@ -36,13 +36,20 @@ class ProfileController extends Controller
     {
         $data = Gallery::where('gallery.deleted_at', NULL)
                 ->join('category', 'category.id', '=', 'gallery.id_category')
-                ->where('category.category', 'profile')
+                ->where('category.category', 'Profile')
                 ->where('category.id_parent', '!=', '0')
                 ->get();
 
+        $param = Parameter::where('key', 'content_profile')->first()->value;
+
+        $pages = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
+                ->where('pages.id', $param)
+                ->where('pages_language.id_language', 1)
+                ->first();
+
         $category = Category::where('category', 'Profile')->get();
 
-        return view('frontend.profile', compact('data','category'));
+        return view('frontend.profile', compact('data','category','pages'));
     }
 
     /**

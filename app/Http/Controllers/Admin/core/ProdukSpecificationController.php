@@ -46,7 +46,8 @@ class ProdukSpecificationController extends Controller
         $data = [];
         foreach ($req->specification as $key => $value) {
             #upload foto to database
-            $file = $req->file('image')[$key];
+            $file = $req->file('image-light')[$key];
+            $file2 = $req->file('image-dark')[$key];
     
             #JIKA FOLDERNYA BELUM ADA
             if (!File::isDirectory($this->path)) {
@@ -98,6 +99,50 @@ class ProdukSpecificationController extends Controller
                 }
             }
     
+            if ($file2) {
+                #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+                $fileName2 = 'SpecDark' . '_' .date('Ymdhis'). '.' . $file2->getClientOriginalExtension();
+    
+                $size   = getimagesize($file2);
+                $width  = $size[0];
+                $height = $size[1];
+    
+                if($width > $height){
+                    $size = ($width/$height);
+                }else{
+                    $size = ($height/$width);
+                }
+    
+                #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+                Image::make($file2)->save($this->path . '/' . $fileName2);
+                foreach ($this->dimensions as $row) {
+                    #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+                    if($width < $height){
+                        $canvas = Image::canvas($row, ceil($row*$size));
+                        $resizeImage2  = Image::make($file2)->resize($row, ceil($row*$size), function($constraint) {
+                            $constraint->aspectRatio();
+                        });
+                    }else{
+                        $canvas = Image::canvas(($row*$size), $row);
+                        $resizeImage2  = Image::make($file2)->resize(ceil($row*$size), $row, function($constraint) {
+                            $constraint->aspectRatio();
+                        });
+                    }
+    
+                    #CEK JIKA FOLDERNYA BELUM ADA
+                    if (!File::isDirectory($this->path . '/' . $row)) {
+                        #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                        File::makeDirectory($this->path . '/' . $row);
+                    }
+    
+                    #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+                    $canvas->insert($resizeImage2, 'center');
+                    #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+                
+                    $canvas->save($this->path . '/500/' . $fileName2);
+                }
+            }
+    
             $data[$key] = [
                 'id_produk'     => $id_produk,
                 'specification' => $req->specification[$key],
@@ -107,7 +152,10 @@ class ProdukSpecificationController extends Controller
             ];
     
             if ($file)
-                $data[$key]['icon'] = $fileName;
+                $data[$key]['icon_light'] = $fileName;
+
+            if ($file2)
+                $data[$key]['icon_dark'] = $fileName2;
         }
 
         $spec = ProdukSpec::insert($data);
@@ -127,7 +175,8 @@ class ProdukSpecificationController extends Controller
     public function update (Request $req, $id) 
     {
     	#upload foto to database
-		$file = $req->file('image');
+		$file = $req->file('image-light');
+		$file2 = $req->file('image-dark');
 
         #JIKA FOLDERNYA BELUM ADA
 		if (!File::isDirectory($this->path)) {
@@ -178,6 +227,50 @@ class ProdukSpecificationController extends Controller
 				$canvas->save($this->path . '/500/' . $fileName);
 			}
 		}
+
+		if ($file2) {
+			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+			$fileName2 = 'SpecDark' . '_' .date('Ymdhis'). '.' . $file2->getClientOriginalExtension();
+
+			$size   = getimagesize($file2);
+			$width  = $size[0];
+			$height = $size[1];
+
+			if($width > $height){
+				$size = ($width/$height);
+			}else{
+				$size = ($height/$width);
+			}
+
+			#UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA
+			Image::make($file2)->save($this->path . '/' . $fileName2);
+			foreach ($this->dimensions as $row) {
+				#MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+				if($width < $height){
+					$canvas = Image::canvas($row, ceil($row*$size));
+					$resizeImage2  = Image::make($file2)->resize($row, ceil($row*$size), function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}else{
+					$canvas = Image::canvas(($row*$size), $row);
+					$resizeImage2  = Image::make($file2)->resize(ceil($row*$size), $row, function($constraint) {
+						$constraint->aspectRatio();
+					});
+				}
+	
+				#CEK JIKA FOLDERNYA BELUM ADA
+				if (!File::isDirectory($this->path . '/' . $row)) {
+					#MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+					File::makeDirectory($this->path . '/' . $row);
+				}
+	
+				#MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+				$canvas->insert($resizeImage2, 'center');
+				#SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+			  
+				$canvas->save($this->path . '/500/' . $fileName2);
+			}
+		}
     
         $data = [
             'specification' => $req->specification,
@@ -185,20 +278,34 @@ class ProdukSpecificationController extends Controller
         ];
 
         if ($file)
-            $data['icon'] = $fileName;
+            $data['icon_light'] = $fileName;
+
+        if ($file2)
+            $data['icon_dark'] = $fileName2;
 
         $spec = ProdukSpec::findOrFail($id);
 
 		if ($file) {
-			File::delete($this->path.'/'.$spec->icon);
-			File::delete($this->path.'/500/'.$spec->icon);
+			File::delete($this->path.'/'.$spec->icon_light);
+			File::delete($this->path.'/500/'.$spec->icon_light);
 		}
 
-        $spec->update($data);
+		if ($file2) {
+			File::delete($this->path.'/'.$spec->icon_dark);
+			File::delete($this->path.'/500/'.$spec->icon_dark);
+		}
 
-        $id_produk = Produk::find($spec->id_produk)->id;
+        $spec->specification = $data['specification'];
+        $spec->is_active = $data['is_active'];
+        if ($file)
+            $spec->icon_light = $data['icon_light'];
+        if($file2)
+            $spec->icon_dark = $data['icon_dark'];
 
-        return redirect()->route('produk.spec.index',$id_produk)->with('info', 'Data Berhasil di Update');
+        // $spec->update($data);
+        $spec->save();
+
+        return redirect()->route('produk.spec.index',$spec->id_produk)->with('info', 'Data Berhasil di Update');
     }
     
     public function delete ($id) 

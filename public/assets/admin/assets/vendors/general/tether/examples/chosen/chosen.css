@@ -79,9 +79,11 @@
 }
 .chosen-container-single .chosen-single abbr:hover {
   background-position: -42px -10px;
+  cursor: default;
 }
 .chosen-container-single.chosen-disabled .chosen-single abbr:hover {
   background-position: -42px -10px;
+  cursor: default;
 }
 .chosen-container-single .chosen-single div {
   position: absolute;

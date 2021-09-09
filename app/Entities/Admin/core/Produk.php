@@ -15,9 +15,11 @@ class Produk extends Model implements HasMedia
 	protected $table = 'produk';
 	protected $primaryKey = 'id';
 	protected $fillable = [
+        'harga',
         'id_category',
         'label',
         'image',
+        'banner',
         'is_created',
         'deleted_at'
     ];

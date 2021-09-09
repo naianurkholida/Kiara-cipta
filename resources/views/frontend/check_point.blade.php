@@ -21,9 +21,12 @@
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:1" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 			<!-- <iframe style="border:0px #ffffff none;" width="100%" height="1000px;" src="http://103.11.135.109:1717/apex/f?p=889:3" scrolling="no" frameborder="1" allowfullscreen=""></iframe> -->
 
-			<div class="card card-kemitraan" style="border-radius: 10px;">
+			<div class="card card-kemitraan card-checkpoint" style="border-radius: 10px;">
 				<div class="card-body">
-					<h2>Checkpoint</h2>
+					<h2>
+						<center>Cek Poin</center>
+					</h2>
+					<br>
 					@if(session()->has('message'))
 					<div class="alert alert-success">
 						{{ session()->get('message') }}
@@ -32,33 +35,45 @@
 					<form action="{{ Route('dermaster.check-point') }}" method="get">
 						<div class="row">
 							<div class="col-lg-12">
-								<label>No Handphone <span style="color: red;">*</span></label>
-								<input type="text" name="no_hp" class="form-control" required="" placeholder="No Handphone"><br>
+								<input type="text" name="no_hp" class="form-control" required="" placeholder="No.Handphone*" value="{{ $no_hp }}"><br>
 							</div>
 							<br>
 							<div class="col-lg-12">
-								<button type="submit" class="btn btn-info" style="width: 100%;">Check Point</button>
+								<button type="submit" class="btn btn-info" style="width: 100%;">Cek Poin</button>
 							</div>
 						</div>
 					</form>
 					@if($no_hp)
-					<br><br>
+					
 					<div class="row">
 						<div class="col-lg-12">
+							<label>Info Member</label>
+							<div style="margin-left: 20px;"> {!! $info_member->konten_page !!}</div>
+						</div>
+						@if (!$data)
+						<div class="col-lg-12">
 							<label>Data Customer</label>
-							<table class="table table-bordered table-striped">
+							<p>⚠️ &nbsp;&nbsp; Nomor Handphone belum terdaftar.&nbsp; ⚠️</p>
+						</div>
+						@else
+						<div class="col-lg-12">
+							<label>Data Customer</label><br>
+							<span>Total Trx <?=Helper::tanggal_indonesia(date('Y-m-d'))?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('+1 year')));?> : <b>{{ number_format($data[4]) }}</b></span>
+							<table class="table table-striped">
 								<tr class="text-center">
 									<th>ID</th>
 									<th>Name</th>
 									<th>Point</th>
+									<th>Member</th>
 								</tr>
 								<tr>
 									<td>{{ $data[0] }}</td>
 									<td>{{ $data[1] }}</td>
 									<td style="text-align: right;">{{ $data[2] }}</td>
+									<td>{{ $data[3] }}</td>
 								</tr>
 							</table>
-						</div>
+						</div>						
 						<hr>
 
 						<div class="col-lg-6"><br>
@@ -69,7 +84,7 @@
 							<a href="{{ Route('dermaster.checkpoint.report', [$data[0], 'report_customer_'.$no_hp]) }}" class="btn btn-info btn-sm" target="blank" style="float: right;">Export</a>
 						</div>
 
-						<div class="col-lg-12"><br>
+						<div class="col-lg-12" style="overflow-x: scroll;"><br>
 							<table class="table table-bordered table-striped" id="datatablesHistory">
 								<thead>
 									<tr class="text-center">
@@ -94,6 +109,7 @@
 								</tbody>
 							</table>
 						</div>
+						@endif
 					</div>
 					@endif
 				</div>

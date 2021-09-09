@@ -1,11 +1,7 @@
 @extends('component.layouts.master')
 
 @section('button')
-	<a href="{{Route('produk.best_seller')}}" class="btn btn-info">
-		<i class="flaticon-eye"></i>
-		<span>Produk Best Seller</span>
-	</a>
-	<a href="{{Route('produk.insert')}}" class="btn btn-info">
+	<a href="{{Route('slider.produk.insert')}}" class="btn btn-info">
 		<i class="flaticon-plus"></i>
 		<span>{{ Helper::baseLabelPage() }}</span>
 	</a>
@@ -22,29 +18,27 @@
 				<thead class="m-datatable__head">
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
-						<th>Title</th>
-						<th>Image</th>
+						<th>Judul</th>
+						<th>Banner</th>
+						<th>Seo</th>
 						<th>Action</th>
 					</tr>
 				</thead>
-
 				<tbody>
-					<?php $no=1?>
-					@foreach($data as $row)
+					<?php $no =1;?>
+					@foreach($slider as $slide)
 					<tr>
-						<td>{{$no}}</td>
-						<td>{{ $row->getProdukLanguage->judul }}</td>
-						<td>
-							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->banner}}" target="blank">{{ $row->banner }}</a>
-						</td>
+						<td class="text-center">{{$no}}</td>
+						<td>{{$slide->descriptionJoin->title}}</td>
 						<td class="text-center">
-							<a href="{{Route('produk.spec.index',$row->id)}}" class="btn btn-sm btn-info" title="Spesifikasi">
-								<i class="la la-gear"></i>
-							</a>
-							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-primary">
+							<a href="{{ asset('assets/admin/assets/media/slider') }}/{{$slide->banner}}" target="blank">{{$slide->banner}}</a>
+						</td>
+						<td>{{$slide->seo}}</td>
+						<td class="text-center">
+							<a href="{{Route('slider.produk.edit',$slide->id)}}" class="btn btn-sm btn-primary">
 								<i class="la la-edit"></i>
 							</a>
-							<a href="{{Route('produk.delete',$row->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ? ')">
+							<a href="{{Route('slider.produk.delete',$slide->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ? ')">
 								<i class="la la-trash"></i>
 							</a>
 						</td>

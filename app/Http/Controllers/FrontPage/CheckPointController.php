@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Parameter;
+use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\Language;
 
 class CheckPointController extends Controller
@@ -30,24 +31,29 @@ class CheckPointController extends Controller
     {
         if($request->no_hp){
             $ch = curl_init(); 
-            curl_setopt($ch, CURLOPT_URL, 'http://103.11.134.45:8087/customer/?id='.$request->no_hp);
+            curl_setopt($ch, CURLOPT_URL, 'http://103.11.135.246:1506/customer/?id='.$request->no_hp);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
             $output = curl_exec($ch); 
             curl_close($ch);
 
             $output = json_decode($output);
-
-            $data   = $output[0];
-
-            $chs = curl_init(); 
-            curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$data[0]);
-            curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
-            curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
-            $outputs = curl_exec($chs); 
-            curl_close($chs);
-
-            $history = json_decode($outputs);
+            // dd($output);
+            if ($output) {
+                $data   = $output[0];
+    
+                $chs = curl_init(); 
+                curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$data[0]);
+                curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
+                curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
+                $outputs = curl_exec($chs); 
+                curl_close($chs);
+    
+                $history = json_decode($outputs);
+            } else {
+                $data = null;
+                $history = null;
+            }
 
             $no_hp = $request->no_hp;
         }else{
@@ -56,13 +62,19 @@ class CheckPointController extends Controller
             $no_hp = null;
         }
 
-        return view('frontend.check_point', compact('data', 'history', 'no_hp'));
+        $info_member = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
+                       ->join('category', 'category.id', '=', 'pages.id_category')
+                       ->where('category.seo', 'info-member')
+                       ->where('pages_language.id_language', 1)
+                       ->first();
+
+        return view('frontend.check_point', compact('data', 'history', 'no_hp', 'info_member'));
     }
 
     public function report($idTrx, $no_hp)
     {
         $chs = curl_init(); 
-        curl_setopt($chs, CURLOPT_URL, 'http://103.11.134.45:8087/CustPoint/?id='.$idTrx);
+        curl_setopt($chs, CURLOPT_URL, 'http://103.11.135.246:1506/CustPoint/?id='.$idTrx);
         curl_setopt($chs, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1); 
         $outputs = curl_exec($chs); 

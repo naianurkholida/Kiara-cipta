@@ -107,6 +107,22 @@
     }
     .prod-mobile{
         width: 100%;
+        display: none;
+    }
+    .detail-spec-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .prod-mobile {
+        width: 100% !important;
+    }
+    .prod-web{
+        display: none;
+    }
+    .detail-spec-web{
+        display: none;
     }
 }
 
@@ -16973,6 +16989,7 @@ body:not(.no-transition) #wrapper,
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    overflow: hidden;
 }
 
 #submenu1:hover ~ .detail-submenu{
@@ -17116,6 +17133,7 @@ body:not(.no-transition) #wrapper,
     .item-kontak{
         width: 100% !important;
     }
+    
 }
 
 .container-gallery{
@@ -17128,3 +17146,63 @@ body:not(.no-transition) #wrapper,
     justify-content: center;
 }
 
+.card-checkpoint{
+    width: 30% !important;
+}
+
+@media (max-width: 768px) {
+   .card-checkpoint{
+       width: 50% !important;
+   }
+    
+}
+
+@media (max-width: 500px) {
+    .card-checkpoint{
+        width: 100% !important;
+    }
+     
+ }
+
+
+ @media (min-width: 768px) {
+    .spost{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+     }
+     
+ }
+
+.img-header-jurnal{
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 500px;
+    background-color: #fafafa;
+}
+
+.box-jurnal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-jurnal{
+    width: 100%;
+    min-height: 500px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.readmore-jurnal{
+    padding: 10px 25px;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+.readmore-jurnal:hover{
+    background-color: #fafafa;
+    border-radius: 5px;
+    color: #008080;
+}

@@ -378,6 +378,15 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/edit/{id}', 'Admin\core\SliderController@edit')->name('slider.edit');
 		Route::post('/update/{id}', 'Admin\core\SliderController@update')->name('slider.update');
 		Route::get('/delete/{id}', 'Admin\core\SliderController@delete')->name('slider.delete');
+
+		Route::get('/produk', 'Admin\core\SliderProdukController@index')->name('slider.produk');
+		Route::get('/produk/insert', 'Admin\core\SliderProdukController@create')->name('slider.produk.insert');		
+		Route::post('/produk/store', 'Admin\core\SliderProdukController@store')->name('slider.produk.store');
+		Route::get('/produk/edit/{id}', 'Admin\core\SliderProdukController@edit')->name('slider.produk.edit');
+		Route::post('/produk/update/{id}', 'Admin\core\SliderProdukController@update')->name('slider.produk.update');
+		Route::get('/produk/delete/{id}', 'Admin\core\SliderProdukController@delete')->name('slider.produk.delete');
+
+		Route::get('/produk/show/{seo}', 'Admin\core\SliderProdukController@show')->name('slider.produk.show');
 	});
 
 	#upload wysiwyg

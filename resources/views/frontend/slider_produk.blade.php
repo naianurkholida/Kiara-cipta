@@ -4,22 +4,22 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Product {{$data->getProdukLanguage->judul}} Derma Express">
-<link rel="canonical" href="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}">
+<meta name="description" content="Product {{$data->descriptionJoin->title}} Derma Express">
+<link rel="canonical" href="https://derma-express.com/slider/products/show/{{$data->seo}}">
 
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="https://derma-express.com/products/show/{{$data->getProdukLanguage->seo}}" />
-<meta property="og:title" content="{{$data->getProdukLanguage->judul}}" />
-<meta property="og:description" content="{{$data->getProdukLanguage->resume}}" />
-<meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/derma_produk/500/{{$data->image}}" />
+<meta property="og:url" content="https://derma-express.com/slider/products/show/{{$data->seo}}" />
+<meta property="og:title" content="{{$data->descriptionJoin->title}}" />
+<meta property="og:description" content="{{$data->descriptionJoin->title}}" />
+<meta property="og:image" content="https://derma-express.com/assets/admin/assets/media/slider/500/{{$data->banner}}" />
 <meta property="article:publisher" content="https://www.facebook.com/dermaxpress/" />
-<meta property="article:tag" content="{{$data->getProdukLanguage->judul}}" />
+<meta property="article:tag" content="{{$data->descriptionJoin->title}}" />
 <meta property="article:tag" content="Beauty" />
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
 
-<title>{{$data->getProdukLanguage->judul}}</title>
+<title>{{$data->descriptionJoin->title}}</title>
 
 <style>
     * {box-sizing: border-box;}
@@ -123,8 +123,8 @@
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
-        <div class="heading-block center noborder" data-heading="O" style="margin-bottom: 0px !important"> 
-            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
+        <div class="heading-block center noborder" data-heading="O">
+            <h3 class="nott ls0">{{$data->descriptionJoin->title}}</h3>
         </div>
     </div>
     <div class="container" id="container_luar">
@@ -134,52 +134,11 @@
                     <div class="row" style="margin-top: 70px;">
                         <div class="col-md-4 col-sm-12">
                             <div class="img-magnifier-container">
-                                <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
+                                <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/slider/') }}/{{$data->banner}}" alt="{{$data->descriptionJoin->title}}" style="margin-bottom:20px;">
                             </div>
                         </div>
                         <div class="col-md-8 col-sm-12">
-                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
-                                @if($data->harga != 0)
-                                    Rp. {{ number_format($data->harga) }}
-                                @endif
-                            </span><br><br>
-                            
-                            {!! $data->getProdukLanguage->deskripsi !!}
-                            <br>
-
-                            <h4 style="font-weight: 800;">Spesifikasi :</h4>
-
-                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3;">
-                            @foreach($data->getSpec as $key => $val)
-                                @if(($key % 2) == 0)
-                                <tr>
-                                @endif
-                                    @if($key == (count($data->getSpec)-1))
-                                    <td width="50%" colspan="2">
-                                    @else
-                                    <td width="50%">
-                                    @endif
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
-                                        <span style="color: white; font-size: 20px; font-family: ui-sans-serif;">{{$val->specification}}</span>
-                                    </td>
-                                @if(($key % 2) != 0 || $key == (count($data->getSpec)-1))
-                                </tr>
-                                @endif
-                            @endforeach
-                            </table>
-
-                            <table class="detail-spec-mobile" style="background-color: #92cac3;">
-                            @foreach($data->getSpec as $key => $val)
-                                <tr>
-                                    <td align="center">
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
-                                    </td>
-                                    <td align="center" style="color: white; font-size: 20px; font-family: ui-sans-serif;">
-                                        <span>{{$val->specification}}</span>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </table>
+                            {!! $data->descriptionJoin->desc !!}
                         </div>
                     </div>
                 </div>
