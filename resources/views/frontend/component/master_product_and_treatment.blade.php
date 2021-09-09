@@ -349,17 +349,17 @@
 
                                 <div id="post-list-footer">
                                     @foreach(Helper::profile_cabang() as $value)
-                                    <div class="spost clearfix">
+                                    <div class="spost clearfix" style="height: 140px;">
                                         <div class="entry-c">
                                             <div class="entry-title">
                                                 <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                <li><span> {{ $value->address }} </span></li>
-                                                <li>Jam Operasional :</li>
+                                                <li><span> {{ $value->address }} </span></li><br />
+                                                <span style="font-size: 12px;">Jam Operasional :</span><br>
                                                 @foreach($value->detail as $detail)
                                                 @if ($detail->type == 'operational')
-                                                <li>{{ $detail->value }}</li>
+                                                <li>{{ $detail->value }}</li><br>
                                                 @endif
                                                 @endforeach
                                             </ul>
