@@ -358,7 +358,7 @@
                             <div class="widget clearfix">
                                 <h4>Klinik Kami</h4>
 
-                                 <div id="post-list-footer">
+                               <div id="post-list-footer">
                                     @foreach(Helper::profile_cabang() as $value)
                                     <div class="spost clearfix" style="height: 140px;">
                                         <div class="entry-c">
@@ -366,11 +366,14 @@
                                                 <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                <li><span> {{ $value->address }} </span></li><br />
+                                                <li><span> {{ $value->address }} </span></li>
+                                            </ul>
+                                            <br>
+                                            <ul>
                                                 <span style="font-size: 12px;">Jam Operasional :</span><br>
                                                 @foreach($value->detail as $detail)
                                                 @if ($detail->type == 'operational')
-                                                <li>{{ $detail->value }}</li><br>
+                                                <li style="font-size: 11px; color: #999999;"><i>{{ $detail->value }}</i></li>
                                                 @endif
                                                 @endforeach
                                             </ul>
