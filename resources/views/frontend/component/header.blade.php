@@ -160,10 +160,13 @@
                                     <div class="menu-drop-new">
                                         <div class="scroller-detail">
                                             <?php foreach(Helper::getJurnal() as $key => $row){ ?>
+                                            <a href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
                                                 <div class="submenu" id="submenuts{{$key}}" value="{{$row->id}}">
                                                     <span class="badge badge-success">{{$row->category->category}}</span><br>
+                                                    
                                                     <span>{{$row->getPostingLanguage->judul}}</span>
                                                 </div>
+                                            </a>
                                             <?php } ?>
                                         </div>
 

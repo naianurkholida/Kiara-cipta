@@ -30,7 +30,7 @@
     </div>
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem">
-            @include('frontend.component.layouts.item-detail', ['related' => 'getTreatmentLanguage', 'column' => 'deskripsi','image' => $data->image])
+            @include('frontend.component.layouts.item-detail-treatments', ['related' => 'getTreatmentLanguage', 'column' => 'deskripsi','image' => $data->image])
         </div>
     </div>
 </div>
