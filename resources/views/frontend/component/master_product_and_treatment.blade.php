@@ -43,7 +43,6 @@
 
         <link rel="canonical" href="https://derma-express.com/">
         <meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
-        <title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
         @yield('header')
 
         <!-- Document Title
@@ -99,16 +98,6 @@
                 src="https://www.facebook.com/tr?id=5649171165125533&ev=PageView&noscript=1"
                 /></noscript>
                 <!-- End Facebook Pixel Code -->
-
-                <!-- Global site tag (gtag.js) - Google Analytics -->
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204519156-1"></script>
-                <script>
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-
-                  gtag('config', 'UA-204519156-1');
-              </script>
     </head>
 
     <body class="stretched">
@@ -408,7 +397,6 @@
                     </div>
 					<center>
 						<h5>Cakep Terjangkau #dermaexpressaja</h5>
-                        <h5 class="text-center">#skincareforeveryone</h5>
 					</center>
                 </div>
 
@@ -465,7 +453,17 @@
     		}
 
     	</script>
-        
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204519156-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-204519156-1');
+      </script>
+
 		<!-- Facebook Pixel Code -->
 		<script>
 		!function(f,b,e,v,n,t,s)
@@ -910,17 +908,6 @@
             	}
             })
 
-			if( $(window).width() > 768 )
-			{
-				$('.prod-mobile').css('display', 'none');
-            	$('.prod-web').css('display', 'block');
-			}
-
-			if( $(window).width() < 768 )
-			{
-				$('.prod-mobile').css('display', 'block');
-            	$('.prod-web').css('display', 'none');
-			}
             $('#carousel-product').owlCarousel({
                 loop: true,
                 nav: true,

@@ -4,8 +4,8 @@
 		<div class="owl-carousel owl-theme" id="carousel-product">
 			@foreach(Helper::sliderProduk() as $item)
 			<div class="item">
-				<a href="{{ url('slider/produk/show') }}/{{ $item->seo }}">
-					<img src="{{ asset('assets/admin/assets/media/slider') }}/{{ $item->banner }}" alt="{{ $item->descriptionJoin->title }}" style="padding: 5px; border-radius: 5%;">
+				<a href="{{ url('slider/produk/show') }}/{{ $item->seo }}" class="lazyload" alt="{{$item->descriptionJoin->title}}">
+					<img src="{{ asset('assets/admin/assets/media/slider/500') }}/{{ $item->banner }}" alt="{{ $item->descriptionJoin->title }}" style="padding: 5px; border-radius: 5%;">
 				</a>
 			</div>
 			@endforeach

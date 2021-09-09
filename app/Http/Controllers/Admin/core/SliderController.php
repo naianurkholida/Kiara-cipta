@@ -19,7 +19,7 @@ class SliderController extends Controller
         //Definisi PATH Foto
 		$this->path =  'assets/admin/assets/media/slider';
         //Definisi Dimensi Foto
-		$this->dimensions = ['500'];
+		$this->dimensions = ['600','500','300'];
 	}
 
 	public function top_bar()
@@ -129,7 +129,9 @@ class SliderController extends Controller
 			$canvas->insert($resizeImage, 'center');
             #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
           
+			$canvas->save($this->path . '/600/' . $fileName);
 			$canvas->save($this->path . '/500/' . $fileName);
+			$canvas->save($this->path . '/300/' . $fileName);
 		}
 
     	$slider = new Slider;
@@ -232,17 +234,22 @@ class SliderController extends Controller
 	        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
 			Image::make($file)->save($this->path . '/' . $fileName);
 			foreach ($this->dimensions as $row) {
+				
 	            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
 				if($width < $height){
+
 					$canvas = Image::canvas($row, ceil($row*$size));
-					$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-						$constraint->aspectRatio();
-					});
+						$resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+							// $constraint->aspectRatio();
+						});
+
 				}else{
-					$canvas = Image::canvas(($row*$size), $row);
+
+					$canvas = Image::canvas(ceil($row*$size), $row);
 					$resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-						$constraint->aspectRatio();
+						// $constraint->aspectRatio();
 					});
+
 				}
 
 	            #CEK JIKA FOLDERNYA BELUM ADA
@@ -254,15 +261,17 @@ class SliderController extends Controller
 	            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
 				$canvas->insert($resizeImage, 'center');
 	            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-	          
-				$canvas->save($this->path . '/500/' . $fileName);
+
+    			$canvas->save($this->path . '/'.$row.'/' . $fileName);
 			}
 		}
 
 		$slider = Slider::find($id);
 
 		File::delete($this->path.'/'.$slider->image);
+		File::delete($this->path.'/600/'.$slider->image);
 		File::delete($this->path.'/500/'.$slider->image);
+		File::delete($this->path.'/300/'.$slider->image);
 
 		$slider->code_warna = $request->code_warna;
 		$slider->title_button = $request->title_button;
@@ -333,8 +342,11 @@ class SliderController extends Controller
     	$slider->save();
 
     	File::delete($this->path.'/'.$slider->image);
+    	File::delete($this->path.'/600/'.$slider->image);
     	File::delete($this->path.'/500/'.$slider->image);
+    	File::delete($this->path.'/300/'.$slider->image);
 
     	return redirect('/slider')->with('danger', 'Data Berhasil di Hapus');
     }
+
 }

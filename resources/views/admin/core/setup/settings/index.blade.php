@@ -156,6 +156,10 @@
 			<br>
 			<div class="row">
 				<div class="col-lg-12">
+					<label>Deskripsi Iklan</label>
+					<textarea class="form-control" name="deskripsi_iklan" rows="4">{{$desc_iklan->value}}</textarea><br>
+				</div>
+				<div class="col-lg-12">
 					<label>Iklan</label><br>
 					<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
 						<div class="kt-avatar__holder" style="background-image: url('{{ asset('assets/admin/assets/media/img/')  }}/{{$iklan->value}}')"></div>

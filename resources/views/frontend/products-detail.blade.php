@@ -1,4 +1,4 @@
-@extends('frontend.component.master')
+@extends('frontend.component.master_product_and_treatment')
 
 @section('header')
 
@@ -19,7 +19,7 @@
 <meta property="article:tag" content="rekomendasi produk" />
 <meta property="article:section" content="Beauty &amp; health" />
 
-<title>{{$data->getProdukLanguage->judul}}</title>
+<title>Derma Express - {{$data->getProdukLanguage->judul}}</title>
 
 <style>
     * {box-sizing: border-box;}
@@ -122,34 +122,30 @@
 
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-    <div class="container clearfix">
-        <div class="heading-block center noborder" data-heading="O" style="margin-bottom: 0px !important"> 
-            <h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3>
-        </div>
-    </div>
     <div class="container" id="container_luar">
         <div class="container" id="container_dalem">
             <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; padding-top: 0 !important">
-                <div class="container" id="container_detail">
-                    <div class="row" style="margin-top: 70px;">
-                        <div class="col-md-4 col-sm-12">
-                            <div class="img-magnifier-container">
-                                <img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="margin-bottom:20px;">
-                            </div>
-                        </div>
-                        <div class="col-md-8 col-sm-12">
-                            <span style="font-size: 20px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
+            	<div class="container" id="container_detail">
+            		<div class="row">
+            			<div class="col-lg-6 col-sm-12" style="border-radius: 5px; margin-bottom: 10px;">
+            				<div class="img-magnifier-container">
+            					<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
+            				</div>
+            			</div>
+
+            			<div class="col-lg-6 col-sm-12" style="font-size: 18px;">
+            				<h3 class="nott ls0">{{$data->getProdukLanguage->judul}}</h3><br>
+            				<span style="font-size: 25px; font-weight: bold; font-family: ui-monospace; margin-bottom: 10px;">
                                 @if($data->harga != 0)
                                     Rp. {{ number_format($data->harga) }}
                                 @endif
                             </span><br><br>
                             
                             {!! $data->getProdukLanguage->deskripsi !!}
-                            <br>
 
-                            <h4 style="font-weight: 800;">Spesifikasi :</h4>
+                            <hr>
 
-                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3;">
+                            <table class="detail-spec-web" style="text-align: center; background-color: #92cac3; border-radius: 7px;">
                             @foreach($data->getSpec as $key => $val)
                                 @if(($key % 2) == 0)
                                 <tr>
@@ -159,8 +155,8 @@
                                     @else
                                     <td width="50%">
                                     @endif
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
-                                        <span style="color: white; font-size: 20px; font-family: ui-sans-serif;">{{$val->specification}}</span>
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 30px; margin: 16px 30px 22px 24px;">
+                                        <span style="color: white; font-size: 15px; font-family: ui-sans-serif;">{{$val->specification}}</span>
                                     </td>
                                 @if(($key % 2) != 0 || $key == (count($data->getSpec)-1))
                                 </tr>
@@ -168,21 +164,23 @@
                             @endforeach
                             </table>
 
-                            <table class="detail-spec-mobile" style="background-color: #92cac3;">
+                            <table class="detail-spec-mobile" style="background-color: #92cac3; border-radius: 7px;">
                             @foreach($data->getSpec as $key => $val)
                                 <tr>
                                     <td align="center">
-                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 50px; margin: 16px 30px 22px 24px;">
+                                        <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_dark }}" alt="" style="width: 30px; margin: 16px 30px 22px 24px;">
                                     </td>
-                                    <td align="center" style="color: white; font-size: 20px; font-family: ui-sans-serif;">
+                                    <td align="center" style="color: white; font-size: 15px; font-family: ui-sans-serif;">
                                         <span>{{$val->specification}}</span>
                                     </td>
                                 </tr>
                             @endforeach
                             </table>
-                        </div>
-                    </div>
-                </div>
+
+                            <a href="https://wa.me/+6282260030880/?text=Pesanan Kamu {{$data->getProdukLanguage->judul}}, Silahkan melakukan proses check out." class="btn btn-info" style="background-color: rgb(16, 158, 158); width: 100%;" target="_blank">Miliki Sekarang</a>
+            			</div>
+            		</div>
+            	</div>
             </div>
         </div>
     </div>

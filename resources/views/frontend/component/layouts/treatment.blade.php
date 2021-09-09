@@ -13,13 +13,13 @@
                 <div class="entry-box-shadow"
                     style="background-color: #ffffff;    border: 4px solid #ddd;min-height: 400px;">
                     @foreach($row->getMedia('treatment') as $val)
-                    <a href="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$val->image}}" data-lightbox="image">
-                        <img src="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$row->image}}" alt="{{ asset('assets/admin/assets/media/derma_treatment') }}/{{$row->image}}">
+                    <a href="{{ asset('assets/admin/assets/media/derma_treatment/500') }}/{{$val->image}}" data-lightbox="image">
+                        <img src="{{ asset('assets/admin/assets/media/derma_treatment/500') }}/{{$row->image}}" alt="{{ $row->getTreatmentLanguage->judul }}" class="lazyload">
                     </a>
                     @endforeach
                     <div class="entry-meta-wrapper">
                         <div class="entry-title clearfix">
-                            <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px;"><a
+                            <h2 style="padding: 10px;padding-left: 15px;padding-right: 15px; text-align: center;"><a
                                     href="{{ route('dermaster.treatments.show', $row->getTreatmentLanguage->seo) }}"
                                     style="color:#65b5aa;">{{ $row->getTreatmentLanguage->judul }}</a></h2>
                         </div>
