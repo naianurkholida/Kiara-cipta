@@ -246,9 +246,9 @@
 
                 <div class="container">
 
-                    <div class="footer-widgets-wrap clearfix">
+                    <div class="footer-widgets-wrap clearfix row">
 
-                        <div class="col_half">
+                        <div class="col-lg-6">
 
                             <div class="widget clearfix">
 
@@ -342,7 +342,37 @@
 
                         </div>
 
-                        <div class="col_one_fourth">
+                        <div class="col-lg-6">
+
+                            <div class="widget clearfix">
+                                <h4>Klinik Kami</h4>
+
+                                <div id="post-list-footer">
+                                    @foreach(Helper::profile_cabang() as $value)
+                                    <div class="spost clearfix">
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li><span> {{ $value->address }} </span></li>
+                                                <li>Jam Operasional :</li>
+                                                @foreach($value->detail as $detail)
+                                                @if ($detail->type == 'operational')
+                                                <li>{{ $detail->value }}</li>
+                                                @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="col_one_fourth">
 
                             <div class="widget clearfix">
                                 <h4>Klinik Kami</h4>
@@ -392,11 +422,12 @@
 
                             </div>
 
-                        </div>
+                        </div> -->
 
                     </div>
 					<center>
-						<h5>Cakep Terjangkau #dermaexpressaja</h5>
+						<h5>Cakep Terjangkau #dermaexpressaja</h5><br>
+                        <h5>#skincareforeveryone</h5>
 					</center>
                 </div>
 
