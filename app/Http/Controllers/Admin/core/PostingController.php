@@ -243,62 +243,69 @@ class PostingController extends Controller
         #upload foto to database
         $file = $request->file('image');
 
-        #JIKA FOLDERNYA BELUM ADA
-        if (!File::isDirectory($this->path)) {
-            #MAKA FOLDER TERSEBUT AKAN DIBUAT
-            File::makeDirectory($this->path);
-        }
+        if($file != null){
+            #JIKA FOLDERNYA BELUM ADA
+            if (!File::isDirectory($this->path)) {
+                #MAKA FOLDER TERSEBUT AKAN DIBUAT
+                File::makeDirectory($this->path);
+            }
 
-        #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-        $fileName = Str::slug($request->judul[0]). '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+            #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+            $fileName = Str::slug($request->judul[0]). '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
 
-        $size   = getimagesize($file);
-        $width  = $size[0];
-        $height = $size[1];
+            $size   = getimagesize($file);
+            $width  = $size[0];
+            $height = $size[1];
 
-        if($width > $height){
-            $size = ($width/$height);
-        }else{
-            $size = ($height/$width);
-        }
-
-        #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
-        Image::make($file)->save($this->path . '/' . $fileName);
-        foreach ($this->dimensions as $row) {
-            #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
-            if($width < $height){
-                $canvas = Image::canvas($row, ceil($row*$size));
-                $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-                    $constraint->aspectRatio();
-                });
+            if($width > $height){
+                $size = ($width/$height);
             }else{
-                $canvas = Image::canvas(($row*$size), $row);
-                $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-                    $constraint->aspectRatio();
-                });
+                $size = ($height/$width);
             }
 
-            #CEK JIKA FOLDERNYA BELUM ADA
-            if (!File::isDirectory($this->path . '/' . $row)) {
-                #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
-                File::makeDirectory($this->path . '/' . $row);
+            #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+            Image::make($file)->save($this->path . '/' . $fileName);
+            foreach ($this->dimensions as $row) {
+                #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+                if($width < $height){
+                    $canvas = Image::canvas($row, ceil($row*$size));
+                    $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }else{
+                    $canvas = Image::canvas(($row*$size), $row);
+                    $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }
+
+                #CEK JIKA FOLDERNYA BELUM ADA
+                if (!File::isDirectory($this->path . '/' . $row)) {
+                    #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                    File::makeDirectory($this->path . '/' . $row);
+                }
+
+                #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+                $canvas->insert($resizeImage, 'center');
+                #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+              
+                $canvas->save($this->path . '/500/' . $fileName);
             }
 
-            #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
-            $canvas->insert($resizeImage, 'center');
-            #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-          
-            $canvas->save($this->path . '/500/' . $fileName);
         }
 
     	$posting = Posting::find($id);
 
-        File::delete($this->path.'/'.$posting->image);
-        File::delete($this->path.'/500/'.$posting->image);
+        if($file != null){
+            File::delete($this->path.'/'.$posting->image);
+            File::delete($this->path.'/500/'.$posting->image);
+        }
 
     	$posting->id_category = $request->kategori;
     	$posting->status = $request->status;
-        $posting->image = $fileName;
+    	if($file != null){
+    		$posting->image = $fileName;
+    	}
     	$posting->is_created = \Session::get('id');
 		$posting->save();
 
