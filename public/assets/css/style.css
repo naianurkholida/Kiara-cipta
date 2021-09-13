@@ -17178,7 +17178,7 @@ body:not(.no-transition) #wrapper,
 .img-header-jurnal{
     min-width: 80%;
     max-width: 80%;
-    min-height: 500px;
+    /*min-height: 500px;*/
     background-color: #fafafa;
 }
 
