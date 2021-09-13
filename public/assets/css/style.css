@@ -17191,16 +17191,16 @@ body:not(.no-transition) #wrapper,
 
 .img-jurnal{
     width: 100%;
-    min-height: 500px;
+    /*min-height: 500px;*/
     background-color: #fafafa;
     margin-bottom: 20px;
 }
 
- @media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .img-jurnal{
        min-height: 100px;
     }  
-}
+}*/
 
 .readmore-jurnal{
     padding: 10px 25px;
