@@ -299,14 +299,14 @@ class Helper
 
 	public static function MenuJurnal()
 	{
-		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'DESC')->get();
+		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
 
 		return $data;
 	}
 
 	public static function getJurnal()
 	{
-		$data = Posting::with('getPostingLanguage', 'category')->whereIn('id_category', [58,51])->get();
+		$data = Posting::with('getPostingLanguage', 'category')->whereIn('id_category', [58,51])->orderBy('created_at', 'desc')->get();
 
 		return $data;
 	}
