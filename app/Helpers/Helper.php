@@ -299,7 +299,7 @@ class Helper
 
 	public static function MenuJurnal()
 	{
-		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'ASC')->get();
+		$data = MenuFrontPage::where('id_sub_menu', 16)->where('is_active', 0)->orderBy('sort_order', 'DESC')->get();
 
 		return $data;
 	}
