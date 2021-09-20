@@ -8,7 +8,7 @@
 			<div class="col-md-6 col-sm-12">
 				{!! $data->$related->$column !!}
 
-				<a href="https://wa.me/message/NWV7N73Q5VWDD1" class="btn btn-info pull-rightu" style="width: 100%;" target="_blank">Buat Janji</a>
+				<a href="https://wa.me/message/NWV7N73Q5VWDD1" class="btn btn-info pull-rightu" style="width: 100%;" target="_blank">Buat Janji Sekarang</a>
 			</div>
 		</div>
 	</div>
