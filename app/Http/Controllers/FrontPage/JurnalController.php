@@ -29,6 +29,7 @@ class JurnalController extends Controller
 	{
 		$data = Posting::with('getPostingLanguage')
 				->whereIn('id_category', [58,51])
+				->orderBy('id', 'desc')
 				->get();
 
 		return view('frontend.jurnal', compact('data'));
