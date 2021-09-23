@@ -17188,6 +17188,19 @@ body:not(.no-transition) #wrapper,
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0px 100px;
+    margin-bottom: 20px;
+}
+
+.box-jurnal:hover{
+    box-shadow: -1px 13px 52px 2px rgba(0,0,0,0.08);
+    -webkit-box-shadow: -1px 13px 52px 2px rgba(0,0,0,0.08);
+    -moz-box-shadow: -1px 13px 52px 2px rgba(0,0,0,0.08);
+}
+
+.container-detail-jurnal{
+    margin: 0px 100px;
+    margin-bottom: 20px;
 }
 
 .img-jurnal{

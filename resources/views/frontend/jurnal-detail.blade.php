@@ -27,10 +27,12 @@
             <div class="heading-block center noborder" data-heading="O">
                 <h3 class="nott ls0">{{$data->getPostingLanguage->judul}}</h3>
             </div>
-            <center><img src="https://derma-express.com/assets/admin/assets/media/posting/{{ $data->image }}" alt="" class="img-header-jurnal"></center>
-            <div class="row" style="margin-top: 70px;">
-                <div class="col-12">
-                    {!! $data->getPostingLanguage->content !!}
+            <div class="container-detail-jurnal">
+                <center><img src="https://derma-express.com/assets/admin/assets/media/posting/{{ $data->image }}" alt="" class="img-header-jurnal"></center>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="col-12">
+                        {!! $data->getPostingLanguage->content !!}
+                    </div>
                 </div>
             </div>
         </div>
