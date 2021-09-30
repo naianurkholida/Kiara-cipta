@@ -41,7 +41,7 @@
     <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
         <div class="container clearfix">
 
-            <div class="container"><h3 class="nott ls0">Junal Lainnya</h3></div>
+            <div class="container"><h3 class="nott ls0">Jurnal Lainnya</h3></div>
             <div class="owl-carousel owl-theme" id="carousel-product">
                 @foreach($detaildesc as $item)
                 <div class="item">
