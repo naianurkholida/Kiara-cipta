@@ -44,7 +44,14 @@ class JurnalController extends Controller
 				})
 				->first();
 
-		return view('frontend.jurnal-detail', compact('data'));
+		$detail = Posting::with('getPostingLanguage')
+				->whereIn('id_category', [58,51])
+				->orderBy('id', 'desc')
+				->limit(3)
+				->inRandomOrder()
+				->get();
+
+		return view('frontend.jurnal-detail', compact('data', 'detail'));
 	}
 
 	public function blog()

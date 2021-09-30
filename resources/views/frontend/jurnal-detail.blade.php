@@ -23,18 +23,36 @@
 
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-        <div class="container clearfix">
-            <div class="heading-block center noborder" data-heading="O">
-                <h3 class="nott ls0">{{$data->getPostingLanguage->judul}}</h3>
-            </div>
-            <div class="container-detail-jurnal">
-                <center><img src="https://derma-express.com/assets/admin/assets/media/posting/{{ $data->image }}" alt="" class="img-header-jurnal"></center>
-                <div class="row" style="margin-top: 70px;">
-                    <div class="col-12">
-                        {!! $data->getPostingLanguage->content !!}
-                    </div>
+    <div class="container clearfix">
+        <div class="heading-block center noborder" data-heading="O">
+            <h3 class="nott ls0">{{$data->getPostingLanguage->judul}}</h3>
+        </div>
+        <div class="container-detail-jurnal">
+            <center><img src="https://derma-express.com/assets/admin/assets/media/posting/{{ $data->image }}" alt="" class="img-header-jurnal"></center>
+            <div class="row" style="margin-top: 70px;">
+                <div class="col-12">
+                    {!! $data->getPostingLanguage->content !!}
                 </div>
             </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container"><h3 class="nott ls0">Junal Lainnya</h3></div>
+        <div class="container container-related">
+           
+
+            @foreach($detail as $row)
+            <div class="box-related">
+                <img class="img-jurnal" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}" alt="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}">
+                <a href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+                    <p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
+                </a>
+                <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
+                <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+                    Read More
+                </a>
+            </div>
+            @endforeach
         </div>
 </div>
 @endsection

@@ -17175,6 +17175,7 @@ body:not(.no-transition) #wrapper,
      
  }
 
+
 .img-header-jurnal{
     /* min-width: 80%;
     max-width: 80%; */
@@ -17226,3 +17227,31 @@ body:not(.no-transition) #wrapper,
     border-radius: 5px;
     color: #008080;
 }
+
+.container-related{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.box-related{
+    width: 30% ;
+}
+
+
+ @media (max-width: 600px) {
+   .container-detail-jurnal{
+          margin: 0px !important;
+     }
+     .container-related {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.box-related {
+    width: 100%;
+    margin-bottom: 40px;
+}
+   }
