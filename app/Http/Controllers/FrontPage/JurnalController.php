@@ -54,7 +54,7 @@ class JurnalController extends Controller
 				->orderBy('id', 'asc')
 				->limit(3)->get();
 
-		return view('frontend.jurnal-detail', compact('data', 'detaildsc', 'detailasc'));
+		return view('frontend.jurnal-detail', compact('data', 'detaildesc', 'detailasc'));
 	}
 
 	public function blog()

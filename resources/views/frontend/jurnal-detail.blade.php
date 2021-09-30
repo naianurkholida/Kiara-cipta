@@ -43,7 +43,7 @@
 
             <div class="container"><h3 class="nott ls0">Junal Lainnya</h3></div>
             <div class="owl-carousel owl-theme" id="carousel-product">
-                @foreach($detaildsc as $item)
+                @foreach($detaildesc as $item)
                 <div class="item">
                     <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}">
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
