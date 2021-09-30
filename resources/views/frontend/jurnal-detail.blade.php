@@ -37,23 +37,31 @@
         </div>
     </div>
     <br><br>
-    <div class="container"><h3 class="nott ls0">Junal Lainnya</h3></div>
-        <div class="container container-related">
-           
 
-            @foreach($detail as $row)
-            <div class="box-related">
-                <img class="img-jurnal" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}" alt="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}">
-                <a href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
-                    <p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
-                </a>
-                <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
-                <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
-                    Read More
-                </a>
+    <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
+        <div class="container clearfix">
+
+            <div class="container"><h3 class="nott ls0">Junal Lainnya</h3></div>
+            <div class="owl-carousel owl-theme" id="carousel-product">
+                @foreach($detail as $item)
+                <div class="item">
+                    <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}">
+                        <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
+                    </a>
+
+                    <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
+                    <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+                        Read More
+                    </a>
+                </div>
+                @endforeach
             </div>
-            @endforeach
+
         </div>
+    </div>
+
+</div>
+
 </div>
 @endsection
 
