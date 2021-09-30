@@ -49,7 +49,7 @@
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
                     </a>
 
-                    <p style="margin-bottom:10 !important;">{{ $item->getPostingLanguage->judul }}</p>
+                    <p style="margin-bottom:10 !important; text-align: center;">{{ $item->getPostingLanguage->judul }}</p>
                     <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}">
                         Read More
                     </a>
@@ -62,7 +62,7 @@
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
                     </a>
 
-                    <p style="margin-bottom:10 !important;">{{ $item->getPostingLanguage->judul }}</p>
+                    <p style="margin-bottom:10 !important; text-align: center;">{{ $item->getPostingLanguage->judul }}</p>
                     <a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}">
                         Read More
                     </a>
