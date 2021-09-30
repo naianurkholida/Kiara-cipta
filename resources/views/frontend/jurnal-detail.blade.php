@@ -45,7 +45,7 @@
             <div class="owl-carousel owl-theme" id="carousel-product">
                 @foreach($detaildesc as $item)
                 <div class="item">
-                    <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}">
+                    <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}" target="_blank">
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
                     </a>
 
@@ -58,7 +58,7 @@
 
                 @foreach($detailasc as $item)
                 <div class="item">
-                    <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}">
+                    <a href="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" class="lazyload" alt="{{ $item->getPostingLanguage->judul }}" target="_blank">
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}" style="padding: 5px; border-radius: 5%;">
                     </a>
 
