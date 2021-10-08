@@ -48,7 +48,7 @@
     				<div class="carousel-item active">
     					@foreach($detaildesc as $item)
     					<div class="col-md-4" style="float:left">
-    						<div class="card mb-2" style="height: 430px;">
+    						<div class="card mb-2" style="height: 410px;">
     							<img class="card-img-top" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}">
     							<div class="card-body">
     								<h4 class="card-title">{{ $item->getPostingLanguage->judul }}</h4>
@@ -62,7 +62,7 @@
     				<div class="carousel-item">
     					@foreach($detailasc as $item)
     					<div class="col-md-4" style="float:left">
-    						<div class="card mb-2" style="height: 430px;">
+    						<div class="card mb-2" style="height: 410px;">
     							<img class="card-img-top" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}">
     							<div class="card-body">
     								<h4 class="card-title">{{ $item->getPostingLanguage->judul }}</h4>
