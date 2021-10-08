@@ -44,7 +44,7 @@
             <div class="container"><h3 class="nott ls0">Jurnal Lainnya</h3></div>
             <div class="owl-carousel owl-theme" id="carousel-product">
                 @foreach($detaildesc as $item)
-                <div class="box-jurnal">
+                <div class="box-jurnal" style="min-height: 400px !important;">
                     <div class="img-jurnal" style="background-image: url({{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}});"></div>
                     <a href="http://localhost:8000/treatments/show/treatment-1">
                         <p id="jurnal-name">
@@ -56,7 +56,7 @@
                 @endforeach
 
                 @foreach($detailasc as $item)
-                <div class="box-jurnal">
+                <div class="box-jurnal" style="min-height: 400px !important;">
                     <div class="img-jurnal-detail" style="background-image: url({{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}});"></div>
                     <a href="http://localhost:8000/treatments/show/treatment-1">
                         <p id="jurnal-name">
