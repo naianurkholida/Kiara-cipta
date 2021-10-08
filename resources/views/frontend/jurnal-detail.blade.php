@@ -39,35 +39,78 @@
     <br><br>
 
     <div id="section-articles" class="section page-section nomargin bgcolor clearfix" style="padding-top: 100px;background-color: #f9f9f9 !important;">
-       
-        <div class="container clearfix">
-            <div class="container"><h3 class="nott ls0">Jurnal Lainnya</h3></div>
+
+    	<div class="container">
+    		<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    			<div class="carousel-inner" role="listbox">
+
+    				<div class="carousel-item active">
+    					@foreach($detaildesc as $item)
+    					<div class="col-md-4" style="float:left">
+    						<div class="card mb-2" style="height: 430px;">
+    							<img class="card-img-top" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}">
+    							<div class="card-body">
+    								<h4 class="card-title">{{ $item->getPostingLanguage->judul }}</h4>
+    								<a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success" style="position: absolute; bottom: 10px;">Selengkapnya</a>
+    							</div>
+    						</div>
+    					</div>
+    					@endforeach
+    				</div>
+
+    				<div class="carousel-item">
+    					@foreach($detailasc as $item)
+    					<div class="col-md-4" style="float:left">
+    						<div class="card mb-2" style="height: 430px;">
+    							<img class="card-img-top" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$item->image}}" alt="{{ $item->getPostingLanguage->judul }}">
+    							<div class="card-body">
+    								<h4 class="card-title">{{ $item->getPostingLanguage->judul }}</h4>
+    								<a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success" style="position: absolute; bottom: 10px;">Selengkapnya</a>
+    							</div>
+    						</div>
+    					</div>
+    					@endforeach
+    				</div>
+
+    			</div>
+
+    		</div>
+    	</div>
+
+        <!--<div class="container clearfix">
             <div class="owl-carousel owl-theme" id="carousel-product">
                 @foreach($detaildesc as $item)
-                <div class="box-jurnal" style="min-height: 400px !important;">
-                    <div class="img-jurnal-detail" style="background-image: url('https://derma-express.com/assets/admin/assets/media/posting/{{$item->image}}')"></div>
-                    <a href="{{ $item->getPostingLanguage->judul }}">
-                        <p id="jurnal-name">
-                            {{ $item->getPostingLanguage->judul }}
-                        </p>
-                    </a>
-                    <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success"><span>Selengkapnya</span></a>
+                <div class="item">
+                    <div class="box-jurnal" style="height: 400px !important; background: white;">
+                        <div class="img-jurnal-detail" style="background-image: url('https://derma-express.com/assets/admin/assets/media/posting/kamu-hoby-gowes-kenali-3-tips-untuk-menjaga-kulit-tetap-sehat_20210128054943.jpg')"></div>
+
+                        <a href="{{ $item->getPostingLanguage->judul }}">
+                            <p id="jurnal-name">
+                                {{ $item->getPostingLanguage->judul }}
+                            </p>
+                        </a>
+                        <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success" style="margin: 20px;"><span>Selengkapnya</span></a>
+                    </div>
                 </div>
                 @endforeach
 
                 @foreach($detailasc as $item)
-                <div class="box-jurnal" style="min-height: 400px !important;">
-                    <div class="img-jurnal-detail" style="background-image: url('https://derma-express.com/assets/admin/assets/media/posting/{{$item->image}}')"></div>
-                    <a href="{{ $item->getPostingLanguage->judul }}">
+                <div class="item">
+                    <div class="box-jurnal" style="height: 400px !important; background: white;">
+                     <div class="img-jurnal-detail" style="background-image: url('https://derma-express.com/assets/admin/assets/media/posting/kamu-hoby-gowes-kenali-3-tips-untuk-menjaga-kulit-tetap-sehat_20210128054943.jpg')"></div>
+                     <a href="{{ $item->getPostingLanguage->judul }}">
                         <p id="jurnal-name">
                             {{ $item->getPostingLanguage->judul }}
                         </p>
                     </a>
-                    <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success"><span>Selengkapnya</span></a>
+                    <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success" style="margin: 20px;"><span>Selengkapnya</span></a>
                 </div>
+            </div>
                 @endforeach
             </div>
-        </div>
+        </div> -->
+
         <!--<div class="container clearfix">
 
             <div class="container"><h3 class="nott ls0">Jurnal Lainnya</h3></div>
