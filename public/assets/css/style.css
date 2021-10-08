@@ -197,6 +197,27 @@ body,
     background-position: center;
 }
 
+.img-jurnal {
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#jurnal-name {
+    margin: 10px !important;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #67b6ab;
+    font-weight: bold;
+}
+
+.box-jurnal {
+    width: 90%;
+    border: 3px solid #ffffff;
+}
+
 .img-dokter {
     width: 100%;
     height: 250px;
@@ -206,7 +227,7 @@ body,
 }
 
 #dokter-name {
-    margin-bottom: 10px !important;
+    margin: 10px !important;
     margin-top: 10px;
     font-size: 20px;
     color: #67b6ab;
