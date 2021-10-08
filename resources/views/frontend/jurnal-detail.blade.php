@@ -51,7 +51,7 @@
                             {{ $item->getPostingLanguage->judul }}
                         </p>
                     </a>
-                    <a href="" class="btn btn-success"><span>Selengkapnya</span></a>
+                    <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success"><span>Selengkapnya</span></a>
                 </div>
                 @endforeach
 
@@ -63,7 +63,7 @@
                             {{ $item->getPostingLanguage->judul }}
                         </p>
                     </a>
-                    <a href="" class="btn btn-success"><span>Selengkapnya</span></a>
+                    <a href="{{ route('dermaster.jurnal.show', $item->getPostingLanguage->seo) }}" class="btn btn-success"><span>Selengkapnya</span></a>
                 </div>
                 @endforeach
             </div>
