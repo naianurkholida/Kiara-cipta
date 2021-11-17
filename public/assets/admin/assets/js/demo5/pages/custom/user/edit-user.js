@@ -18,7 +18,7 @@ var KTUserEdit = function () {
 }();
 
 // Class definition
-var KTUserEdit = function () {
+var KTUserEdit2 = function () {
     // Base elements
     var avatar;
      

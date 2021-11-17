@@ -34,8 +34,8 @@
         border-radius: 0%;
         cursor: none;
         /*Set the size of the magnifier glass:*/
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     table {
@@ -84,6 +84,7 @@
         /*and also for touch screens:*/
         glass.addEventListener("touchmove", moveMagnifier);
         img.addEventListener("touchmove", moveMagnifier);
+
         function moveMagnifier(e) {
             var pos, x, y;
             /*prevent any other actions that may occur when moving over the image*/
@@ -103,6 +104,7 @@
             /*display what the magnifier glass "sees":*/
             glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
         }
+
         function getCursorPos(e) {
             var a, x = 0, y = 0;
             e = e || window.event;
@@ -129,8 +131,17 @@
             		<div class="row">
             			<div class="col-lg-6 col-sm-12" style="border-radius: 5px; margin-bottom: 10px;">
             				<div class="img-magnifier-container">
-            					<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
+            					<img class="img-home" id="img-home" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="border-radius: 5px;">
+
+                                <input type="hidden" id="img-home-before" value="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}">
             				</div>
+
+                            <br />
+                            <img class="img-home" id="img-produk-0" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="border-radius: 5px; width: 16%;" onmouseover="setImage(this, '0')" onmouseleave="changeImage(this, 0)" onclick="setThis(this, '0')">
+
+                            <?php $i = 1; foreach ($detailGambar as $item) { $i++; ?>
+                               <img class="img-home" id="img-produk-{{$i}}" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/Produk_20210603064016.png" alt="{{$data->getProdukLanguage->judul}}" style="width: 16%; border-radius: 5px;" onmouseover="setImage(this, '{{$i}}')" onmouseleave="changeImage(this, '{{$i}}')" onclick="setThis(this, '{{$i}}')">
+                            <?php } ?>
             			</div>
 
             			<div class="col-lg-6 col-sm-12" style="font-size: 18px;">
@@ -202,6 +213,20 @@
     } else {
         $( "#container_dalem" ).addClass("container");
         $( "#container_luar" ).removeClass("container-fluid").addClass("container");
+    }
+
+    function setImage(x, i){
+        $("#img-home").attr("src", x.src);
+        document.getElementById('img-produk-'+i).style.border = "4px solid #3aff00";
+    }
+
+    function setThis(x, i){
+        $("#img-home").attr("src", x.src);
+        document.getElementById('img-produk-'+i).style.border = "4px solid #3aff00";
+    }
+
+    function changeImage(x, i){
+        document.getElementById('img-produk-'+i).style.border = "none";
     }
 </script>
 @endsection

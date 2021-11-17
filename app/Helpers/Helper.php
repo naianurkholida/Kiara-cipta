@@ -17,6 +17,7 @@ use App\Entities\Admin\core\SliderProdukLanguage;
 use App\Entities\Admin\core\Treatment;
 use App\Entities\Admin\core\TreatmentLanguage;
 use App\Entities\Admin\core\Produk;
+use App\Entities\Admin\core\ProdukImage;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\BestSellerIcon;
 use App\Entities\Admin\core\OnlineStore;

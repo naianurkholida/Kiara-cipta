@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Produk;
+use App\Entities\Admin\core\ProdukImage;
 use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Language;
@@ -77,7 +78,9 @@ class ProductsController extends Controller
 
         $data = Produk::where('deleted_at',null)->findOrFail($dataLanguage->id_produk);
 
-        return view('frontend.products-detail', compact('data'));
+        $detailGambar = ProdukImage::where('id_produk', $dataLanguage->id_produk)->orderBy('id', 'desc')->limit(5)->get();
+
+        return view('frontend.products-detail', compact('data', 'detailGambar'));
     }
 
     public function showByCategory ($category) 

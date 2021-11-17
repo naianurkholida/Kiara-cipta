@@ -38,10 +38,13 @@
 							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->banner}}" target="blank">{{ $row->banner }}</a>
 						</td>
 						<td class="text-center">
+							<a href="{{Route('produk.upload_image', $row->id)}}" class="btn btn-sm btn-success" title="Gambar">
+								<i class="la la-plus-circle"></i>
+							</a>
 							<a href="{{Route('produk.spec.index',$row->id)}}" class="btn btn-sm btn-info" title="Spesifikasi">
 								<i class="la la-gear"></i>
 							</a>
-							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-primary">
+							<a href="{{Route('produk.edit',$row->id)}}" class="btn btn-sm btn-warning">
 								<i class="la la-edit"></i>
 							</a>
 							<a href="{{Route('produk.delete',$row->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ? ')">

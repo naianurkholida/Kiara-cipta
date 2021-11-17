@@ -37,7 +37,7 @@
 					<div class="form-group">
 						<label for="document">Banner</label>
 						<!-- <div class="needsclick dropzone" id="document-dropzone"></div> -->
-						<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar" style="width: 100%;">
+						<div class="kt-avatar kt-avatar--outline" id="kt_user_edit_avatar" style="width: 100%;">
 							<div class="kt-avatar__holder" style="width: 100%; background-image: url('{{ asset('assets/admin/assets/media/derma_produk') }}/{{$produk->banner}}')"></div>
 							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 								<i class="fa fa-pen"></i>
@@ -53,7 +53,7 @@
 					<div class="form-group">
 						<label for="document">Image</label>
 						<!-- <div class="needsclick dropzone" id="document-dropzone"></div> -->
-						<div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar" style="width: 100%;">
+						<div class="kt-avatar kt-avatar--outline" id="kt_user_edit_avatar_two" style="width: 100%;">
 							<div class="kt-avatar__holder" style="width: 100%; background-image: url('{{ asset('assets/admin/assets/media/derma_produk') }}/{{$produk->image}}')"></div>
 							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 								<i class="fa fa-pen"></i>
@@ -133,7 +133,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/add-user.js')}}" type="text/javascript"></script>	
+<script src="{{asset('assets/admin/assets/js/demo5/pages/custom/user/edit-user.js')}}" type="text/javascript"></script>	
 <script type="text/javascript">
 
 	function simpan() {

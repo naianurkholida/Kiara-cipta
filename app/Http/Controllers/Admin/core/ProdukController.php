@@ -13,6 +13,7 @@ use App\Entities\Admin\core\Language;
 use App\Entities\Admin\core\Role as Role;
 use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\ProdukLanguage;
+use App\Entities\Admin\core\ProdukImage;
 use Carbon\Carbon;
 use Image;
 use File;
@@ -412,5 +413,46 @@ class ProdukController extends Controller
 		}
 
 		return redirect()->route('produk.index')->with('danger', 'Data Berhasil di Hapus');
+	}
+
+	public function upload_image($id)
+	{
+		$id_produk = $id;
+		$data = ProdukImage::where('id_produk', $id)->get();
+		return view('admin.core.produk.image.upload', compact('data', 'id_produk'));
+	}
+
+	public function upload_image_store(Request $request, $id)
+	{
+		$this->validate($request, [
+			'filename' => 'required',
+			'filename.*' => 'image|mimes:jpeg,jpg,png|max:2048'
+		]);
+
+		if($request->hasFile('filename')){
+			foreach ($request->file('filename') as $key => $image) {
+				$name = 'produk-'.date('His').'-'.$image->getClientOriginalName();
+				$image->move($this->path, $name);
+
+				$upload = new ProdukImage;
+				$upload->id_produk = $id;
+				$upload->image = $name;
+				$upload->save();
+			}
+
+			return redirect()->back()->with('success', 'Image Berhasil di Upload');
+		}else{
+			return redirect()->back()->with('danger', 'Image Gagal di Upload');
+		}
+	}
+
+	public function upload_image_delete($id)
+	{
+		$data = ProdukImage::find($id);
+		File::delete($this->path.'/'.$data->image);
+
+		$data->delete();
+
+		return redirect()->back()->with('success', 'Image Berhasil di Hapus');
 	}
 }

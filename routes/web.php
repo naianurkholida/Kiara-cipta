@@ -171,6 +171,11 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/update/{id}', 'Admin\core\ProdukController@update')->name('produk.update');
 		Route::get('/delete/{id}', 'Admin\core\ProdukController@delete')->name('produk.delete');
 		Route::get('/history/{id}', 'Admin\core\ProdukController@history')->name('produk.history');
+		
+		#image lainnya
+		Route::get('/upload_image/{id}', 'Admin\core\ProdukController@upload_image')->name('produk.upload_image');
+		Route::post('/upload_image_store/{id}', 'Admin\core\ProdukController@upload_image_store')->name('produk.upload_image.store');
+		Route::get('/upload_image_delete/{id}', 'Admin\core\ProdukController@upload_image_delete')->name('produk.upload_image.delete');
 
 		#icon best seller
 		Route::get('/best_seller', 'Admin\core\BestSellerController@index')->name('produk.best_seller');
