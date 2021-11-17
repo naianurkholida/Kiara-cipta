@@ -140,7 +140,7 @@
                             <img class="img-home" id="img-produk-0" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$data->image}}" alt="{{$data->getProdukLanguage->judul}}" style="border-radius: 5px; width: 16%;" onmouseover="setImage(this, '0')" onmouseleave="changeImage(this, 0)" onclick="setThis(this, '0')">
 
                             <?php $i = 1; foreach ($detailGambar as $item) { $i++; ?>
-                               <img class="img-home" id="img-produk-{{$i}}" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/Produk_20210603064016.png" alt="{{$data->getProdukLanguage->judul}}" style="width: 16%; border-radius: 5px;" onmouseover="setImage(this, '{{$i}}')" onmouseleave="changeImage(this, '{{$i}}')" onclick="setThis(this, '{{$i}}')">
+                               <img class="img-home" id="img-produk-{{$i}}" width="100%" src="{{ asset('assets/admin/assets/media/derma_produk/') }}/{{$item->image}}" alt="{{$data->getProdukLanguage->judul}}" style="width: 16%; border-radius: 5px;" onmouseover="setImage(this, '{{$i}}')" onmouseleave="changeImage(this, '{{$i}}')" onclick="setThis(this, '{{$i}}')">
                             <?php } ?>
             			</div>
 
