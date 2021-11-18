@@ -102,6 +102,9 @@
     .container {
         max-width: 540px;
     }
+}
+
+@media (max-width: 576px) {
     .xzysui{
     padding: 0px;
     padding-top: 0px;
