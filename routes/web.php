@@ -21,6 +21,11 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	Route::get('/ajax-jurnal', 'FrontPage\HomeController@jurnalListJson');
 	Route::get('/ajax-sub-menu', 'FrontPage\HomeController@getSubMenuById');
 
+	// login
+	Route::get('/loginfront', 'FrontPage\HomeController@login')->name('loginfront');
+	Route::get('/forgotfront', 'FrontPage\HomeController@forgot')->name('forgotfront');
+	Route::get('/regisfront', 'FrontPage\HomeController@regis')->name('regisfront');
+
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
 		Route::get('/blog', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.blog');

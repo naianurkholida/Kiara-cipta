@@ -37,6 +37,19 @@ class HomeController extends Controller
             $pengunjung->save();
         }
     }
+    // login
+    public function login()
+    {
+        return view('frontend.login');
+    }
+    public function forgot()
+    {
+        return view('frontend.forgot');
+    }
+    public function regis()
+    {
+        return view('frontend.regis');
+    }
 
     /**
      * Handle the incoming request.
