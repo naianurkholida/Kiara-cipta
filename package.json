@@ -23,6 +23,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "froala-editor": "^3.0.5"
+        "froala-editor": "^3.0.5",
+        "guzzle": "0.0.3"
     }
 }

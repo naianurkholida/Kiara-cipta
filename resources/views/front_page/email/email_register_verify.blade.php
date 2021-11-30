@@ -1,1 +1,0 @@
-<a href="{{Route('front_page.email_verify', $token)}}">Klik Disini {{$token}}</a>

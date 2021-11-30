@@ -37,7 +37,9 @@
                     @endforeach
                 </div>
             </div>
-            <div class="btn-bestseller-overlay" style="border-radius: 8px;"><a href="{{ route('dermaster.products.show', $row->produk->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->produk->getProdukLanguage->judul}}</a></div>
+            <div class="btn-bestseller-overlay" style="border-radius: 8px;">
+                <a href="{{ route('dermaster.products.show', $row->produk->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->produk->getProdukLanguage->judul}}</a>
+            </div>
         </div>
     </div>
     @endforeach

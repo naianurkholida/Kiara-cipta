@@ -41,7 +41,7 @@
 </head>
 <body>
 <div class="container-login">
-    <div class="img-login" style="background-image: url('https://derma-express.com/assets/admin/assets/media/slider/Slider_20210714041916.jpg');"></div>
+    <div class="img-login" style="background-image: url('http://localhost:8000/assets/admin/assets/media/bg/login-frontend.jpg');"></div>
     <div class="login-box">
         <div class="form-log">
                         <!--begin::Signin-->

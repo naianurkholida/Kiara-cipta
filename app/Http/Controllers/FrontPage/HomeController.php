@@ -14,6 +14,7 @@ use App\Entities\Admin\core\Produk;
 use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\MenuFrontPage;
 use App\Entities\Admin\core\MenuFrontPageLanguage;
+use GuzzleHttp\Client;
 
 class HomeController extends Controller
 {
@@ -37,19 +38,7 @@ class HomeController extends Controller
             $pengunjung->save();
         }
     }
-    // login
-    public function login()
-    {
-        return view('frontend.login');
-    }
-    public function forgot()
-    {
-        return view('frontend.forgot');
-    }
-    public function regis()
-    {
-        return view('frontend.regis');
-    }
+
 
     /**
      * Handle the incoming request.
