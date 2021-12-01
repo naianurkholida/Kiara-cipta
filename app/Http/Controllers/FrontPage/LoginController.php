@@ -61,4 +61,32 @@ class LoginController extends Controller
             'message' => $body_array
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        unset($_COOKIE['username']);
+
+        return redirect('/');
+    }
+
+    public function customer()
+    {
+        return view('frontend.auth.profile');
+    }
+
+    public function profile(Request $request, $no_telp)
+    {
+        $client = new Client();
+        $response = $client->request('GET', 'http://103.11.135.246:1506/datapercustomer', ['query' => [
+            'tel' => $no_telp
+        ]]);
+
+        $body = $response->getBody();
+        $data = json_decode($body);
+
+        return response()->json([
+            'status' => $response->getStatusCode(),
+            'message' => $data
+        ]);
+    }
 }

@@ -118,8 +118,8 @@
 					dataType: 'json',
 				})
 				.done(function(res) {
-					
-					if(res.message[0].status == '200'){
+					console.log(res)
+					if(res.message[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 
 						//set cookier auth

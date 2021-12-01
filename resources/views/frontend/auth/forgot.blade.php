@@ -121,8 +121,8 @@
 					dataType: 'json',
 				})
 				.done(function(res) {
-					
-					if(res.message[0].status == '200'){
+					console.log(res)
+					if(res.message[0].Status == '200'){
 						$.notify("Change password is successfully.", "success");
 
 						window.location.href = '/sign';

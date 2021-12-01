@@ -24,9 +24,13 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	// login front page
 	Route::get('/sign', 'FrontPage\LoginController@login')->name('loginfront.login');
 	Route::post('/sign/next', 'FrontPage\LoginController@login_post')->name('loginfront.login_post');
-	
+	Route::get('/sign/logout', 'FrontPage\LoginController@logout')->name('loginfront.logout');
+
 	Route::get('/sign/forgot', 'FrontPage\LoginController@forgot')->name('loginfront.forgot');
 	Route::post('/sign/forgot/next', 'FrontPage\LoginController@forgot_post')->name('loginfront.forgot_post');
+
+	Route::get('/customer-profile/{no_telp}', 'FrontPage\LoginController@profile')->name('loginfront.profile');
+	Route::get('/customer', 'FrontPage\LoginController@customer')->name('loginfront.customer');
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
