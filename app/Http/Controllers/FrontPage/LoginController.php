@@ -44,6 +44,7 @@ class LoginController extends Controller
             session::put('customer_email',$dataCustomer->EMAIL);
             session::put('customer_address', $dataCustomer->ADDRESS);
             session::put('customer_no_telp', $dataCustomer->TELEPHON);
+
         }else{
             $dataCustomer = [];
         }
@@ -85,9 +86,8 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        setcookie('username', false);
-        
         session_start();
+        setcookie('username', '');
         unset($_SESSION['customer_id']);
         unset($_SESSION['customer_name']);
         unset($_SESSION['customer_email']);
