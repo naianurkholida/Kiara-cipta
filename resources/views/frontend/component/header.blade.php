@@ -321,11 +321,10 @@
                                 @endif
                             @endforeach 
 
-                            @if(isset($_COOKIE['username']) != null)
                             <li class="sub-menu active">
                             	<a href="#" class="sf-with-ul"><i class="icon-user-circle"></i><i class="icon-angle-down1"></i></a>
                             	<ul>
-                                    @if(isset($_COOKIE['username']) != null)
+                                    @if(Session::get('username') != null)
                             		<li class="menu-header" style="width: auto;">
                             			<a href="{{ url('dashboard-customer') }}">
                             				Dashboard
@@ -334,8 +333,8 @@
                                     @endif
 
                             		<li class="menu-header" style="width: auto;">
-	                            		@if(isset($_COOKIE['username']) == null)
-	                            			<a href="{{ url('sign') }}">
+	                            		@if(Session::get('username') == null)
+	                            			<a href="{{ url('/') }}">
 	                            				Sign In
 	                            			</a>
 	                            		@else
@@ -346,7 +345,6 @@
                             		</li>
                             	</ul>
                             </li>
-                            @endif
 
                         </ul> 
                         </nav>

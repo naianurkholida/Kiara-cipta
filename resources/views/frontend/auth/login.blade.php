@@ -73,14 +73,16 @@
 						</div>
 						<!--begin::Action-->
 						<div class="kt-login__actions">
-							<!-- <a href="#" class="kt-link kt-login__link-forgot">
-								Forgot Password ?
-							</a> -->
 							<button type="button" id="login" class="btn btn-primary btn-sm btn-elevate kt-login__btn-primary" style="width: 100%; height: 40px;">Sign In</button>
 						</div>
 						<!--end::Action-->
 						<div class="action-login">
 							<a href="{{route('loginfront.forgot')}}">Forgot Password</a>
+
+							<a href="{{ url('home') }}" class="kt-link kt-login__link-forgot">
+								Lanjutkan Tanpa Login
+							</a>
+							
 						</div>
 					</form>
 					<!--end::Form-->
@@ -124,10 +126,7 @@
 					if(res.message[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 
-						//set cookier auth
-						Cookies.set('username', username, { expires: 1 })
-
-						window.location.href = '/';
+						window.location.href = '/home';
 					}else{
 						$.notify("Invalid username or password.", "error");
 					}

@@ -15,7 +15,7 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 
 #new front page route
 
-	Route::get('/', 'FrontPage\HomeController')->name('dermaster.home');
+	Route::get('/home', 'FrontPage\HomeController')->name('dermaster.home');
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
 	Route::get('/ajax-kategori-produk', 'FrontPage\HomeController@kategoriProdukListJson');
 	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');
@@ -23,7 +23,7 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 	Route::get('/ajax-sub-menu', 'FrontPage\HomeController@getSubMenuById');
 
 	// login front page
-	Route::get('/sign', 'FrontPage\LoginController@login')->name('loginfront.login');
+	Route::get('/', 'FrontPage\LoginController@login')->name('loginfront.login');
 	Route::post('/sign/next', 'FrontPage\LoginController@login_post')->name('loginfront.login_post');
 	Route::get('/sign/logout', 'FrontPage\LoginController@logout')->name('loginfront.logout');
 
@@ -32,13 +32,17 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 
 
 	//dashboard user
-	Route::get('/customer-profile/{no_telp}', 'FrontPage\LoginController@profile')->name('loginfront.profile');
-	Route::get('/dashboard-customer', 'FrontPage\LoginController@customer')->name('loginfront.customer');
+	Route::group([
+		'middleware' => 'frontend',
+	], function(){    
+		Route::get('/customer-profile/{no_telp}', 'FrontPage\LoginController@profile')->name('loginfront.profile');
+		Route::get('/dashboard-customer', 'FrontPage\LoginController@customer')->name('loginfront.customer');
 
-	Route::get('/customer/profile', 'FrontPage\DashboardCustomerController@profile');
-	Route::get('/customer/history-transactions', 'FrontPage\DashboardCustomerController@history');
-	Route::get('/customer/change-point', 'FrontPage\DashboardCustomerController@changePoint');
-	Route::get('/customer/get-customer', 'FrontPage\DashboardCustomerController@_json_customer');
+		Route::get('/customer/profile', 'FrontPage\DashboardCustomerController@profile');
+		Route::get('/customer/history-transactions', 'FrontPage\DashboardCustomerController@history');
+		Route::get('/customer/change-point', 'FrontPage\DashboardCustomerController@changePoint');
+		Route::get('/customer/get-customer', 'FrontPage\DashboardCustomerController@_json_customer');
+	});
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');

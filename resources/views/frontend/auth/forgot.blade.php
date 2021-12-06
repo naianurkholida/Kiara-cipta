@@ -124,7 +124,7 @@
 					if(res.message[0].Status == '200'){
 						$.notify("Change password is successfully.", "success");
 
-						window.location.href = '/sign';
+						window.location.href = '/';
 					}else{
 						$.notify("Change password is failed.", "error");
 					}
