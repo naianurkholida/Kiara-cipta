@@ -29,8 +29,15 @@ Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
 	Route::get('/sign/forgot', 'FrontPage\LoginController@forgot')->name('loginfront.forgot');
 	Route::post('/sign/forgot/next', 'FrontPage\LoginController@forgot_post')->name('loginfront.forgot_post');
 
+
+	//dashboard user
 	Route::get('/customer-profile/{no_telp}', 'FrontPage\LoginController@profile')->name('loginfront.profile');
-	Route::get('/customer', 'FrontPage\LoginController@customer')->name('loginfront.customer');
+	Route::get('/dashboard-customer', 'FrontPage\LoginController@customer')->name('loginfront.customer');
+
+	Route::get('/customer/profile', 'FrontPage\DashboardCustomerController@profile');
+	Route::get('/customer/history-transactions', 'FrontPage\DashboardCustomerController@history');
+	Route::get('/customer/change-point', 'FrontPage\DashboardCustomerController@changePoint');
+	Route::get('/customer/get-customer', 'FrontPage\DashboardCustomerController@_json_customer');
 
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');

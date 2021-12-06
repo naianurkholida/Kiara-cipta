@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
 
@@ -25,12 +26,26 @@ class LoginController extends Controller
             'password' => $password
         ]]);
 
-    	$body = $response->getBody();
-    	$body_array = json_decode($body);
+    	$res = $response->getBody();
+    	$notif = json_decode($res);
+
+        $customer = $client->request('GET', 'http://103.11.135.246:1506/datapercustomer', ['query' => [
+            'tel' => $username
+        ]]);
+
+        $res2 = $customer->getBody();
+        $dataCustomer = json_decode($res2);
+
+        session::put('customer_id', $dataCustomer[0]->CUSTOMER_ID);
+        session::put('customer_name',$dataCustomer[0]->CUSTOMER_NAME);
+        session::put('customer_email',$dataCustomer[0]->EMAIL);
+        session::put('customer_address', $dataCustomer[0]->ADDRESS);
+        session::put('customer_no_telp', $dataCustomer[0]->TELEPHON);
 
     	return response()->json([
     		'status' => $response->getStatusCode(),
-    		'message' => $body_array
+    		'message' => $notif,
+            'customer' => $dataCustomer[0]
     	]);
     }
 
@@ -71,7 +86,7 @@ class LoginController extends Controller
 
     public function customer()
     {
-        return view('frontend.auth.profile');
+        return view('frontend.auth.dashboard');
     }
 
     public function profile(Request $request, $no_telp)
@@ -84,9 +99,13 @@ class LoginController extends Controller
         $body = $response->getBody();
         $data = json_decode($body);
 
+        $customer_id = $data[0]->CUSTOMER_ID;
+        $history = json_decode($client->request('GET', 'http://103.11.135.246:1506/CustPoint/?id='.$customer_id)->getBody());
+
         return response()->json([
             'status' => $response->getStatusCode(),
-            'message' => $data
+            'message' => $data,
+            'data' => $history
         ]);
     }
 }

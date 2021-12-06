@@ -324,14 +324,16 @@
                             <li class="sub-menu active">
                             	<a href="#" class="sf-with-ul"><i class="icon-user-circle"></i><i class="icon-angle-down1"></i></a>
                             	<ul>
+                                    @if(isset($_COOKIE['username']) != null)
                             		<li class="menu-header" style="width: auto;">
-                            			<a href="{{ url('customer') }}">
-                            				Profile
+                            			<a href="{{ url('dashboard-customer') }}">
+                            				Dashboard
                             			</a>
                             		</li>
+                                    @endif
 
                             		<li class="menu-header" style="width: auto;">
-	                            		@if($_COOKIE['username'] == null)
+	                            		@if(isset($_COOKIE['username']) == null)
 	                            			<a href="{{ url('sign') }}">
 	                            				Sign In
 	                            			</a>
