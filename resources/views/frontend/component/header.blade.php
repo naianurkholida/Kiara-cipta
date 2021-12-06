@@ -324,7 +324,7 @@
                             <li class="sub-menu active">
                             	<a href="#" class="sf-with-ul"><i class="icon-user-circle"></i><i class="icon-angle-down1"></i></a>
                             	<ul>
-                                    @if(Session::get('username') != null)
+                                    @if(Session::get('customer_id') != null)
                             		<li class="menu-header" style="width: auto;">
                             			<a href="{{ url('dashboard-customer') }}">
                             				Dashboard
@@ -333,7 +333,7 @@
                                     @endif
 
                             		<li class="menu-header" style="width: auto;">
-	                            		@if(Session::get('username') == null)
+	                            		@if(Session::get('customer_id') == null)
 	                            			<a href="{{ url('/') }}">
 	                            				Sign In
 	                            			</a>
