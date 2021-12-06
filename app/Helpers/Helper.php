@@ -80,6 +80,23 @@ class Helper
 		return $data;
 	}
 
+	public static function produkListChangePoin()
+	{
+		$data = Produk::with('getProdukLanguage', 'getCategory')
+				->where('deleted_at', null)
+				->whereHas('getCategory', function($q){
+					$q->where('seo', 'tukar-poin');
+				})
+				->get();
+
+				$data = $data->sortBy(function ($data, $key)
+                {
+                    return $data->getProdukLanguage->judul;
+                });
+	
+		return $data;
+	}
+
 	public static function produkListBestSeller()
 	{
 		$data = BestSellerIcon::with('produk','produk.getProdukLanguage','produk.getCategory','produk.getSpec')

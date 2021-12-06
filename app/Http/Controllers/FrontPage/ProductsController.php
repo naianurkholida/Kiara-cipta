@@ -29,8 +29,12 @@ class ProductsController extends Controller
     public function index()
     {
         $category = null;
-        $data = Produk::with('getProdukLanguage','getSpec')
+        $data = Produk::with('getProdukLanguage','getSpec','getCategory')
                 ->where('deleted_at', NULL)
+                ->whereHas('getCategory', function($q) {
+                    $q->where('seo', '!=', 'tukar-poin')
+                    ->Where('seo', '!=', 'promo');
+                })
                 ->get();
 
                 $data = $data->sortBy(function ($data, $key)

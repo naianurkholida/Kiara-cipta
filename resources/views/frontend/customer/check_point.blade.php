@@ -81,7 +81,7 @@
 		getPointCustomer()
 
 		$('#datatablesHistory').DataTable( {
-			"ajax": '{{ url("customer-profile") }}/'+Cookies.get('username')
+			"ajax": '{{ url("customer-profile") }}/'+'{{ Session::get("customer_no_telp") }}'
 		} );
 	});
 
@@ -93,7 +93,7 @@
 	}
 
 	function getDataCustomer() {
-		let no_telp = Cookies.get('username')
+		let no_telp = '{{ Session::get("customer_no_telp") }}'
 
 		$.ajax({
 			url: '{{ url("customer-profile") }}/'+no_telp,
@@ -107,7 +107,7 @@
 	}
 
 	function getPointCustomer() {
-		let id = Cookies.get('username')
+		let id = '{{ Session::get("customer_no_telp") }}'
 
 		$.ajax({
 			url: '{{ url("customer/get-customer") }}',

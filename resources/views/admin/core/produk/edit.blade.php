@@ -16,7 +16,7 @@
 		<form action="{{Route('produk.update', $produk->id)}}" method="POST" enctype="multipart/form-data" id="form_menu">
 			{{csrf_field()}}
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<label>Kategori Produk</label>
 					<select class="form-control" name="kategori_produk" required="">
 						<option value="" selected="" disabled="">- Kategori -</option>
@@ -32,6 +32,10 @@
 				<div class="col-lg-3">
 					<label>Harga</label>
 					<input type="number" name="harga" class="form-control" value="{{$produk->harga}}" id="harga" required="">
+				</div>
+				<div class="col-lg-3">
+					<label>Poin</label>
+					<input type="number" id="poin" name="poin" class="form-control" value="{{$produk->poin}}"><br>
 				</div>
 				<div class="col-lg-12">
 					<div class="form-group">

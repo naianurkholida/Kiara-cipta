@@ -44,6 +44,10 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 		Route::get('/customer/get-customer', 'FrontPage\DashboardCustomerController@_json_customer');
 	});
 
+	Route::group(['prefix' => 'event'], function() {
+		Route::get('/', 'FrontPage\EventController@index')->name('dermaster.event');
+	});
+
 	Route::group(['prefix' => 'jurnal'], function(){
 		Route::get('/', 'FrontPage\JurnalController@index')->name('dermaster.jurnal');
 		Route::get('/blog', 'FrontPage\JurnalController@blog')->name('dermaster.jurnal.blog');

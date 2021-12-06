@@ -72,29 +72,29 @@
 
 			<div class="col-lg-12">
 				<div class="box-bestseller">
-					@foreach(Helper::produkListBestSeller() as $row)
+					@foreach(Helper::produkListChangePoin() as $row)
 					<div class="item-bestseller">
-						<div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$row->produk->image}}); padding: 8px;" alt="{{ $row->produk->getProdukLanguage->judul }}" class="lazyload">
+						<div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk/500') }}/{{$row->image}}); padding: 8px;" alt="{{ $row->getProdukLanguage->judul }}" class="lazyload">
 							<p id="badge-product" style="
 							border-radius: 4px; 
 							background-color: #67b6ab; 
 							color: white;
 							padding: 8px;
 							width: fit-content;">
-							{{ $row->produk->getCategory->category }}
+							{{ number_format($row->poin) }}
 						</p>
 					</div>
 					
 					<div class="btn-bestseller" style="border-radius: 8px;">
-						<a href="{{ route('dermaster.products.show', $row->produk->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->produk->getProdukLanguage->judul}}
+						<a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->getProdukLanguage->judul}}
 						</a>
 					</div>
 
 					<div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
 						<div class="container-overlay">
 							<div>
-								<?php //$icon = Helper::iconProdukBestSeller($row->produk->id); ?>
-								@foreach($row->produk->getSpec as $val)
+								<?php //$icon = Helper::iconProdukBestSeller($row->id); ?>
+								@foreach($row->getSpec as $val)
 								<img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%; margin-right: 15px;" class="lazyload">
 								<span>{{ $val->specification }}</span>
 								<br><br>
@@ -102,7 +102,7 @@
 							</div>
 						</div>
 						<div class="btn-bestseller-overlay" style="border-radius: 8px;">
-							<a href="{{ route('dermaster.products.show', $row->produk->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->produk->getProdukLanguage->judul}}
+							<a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->getProdukLanguage->judul}}
 							</a>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 	});
 
 	function getDataCustomer() {
-		let no_telp = Cookies.get('username')
+		let no_telp = '{{ Session::get("customer_no_telp") }}'
 
 		$.ajax({
 			url: '{{ url("customer-profile") }}/'+no_telp,
@@ -156,7 +156,7 @@
 	}
 
 	function getPointCustomer() {
-		let id = Cookies.get('username')
+		let id = '{{ Session::get("customer_no_telp") }}'
 
 		$.ajax({
 			url: '{{ url("customer/get-customer") }}',

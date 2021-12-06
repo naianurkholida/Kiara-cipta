@@ -16,7 +16,7 @@
 	<form action="{{Route('produk.store')}}" method="POST" enctype="multipart/form-data" id="form_menu">
 			{{csrf_field()}}
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<label>Kategori Produk</label>
 					<select class="form-control" name="kategori_produk">
 						<option value="" selected="" disabled="">- Kategori -</option>
@@ -33,6 +33,11 @@
 				<div class="col-lg-3">
 					<label>Harga</label>
 					<input type="number" name="harga" class="form-control" id="harga" required="">
+				</div>
+
+				<div class="col-lg-3">
+					<label>Poin</label>
+					<input type="number" name="poin" class="form-control" id="poin" required="" value="0">
 				</div>
 
 				<div class="col-lg-12">

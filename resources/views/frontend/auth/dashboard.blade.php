@@ -144,7 +144,7 @@
 	});
 
 	function getDataCustomer() {
-		let no_telp = Cookies.get('username')
+		let no_telp = '{{ Session::get("customer_no_telp") }}'
 
 		$.ajax({
 			url: '{{ url("customer-profile") }}/'+no_telp,
