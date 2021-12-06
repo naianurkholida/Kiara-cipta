@@ -113,8 +113,7 @@
 			}else{
 
 				$.ajax({
-					// url: '{{ url("sign/next") }}?username='+username+'&password='+password,
-					url : '{{ Route("loginfront.login_post") }}?username='+username+'&password='+password,
+					url: "{{ env('APP_URL') }}"+'sign?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})
