@@ -36,11 +36,13 @@ class LoginController extends Controller
         $res2 = $customer->getBody();
         $dataCustomer = json_decode($res2);
 
-        session::put('customer_id', $dataCustomer[0]->CUSTOMER_ID);
-        session::put('customer_name',$dataCustomer[0]->CUSTOMER_NAME);
-        session::put('customer_email',$dataCustomer[0]->EMAIL);
-        session::put('customer_address', $dataCustomer[0]->ADDRESS);
-        session::put('customer_no_telp', $dataCustomer[0]->TELEPHON);
+        if(count($dataCustomer) > 0){
+            session::put('customer_id', $dataCustomer[0]->CUSTOMER_ID);
+            session::put('customer_name',$dataCustomer[0]->CUSTOMER_NAME);
+            session::put('customer_email',$dataCustomer[0]->EMAIL);
+            session::put('customer_address', $dataCustomer[0]->ADDRESS);
+            session::put('customer_no_telp', $dataCustomer[0]->TELEPHON);
+        }
 
     	return response()->json([
     		'status' => $response->getStatusCode(),
