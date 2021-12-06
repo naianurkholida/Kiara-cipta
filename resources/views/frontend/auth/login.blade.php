@@ -55,11 +55,13 @@
 
 					<!--begin::Form-->
 					<form action="{{ url('sign/next') }}" method="POST">
+
 						@if(Session::get('alert'))
 						<div class="alert alert-danger alert-block">
 							{{Session::get('alert')}}
 						</div>
 						@endif
+
 						{{csrf_field()}}
 						<label>Username</label>
 						<div class="input-group">
@@ -113,7 +115,7 @@
 			}else{
 
 				$.ajax({
-					url: "{{ env('APP_URL') }}/"+'sign?username='+username+'&password='+password,
+					url: "{{ env('APP_URL') }}/"+'sign/next?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})
