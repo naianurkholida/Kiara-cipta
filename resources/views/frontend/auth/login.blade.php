@@ -113,7 +113,7 @@
 			}else{
 
 				$.ajax({
-					url: "{{ env('APP_URL') }}"+'sign?username='+username+'&password='+password,
+					url: "{{ env('APP_URL') }}/"+'sign?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})
