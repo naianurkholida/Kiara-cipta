@@ -170,7 +170,7 @@
 			</div>
 			<h1>oops!</h1>
 			<h2>Error 404 : Page Not Found</h2>
-			<a href="{{ url('sign') }}">go back</a>
+			<a href="{{ url('/') }}">go back</a>
 		</div>
 	</div>
 
