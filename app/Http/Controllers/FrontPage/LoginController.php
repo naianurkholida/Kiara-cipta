@@ -86,13 +86,11 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        session_start();
-        
-        unset($_SESSION['customer_id']);
-        unset($_SESSION['customer_name']);
-        unset($_SESSION['customer_email']);
-        unset($_SESSION['customer_address']);
-        unset($_SESSION['customer_no_telp']);
+        session::forget('customer_id');
+        session::forget('customer_name');
+        session::forget('customer_email');
+        session::forget('customer_address');
+        session::forget('customer_no_telp');
 
         return redirect('/');
     }
