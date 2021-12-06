@@ -321,7 +321,7 @@
                                 @endif
                             @endforeach 
 
-                            @if(isset($_COOKIE['username']) == null)
+                            @if(isset($_COOKIE['username']) != null)
                             <li class="sub-menu active">
                             	<a href="#" class="sf-with-ul"><i class="icon-user-circle"></i><i class="icon-angle-down1"></i></a>
                             	<ul>
@@ -347,7 +347,7 @@
                             	</ul>
                             </li>
                             @endif
-                            
+
                         </ul> 
                         </nav>
 
