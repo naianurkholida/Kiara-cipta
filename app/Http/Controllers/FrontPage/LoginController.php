@@ -87,7 +87,7 @@ class LoginController extends Controller
     {
         unset($_COOKIE['username']);
 
-        return redirect('/');
+        return redirect('/sign');
     }
 
     public function customer()
