@@ -116,7 +116,7 @@
 			}else{
 
 				$.ajax({
-					url: "{{ env('APP_URL') }}/"+'sign/forgot/next?username='+username+'&password='+password+'&new_password='+new_password,
+					url: 'https://derma.baradeveloper.com/sign/forgot/next?username='+username+'&password='+password+'&new_password='+new_password,
 					type: 'POST',
 					dataType: 'json',
 				})
