@@ -113,12 +113,13 @@
 			}else{
 
 				$.ajax({
-					url: '{{ url("sign/next") }}?username='+username+'&password='+password,
+					// url: '{{ url("sign/next") }}?username='+username+'&password='+password,
+					url : '{{ Route("loginfront.login_post") }}?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})
 				.done(function(res) {
-					console.log(res)
+
 					if(res.message[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 

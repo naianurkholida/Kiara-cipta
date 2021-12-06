@@ -11,14 +11,10 @@ use App\Entities\Admin\core\ProdukImage;
 use App\Entities\Admin\core\ProdukLanguage;
 use App\Entities\Admin\core\Parameter;
 use App\Entities\Admin\core\Language;
+use App\Entities\FrontPage\LogClick;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct(Request $request)
     {
         $language = Language::first()->id;
@@ -45,41 +41,16 @@ class ProductsController extends Controller
         return view('frontend.products', compact('data', 'category'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
+
         $dataLanguage = ProdukLanguage::where('seo', $id)->where('deleted_at',null)->first();
 
         $data = Produk::where('deleted_at',null)->findOrFail($dataLanguage->id_produk);
 
         $detailGambar = ProdukImage::where('id_produk', $dataLanguage->id_produk)->orderBy('id', 'desc')->limit(5)->get();
 
+        $this->logClick($dataLanguage->id_produk);
         return view('frontend.products-detail', compact('data', 'detailGambar'));
     }
 
@@ -99,37 +70,20 @@ class ProductsController extends Controller
         return view('frontend.products', compact('data','category'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function logClick($product_id)
     {
-        //
-    }
+        $no_telp = $_COOKIE['username'];
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $data = LogClick::where('no_telp', $no_telp)->where('tanggal', date('Y-m-d'))->first();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if($data == null){
+            $data = new LogClick;
+            $data->id_product = $product_id;
+            $data->no_telp = $no_telp;
+            $data->tanggal = date('Y-m-d');
+            $data->save(); 
+        }
+
+        return $data;
     }
 }
