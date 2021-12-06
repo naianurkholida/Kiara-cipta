@@ -11,6 +11,7 @@
 |
 */
 Route::get('/phpinfo', 'Admin\core\TreatmentController@phpinfo');
+Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email');
 
 #new front page route
 

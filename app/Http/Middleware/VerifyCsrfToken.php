@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         'finish',
         'notification/handler',
         'sign/next',
-        'sign/forgot/next'
+        'sign/forgot/next',
+        'blast_email'
     ];
 }

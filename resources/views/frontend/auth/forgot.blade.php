@@ -121,7 +121,6 @@
 					dataType: 'json',
 				})
 				.done(function(res) {
-					console.log(res)
 					if(res.message[0].Status == '200'){
 						$.notify("Change password is successfully.", "success");
 

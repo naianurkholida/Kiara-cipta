@@ -116,6 +116,7 @@
 
 				$.ajax({
 					url: 'https://derma.baradeveloper.com/sign/next?username='+username+'&password='+password,
+					//url : 'http://localhost:8000/sign/next?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})

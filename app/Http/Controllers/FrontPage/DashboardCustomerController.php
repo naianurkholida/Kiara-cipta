@@ -46,4 +46,19 @@ class DashboardCustomerController extends Controller
             'customer' => $data[0]
         ]);
     }
+
+    public function _blast_email()
+    {
+        $client = new Client();
+
+        $response = $client->request('POST', 'http://103.11.135.246:1506/blast?recipient_id=&recipient_name=Agus Setiawan&recipient_email=luciversetiawan110@gmail.com&nama_product=test&url=http:://image.com');
+
+        $res = $response->getBody();
+        $data = json_decode($res);
+
+        return response()->json([
+            'status' => $response->getStatusCode(),
+            'customer' => $data[0]
+        ]);
+    }
 }
