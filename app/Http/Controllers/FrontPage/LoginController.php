@@ -85,6 +85,8 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        session_start();
+        
         unset($_COOKIE['username']);
         unset($_SESSION['customer_id']);
         unset($_SESSION['customer_name']);
