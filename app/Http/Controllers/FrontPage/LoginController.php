@@ -34,20 +34,24 @@ class LoginController extends Controller
         ]]);
 
         $res2 = $customer->getBody();
-        $dataCustomer = json_decode($res2);
+        $response_users = json_decode($res2);
 
-        if($dataCustomer != null){
-            session::put('customer_id', $dataCustomer[0]->CUSTOMER_ID);
-            session::put('customer_name',$dataCustomer[0]->CUSTOMER_NAME);
-            session::put('customer_email',$dataCustomer[0]->EMAIL);
-            session::put('customer_address', $dataCustomer[0]->ADDRESS);
-            session::put('customer_no_telp', $dataCustomer[0]->TELEPHON);
+        if($response_users != null){
+            $dataCustomer = $response_users[0];
+
+            session::put('customer_id', $dataCustomer->CUSTOMER_ID);
+            session::put('customer_name',$dataCustomer->CUSTOMER_NAME);
+            session::put('customer_email',$dataCustomer->EMAIL);
+            session::put('customer_address', $dataCustomer->ADDRESS);
+            session::put('customer_no_telp', $dataCustomer->TELEPHON);
+        }else{
+            $dataCustomer = [];
         }
 
     	return response()->json([
     		'status' => $response->getStatusCode(),
     		'message' => $notif,
-            'customer' => $dataCustomer[0]
+            'customer' => $dataCustomer
     	]);
     }
 
