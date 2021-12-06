@@ -196,6 +196,7 @@
                                     <img src="{{asset('assets/images/LogoDermaExpress-1@4x.png')}}" alt="DermaexpressLogo" style="height: 45px; margin-top: 12px;">
                                 </a>
                             </div>
+
                             @foreach(Helper::MenuFrontPage() as $key => $row)
                                 @if($key > 3)
                                     @if($row->url != "treatments" && $row->url != "products" && $row->url != 'jurnal')
@@ -229,7 +230,7 @@
                                             <div>{{$row->getMenuFrontPageLanguage->judul_menu}}</div>
                                         </a>
                                        
-                                    </li>
+                                    </li>   
                                     <div class="menu-drop-new">
                                         <div class="scroller-detail">
                                             <?php foreach(Helper::treatment() as $key => $row){ ?>
@@ -319,11 +320,35 @@
                                     @endif
                                 @endif
                             @endforeach 
-                        </ul> 
 
+                            <li class="sub-menu active">
+                            	<a href="#" class="sf-with-ul"><i class="icon-user-circle"></i><i class="icon-angle-down1"></i></a>
+                            	<ul>
+                                    @if(isset($_COOKIE['username']) != null)
+                            		<li class="menu-header" style="width: auto;">
+                            			<a href="{{ url('dashboard-customer') }}">
+                            				Dashboard
+                            			</a>
+                            		</li>
+                                    @endif
+
+                            		<li class="menu-header" style="width: auto;">
+	                            		@if(isset($_COOKIE['username']) == null)
+	                            			<a href="{{ url('sign') }}">
+	                            				Sign In
+	                            			</a>
+	                            		@else
+	                            			<a href="{{ url('sign/logout') }}">
+	                            				Logout
+	                            			</a>
+	                            		@endif
+                            		</li>
+                            	</ul>
+                            </li>
+                        </ul> 
                         </nav>
-                        <!-- #primary-menu end -->
-                        
+
+                        <!-- #primary-menu end --> 
                     </div>
                 </div>
             </div>

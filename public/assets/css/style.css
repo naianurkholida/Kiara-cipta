@@ -94,11 +94,83 @@
 /* ----------------------------------------------------------------
 	Bootstrap Adjustments
 -----------------------------------------------------------------*/
+.flex-2 {
+    display: flex; 
+    width: 100%;
+}
 
+.flex-benefits-items {
+    width: 20%;
+}
+
+.img-benefits-items {
+    width: 180px;
+    margin-left: 20px;
+}
+
+.flex-membership-items {
+    width: 25%;
+}
+
+.img-memebership-items {
+    width: 180px;
+    margin-left: 20px;
+}
+
+.flex-poin {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.flex-poin-items {
+    width: 33.3%;
+}
+
+.img-poin-items {
+    width: 180px;
+    margin-left: 46px;
+}
+
+@media (max-width: 600px) {
+    .flex-2 {
+        display: flex; 
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .flex-benefits-items {
+        width: 100%;
+    }
+
+    .img-benefits-items {
+        width: 180px;
+        margin-left: 50px;
+    }
+
+    .flex-membership-items {
+        width: 25%;
+    }
+
+    .flex-poin {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .flex-poin-items {
+        width: 100%;
+    }
+
+    .img-poin-items {
+        width: 180px;
+        margin-left: 46px;
+    }
+}
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
-    }
+    }    
 }
 
 @media (max-width: 576px) {
@@ -3258,93 +3330,93 @@ body:not(.device-touch) #page-menu nav li a {
     }
     /* Side Header - Push Header
 -----------------------------------------------------------------*/
-    .side-header.open-header.push-wrapper {
-        overflow-x: hidden;
-    }
-    .side-header.open-header #header {
-        left: -260px;
-    }
-    .side-header.open-header.side-header-open #header {
-        left: 0;
-    }
-    .side-header.open-header #wrapper {
-        left: 0;
-    }
-    .side-header.open-header.push-wrapper.side-header-open #wrapper {
-        left: 260px;
-    }
-    #header-trigger {
-        display: none;
-    }
-    .side-header.open-header #header-trigger {
-        display: block;
-        position: fixed;
-        cursor: pointer;
-        top: 20px;
-        left: 20px;
-        z-index: 11;
-        font-size: 16px;
-        width: 32px;
-        height: 32px;
-        line-height: 32px;
-        background-color: #FFF;
-        text-align: center;
-        border-radius: 2px;
-    }
-    .side-header.open-header.side-header-open #header-trigger {
-        left: 280px;
-    }
-    .side-header.open-header #header-trigger i:nth-child(1),
-    .side-header.open-header.side-header-open #header-trigger i:nth-child(2) {
-        display: block;
-    }
-    .side-header.open-header.side-header-open #header-trigger i:nth-child(1),
-    .side-header.open-header #header-trigger i:nth-child(2) {
-        display: none;
-    }
-    .side-header.open-header #header,
-    .side-header.open-header #header-trigger,
-    .side-header.open-header.push-wrapper #wrapper {
-        -webkit-transition: left .4s ease;
-        -o-transition: left .4s ease;
-        transition: left .4s ease;
-    }
+.side-header.open-header.push-wrapper {
+    overflow-x: hidden;
+}
+.side-header.open-header #header {
+    left: -260px;
+}
+.side-header.open-header.side-header-open #header {
+    left: 0;
+}
+.side-header.open-header #wrapper {
+    left: 0;
+}
+.side-header.open-header.push-wrapper.side-header-open #wrapper {
+    left: 260px;
+}
+#header-trigger {
+    display: none;
+}
+.side-header.open-header #header-trigger {
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    top: 20px;
+    left: 20px;
+    z-index: 11;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #FFF;
+    text-align: center;
+    border-radius: 2px;
+}
+.side-header.open-header.side-header-open #header-trigger {
+    left: 280px;
+}
+.side-header.open-header #header-trigger i:nth-child(1),
+.side-header.open-header.side-header-open #header-trigger i:nth-child(2) {
+    display: block;
+}
+.side-header.open-header.side-header-open #header-trigger i:nth-child(1),
+.side-header.open-header #header-trigger i:nth-child(2) {
+    display: none;
+}
+.side-header.open-header #header,
+.side-header.open-header #header-trigger,
+.side-header.open-header.push-wrapper #wrapper {
+    -webkit-transition: left .4s ease;
+    -o-transition: left .4s ease;
+    transition: left .4s ease;
+}
     /* Side Header - Right Aligned
 -----------------------------------------------------------------*/
-    .side-header.side-header-right #header {
-        left: auto;
-        right: 0;
-        border: none;
-        border-left: 1px solid #EEE;
-    }
-    .side-header.side-header-right:not(.open-header) #wrapper {
-        margin: 0 260px 0 0 !important;
-    }
-    .side-header.side-header-right.open-header #header {
-        left: auto;
-        right: -260px;
-    }
-    .side-header.side-header-right.open-header.side-header-open #header {
-        left: auto;
-        right: 0;
-    }
-    .side-header.side-header-right.open-header.push-wrapper.side-header-open #wrapper {
-        left: -260px;
-    }
-    .side-header.side-header-right.open-header #header-trigger {
-        left: auto;
-        right: 20px;
-    }
-    .side-header.side-header-right.open-header.side-header-open #header-trigger {
-        left: auto;
-        right: 280px;
-    }
-    .side-header.side-header-right.open-header #header,
-    .side-header.side-header-right.open-header #header-trigger {
-        -webkit-transition: right .4s ease;
-        -o-transition: right .4s ease;
-        transition: right .4s ease;
-    }
+.side-header.side-header-right #header {
+    left: auto;
+    right: 0;
+    border: none;
+    border-left: 1px solid #EEE;
+}
+.side-header.side-header-right:not(.open-header) #wrapper {
+    margin: 0 260px 0 0 !important;
+}
+.side-header.side-header-right.open-header #header {
+    left: auto;
+    right: -260px;
+}
+.side-header.side-header-right.open-header.side-header-open #header {
+    left: auto;
+    right: 0;
+}
+.side-header.side-header-right.open-header.push-wrapper.side-header-open #wrapper {
+    left: -260px;
+}
+.side-header.side-header-right.open-header #header-trigger {
+    left: auto;
+    right: 20px;
+}
+.side-header.side-header-right.open-header.side-header-open #header-trigger {
+    left: auto;
+    right: 280px;
+}
+.side-header.side-header-right.open-header #header,
+.side-header.side-header-right.open-header #header-trigger {
+    -webkit-transition: right .4s ease;
+    -o-transition: right .4s ease;
+    transition: right .4s ease;
+}
 }
 
 
@@ -14428,7 +14500,7 @@ body:not(.device-touch) #gotoTop {
  iOS requires the button element instead of an anchor tag.
  If you want the anchor version, it requires `href="#"`.*/
 
-button.toast-close-button {
+ button.toast-close-button {
     padding: 0;
     cursor: pointer;
     background: transparent;
@@ -17101,24 +17173,24 @@ body:not(.no-transition) #wrapper,
 @media only screen and (max-width: 425px) {
     .logo-desktop {
       display: none !important;
-    }
-    .menu-drop-new{
-        display: none !important;
-    }
-    #primary-menu{
-        width: 100%;
-        margin-top: 100px;
-    }
-    .menu-header{
-        width: 100% !important;
-    }
-    .mobile-logo{
-        display: inline;
-        position: absolute;
-        top: 20px;
-        left: 100px;
-    }
-    
+  }
+  .menu-drop-new{
+    display: none !important;
+}
+#primary-menu{
+    width: 100%;
+    margin-top: 100px;
+}
+.menu-header{
+    width: 100% !important;
+}
+.mobile-logo{
+    display: inline;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+
 }
 
 .container-flex{
@@ -17179,29 +17251,29 @@ body:not(.no-transition) #wrapper,
 }
 
 @media (max-width: 768px) {
-   .card-checkpoint{
-       width: 50% !important;
-   }
-    
+ .card-checkpoint{
+     width: 50% !important;
+ }
+
 }
 
 @media (max-width: 500px) {
     .card-checkpoint{
         width: 100% !important;
     }
-     
- }
+
+}
 
 
- @media (min-width: 768px) {
+@media (min-width: 768px) {
     .spost{
         height: 100px;
         display: flex;
         justify-content: center;
         flex-direction: column;
-     }
-     
- }
+    }
+
+}
 
 
 .img-header-jurnal{
@@ -17267,11 +17339,11 @@ body:not(.no-transition) #wrapper,
 }
 
 
- @media (max-width: 600px) {
-   .container-detail-jurnal{
-          margin: 0px !important;
-     }
-     .container-related {
+@media (max-width: 600px) {
+ .container-detail-jurnal{
+  margin: 0px !important;
+}
+.container-related {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -17285,7 +17357,7 @@ body:not(.no-transition) #wrapper,
 .box-jurnal{
     margin: 0px !important;
     margin-bottom: 20px;
-   }}
+}}
 
 /* front login */
 
