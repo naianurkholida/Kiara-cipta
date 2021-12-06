@@ -36,7 +36,7 @@ class LoginController extends Controller
         $res2 = $customer->getBody();
         $dataCustomer = json_decode($res2);
 
-        if(count($dataCustomer) > 0){
+        if($dataCustomer != null){
             session::put('customer_id', $dataCustomer[0]->CUSTOMER_ID);
             session::put('customer_name',$dataCustomer[0]->CUSTOMER_NAME);
             session::put('customer_email',$dataCustomer[0]->EMAIL);
