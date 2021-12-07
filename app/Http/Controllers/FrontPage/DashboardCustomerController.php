@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontPage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use GuzzleHttp\Client;
 use App\Entities\Admin\core\Pages;
 
@@ -22,7 +23,13 @@ class DashboardCustomerController extends Controller
 
     public function history(Request $request)
     {
-        return view('frontend.customer.check_point');
+        $client = new Client();
+        $customer_id = session::get('customer_id');
+        $data = json_decode($client->request('GET', 'http://103.11.135.246:1506/CustPoint/?id='.$customer_id)->getBody());
+
+        // return response()->json($data);
+
+        return view('frontend.customer.check_point', compact('data'));
     }
 
     public function changePoint(Request $request)
