@@ -10,6 +10,8 @@
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Dashboard Customer" />
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
 <title>Customer Profile</title>
 <style type="text/css">
 	.dataTables_filter {
@@ -46,6 +48,7 @@
 		<table class="table table-bordered table-striped" id="datatablesHistory">
 			<thead>
 				<tr class="text-center">
+					<th>No</th>
 					<th>Date</th>
 					<th>Trx No</th>
 					<th>Amount</th>
@@ -53,8 +56,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($data as $item): ?>
+				<?php $no =1; foreach($data as $item): ?>
 					<tr>
+						<td>{{ $no++ }}
 						<td>{{ $item[0] }}</td>
 						<td>{{ $item[1] }}</td>
 						<td>{{ $item[2] }}</td>
@@ -85,10 +89,11 @@
 	}
 
 	$(document).ready(function() {
+		$('#datatablesHistory').dataTable();
+
 		getDataCustomer()
 		getPointCustomer()
-		
-		$('#datatablesHistory').dataTable();
+
 	});
 
 	function export_pdf() {
