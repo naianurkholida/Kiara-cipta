@@ -93,7 +93,6 @@
 					<div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
 						<div class="container-overlay">
 							<div>
-								<?php //$icon = Helper::iconProdukBestSeller($row->id); ?>
 								@foreach($row->getSpec as $val)
 								<img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%; margin-right: 15px;" class="lazyload">
 								<span>{{ $val->specification }}</span>

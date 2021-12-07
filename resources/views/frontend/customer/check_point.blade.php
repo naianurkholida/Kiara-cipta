@@ -80,9 +80,22 @@
 		getDataCustomer()
 		getPointCustomer()
 
-		$('#datatablesHistory').DataTable( {
-			"ajax": '{{ url("customer-profile") }}/'+'{{ Session::get("customer_no_telp") }}'
-		} );
+		// $('#datatablesHistory').DataTable( {
+		// 	"ajax": '{{ url("customer-profile") }}/'+'{{ Session::get("customer_no_telp") }}'
+		// } );
+
+		$('#datatablesHistory').DataTable({
+			"bLengthChange":true,
+			"pageLength":10,
+			"ajax" : '{{ url("customer-profile") }}/'+'{{ Session::get("customer_no_telp") }}',
+			"columns": 
+			[
+			{ targets:[0],data: [0] },
+			{ targets:[1],data: [1] },
+			{ targets:[2],data: [2] },
+			{ targets:[3],data: [3] },
+			]
+		})
 	});
 
 	function export_pdf() {
