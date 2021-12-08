@@ -37,6 +37,7 @@
 
 	<link rel="canonical" href="https://derma-express.com/">
 	<meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
 </head>
 <body>
