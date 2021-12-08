@@ -48,7 +48,7 @@
 				<div class="kt-login__form">
 					<div class="kt-login__title">
 						<center>
-							<img src="{{ asset(Helper::logo()) }}" style="width: 200px;"><br>
+							<img src="{{ asset(Helper::logo_login()) }}" style="width: 200px;"><br>
 						</center>
 						<h3>Sign In</h3>
 					</div>			
@@ -65,11 +65,11 @@
 						{{csrf_field()}}
 						<label>Username</label>
 						<div class="input-group">
-							<input type="text" name="username" id="username" class="form-control input-logfront" placeholder="Username"  value="">
+							<input type="text" name="username" id="username" class="form-control input-logfront" placeholder="No Telepon"  value="">
 						</div>
 						<label>Password</label>
 						<div class="input-group">
-							<input type="password" name="password" id="password" class="form-control input-logfront" placeholder="Password"value="" maxlength="8" minlength="8">
+							<input type="password" name="password" id="password" class="form-control input-logfront" placeholder="DDMMYY"value="" maxlength="8" minlength="8">
 						</div>
 						<!--begin::Action-->
 						<div class="kt-login__actions">

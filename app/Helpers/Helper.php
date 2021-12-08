@@ -160,6 +160,13 @@ class Helper
 		return $data;
 	}
 
+	public static function logo_login()
+	{
+		$data = '/assets/images/LogoDermaExpress-1@4x.png';
+
+		return $data;
+	}
+
     public static function baseLabelPage()
     {
 		$url = request()->url();
