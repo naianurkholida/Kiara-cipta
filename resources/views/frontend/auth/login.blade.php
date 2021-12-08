@@ -71,7 +71,7 @@
 
 						<label>Password</label>
 						<div class="input-group">
-							<input type="password" name="password" id="password" class="form-control input-logfront" placeholder="DDMMYY"value="" maxlength="8" minlength="8">
+							<input type="password" name="password" id="password" class="form-control input-logfront" placeholder="DDMMYYYY"value="" maxlength="8" minlength="8">
 						</div>
 
 						<input type="checkbox" class="form-checkbox"> Show password<br />
