@@ -97,26 +97,8 @@
 	}
 
 	$(document).ready(function() {
-		getDataCustomer()
 		getPointCustomer()
 	});
-
-	function getDataCustomer() {
-		let no_telp = '{{ Session::get("customer_no_telp") }}'
-
-		$.ajax({
-			url: '{{ url("customer-profile") }}/'+no_telp,
-			type: 'GET',
-			dataType: 'json',
-		})
-		.done(function(res) {
-			$('#id_customer').html(res.message[0].CUSTOMER_ID)
-			$('#name_customer').html(res.message[0].CUSTOMER_NAME)
-			
-			$('#td_name').html(res.message[0].CUSTOMER_NAME)
-			$('#td_id').html(res.message[0].CUSTOMER_ID)
-		});
-	}
 
 	function getPointCustomer() {
 		let id = '{{ Session::get("customer_no_telp") }}'
@@ -128,6 +110,12 @@
 			data: { id: id },
 		})
 		.done(function(res) {
+			$('#id_customer').html(res.customer[0])
+			$('#name_customer').html(res.customer[1])
+			
+			$('#td_name').html(res.customer[1])
+			$('#td_id').html(res.customer[0])
+
 			$('#td_member').html(res.customer[3])
 			$('#td_point').html(res.customer[2])
 		});		
