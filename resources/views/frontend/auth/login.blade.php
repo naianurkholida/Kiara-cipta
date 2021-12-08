@@ -129,7 +129,7 @@
 				})
 				.done(function(res) {
 
-					if(res[0].Status == '200'){
+					if(res.message[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 
 						window.location.href = '/home';
