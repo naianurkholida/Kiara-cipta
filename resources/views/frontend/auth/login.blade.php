@@ -67,10 +67,14 @@
 						<div class="input-group">
 							<input type="text" name="username" id="username" class="form-control input-logfront" placeholder="No Telepon"  value="">
 						</div>
+
 						<label>Password</label>
 						<div class="input-group">
 							<input type="password" name="password" id="password" class="form-control input-logfront" placeholder="DDMMYY"value="" maxlength="8" minlength="8">
 						</div>
+
+						<input type="checkbox" class="form-checkbox"> Show password<br />
+
 						<!--begin::Action-->
 						<div class="kt-login__actions">
 							<button type="button" id="login" class="btn btn-primary btn-sm btn-elevate kt-login__btn-primary" style="width: 100%; height: 40px;">Sign In</button>
@@ -117,13 +121,14 @@
 			}else{
 
 				$.ajax({
-					url: '{{ url("sign/next?username=") }}'+username+'&password='+password,
+					// url: '{{ url("sign/next?username=") }}'+username+'&password='+password,
+					url: 'http://103.11.135.246:1506/login?username='+username+'&password='+password,
 					type: 'POST',
 					dataType: 'json',
 				})
 				.done(function(res) {
 
-					if(res.message[0].Status == '200'){
+					if(res[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 
 						window.location.href = '/home';
@@ -133,6 +138,16 @@
 
 				});
 
+			}
+		});
+	});
+
+	$(document).ready(function(){		
+		$('.form-checkbox').click(function(){
+			if($(this).is(':checked')){
+				$('#password').attr('type','text');
+			}else{
+				$('#password').attr('type','password');
 			}
 		});
 	});
