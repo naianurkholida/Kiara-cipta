@@ -228,7 +228,7 @@
         height: 150px !important; 
         width: 260px; 
         border-radius: 50px; 
-        margin-left: 0px;    
+        margin-left: 10%;    
     }
 }
 @media (min-width: 576px) {
