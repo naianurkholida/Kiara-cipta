@@ -136,6 +136,7 @@
     float: right;
     color: white;
     text-shadow: 2px 2px #000000;
+    font-size: 15px;
 } 
 
 .name-customer{
@@ -145,6 +146,7 @@
     color: white;
     text-shadow: 2px 2px #000000;
     margin: 0px;
+    font-size: 15px;
 }
 
 .id-customer{
@@ -154,14 +156,16 @@
     color: white;
     text-shadow: 2px 2px #000000;
     margin: 0px;
+    font-size: 15px;
 }
 
 .card-responsive {
-    height: 350px; 
-    width: 700px; 
+    height: 150px !important; 
+    width: 260px; 
     border-radius: 50px; 
-    margin-left: 20%;
+    margin-left: 10%;    
 }
+
 @media (max-width: 600px) {
     .flex-2 {
         display: flex; 
