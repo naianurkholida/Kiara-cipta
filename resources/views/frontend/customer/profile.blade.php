@@ -28,8 +28,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 
-				<div class="card text-center" style="height: 500px; width: auto;">
-					<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover;">
+				<div class="card text-center" style="height: 350px; width: 700px; border-radius: 50px; margin-left: 20%;">
+					<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover; border-radius: 10px;">
 						<h2 class="card-title card-name">Derma Express Card</h2>
 						<h3 class="card-text name-customer" id="name_customer">Nama Customer</h3>
 						<h3 class="card-text id-customer" id="id_customer">ID Customer</h3>
