@@ -17415,3 +17415,27 @@ body:not(.no-transition) #wrapper,
         width: 100%;
     }
 }
+
+.card-name{
+    float: right;
+    color: white;
+    text-shadow: 2px 2px #000000;
+} 
+
+.name-customer{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin: 0px;
+}
+
+.id-customer{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin: 0px;
+}

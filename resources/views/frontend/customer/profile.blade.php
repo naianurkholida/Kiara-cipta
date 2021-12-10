@@ -28,16 +28,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 
-				<div class="card text-center">
-					<div class="card-header">
-						<img src="https://derma-express.com/assets/images/LogoDermaExpress-1@4x.png" class="card-img-top" style="width: 100px;">
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Derma Express Card</h5>
-						<h3 class="card-text" id="name_customer">Nama Customer</h3>
-					</div>
-					<div class="card-footer text-muted">
-						<h4 id="id_customer">ID Customer</h4>
+				<div class="card text-center" style="height: 500px; width: auto;">
+					<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover;">
+						<h2 class="card-title card-name">Derma Express Card</h2>
+						<h3 class="card-text name-customer" id="name_customer">Nama Customer</h3>
+						<h3 class="card-text id-customer" id="id_customer">ID Customer</h3>
 					</div>
 				</div>
 

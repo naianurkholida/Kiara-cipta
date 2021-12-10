@@ -132,7 +132,7 @@
 					if(res.message[0].Status == '200'){
 						$.notify("Login is successfully.", "success");
 
-						window.location.href = '/home';
+						window.location.href = '/dashboard-customer';
 					}else{
 						$.notify("Invalid username or password.", "error");
 					}
