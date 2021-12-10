@@ -132,6 +132,36 @@
     margin-left: 46px;
 }
 
+.card-name{
+    float: right;
+    color: white;
+    text-shadow: 2px 2px #000000;
+} 
+
+.name-customer{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin: 0px;
+}
+
+.id-customer{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin: 0px;
+}
+
+.card-responsive {
+    height: 350px; 
+    width: 700px; 
+    border-radius: 50px; 
+    margin-left: 20%;
+}
 @media (max-width: 600px) {
     .flex-2 {
         display: flex; 
@@ -165,6 +195,40 @@
     .img-poin-items {
         width: 180px;
         margin-left: 46px;
+    }
+
+    .card-name{
+        float: right;
+        color: white;
+        text-shadow: 2px 2px #000000;
+        font-size: 15px;
+    } 
+
+    .name-customer{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        text-shadow: 2px 2px #000000;
+        margin: 0px;
+        font-size: 15px;
+    }
+
+    .id-customer{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: white;
+        text-shadow: 2px 2px #000000;
+        margin: 0px;
+        font-size: 15px;
+    }
+
+    .card-responsive {
+        height: 150px !important; 
+        width: auto; 
+        border-radius: 50px; 
+        margin-left: 0px;    
     }
 }
 @media (min-width: 576px) {
@@ -17414,28 +17478,4 @@ body:not(.no-transition) #wrapper,
     .login-box{
         width: 100%;
     }
-}
-
-.card-name{
-    float: right;
-    color: white;
-    text-shadow: 2px 2px #000000;
-} 
-
-.name-customer{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    text-shadow: 2px 2px #000000;
-    margin: 0px;
-}
-
-.id-customer{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    color: white;
-    text-shadow: 2px 2px #000000;
-    margin: 0px;
 }
