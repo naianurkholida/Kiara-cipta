@@ -45,28 +45,31 @@
 		<input type="hidden" id="id_customer">
 		<input type="hidden" id="no_telp">
 
-		<table class="table table-bordered table-striped" id="datatablesHistory">
-			<thead>
-				<tr class="text-center">
-					<th>No</th>
-					<th>Date</th>
-					<th>Trx No</th>
-					<th>Amount</th>
-					<th>Point</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php $no =1; foreach($data as $item): ?>
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped" id="datatablesHistory">
+				<thead>
+					<tr class="text-center">
+						<th>No</th>
+						<th>Date</th>
+						<th>Trx No</th>
+						<th>Amount</th>
+						<th>Point</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php $no =1; foreach($data as $item): ?>
 					<tr>
 						<td>{{ $no++ }}
-						<td>{{ $item[0] }}</td>
-						<td>{{ $item[1] }}</td>
-						<td>{{ $item[2] }}</td>
-						<td>{{ $item[3] }}</td>
+							<td>{{ $item[0] }}</td>
+							<td>{{ $item[1] }}</td>
+							<td>{{ $item[2] }}</td>
+							<td>{{ $item[3] }}</td>
+						</td>
 					</tr>
-				<?php endforeach;  ?>
-			</tbody>
-		</table>
+					<?php endforeach;  ?>
+				</tbody>
+			</table>
+		</div>
 
 		<hr>
 
