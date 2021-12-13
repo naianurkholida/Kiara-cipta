@@ -76,7 +76,7 @@ class ProductsController extends Controller
 
     public function logClick($product_id, $nama_product, $url)
     {
-        $no_telp = $_COOKIE['username'];
+        $no_telp = Session::get('username');
         $expire = date('Y-m-d', strtotime("+45 day"));
         $customer =  LogClick::where('no_telp', $no_telp)->orderBy('tanggal', 'desc')->first();
 
