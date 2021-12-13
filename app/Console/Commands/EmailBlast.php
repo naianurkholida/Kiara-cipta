@@ -51,7 +51,7 @@ class EmailBlast extends Command
                 'recipient_name' => $item->customer_name,
                 'recipient_email' => $item->customer_email,
                 'nama_product' => $item->nama_product,
-                'url' => env('APP_URL').'/assets/admin/assets/media/derma_produk/'.$item->url_product
+                'gambar_url' => env('APP_URL').'/assets/admin/assets/media/derma_produk/'.$item->url_product
 
             ]])->getBody();
             $data = json_decode($response);
@@ -61,6 +61,6 @@ class EmailBlast extends Command
             $update->save();
         }
 
-        \Log::info("Cron Blast Email Customer is success !". env('APP_URL').'/assets/admin/assets/media/derma_produk/'.$item->url_product);
+        \Log::info("Cron Blast Email Customer is success !");
     }
 }
