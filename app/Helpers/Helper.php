@@ -454,7 +454,7 @@ class Helper
 		$membership_1 = $data[0]->icon;
 		$membership_2 = $data[1]->icon;
 		$membership_3 = $data[2]->icon;
-		$membership_4 = $data[2]->icon;
+		$membership_4 = $data[3]->icon;
 
 		$obj = [
 			'membership_1' => $membership_1,
