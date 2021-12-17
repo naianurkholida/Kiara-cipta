@@ -38,27 +38,27 @@
 				<span>5 Keuntungan Ekslusif Member</span>
 				<div class="flex-2" style="display: flex;">
 					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/image/logo/bday_voucher.png') }}" class="img-benefits-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_1'] }}" class="img-benefits-items">
 						<p>Birthday Voucher senilai Rp 100.000, akan diterima pada bulan ulang tahun, berlaku dengan minimal pembelian Rp500.000</p>
 					</div>
 
 					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/image/logo/hadiah.png') }}" class="img-benefits-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_2'] }}" class="img-benefits-items">
 						<p>Reward spesial untuk anda yang sudah di Level Gold. Dapatkan merchandise Levi’s® yang dapat dibawa pulang secara gratis tanpa transaksi.</p>
 					</div>
 
 					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/image/logo/vip.png') }}" class="img-benefits-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_3'] }}" class="img-benefits-items">
 						<p>Mendapatkan penawaran khusus untuk member, seperti Extra Diskon 10%, Surprise Voucher, dll.</p>
 					</div>
 
 					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/image/logo/poin.png') }}" class="img-benefits-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_4'] }}" class="img-benefits-items">
 						<p>Poin anda dapat ditukar dengan voucher potongan harga.</p>
 					</div>
 
 					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/image/logo/promo.png') }}" class="img-benefits-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_5'] }}" class="img-benefits-items">
 						<p>Anda dapat diundang ke acara khusus yang diadakan oleh Levi’s®</p>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 
 					<div class="flex-membership-items">
 						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/image/logo/bronze.png') }}" class="img-memebership-items">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_1'] }}" class="img-memebership-items">
 							<div class="card-body">
 								<h5 class="card-title text-center">Turquoise</h5>
 								<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
@@ -85,7 +85,7 @@
 
 					<div class="flex-membership-items">
 						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/image/logo/silver.png') }}" class="img-memebership-items">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_2'] }}" class="img-memebership-items">
 							<div class="card-body">
 								<h5 class="card-title text-center">Silver</h5>
 								<p class="card-text">Pada level ini, transaksi anda berarti 30 juta sampai 60 juta </p>
@@ -95,7 +95,7 @@
 
 					<div class="flex-membership-items">
 						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/image/logo/gold.png') }}" class="img-memebership-items">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_3'] }}" class="img-memebership-items">
 							<div class="card-body">
 								<h5 class="card-title text-center">Gold</h5>
 								<p class="card-text">Pada level ini, transaksi anda berarti 60 juta sampai 100 juta</p>
@@ -105,7 +105,7 @@
 
 					<div class="flex-membership-items">
 						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/image/logo/crown.png') }}" class="img-memebership-items" style="margin-top: 20px;">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_4'] }}" class="img-memebership-items" style="margin-top: 20px;">
 							<div class="card-body">
 								<h5 class="card-title text-center" style="margin-top: 62px;">Solitaire</h5>
 								<p class="card-text">Pada level ini, transaksi anda berarti diatas 100 juta</p>

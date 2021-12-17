@@ -22,6 +22,7 @@ use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\BestSellerIcon;
 use App\Entities\Admin\core\OnlineStore;
 use App\Entities\Admin\core\ProfileCabang;
+use App\Entities\Admin\core\Settings;
 use DB;
 
 class Helper
@@ -423,5 +424,85 @@ class Helper
 							->get();
 
 		return $data;
+	}
+
+	public static function benefit()
+	{
+		$data = Settings::where('key', 'like', '%benefit%')->orderBy('key','asc')->get();
+
+		$benefit_1 = $data[0]->icon;
+		$benefit_2 = $data[1]->icon;
+		$benefit_3 = $data[2]->icon;
+		$benefit_4 = $data[3]->icon;
+		$benefit_5 = $data[4]->icon;
+
+		$obj = [
+			'benefit_1' => $benefit_1,
+			'benefit_2' => $benefit_2,
+			'benefit_3' => $benefit_3,
+			'benefit_4' => $benefit_4,
+			'benefit_5' => $benefit_5,
+		];
+
+		return $obj;
+	}
+
+	public static function membership()
+	{
+		$data = Settings::where('key', 'like', '%membership%')->orderBy('key','asc')->get();
+
+		$membership_1 = $data[0]->icon;
+		$membership_2 = $data[1]->icon;
+		$membership_3 = $data[2]->icon;
+		$membership_4 = $data[2]->icon;
+
+		$obj = [
+			'membership_1' => $membership_1,
+			'membership_2' => $membership_2,
+			'membership_3' => $membership_3,
+			'membership_4' => $membership_4,
+		];
+
+		return $obj;
+	}
+
+	public static function how_to_get()
+	{
+		$data = Settings::where('key', 'like', '%how_to_get%')->orderBy('key','asc')->get();
+
+		$how_to_get_1 = $data[0]->icon;
+		$how_to_get_2 = $data[1]->icon;
+		$how_to_get_3 = $data[2]->icon;
+
+		$obj = [
+			'how_to_get_1' => $how_to_get_1,
+			'how_to_get_2' => $how_to_get_2,
+			'how_to_get_3' => $how_to_get_3,
+		];
+
+		return $obj;
+	}
+
+	public static function icon_menu()
+	{
+		$data = Settings::where('key', 'like', '%icon%')->orderBy('key','asc')->get();
+
+		$icon_1 = $data[0]->icon;
+		$icon_2 = $data[1]->icon;
+		$icon_3 = $data[2]->icon;
+		$icon_4 = $data[3]->icon;
+		$icon_5 = $data[4]->icon;
+		$icon_6 = $data[4]->icon;
+
+		$obj = [
+			'icon_menu_1' => $icon_1,
+			'icon_menu_2' => $icon_2,
+			'icon_menu_3' => $icon_3,
+			'icon_menu_4' => $icon_4,
+			'icon_menu_5' => $icon_5,
+			'icon_menu_6' => $icon_6,
+		];
+
+		return $obj;
 	}
 }
