@@ -397,6 +397,9 @@ Route::group(['prefix' => 'language'], function(){
 	], function(){
 		Route::get('/settings', 'Admin\core\SetupController@settings')->name('setup.settings');
 		Route::post('/store_settings', 'Admin\core\SetupController@store_settings')->name('setup.store_settings');
+
+		Route::get('/dashboard_customer', 'Admin\core\SetupController@dashboard_customer')->name('setup.dashboard_customer');
+		Route::post('/store_dashboard', 'Admin\core\SetupController@store_dashboard')->name('setup.store_dashboard');
 	});
 
 	#slider
