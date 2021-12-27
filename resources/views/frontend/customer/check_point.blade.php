@@ -11,6 +11,7 @@
 <meta property="og:description" content="Dashboard Customer" />
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
 
 <title>Customer Profile</title>
 <style type="text/css">
@@ -45,31 +46,29 @@
 		<input type="hidden" id="id_customer">
 		<input type="hidden" id="no_telp">
 
-		<div class="table-responsive">
-			<table class="table table-bordered table-striped" id="datatablesHistory">
-				<thead>
-					<tr class="text-center">
-						<th>No</th>
-						<th>Date</th>
-						<th>Trx No</th>
-						<th>Amount</th>
-						<th>Point</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php $no =1; foreach($data as $item): ?>
-					<tr>
-						<td>{{ $no++ }}
-							<td>{{ $item[0] }}</td>
-							<td>{{ $item[1] }}</td>
-							<td>{{ $item[2] }}</td>
-							<td>{{ $item[3] }}</td>
-						</td>
-					</tr>
-					<?php endforeach;  ?>
-				</tbody>
-			</table>
-		</div>
+		<table class="table table-bordered table-striped dt-responsive nowrap" id="datatablesHistory" style="width:100%">
+			<thead>
+				<tr class="text-center">
+					<th>No</th>
+					<th>Date</th>
+					<th>Trx No</th>
+					<th>Amount</th>
+					<th>Point</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php $no =1; foreach($data as $item): ?>
+				<tr>
+					<td>{{ $no++ }}
+						<td>{{ $item[0] }}</td>
+						<td>{{ $item[1] }}</td>
+						<td>{{ $item[2] }}</td>
+						<td>{{ $item[3] }}</td>
+					</td>
+				</tr>
+				<?php endforeach;  ?>
+			</tbody>
+		</table>
 
 		<hr>
 
@@ -82,6 +81,8 @@
 @section('js')
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
 <script>
 
 	if (window.matchMedia('(max-width: 425px)'))

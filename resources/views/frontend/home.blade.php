@@ -68,6 +68,8 @@
 
 @include('frontend.component.layouts.slider_product')
 
+@include('frontend.component.layouts.achievement')
+
 <!-- <div class="pop-container">
     <div class="box-pop">
         <div class="close-pop">X</div>
