@@ -71,45 +71,37 @@
 			<div class="col-lg-12">
 				<h4 style="font-weight: 600">MEMBERSHIP LEVEL</h4>
 				<span>Jadilah Member dan Dapatkan Keuntungannya</span>
-				<div class="flex-2" style="display: flex; margin-top: 10px;">
+				<div class="flex-2">
 
 					<div class="flex-membership-items">
-						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_1'] }}" class="img-memebership-items">
-							<div class="card-body">
-								<h5 class="card-title text-center">Turquoise</h5>
-								<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
-							</div>
+						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_1'] }})" class="img-memebership-items"></div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Turquoise</h5>
+							<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
 						</div>
 					</div>
 
 					<div class="flex-membership-items">
-						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_2'] }}" class="img-memebership-items">
-							<div class="card-body">
-								<h5 class="card-title text-center">Silver</h5>
-								<p class="card-text">Pada level ini, transaksi anda berarti 30 juta sampai 60 juta </p>
-							</div>
+						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_2'] }})" class="img-memebership-items"></div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Silver</h5>
+							<p class="card-text">Pada level ini, transaksi anda berarti 30 juta sampai 60 juta </p>
 						</div>
 					</div>
 
 					<div class="flex-membership-items">
-						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_3'] }}" class="img-memebership-items">
-							<div class="card-body">
-								<h5 class="card-title text-center">Gold</h5>
-								<p class="card-text">Pada level ini, transaksi anda berarti 60 juta sampai 100 juta</p>
-							</div>
+						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_3'] }})" class="img-memebership-items"></div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Gold</h5>
+							<p class="card-text">Pada level ini, transaksi anda berarti 60 juta sampai 100 juta</p>
 						</div>
 					</div>
 
 					<div class="flex-membership-items">
-						<div class="card" style="width: 18rem; border: none;">
-							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_4'] }}" class="img-memebership-items" style="margin-top: 20px;">
-							<div class="card-body">
-								<h5 class="card-title text-center" style="margin-top: 62px;">Solitaire</h5>
-								<p class="card-text">Pada level ini, transaksi anda berarti diatas 100 juta</p>
-							</div>
+						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_4'] }})" class="img-memebership-items"></div>
+						<div class="card-body">
+							<h5 class="card-title text-center">Solitaire</h5>
+							<p class="card-text">Pada level ini, transaksi anda berarti diatas 100 juta</p>
 						</div>
 					</div>
 
