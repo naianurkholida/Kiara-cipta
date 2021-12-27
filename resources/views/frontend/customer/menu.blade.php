@@ -12,7 +12,7 @@
 	
 		<div class="item-menu grow">
 			<img style="margin-right: 10px;" src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::icon_menu()['icon_menu_3'] }}">
-			<a href="{{ url('/customer/history-transactions') }}">History Transactions</a>
+			<a href="{{ url('/customer/history-transactions') }}">Transactions</a>
 		</div>
 	
 		<div class="item-menu grow">
