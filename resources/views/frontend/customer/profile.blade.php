@@ -66,9 +66,9 @@
 			transform: translateX(0);
 		}
 	}
-	.progress-bar {
+	/*.progress-bar {
 		animation: 2s ease-out 10s 1 slideInFromLeft;
-	}
+	}*/
 </style>
 @endsection
 
