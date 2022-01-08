@@ -34,8 +34,13 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 style="font-weight: 600;">BENEFITS</h4>
-				<span>5 Keuntungan Ekslusif Member</span>
+				<div class="container clearfix">
+					<div class="heading-block center noborder" data-heading="O">
+						<h3 class="nott ls0">BENEFITS</h3>
+						<span>5 Keuntungan Ekslusif Member</span>
+					</div>
+				</div>
+
 				<div class="flex-2" style="display: flex;">
 					<div class="flex-benefits-items">
 						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_1'] }}" class="img-benefits-items">
@@ -69,8 +74,13 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 style="font-weight: 600">MEMBERSHIP LEVEL</h4>
-				<span>Jadilah Member dan Dapatkan Keuntungannya</span>
+				<div class="container clearfix">
+					<div class="heading-block center noborder" data-heading="O">
+						<h3 class="nott ls0">MEMBERSHIP LEVEL</h3>
+						<span>Jadilah Member dan Dapatkan Keuntungannya</span>
+					</div>
+				</div>
+
 				<div class="flex-2">
 
 					<div class="flex-membership-items">

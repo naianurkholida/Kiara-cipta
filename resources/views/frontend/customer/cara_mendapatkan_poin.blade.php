@@ -1,7 +1,13 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h4 style="font-weight: 600;">CARA MENDAPATKAN POIN</h4>
-		<span>Kumpulkan Poinmu dan Nikmati Keuntungannya</span>
+
+		<div class="container clearfix">
+			<div class="heading-block center noborder" data-heading="O">
+				<h3 class="nott ls0">HOW TO GET POIN</h3>
+				<span>Kumpulkan Poinmu dan Nikmati Keuntungannya</span>
+			</div>
+		</div>
+
 		<div class="flex-poin">
 
 			<div class="flex-poin-items">
