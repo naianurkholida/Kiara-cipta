@@ -79,6 +79,7 @@ class ProductsController extends Controller
         $no_telp = session::get('customer_no_telp');
         $expire = date('Y-m-d', strtotime("+45 day"));
 
+        $data = '';
         if($no_telp != null && $no_telp != ''){
             $customer =  LogClick::where('no_telp', $no_telp)->orderBy('tanggal', 'desc')->first();
 
