@@ -155,6 +155,12 @@
 					<div class="progress-bar bg-info" id="progress"></div>
 				</div>
 				<p id="text-progress"></p>
+
+				<div class="col-xs-12 col-sm-12 progress-container">
+					<div class="progress progress-striped active">
+						<div class="progress-bar progress-bar-success" style="width:0%"></div>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -186,14 +192,13 @@
 		getDataCustomer()
 	});
 
-	function execProg(num, id) {
+	function execProg(num) {
 
-		var progressBar = $(id);
-		for (var i = 0; i < num; i++) {
-			progressBar.css("width", i + "%");
-		}
-
-		console.log(num, id)
+		setTimeout(function() {
+			$(".progress-bar").animate({
+				width: num+'%'
+			}, 5000 );
+		}, 5000);
 
 	}
 
@@ -262,11 +267,9 @@
 			}
 
 			persen = ((amount / solitaire) * 100).toFixed(2);
-
-			// document.getElementById('progress').style.width = persen+'%';
 			$('#text-progress').html('Ayo tingkatin transaksi kamu sisa '+'Rp. '+sisa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
-			execProg(persen, "#progress");
+			execProg(persen);
 		});
 	}
 </script>
