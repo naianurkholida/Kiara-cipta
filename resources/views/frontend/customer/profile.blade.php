@@ -155,12 +155,6 @@
 					<div class="progress-bar bg-info" id="progress"></div>
 				</div>
 				<p id="text-progress"></p>
-
-				<div class="col-xs-12 col-sm-12 progress-container">
-					<div class="progress progress-striped active">
-						<div class="progress-bar progress-bar-success" style="width:0%"></div>
-					</div>
-				</div>
 			</div>
 
 		</div>
@@ -194,11 +188,9 @@
 
 	function execProg(num) {
 
-		setTimeout(function() {
-			$(".progress-bar").animate({
-				width: num+'%'
-			}, 5000 );
-		}, 5000);
+		$(".progress-bar").animate({
+			width: num+'%'
+		}, 5000 );
 
 	}
 
