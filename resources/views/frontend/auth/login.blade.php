@@ -42,7 +42,7 @@
 </head>
 <body>
 	<div class="container-login">
-		<div class="img-login" style="background-image: url('/assets/admin/assets/media/bg/login-frontend.jpg');"></div>
+		<div class="img-login" style="background-image: url('/assets/admin/assets/media/bg/img-piclogin.JPG');"></div>
 		<div class="login-box">
 			<div class="form-log">
 				<!--begin::Signin-->
