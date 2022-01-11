@@ -428,28 +428,28 @@ class Helper
 
 	public static function benefit()
 	{
-		$data = Settings::where('jenis', 1)->orderBy('key','asc')->get();
+		$data = Settings::where('jenis', 1)->orderBy('id','asc')->get();
 
 		return $data;
 	}
 
 	public static function membership()
 	{
-		$data = Settings::where('jenis', 2)->orderBy('key','asc')->get();
+		$data = Settings::where('jenis', 2)->orderBy('id','asc')->get();
 
 		return $data;
 	}
 
 	public static function how_to_get()
 	{
-		$data = Settings::where('jenis', 3)->orderBy('key','asc')->get();
+		$data = Settings::where('jenis', 3)->orderBy('id','asc')->get();
 
 		return $data;
 	}
 
 	public static function icon_menu()
 	{
-		$data = Settings::where('jenis', 4)->orderBy('key','asc')->get();
+		$data = Settings::where('jenis', 4)->orderBy('id','asc')->get();
 
 		return $data;
 	}
