@@ -89,7 +89,7 @@
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="basic-addon1"><i class="la la-user"></i></span>
 									</div>
-									<input type="text" class="form-control" placeholder="TELEPON" aria-label="Username" aria-describedby="basic-addon1" style="height: 45px;">
+									<input type="text" name="username" id="username" class="form-control" placeholder="TELEPON" aria-label="Username" aria-describedby="basic-addon1" style="height: 45px;">
 								</div>
 
 								<label>Password</label>
