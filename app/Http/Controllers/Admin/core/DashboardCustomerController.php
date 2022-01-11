@@ -64,7 +64,7 @@ class DashboardCustomerController extends Controller
 
     public function update(Request $request, $id)
     {
-        $settings = new Settings;
+        $settings = Settings::findOrFail($id);
         $settings->key = Str::slug($request->title);
         $settings->url = $request->url;
         $settings->name = $request->title;
