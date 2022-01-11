@@ -17510,7 +17510,7 @@ body:not(.no-transition) #wrapper,
 }
 
 .form-log{
-    width: 80%;
+    width: 45%;
 }
 
 .input-logfront{
@@ -17532,6 +17532,9 @@ body:not(.no-transition) #wrapper,
         flex-direction: column;
     }
 
+    .form-log{
+        width: 100%;
+    }
 
     .img-login{
         width: 100%;
