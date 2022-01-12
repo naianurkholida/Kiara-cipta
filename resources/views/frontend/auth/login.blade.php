@@ -110,7 +110,7 @@
 								</div>
 
 								<small style="color: red;">
-									Jika kamu member Derma Express, Gunakana nomer ponser dan tanggal lahir yang terdaftar di Derma Express Membership.
+									Jika kamu member Derma Express, Gunakan nomer ponsel dan tanggal lahir yang terdaftar di Derma Express Membership.
 								</small>
 
 								<!--begin::Action-->
