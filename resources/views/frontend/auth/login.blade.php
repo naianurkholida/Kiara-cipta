@@ -66,7 +66,7 @@
 
 					<div class="kt-login__title">
 						<center>
-							<img src="{{ asset(Helper::logo_login()) }}" style="width: 200px;"><br>
+							<img src="{{ asset(Helper::logo_login()) }}" style="width: 150px;"><br>
 						</center>
 					</div>			
 
@@ -109,7 +109,7 @@
 									</div>
 								</div>
 
-								<small style="color: red;">
+								<small style="color: red; line-height: 1px !important;">
 									Jika kamu member Derma Express, Gunakan nomer ponsel dan tanggal lahir yang terdaftar di Derma Express Membership.
 								</small>
 
@@ -130,7 +130,7 @@
 							</a>
 
 						</div>
-						<div style="margin-top: 20px;">
+						<div style="margin-top: 0px;">
 							<center>
 								<a href="{{route('loginfront.forgot')}}">Lupa Password ?</a>
 							</center>
