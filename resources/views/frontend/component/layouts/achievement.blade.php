@@ -1,7 +1,15 @@
-<div id="section-articles" class="section page-section nomargin clearfix" style="padding-top: 100px; background: #ffffff;">
+<div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
 	<div class="container clearfix">
-
-		<img src="{{ asset('assets/image/award.jpg') }}" style="max-width: 50%; display: block; margin-left: auto; margin-right: auto;">
-
+		<center>
+			<h2>
+				Award
+			</h2>
+		</center>
 	</div>
+</div>
+
+<div class="container clearfix">
+
+	<img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
+
 </div>

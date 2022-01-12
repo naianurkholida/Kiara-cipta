@@ -17527,6 +17527,14 @@ body:not(.no-transition) #wrapper,
     font-size: 15px;
 }
 
+.img-award {
+    max-width: 35%; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .container-login{
         flex-direction: column;
@@ -17543,5 +17551,13 @@ body:not(.no-transition) #wrapper,
 
     .login-box{
         width: 100%;
+    }
+
+    .img-award {
+        max-width: 50%; 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+        padding-bottom: 20px;
     }
 }
