@@ -17504,7 +17504,7 @@ body:not(.no-transition) #wrapper,
 
 .login-box{
     width: 55%;
-    padding: 50px;
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
