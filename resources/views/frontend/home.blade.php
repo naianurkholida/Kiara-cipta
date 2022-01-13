@@ -25,6 +25,15 @@
     margin-right: 15%;
 }
 
+.img-award {
+    max-width: 35%; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-bottom: 20px;
+}
+
+
 @media (max-width: 576px){
     .modal-show {
         padding: 0px !important;
@@ -52,6 +61,15 @@
     .text-set {
         font-size: 12px !important;
     }
+
+    .img-award {
+        max-width: 50%; 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+        padding-bottom: 20px;
+    }
+
 }
 </style>
 @endsection
@@ -67,6 +85,8 @@
 @include('frontend.component.layouts.bestseller')
 
 @include('frontend.component.layouts.slider_product')
+
+@include('frontend.component.layouts.achivement_backup')
 
 <!-- <div class="pop-container">
     <div class="box-pop">
