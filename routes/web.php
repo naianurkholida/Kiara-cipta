@@ -46,6 +46,7 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 
 	Route::group(['prefix' => 'event'], function() {
 		Route::get('/', 'FrontPage\EventController@index')->name('dermaster.event');
+		Route::get('/show/{seo}', 'FrontPage\EventController@show')->name('dermaster.event.show');
 	});
 
 	Route::group(['prefix' => 'jurnal'], function(){
