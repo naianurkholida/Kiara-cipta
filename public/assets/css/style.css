@@ -1,4 +1,5 @@
-//*-----------------------------------------------------------------------------------
+
+f//*-----------------------------------------------------------------------------------
 
 	Theme Name: Canvas
 	Theme URI: http://themes.semicolonweb.com/html/canvas
@@ -127,7 +128,7 @@
 }
 
 .flex-benefits-items {
-    width: 19%;
+    width: 23%;
     padding: 20px;
     align-items: center;
     display: flex;
@@ -159,7 +160,7 @@
 }
 
 .img-memebership-items {
-    width: 120px;
+    width: 100%;
     height: 120px;
     background-size: contain;
     background-repeat: no-repeat;
