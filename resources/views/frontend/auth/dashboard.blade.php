@@ -62,26 +62,31 @@
 			<div class="col-lg-12">
 				<div class="container clearfix">
 					<div class="heading-block center noborder" data-heading="O">
-						<h3 class="nott ls0">MEMBERSHIP LEVEL</h3>
+						<h3 class="nott ls0">MEMBERSHIP LEVEL</h3>Ù
 						<span>Jadilah Member dan Dapatkan Keuntungannya</span>
 					</div>
 				</div>
-
-				<div class="flex-2">
-
-					@foreach(Helper::membership() as $item)
-
-						<div class="flex-membership-items">
-							<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }})" class="img-memebership-items"></div>
-							<div class="card-body">
-								<h5 class="card-title text-center">{{ $item->name }}</h5>
-								<p class="card-text">{{ $item->description }}</p>
-							</div>
-						</div>
-					
+				
+					@foreach(Helper::membership() as $key => $item)
+							@if(($key%2 == 0))
+								<div class="benefit-item">
+									<img src="https://staging.derma-express.com/assets/admin/assets/media/img/turqoise_61e8edfd226d8.jpg" class="img-benefit">
+									<div class="card-body">
+										<h5 class="benefit-title">Turqoise</h5>
+										<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
+									</div>
+								</div>
+							@else
+								<div class="benefit-item benefit-rtl">
+									<img src="https://staging.derma-express.com/assets/admin/assets/media/img/turqoise_61e8edfd226d8.jpg" class="img-benefit">
+									<div class="card-body">
+										<h5 class="benefit-title">Turqoise</h5>
+										<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
+									</div>
+								</div>
+							@endif
 					@endforeach
 
-				</div>
 			</div>
 		</div>
 

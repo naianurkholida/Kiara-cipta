@@ -17535,7 +17535,27 @@ body:not(.no-transition) #wrapper,
     margin-right: auto; 
     padding-bottom: 20px;
 }
-
+.benefit-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.img-benefit{
+    width: 50%;
+    border-radius: 20px;
+}
+.benefit-title{
+    text-align: left !important;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.card-text{
+    color: #a7a7a7 !important;
+}
+.benefit-rtl{
+    flex-direction: row-reverse;
+}
 @media (max-width: 768px) {
     .container-login{
         flex-direction: column;
@@ -17560,5 +17580,11 @@ body:not(.no-transition) #wrapper,
         margin-left: auto; 
         margin-right: auto; 
         padding-bottom: 20px;
+    }
+    .benefit-item{
+        flex-direction: column;
+    }
+    .img-benefit{
+        width: 100%;
     }
 }
