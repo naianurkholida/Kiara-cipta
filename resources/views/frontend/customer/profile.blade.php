@@ -89,7 +89,7 @@
 
 				<center>
 					<div class="card card-responsive text-center" style="">
-						<div class="card-body" style="background-image: url('/assets/admin/assets/media/img/{{$settings->icon}}'); background-size: cover; border-radius: 10px;">
+						<div class="card-body" style="background-image: url('/assets/admin/assets/media/img/{{$settings->icon}}'); background-size: cover; border-radius: 20px;">
 							<h3 class="name-customer" id="name_customer">{{ $data[0][1] }}</h3>
 							<h3 class="id-customer" id="id_customer">{{ $data[0][0] }}</h3>
 						</div>
@@ -250,16 +250,22 @@
 			}else if(amount >= silver && amount <= gold){
 				sisa = (gold-amount)+' untuk menuju level Solitaire.';
 
+				document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
+				document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
 				document.getElementById('circle-point-gold').classList.remove("circle-nonactive");
 				document.getElementById('circle-point-text-gold').classList.remove("txt-point-nonactive");
 			}else{
 				sisa = (solitaire-amount)+', selamat and sudah mencapai level Solitaire.';
 
+				document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
+				document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
+				document.getElementById('circle-point-gold').classList.remove("circle-nonactive");
+				document.getElementById('circle-point-text-gold').classList.remove("txt-point-nonactive");
 				document.getElementById('circle-point-solitaire').classList.remove("circle-nonactive");
 				document.getElementById('circle-point-text-solitaire').classList.remove("txt-point-nonactive");
 			}
 
-			persen = ((amount / solitaire) * 100).toFixed(2);
+			persen = ((amount / solitaire) * (80)).toFixed(2);
 			$('#text-progress').html('Ayo tingkatin transaksi kamu sisa '+'Rp. '+sisa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
 			execProg(persen);
