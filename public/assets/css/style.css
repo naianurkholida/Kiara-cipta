@@ -1,5 +1,4 @@
-
-f//*-----------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------
 
 	Theme Name: Canvas
 	Theme URI: http://themes.semicolonweb.com/html/canvas
@@ -220,10 +219,10 @@ f//*----------------------------------------------------------------------------
 }
 
 .card-responsive {
-    height: 150px !important; 
-    width: 260px; 
+    height: 300px !important; 
+    width: 520px; 
     border-radius: 50px; 
-    margin-left: 40%;    
+    /*margin-left: 40%;    */
 }
 
 @media (max-width: 600px) {

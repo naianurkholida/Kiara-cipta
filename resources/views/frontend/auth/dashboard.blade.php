@@ -37,7 +37,7 @@
 				<div class="container clearfix">
 					<div class="heading-block center noborder" data-heading="O">
 						<h3 class="nott ls0">BENEFITS</h3>
-						<span>5 Keuntungan Ekslusif Member</span>
+						<span>4 Keuntungan Ekslusif Member</span>
 					</div>
 				</div>
 

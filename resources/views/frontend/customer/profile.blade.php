@@ -86,15 +86,15 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-
-				<div class="card card-responsive text-center" style="">
-					<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover; border-radius: 10px;">
-						<h2 class="card-title card-name">Derma Express Card</h2>
-						<h3 class="card-text name-customer" id="name_customer">Nama Customer</h3>
-						<h3 class="card-text id-customer" id="id_customer">ID Customer</h3>
+				<center>
+					<div class="card card-responsive text-center" style="">
+						<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover; border-radius: 10px;">
+							<h2 class="card-title card-name">Derma Express Card</h2>
+							<h3 class="card-text name-customer" id="name_customer">Nama Customer</h3>
+							<h3 class="card-text id-customer" id="id_customer">ID Customer</h3>
+						</div>
 					</div>
-				</div>
-
+				</center>
 			</div>
 		</div>
 
