@@ -208,7 +208,7 @@
 		$( "#container_dalem" ).removeClass("container");
 	} else {
 		$( "#container_dalem" ).addClass("container");
-	}
+	}~
 
 	$(document).ready(function() {
 		// $( ".progress-bar" ).addClass("animate-muncul");
