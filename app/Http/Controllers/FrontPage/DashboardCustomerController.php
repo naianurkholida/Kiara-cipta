@@ -7,18 +7,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use GuzzleHttp\Client;
 use App\Entities\Admin\core\Pages;
+use App\Entities\Admin\core\Settings;
 
 class DashboardCustomerController extends Controller
 {
     public function profile(Request $request)
     {
+        $client = new Client();
+
+        $id = \Session::get('customer_no_telp');
+
+        $response = $client->request('GET', 'http://103.11.135.246:1506/customer/?id='.$id);
+
+        $res = $response->getBody();
+        $data = json_decode($res);
+
+        $level_member = strtolower($data[0][3]);
+
+        $settings = Settings::where('key', $level_member)->first();
+        
         $info_member = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
                        ->join('category', 'category.id', '=', 'pages.id_category')
                        ->where('category.seo', 'info-member')
                        ->where('pages_language.id_language', 1)
                        ->first();
 
-        return view('frontend.customer.profile', compact('info_member'));
+        return view('frontend.customer.profile', compact('info_member', 'data', 'settings'));
     }
 
     public function history(Request $request)

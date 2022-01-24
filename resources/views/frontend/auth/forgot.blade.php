@@ -48,7 +48,7 @@
 				<div class="kt-login__form">
 					<div class="kt-login__title">
 						<center>
-							<img src="{{ asset(Helper::logo()) }}" style="width: 200px;"><br>
+							<img src="{{ asset(Helper::logo_login()) }}" style="width: 200px;"><br>
 						</center>
 						<h3>Reset Password</h3>
 					</div>			

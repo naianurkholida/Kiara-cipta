@@ -46,6 +46,7 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 
 	Route::group(['prefix' => 'event'], function() {
 		Route::get('/', 'FrontPage\EventController@index')->name('dermaster.event');
+		Route::get('/show/{seo}', 'FrontPage\EventController@show')->name('dermaster.event.show');
 	});
 
 	Route::group(['prefix' => 'jurnal'], function(){
@@ -390,6 +391,19 @@ Route::group(['prefix' => 'language'], function(){
 		Route::post('/comment/post', 'Admin\core\InboxAndCommentsController@post_comment')->name('comment.post');
 	});
 
+	#dashboard customer
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'dashboard_customer'
+	], function() {
+		Route::get('/', 'Admin\core\DashboardCustomerController@index')->name('dashboard_customer.index');
+		Route::get('/insert', 'Admin\core\DashboardCustomerController@insert')->name('dashboard_customer.insert');
+		Route::post('/store', 'Admin\core\DashboardCustomerController@store')->name('dashboard_customer.store');
+		Route::get('/edit/{id}', 'Admin\core\DashboardCustomerController@edit')->name('dashboard_customer.edit');
+		Route::post('/update/{id}', 'Admin\core\DashboardCustomerController@update')->name('dashboard_customer.update');
+		Route::get('/delete/{id}', 'Admin\core\DashboardCustomerController@delete')->name('dashboard_customer.delete');
+	});
+
 	#setup
 	Route::group([
 		'middleware' => 'middleware',
@@ -398,7 +412,7 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/settings', 'Admin\core\SetupController@settings')->name('setup.settings');
 		Route::post('/store_settings', 'Admin\core\SetupController@store_settings')->name('setup.store_settings');
 
-		Route::get('/dashboard_customer', 'Admin\core\SetupController@dashboard_customer')->name('setup.dashboard_customer');
+		// Route::get('/dashboard_customer', 'Admin\core\SetupController@dashboard_customer')->name('setup.dashboard_customer');
 		Route::post('/store_dashboard', 'Admin\core\SetupController@store_dashboard')->name('setup.store_dashboard');
 	});
 

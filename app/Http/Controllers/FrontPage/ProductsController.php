@@ -78,59 +78,62 @@ class ProductsController extends Controller
     {
         $no_telp = session::get('customer_no_telp');
         $expire = date('Y-m-d', strtotime("+45 day"));
-        $customer =  LogClick::where('no_telp', $no_telp)->orderBy('tanggal', 'desc')->first();
 
-        $data = LogClick::where('no_telp', $no_telp)->where('tanggal', date('Y-m-d'))->first();
+        $data = '';
+        if($no_telp != null && $no_telp != ''){
+            $customer =  LogClick::where('no_telp', $no_telp)->orderBy('tanggal', 'desc')->first();
 
-        if($data != null){  
-        	/* jika user click produk lebih dari 1 produk, hapus data sebelumnya input yang baru */
+            $data = LogClick::where('no_telp', $no_telp)->where('tanggal', date('Y-m-d'))->first();
 
-        	LogClick::where('no_telp', $no_telp)->where('tanggal', date('Y-m-d'))->delete();
+            if($data != null){  
+            	/* jika user click produk lebih dari 1 produk, hapus data sebelumnya input yang baru */
 
-        	$data = new LogClick;
-        	$data->id_product = $product_id;
-        	$data->nama_product = $nama_product;
-        	$data->url_product = $url;
-        	$data->no_telp = $no_telp;
-        	$data->customer_id = session::get('customer_id');
-        	$data->customer_name = session::get('customer_name');
-            $data->customer_email = session::get('customer_email');
-        	$data->tanggal = date('Y-m-d');
-        	$data->tanggal_expire = $expire;
-        	$data->save(); 
+            	LogClick::where('no_telp', $no_telp)->where('tanggal', date('Y-m-d'))->delete();
 
-        }else{
-        	if($customer != null){
-        		/* cek tanggal hari ini dengan tanggal expire blast customer nya */
-        		if(strtotime(date('Y-m-d')) > strtotime($customer->tanggal_expire)){
-        			$data = new LogClick;
-        			$data->id_product = $product_id;
-        			$data->nama_product = $nama_product;
-        			$data->url_product = $url;
-        			$data->no_telp = $no_telp;
-        			$data->customer_id = session::get('customer_id');
-        			$data->customer_name = session::get('customer_name');
-                    $data->customer_email = session::get('customer_email');
-        			$data->tanggal = date('Y-m-d');
-        			$data->tanggal_expire = $expire;
-        			$data->save(); 
-        		}
-        	}else{
-        		/* input data jika customer belum pernah terdaftar */
-        		$data = new LogClick;
-        		$data->id_product = $product_id;
-        		$data->nama_product = $nama_product;
-        		$data->url_product = $url;
-        		$data->no_telp = $no_telp;
-        		$data->customer_id = session::get('customer_id');
-        		$data->customer_name = session::get('customer_name');
+            	$data = new LogClick;
+            	$data->id_product = $product_id;
+            	$data->nama_product = $nama_product;
+            	$data->url_product = $url;
+            	$data->no_telp = $no_telp;
+            	$data->customer_id = session::get('customer_id');
+            	$data->customer_name = session::get('customer_name');
                 $data->customer_email = session::get('customer_email');
-        		$data->tanggal = date('Y-m-d');
-        		$data->tanggal_expire = $expire;
-        		$data->save(); 
-        	}
-        }
+            	$data->tanggal = date('Y-m-d');
+            	$data->tanggal_expire = $expire;
+            	$data->save(); 
 
+            }else{
+            	if($customer != null){
+            		/* cek tanggal hari ini dengan tanggal expire blast customer nya */
+            		if(strtotime(date('Y-m-d')) > strtotime($customer->tanggal_expire)){
+            			$data = new LogClick;
+            			$data->id_product = $product_id;
+            			$data->nama_product = $nama_product;
+            			$data->url_product = $url;
+            			$data->no_telp = $no_telp;
+            			$data->customer_id = session::get('customer_id');
+            			$data->customer_name = session::get('customer_name');
+                        $data->customer_email = session::get('customer_email');
+            			$data->tanggal = date('Y-m-d');
+            			$data->tanggal_expire = $expire;
+            			$data->save(); 
+            		}
+            	}else{
+            		/* input data jika customer belum pernah terdaftar */
+            		$data = new LogClick;
+            		$data->id_product = $product_id;
+            		$data->nama_product = $nama_product;
+            		$data->url_product = $url;
+            		$data->no_telp = $no_telp;
+            		$data->customer_id = session::get('customer_id');
+            		$data->customer_name = session::get('customer_name');
+                    $data->customer_email = session::get('customer_email');
+            		$data->tanggal = date('Y-m-d');
+            		$data->tanggal_expire = $expire;
+            		$data->save(); 
+            	}
+            }
+        }
         return $data;
     }
 }

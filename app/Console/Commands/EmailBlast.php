@@ -42,8 +42,8 @@ class EmailBlast extends Command
     {
         $client = new Client();
 
-        $customer = LogClick::where('tanggal', date('Y-m-d'))->get();
-
+        $customer = LogClick::where('tanggal', date('Y-m-d'))->where('status', 0)->get();
+        
         foreach($customer as $key => $item){
 
             $response = $client->request('POST', 'http://103.11.135.246:1506/blast', ['query' => [

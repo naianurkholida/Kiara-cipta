@@ -34,33 +34,24 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 style="font-weight: 600;">BENEFITS</h4>
-				<span>5 Keuntungan Ekslusif Member</span>
+				<div class="container clearfix">
+					<div class="heading-block center noborder" data-heading="O">
+						<h3 class="nott ls0">BENEFITS</h3>
+						<span>4 Keuntungan Ekslusif Member</span>
+					</div>
+				</div>
+
 				<div class="flex-2" style="display: flex;">
-					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_1'] }}" class="img-benefits-items">
-						<p>Birthday Voucher senilai Rp 100.000, akan diterima pada bulan ulang tahun, berlaku dengan minimal pembelian Rp500.000</p>
-					</div>
+					
+					@foreach(Helper::benefit() as $item)
 
-					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_2'] }}" class="img-benefits-items">
-						<p>Reward spesial untuk anda yang sudah di Level Gold. Dapatkan merchandise Levi’s® yang dapat dibawa pulang secara gratis tanpa transaksi.</p>
-					</div>
+						<div class="flex-benefits-items">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }}" class="img-benefits-items">
+							<p>{{ $item->description }}</p>
+						</div>
 
-					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_3'] }}" class="img-benefits-items">
-						<p>Mendapatkan penawaran khusus untuk member, seperti Extra Diskon 10%, Surprise Voucher, dll.</p>
-					</div>
+					@endforeach
 
-					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_4'] }}" class="img-benefits-items">
-						<p>Poin anda dapat ditukar dengan voucher potongan harga.</p>
-					</div>
-
-					<div class="flex-benefits-items">
-						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ Helper::benefit()['benefit_5'] }}" class="img-benefits-items">
-						<p>Anda dapat diundang ke acara khusus yang diadakan oleh Levi’s®</p>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -69,43 +60,33 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h4 style="font-weight: 600">MEMBERSHIP LEVEL</h4>
-				<span>Jadilah Member dan Dapatkan Keuntungannya</span>
-				<div class="flex-2">
-
-					<div class="flex-membership-items">
-						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_1'] }})" class="img-memebership-items"></div>
-						<div class="card-body">
-							<h5 class="card-title text-center">Turquoise</h5>
-							<p class="card-text">Pada level ini, transaksi anda berarti 0 sampai 30 juta</p>
-						</div>
+				<div class="container clearfix">
+					<div class="heading-block center noborder" data-heading="O">
+						<h3 class="nott ls0">MEMBERSHIP LEVEL</h3>
+						<span>Jadilah Member dan Dapatkan Keuntungannya</span>
 					</div>
-
-					<div class="flex-membership-items">
-						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_2'] }})" class="img-memebership-items"></div>
-						<div class="card-body">
-							<h5 class="card-title text-center">Silver</h5>
-							<p class="card-text">Pada level ini, transaksi anda berarti 30 juta sampai 60 juta </p>
-						</div>
-					</div>
-
-					<div class="flex-membership-items">
-						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_3'] }})" class="img-memebership-items"></div>
-						<div class="card-body">
-							<h5 class="card-title text-center">Gold</h5>
-							<p class="card-text">Pada level ini, transaksi anda berarti 60 juta sampai 100 juta</p>
-						</div>
-					</div>
-
-					<div class="flex-membership-items">
-						<div style="background-image: url({{ asset('assets/admin/assets/media/img') }}/{{ Helper::membership()['membership_4'] }})" class="img-memebership-items"></div>
-						<div class="card-body">
-							<h5 class="card-title text-center">Solitaire</h5>
-							<p class="card-text">Pada level ini, transaksi anda berarti diatas 100 juta</p>
-						</div>
-					</div>
-
 				</div>
+				
+				@foreach(Helper::membership() as $key => $item)
+					@if(($key%2 == 0))
+						<div class="benefit-item">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }}" class="img-benefit">
+							<div class="card-body">
+								<h5 class="benefit-title">{{ $item->name }}</h5>
+								<p class="card-text">{{ $item->description }}</p>
+							</div>
+						</div>
+					@else
+						<div class="benefit-item benefit-rtl">
+							<img src="{{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }}" class="img-benefit">
+							<div class="card-body">
+								<h5 class="benefit-title">{{ $item->name }}</h5>
+								<p class="card-text">{{ $item->description }}</p>
+							</div>
+						</div>
+					@endif
+				@endforeach
+
 			</div>
 		</div>
 

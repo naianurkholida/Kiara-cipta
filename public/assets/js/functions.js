@@ -649,7 +649,7 @@ var SEMICOLON = SEMICOLON || {};
                 inDuration: Number(durationIn),
                 outDuration: Number(durationOut),
                 linkElement: 'body:not(.device-md):not(.device-sm):not(.device-xs) #primary-menu:not(.on-click) ul li a:not([target="_blank"]):not([href*="#"]):not([data-lightbox]):not([href^="mailto"]):not([href^="tel"]):not([href^="sms"]):not([href^="call"])',
-                loading: true,
+                loading: false,
                 loadingParentElement: 'body',
                 loadingClass: 'page-transition-wrap',
                 loadingInner: loaderHtml,

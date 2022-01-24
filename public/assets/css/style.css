@@ -1,4 +1,4 @@
-//*-----------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------
 
 	Theme Name: Canvas
 	Theme URI: http://themes.semicolonweb.com/html/canvas
@@ -127,7 +127,7 @@
 }
 
 .flex-benefits-items {
-    width: 19%;
+    width: 23%;
     padding: 20px;
     align-items: center;
     display: flex;
@@ -159,7 +159,7 @@
 }
 
 .img-memebership-items {
-    width: 120px;
+    width: 100%;
     height: 120px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -201,28 +201,29 @@
 .name-customer{
     position: absolute;
     bottom: 20px;
-    left: 20px;
-    color: white;
+    right: 20px;
+    color: white !important;
     text-shadow: 2px 2px #000000;
     margin: 0px;
-    font-size: 15px;
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 .id-customer{
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     right: 20px;
-    color: white;
+    color: white !important;
     text-shadow: 2px 2px #000000;
     margin: 0px;
     font-size: 15px;
 }
 
 .card-responsive {
-    height: 150px !important; 
-    width: 260px; 
+    height: 300px !important; 
+    width: 520px; 
     border-radius: 50px; 
-    margin-left: 40%;    
+    /*margin-left: 40%;    */
 }
 
 @media (max-width: 600px) {
@@ -17504,13 +17505,13 @@ body:not(.no-transition) #wrapper,
 
 .login-box{
     width: 55%;
-    padding: 50px;
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
 
 .form-log{
-    width: 80%;
+    width: 70%;
 }
 
 .input-logfront{
@@ -17527,11 +17528,42 @@ body:not(.no-transition) #wrapper,
     font-size: 15px;
 }
 
+.img-award {
+    max-width: 35%; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-bottom: 20px;
+}
+.benefit-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.img-benefit{
+    width: 50%;
+    border-radius: 20px;
+}
+.benefit-title{
+    text-align: left !important;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.card-text{
+    color: #a7a7a7 !important;
+}
+.benefit-rtl{
+    flex-direction: row-reverse;
+}
 @media (max-width: 768px) {
     .container-login{
         flex-direction: column;
     }
 
+    .form-log{
+        width: 100%;
+    }
 
     .img-login{
         width: 100%;
@@ -17539,6 +17571,20 @@ body:not(.no-transition) #wrapper,
     }
 
     .login-box{
+        width: 100%;
+    }
+
+    .img-award {
+        max-width: 50%; 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+        padding-bottom: 20px;
+    }
+    .benefit-item{
+        flex-direction: column;
+    }
+    .img-benefit{
         width: 100%;
     }
 }

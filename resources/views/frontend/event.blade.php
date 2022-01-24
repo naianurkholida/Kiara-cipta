@@ -1,63 +1,38 @@
 @extends('frontend.component.master')
 
 @section('header')
-<meta name="description" content="Products List Derma Express.">
-<link rel="canonical" href="https://derma-express.com/products">
-<title>Products List Derma Express</title>
+<meta name="description" content="Treatments List Derma Express.">
+<link rel="canonical" href="https://derma-express.com/treatments">
+
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://derma-express.com/treatments" />
+<meta property="og:title" content="Derma Express" />
+<meta property="og:description" content="Kamu Bisa Cek Treatment Apa Saja yang Tersedia di Derma Express." />
+
+<title>Treatments List Derma Express</title>
 @endsection
 
 @section('content')
 <div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
     <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
-            
-            <h3 class="nott ls0">Promo Event</h3>
-            
+            <h3 class="nott ls0">Event</h3>
         </div>
     </div>
-    <div class="container-flex container">
-        <div class="box-bestseller">
-            @foreach($data as $row)
-            <div class="item-bestseller">
-                <div class="img-bestseller" style="background-image: url({{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}); padding: 8px;" alt="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->image}}">
-                    <p id="badge-product" style="
-                    border-radius: 4px; 
-                    background-color: #67b6ab; 
-                    color: white;
-                    padding: 8px;
-                    width: fit-content;">
-                    {{ $row->label }}
-                </p>
-                </div>
-                <div class="btn-bestseller" style="border-radius: 6px;"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: white; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
-                <div class="overlay-bestseller" style="border: 3px solid #67b6ab; background-color: rgb(0 128 128 / 95%);">
-                    <div class="container-overlay">
-                        <div>
-                            @foreach($row->getSpec as $val)
-                            <img src="{{ asset('assets/admin/assets/media/derma_produk_spec') }}/{{ $val->icon_light }}" alt="" style="width: 15% !important; margin-left: 16%; margin-right: 15px;">
-                            <span>{{ $val->specification }}</span>
-                            <br><br>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="btn-bestseller-overlay" style="border-radius: 6px;"><a href="{{ route('dermaster.products.show', $row->getProdukLanguage->seo) }}" style="color: rgb(16, 158, 158) ; text-align:center;">{{$row->getProdukLanguage->judul}}</a></div>
-                </div>
+    <div class="container container-flex">
+        @foreach($data as $row)
+            <div class="box-dokter" style="min-height: 320px;">
+                <div class="img-dokter" style="background-image: url('{{ asset('assets/admin/assets/media/posting') }}/{{$row->image}}');"></div>
+                <a href="{{ route('dermaster.event.show', $row->getPostingLanguage->seo) }}">
+                    <p id="dokter-name">
+                        {{ $row->getPostingLanguage->judul }}
+                    </p>
+                </a>
+                <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
             </div>
-            @endforeach
-        </div>
+        @endforeach
     </div>
 
 </div>
-@endsection
-
-@section('js')
-<script>
-
-    if (window.matchMedia('(max-width: 425px)'))
-    {
-        $( "#container_dalem" ).removeClass("container");
-    } else {
-        $( "#container_dalem" ).addClass("container");
-    }
-</script>
 @endsection
