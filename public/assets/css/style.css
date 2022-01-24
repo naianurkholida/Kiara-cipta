@@ -97,6 +97,7 @@
 .grow { transition: all .2s ease-in-out; 
 }
 .grow:hover { transform: scale(1.1); }
+
 .item-menu{
     padding: 10px;
     border-radius: 5px;
@@ -104,13 +105,16 @@
     background-color: #65b5aa1f;
     align-items: center;
     margin-bottom: 10px;
-    width: 16%;
+    width: 100%;
 }
 .flex-menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.flex-menu a{
+        width: 16%;
+    }
 @media (max-width: 600px) {
     .item-menu{
         width: 100%;
