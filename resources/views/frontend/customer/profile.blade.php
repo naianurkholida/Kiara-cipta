@@ -86,15 +86,17 @@
 
 		<div class="row">
 			<div class="col-lg-12">
+
 				<center>
 					<div class="card card-responsive text-center" style="">
-						<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/Artboard 1_alt.jpg'); background-size: cover; border-radius: 10px;">
+						<div class="card-body" style="background-image: url('/assets/admin/assets/media/bg/{{$settings->icon}}'); background-size: cover; border-radius: 10px;">
 							<h2 class="card-title card-name">Derma Express Card</h2>
-							<h3 class="card-text name-customer" id="name_customer">Nama Customer</h3>
-							<h3 class="card-text id-customer" id="id_customer">ID Customer</h3>
+							<h3 class="card-text name-customer" id="name_customer">{{ $data[0][1] }}</h3>
+							<h3 class="card-text id-customer" id="id_customer">{{ $data[0][0] }}</h3>
 						</div>
 					</div>
 				</center>
+
 			</div>
 		</div>
 
@@ -204,8 +206,8 @@
 			data: { id: id },
 		})
 		.done(function(res) {
-			$('#id_customer').html(res.customer[0])
-			$('#name_customer').html(res.customer[1])
+			// $('#id_customer').html(res.customer[0])
+			// $('#name_customer').html(res.customer[1])
 			
 			$('#td_name').html(res.customer[1])
 			$('#td_id').html(res.customer[0])
