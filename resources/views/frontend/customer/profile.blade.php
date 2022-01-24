@@ -180,7 +180,7 @@
 		$( "#container_dalem" ).removeClass("container");
 	} else {
 		$( "#container_dalem" ).addClass("container");
-	}
+	}~
 
 	$(document).ready(function() {
 		getPointCustomer()
