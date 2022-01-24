@@ -90,9 +90,8 @@
 				<center>
 					<div class="card card-responsive text-center" style="">
 						<div class="card-body" style="background-image: url('/assets/admin/assets/media/img/{{$settings->icon}}'); background-size: cover; border-radius: 10px;">
-							<h2 class="card-title card-name">Derma Express Card</h2>
-							<h3 class="card-text name-customer" id="name_customer">{{ $data[0][1] }}</h3>
-							<h3 class="card-text id-customer" id="id_customer">{{ $data[0][0] }}</h3>
+							<h3 class="name-customer" id="name_customer">{{ $data[0][1] }}</h3>
+							<h3 class="id-customer" id="id_customer">{{ $data[0][0] }}</h3>
 						</div>
 					</div>
 				</center>
