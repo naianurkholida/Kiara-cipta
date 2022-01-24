@@ -144,12 +144,12 @@
 							<p id="circle-point-text-silver" class="txt-point-nonactive">Silver</p>
 						</div>
 						<div class="item-prog-point">
-							<div class="circle-point circle-nonactive bg-info"></div>
-							<p class="txt-point-nonactive">Gold</p>
+							<div class="circle-point-gold circle-nonactive bg-info"></div>
+							<p id="circle-point-text-gold" class="txt-point-nonactive">Gold</p>
 						</div>
 						<div class="item-prog-point">
-							<div class="circle-point circle-nonactive bg-info"></div>
-							<p class="txt-point-nonactive">Solitaire</p>
+							<div class="circle-point-soltaire circle-nonactive bg-info"></div>
+							<p id="circle-point-text-solitaire" class="txt-point-nonactive">Solitaire</p>
 						</div>
 					</div>
 					
