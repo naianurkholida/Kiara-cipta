@@ -77,7 +77,7 @@
 	<div class="container clearfix">
 		<div class="heading-block center noborder" data-heading="O">
 
-			<h3 class="nott ls0">Profile</h3>
+			<h3 class="nott ls0">Profil</h3>
 
 		</div>
 	</div>
@@ -162,7 +162,27 @@
 
 		<hr>
 
-		@include('frontend.customer.cara_mendapatkan_poin')
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="container clearfix">
+					<div class="heading-block center noborder" data-heading="O">
+						<h3 class="nott ls0">CARA MENUKARKAN POIN</h3>
+						<span>Tukarkan di klinik cabang terdekat</span>
+					</div>
+				</div>
+				<div class="flex-poin">
+					@foreach(Helper::how_to_get() as $item)
+					
+					<div class="flex-poin-items">
+						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }}" class="img-poin-items">
+						<p class="card-text">
+							{{ $item->description }}
+						</p>
+					</div>
+					@endforeach
+				</div>
+			</div>
+		</div>
 
 		<hr>
 

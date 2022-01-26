@@ -278,7 +278,6 @@
     .name-customer{
         position: absolute;
         bottom: 20px;
-        left: 20px;
         color: white;
         text-shadow: 2px 2px #000000;
         margin: 0px;
@@ -287,7 +286,7 @@
 
     .id-customer{
         position: absolute;
-        bottom: 20px;
+        bottom: 50px;
         right: 20px;
         color: white;
         text-shadow: 2px 2px #000000;
@@ -298,8 +297,7 @@
     .card-responsive {
         height: 150px !important; 
         width: 260px; 
-        border-radius: 50px; 
-        margin-left: 10%;    
+        border-radius: 50px;
     }
 }
 @media (min-width: 576px) {

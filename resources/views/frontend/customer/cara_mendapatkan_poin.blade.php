@@ -3,7 +3,7 @@
 
 		<div class="container clearfix">
 			<div class="heading-block center noborder" data-heading="O">
-				<h3 class="nott ls0">HOW TO GET POIN</h3>
+				<h3 class="nott ls0">CARA MENDAPATKAN POIN</h3>
 				<span>Kumpulkan Poinmu dan Nikmati Keuntungannya</span>
 			</div>
 		</div>
