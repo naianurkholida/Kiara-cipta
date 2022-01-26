@@ -30,7 +30,7 @@
 	<div class="container clearfix">
 		<div class="heading-block center noborder" data-heading="O">
 
-			<h3 class="nott ls0">Histori Transaksi</h3>
+			<h3 class="nott ls0">Riwayat Transaksi</h3>
 
 		</div>
 	</div>
