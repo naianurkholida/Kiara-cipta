@@ -89,10 +89,12 @@
 
 				<center>
 					<div class="card card-responsive text-center" style="">
+						@if($settings)
 						<div class="card-body" style="background-image: url('/assets/admin/assets/media/img/{{$settings->icon}}'); background-size: cover; border-radius: 20px;">
 							<h3 class="name-customer" id="name_customer">{{ $data[0][1] }}</h3>
 							<h3 class="id-customer" id="id_customer">{{ $data[0][0] }}</h3>
 						</div>
+						@endif
 					</div>
 				</center>
 
@@ -141,15 +143,15 @@
 						</div>
 						<div class="item-prog-point">
 							<div id="circle-point-silver" class="circle-point circle-nonactive bg-info"></div>
-							<p id="circle-point-text-silver" class="txt-point-nonactive">Silver</p>
+							<p id="circle-point-text-silver" class="txt-point">Silver</p>
 						</div>
 						<div class="item-prog-point">
 							<div id="circle-point-gold" class="circle-point circle-nonactive bg-info"></div>
-							<p id="circle-point-text-gold" class="txt-point-nonactive">Gold</p>
+							<p id="circle-point-text-gold" class="txt-point">Gold</p>
 						</div>
 						<div class="item-prog-point">
 							<div id="circle-point-solitaire" class="circle-point circle-nonactive bg-info"></div>
-							<p id="circle-point-text-solitaire" class="txt-point-nonactive">Solitaire</p>
+							<p id="circle-point-text-solitaire" class="txt-point">Solitaire</p>
 						</div>
 					</div>
 					
@@ -257,7 +259,7 @@
 
 			var persen = 0;
 			var sisa = 0;
-			var text = '';
+			var text = false;
 
 			if(amount <= turquoise){
 				sisa = (turquoise-amount)+' untuk menuju level Silver.';
@@ -276,6 +278,7 @@
 				document.getElementById('circle-point-text-gold').classList.remove("txt-point-nonactive");
 			}else{
 				sisa = (solitaire-amount)+', selamat and sudah mencapai level Solitaire.';
+				text = true;
 
 				document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
 				document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
@@ -286,7 +289,11 @@
 			}
 
 			persen = ((amount / solitaire) * (80)).toFixed(2);
-			$('#text-progress').html('Ayo tingkatin transaksi kamu sisa '+'Rp. '+sisa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			if(text == true){
+				$('#text-progress').html('Selamat kamu sudah mencapai level Solitaire.');
+			}else{
+				$('#text-progress').html('Ayo tingkatin transaksi kamu sisa '+'Rp. '+sisa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			}
 
 			execProg(persen);
 		});

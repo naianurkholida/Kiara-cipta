@@ -37,15 +37,14 @@
     	<link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     	type="text/css" />
-    	<link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}">
+    	<link rel="shortcut icon" href="{{asset('rsz_1logodermaexpress.png')}}">
 
         <link rel="canonical" href="https://derma-express.com/">
         <meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
         <title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
         @yield('header')
 
-        <!-- Document Title
-        	============================================= -->
+        <!-- Document Title ============================================= -->
         	@php
         	$next = asset('assets/image/next.png');
         	$prev = asset('assets/image/prev.png');
@@ -105,7 +104,7 @@
                   gtag('js', new Date());
 
                   gtag('config', 'UA-204519156-1');
-              </script>
+        </script>
     </head>
 
     <body class="stretched">
