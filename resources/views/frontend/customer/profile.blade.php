@@ -173,7 +173,7 @@
 					</div>
 				</div>
 				<div class="flex-poin">
-					@foreach(Helper::how_to_get() as $item)
+					@foreach(Helper::how_to_redeem() as $item)
 					
 					<div class="flex-poin-items">
 						<img src="{{ asset('assets/admin/assets/media/img') }}/{{ $item->icon }}" class="img-poin-items">

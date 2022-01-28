@@ -453,4 +453,11 @@ class Helper
 
 		return $data;
 	}
+
+	public static function how_to_redeem()
+	{
+		$data = Settings::where('jenis', 5)->orderBy('id','asc')->get();
+
+		return $data;
+	}
 }

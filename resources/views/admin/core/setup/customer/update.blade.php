@@ -34,6 +34,7 @@
 							<option value="2" <?php if($data->jenis == 2){ ?> selected <?php } ?> >Membership</option>
 							<option value="3" <?php if($data->jenis == 3){ ?> selected <?php } ?> >How To Get Point</option>
 							<option value="4" <?php if($data->jenis == 4){ ?> selected <?php } ?> >Icon Menu</option>
+							<option value="5" <?php if($data->jenis == 5){ ?> selected <?php } ?>>How to Redeem Points</option>
 						</select>
 					</div>
 				</div>

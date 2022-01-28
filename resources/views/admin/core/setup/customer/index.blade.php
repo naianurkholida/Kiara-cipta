@@ -39,9 +39,11 @@
 							@elseif($val->jenis == 2)
 								<span class="badge badge-info">Membership</span>
 							@elseif($val->jenis == 3)
-								<span class="badge badge-warning">Hot To Get Point</span>
-							@else
+								<span class="badge badge-warning">How To Get Point</span>
+							@elseif($val->jenis == 4)
 								<span class="badge badge-danger">Icon Menu</span>
+							@else
+								<span class="badge badge-secondary">How To Redeem Points</span>
 							@endif
 
 						</td>

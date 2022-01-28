@@ -34,6 +34,7 @@
 							<option value="2">Membership</option>
 							<option value="3">How To Get Point</option>
 							<option value="4">Icon Menu</option>
+							<option value="5">How to Redeem Points</option>
 						</select>
 					</div>
 				</div>
