@@ -24,11 +24,11 @@
 				<div class="form-group row">
 					<div class="col-md-6">
 						<label>Title</label>
-						<input type="text" name="title" class="form-control">
-					</div>
+						<input type="text" name="title" class="form-control" required>
+					</div> 
 					<div class="col-md-6">
 						<label>Type</label>
-						<select class="form-control" name="jenis">
+						<select class="form-control" name="jenis" required>
 							<option value="" selected>- Type -</option>
 							<option value="1">Benefit</option>
 							<option value="2">Membership</option>
@@ -44,7 +44,7 @@
 				</div>
 				<div class="form-group">
 					<label>Description</label>
-					<textarea class="form-control" name="description" rows="4"></textarea>
+					<textarea class="form-control" name="description" rows="4" required></textarea>
 				</div>
 				<div class="form-group">
 					<label>Icon</label>
@@ -53,7 +53,7 @@
 							<div class="kt-avatar__holder" style="width: 180px; height: 180px; background: url('');"></div>
 							<label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
 								<i class="fa fa-pen"></i>
-								<input type="file" name="file" id="file">
+								<input type="file" name="file" id="file" required>
 							</label>
 							<span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
 								<i class="fa fa-times"></i>
