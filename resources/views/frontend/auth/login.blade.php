@@ -77,7 +77,7 @@
 						<div class="card" style="margin-top: 20px; border-radius: 15px;">
 
 							<div class="card-body">
-								<h3 class="text-center" style="margin-bottom: 20px;">Selamat Datang DexPeople</h3>
+								<h3 class="text-center" style="margin-bottom: 20px;">Hello DexPeople</h3>
 
 								@if(Session::get('alert'))
 								<div class="alert alert-danger alert-block">
