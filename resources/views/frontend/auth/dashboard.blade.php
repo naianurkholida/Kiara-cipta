@@ -18,7 +18,7 @@
 	<div class="container clearfix">
 		<div class="heading-block center noborder" data-heading="O">
 
-			<h3 class="nott ls0">Selamat Datang Kembali</h3>
+			<h3 class="nott ls0">Hello DexPeople</h3>
 
 		</div>
 	</div>

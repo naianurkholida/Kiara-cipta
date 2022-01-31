@@ -72,7 +72,9 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Layout Skins(used by all pages) -->
 	<!--end::Layout Skins -->
 	
-	<link rel="shortcut icon" href="{{asset(Helper::logo())}}" />
+	<!-- <link rel="shortcut icon" href="{{asset(Helper::logo())}}" /> -->
+
+	<link rel="shortcut icon" href="{{asset('rsz_1logodermaexpress.png')}}">
 </head>
 <!-- end::Head -->
 

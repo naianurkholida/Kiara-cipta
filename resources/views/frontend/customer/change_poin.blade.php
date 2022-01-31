@@ -81,7 +81,7 @@
 							color: white;
 							padding: 8px;
 							width: fit-content;">
-							{{ number_format($row->poin) }}
+							{{ number_format($row->poin) }} Poin
 						</p>
 					</div>
 					
