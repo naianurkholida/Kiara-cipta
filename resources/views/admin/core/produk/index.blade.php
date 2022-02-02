@@ -24,6 +24,7 @@
 					<tr class="m-datatable__row text-center">
 						<th>No</th>
 						<th>Title</th>
+						<th>Category</th>
 						<th>Image</th>
 						<th>Action</th>
 					</tr>
@@ -35,6 +36,7 @@
 					<tr>
 						<td>{{$no}}</td>
 						<td>{{ $row->getProdukLanguage->judul }}</td>
+						<td>{{ $row->getCategory->category }}</td>
 						<td>
 							<a href="{{ asset('assets/admin/assets/media/derma_produk') }}/{{$row->banner}}" target="blank">{{ $row->banner }}</a>
 						</td>

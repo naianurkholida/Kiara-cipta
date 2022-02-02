@@ -31,7 +31,7 @@ class ProdukController extends Controller
 
     public function index()
     {
-        $data = Produk::with('getProdukLanguage')->where('deleted_at', NULL)->get();
+        $data = Produk::with('getProdukLanguage','getCategory')->where('deleted_at', NULL)->get();
 
 		return view('admin.core.produk.index', compact('data'));
     }
