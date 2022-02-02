@@ -103,7 +103,7 @@ class ProdukController extends Controller
 
 		if ($banner) {
 			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-			$fileNameBanner = 'Produk' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
+			$fileNameBanner = 'ProdukBanner' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
 
 			$size   = getimagesize($banner);
 			$width  = $size[0];
@@ -264,7 +264,7 @@ class ProdukController extends Controller
 
 		if ($banner) {
 			#MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
-			$fileNameBanner = 'Produk' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
+			$fileNameBanner = 'ProdukBanner' . '_' .date('Ymdhis'). '.' . $banner->getClientOriginalExtension();
 
 			$size   = getimagesize($banner);
 			$width  = $size[0];
