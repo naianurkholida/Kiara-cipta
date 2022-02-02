@@ -71,7 +71,7 @@ class Helper
 	
 	public static function produkList()
 	{
-		$data = Produk::with('getProdukLanguage', 'getCategory')->where('deleted_at', null)->get();
+		$data = Produk::with('getProdukLanguage', 'getCategory')->where('id_category', '!=', '63')->where('deleted_at', null)->get();
 
 				$data = $data->sortBy(function ($data, $key)
                 {
