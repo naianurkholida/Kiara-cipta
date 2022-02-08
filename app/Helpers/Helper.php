@@ -235,7 +235,12 @@ class Helper
 
 	public static function treatment()
 	{
-		$data = Treatment::with('getTreatmentLanguage')->where('deleted_at', NULL)->get();
+		$data = Treatment::with('getTreatmentLanguage')
+			->where('deleted_at', NULL)
+			->whereHas('getTreatmentLanguage', function($q) {
+				$q->orderBy('judul','ASC');
+			})
+			->get();
 
 		return $data;
 	}
