@@ -237,10 +237,12 @@ class Helper
 	{
 		$data = Treatment::with('getTreatmentLanguage')
 			->where('deleted_at', NULL)
-			->whereHas('getTreatmentLanguage', function($q) {
-				$q->orderBy('judul','ASC');
-			})
 			->get();
+
+			$data = $data->sortBy(function ($data, $key)
+			{
+				return $data->getTreatmentLanguage->judul;
+			});
 
 		return $data;
 	}
