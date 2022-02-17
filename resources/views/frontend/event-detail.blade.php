@@ -45,7 +45,7 @@
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
                 <div class="carousel-inner" role="listbox">
-                    <h4 style="margin-left: 15px;">Event Lainnya</h4>
+                    <h4 style="margin-left: 15px;">Promo Lainnya</h4>
                     <div class="carousel-item active">
                         @foreach($event_lainnya as $item)
                         <div class="col-md-4" style="float:left">
