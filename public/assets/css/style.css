@@ -17586,7 +17586,7 @@ body:not(.no-transition) #wrapper,
 }
 @media (max-width: 768px) {
     .breadcrumb-page{
-        height: 150px;
+        height: 90px;
         background-size: contain !important;
     }
 
