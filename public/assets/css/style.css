@@ -17574,6 +17574,7 @@ body:not(.no-transition) #wrapper,
     font-weight: 600;
     position: relative;
     margin-bottom: 30px;
+    background-attachment: fixed;
 }
 .overlay-breadcrumb{
     width: 100%;
