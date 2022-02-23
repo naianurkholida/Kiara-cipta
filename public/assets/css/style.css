@@ -17585,6 +17585,11 @@ body:not(.no-transition) #wrapper,
     left: 0;
 }
 @media (max-width: 768px) {
+    .breadcrumb-page{
+        height: 150px;
+        background-size: contain !important;
+    }
+
     .container-login{
         flex-direction: column;
     }
