@@ -33,7 +33,7 @@ class ProductsController extends Controller
                 ->where('deleted_at', NULL)
                 ->whereHas('getCategory', function($q) {
                     $q->where('seo', '!=', 'tukar-poin')
-                    ->Where('seo', '!=', 'promo');
+                    ->where('seo', '!=', 'promo');
                 })
                 ->get();
 

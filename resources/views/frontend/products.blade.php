@@ -13,7 +13,7 @@
             @if ($category)
             <h3 class="nott ls0">{{$category->category}}</h3>
             @else
-            <h3 class="nott ls0">Product</h3>
+            <h3 class="nott ls0">Produk</h3>
             @endif
         </div>
     </div>
