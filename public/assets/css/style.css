@@ -17586,8 +17586,9 @@ body:not(.no-transition) #wrapper,
 }
 @media (max-width: 768px) {
     .breadcrumb-page{
-        height: 120px;
+        height: 170px;
         background-size: contain !important;
+        background-repeat: no-repeat;
     }
 
     .container-login{
