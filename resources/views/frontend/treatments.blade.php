@@ -14,12 +14,16 @@
 @endsection
 
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-    <div class="container clearfix">
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0; padding-top:0px;">
+    <div class="breadcrumb-page" style="background-image: url({{ asset('assets/image/bg-paralax.jpg') }});">
+        <div class="overlay-breadcrumb"></div>
+        <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Treatments</h2>
+    </div>
+    <!-- <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
             <h3 class="nott ls0">Treatments</h3>
         </div>
-    </div>
+    </div> -->
     <div class="container container-flex">
         @foreach($data as $row)
             <div class="box-dokter" style="min-height: 441px;">

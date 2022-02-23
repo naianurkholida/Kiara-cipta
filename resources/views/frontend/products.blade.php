@@ -7,8 +7,16 @@
 @endsection
 
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-    <div class="container clearfix">
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0; padding-top:0px;">
+    <div class="breadcrumb-page" style="background-image: url({{ asset('assets/image/bg-paralax.jpg') }});">
+        <div class="overlay-breadcrumb"></div>
+            @if ($category)
+            <h2 class="" style="margin:0;font-weight:600;z-index: 9;">{{$category->category}}</h2>
+            @else
+            <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Produk</h2>
+            @endif
+    </div>
+    <!-- <div class="container clearfix">
         <div class="heading-block center noborder" data-heading="O">
             @if ($category)
             <h3 class="nott ls0">{{$category->category}}</h3>
@@ -16,7 +24,7 @@
             <h3 class="nott ls0">Produk</h3>
             @endif
         </div>
-    </div>
+    </div> -->
     <div class="container-flex container">
         <div class="box-bestseller">
             @foreach($data as $row)
