@@ -5,7 +5,7 @@
 <link rel="canonical" href="https://derma-express.com/jurnal">
 
 <meta property="og:locale" content="id_ID" />
-<meta property="og:type" content="article"/>
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://derma-express.com/jurnal" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Kegiatan dan Info Terbaru Derma di Sini." />
@@ -13,37 +13,58 @@
 <title>Jurnal</title>
 
 <style type="text/css">
-	.pagination {
-		float: right;
-	}
+    .pagination {
+        float: right;
+    }
+
 </style>
 @endsection
 
 @section('content')
-<div class="section nobg nobottommargin clearfix" style="margin-top: 0;">
-	<div class="container">
-		@foreach($data as $row)
-		<div class="box-jurnal">
-			<img class="img-jurnal" src="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}" alt="{{ asset('assets/admin/assets/media/posting/') }}/{{$row->image}}">
-			<a href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
-				<p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
-			</a>
-			<p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}</p>
-			<a class="readmore-jurnal" href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
-				Read More
-			</a>
-		</div>
-		@endforeach
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0; padding-top: 0;">
+    <div class="breadcrumb-page"
+        style="background-image: url({{ asset('assets/image/bg-paralax.jpg') }});">
+        <div class="overlay-breadcrumb"></div>
+        <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Jurnal</h2>
+    </div>
 
-		<div class="row">
-			<div class="col-lg-6">
-				Showing {{$data->currentPage()}} to {{$data->perPage()}} of {{$data->total()}} entries
-			</div> 
-			<div class="col-lg-6"> 
-				{{$data->links()}}
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Jurnal</li>
+            </ol>
+        </nav>
+        <br /><br />
+    </div>
+    <div class="container">
+        @foreach($data as $row)
+            <div class="box-jurnal">
+                <img class="img-jurnal"
+                    src="{{ asset('assets/admin/assets/media/posting/') }}/{{ $row->image }}"
+                    alt="{{ asset('assets/admin/assets/media/posting/') }}/{{ $row->image }}">
+                <a
+                    href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+                    <p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
+                </a>
+                <p style="margin-bottom:10 !important;">{!! Helper::removeTags($row->getPostingLanguage->content) !!}
+                </p>
+                <a class="readmore-jurnal"
+                    href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
+                    Read More
+                </a>
+            </div>
+        @endforeach
+
+        <div class="row">
+            <div class="col-lg-6">
+                Showing {{ $data->currentPage() }} to {{ $data->perPage() }} of {{ $data->total() }} entries
+            </div>
+            <div class="col-lg-6">
+                {{ $data->links() }}
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection

@@ -4302,7 +4302,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner {
 }
 
 .breadcrumb {
-    position: absolute !important;
+    /* position: absolute !important; */
     width: auto !important;
     top: 50% !important;
     left: auto !important;
@@ -17573,7 +17573,7 @@ body:not(.no-transition) #wrapper,
     font-size: 35px;
     font-weight: 600;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 .overlay-breadcrumb{
     width: 100%;

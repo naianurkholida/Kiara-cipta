@@ -58,7 +58,22 @@
 @endsection
 
 @section('content')
-<div class="section nobg nobottommargin clearfix">
+<div class="section nobg nobottommargin clearfix" style="margin-top: 0; padding-top: 0;">
+<div class="breadcrumb-page"
+        style="background-image: url({{ asset('assets/image/bg-paralax.jpg') }});">
+        <div class="overlay-breadcrumb"></div>
+        <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Galeri</h2>
+    </div>
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Galeri</li>
+            </ol>
+        </nav>
+        <br /><br />
+    </div>
     <div class="container clearfix container-gallery">
 
         <!-- Portfolio Filter

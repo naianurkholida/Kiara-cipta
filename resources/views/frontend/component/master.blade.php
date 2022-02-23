@@ -38,10 +38,6 @@
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     	type="text/css" />
     	<link rel="shortcut icon" href="{{asset('rsz_1logodermaexpress.png')}}">
-
-        <link rel="canonical" href="https://derma-express.com/">
-        <meta name="description" content="klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
-        <title>Derma Express , Klinik Kecantikan dengan Dokter dan Layanan Estetika Terbaik di Indonesia.</title>
         @yield('header')
 
         <!-- Document Title ============================================= -->
