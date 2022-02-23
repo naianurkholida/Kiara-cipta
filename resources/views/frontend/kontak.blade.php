@@ -15,7 +15,7 @@
 
 @section('content')
 <div class="breadcrumb-page"
-    style="background-image: url({{ asset('assets/image/bg-paralax.jpg') }});">
+    style="background-image: url({{ asset('assets/image/bg-paralax-title.jpg') }});">
     <div class="overlay-breadcrumb"></div>
     <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Kontak</h2>
 </div>
