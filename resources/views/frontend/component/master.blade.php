@@ -15,7 +15,7 @@
     	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap"
     	rel="stylesheet">
     	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" type="text/css" />
-    	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}?n=9" type="text/css" />
+    	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}?n=10" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/swiper.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}" type="text/css" />

@@ -17588,7 +17588,7 @@ body:not(.no-transition) #wrapper,
     .breadcrumb-page{
         height: 170px;
         background-size: contain !important;
-        background-repeat: no-repeat;
+        /* background-repeat: no-repeat; */
     }
 
     .container-login{
