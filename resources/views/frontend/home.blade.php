@@ -5,7 +5,7 @@
 <meta name="description" content="Klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.">
 <meta name="facebook-domain-verification" content="7gok7ljicai2ven06osijpt0ide58a" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Teaching Factory || SMKN 2 CIMAHI" />
+<meta property="og:title" content="Derma Express Klinik Kecantikan" />
 <meta property="og:image" content="https://derma-express.com/assets/images/LogoDermaExpress-1@4x.png" />
 <meta property="og:description"
     content="Klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia." />
