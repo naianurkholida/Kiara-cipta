@@ -58,7 +58,7 @@
 						@else
 						<div class="col-lg-12">
 							<label>Data Customer</label><br>
-							<span>Total Trx <?=Helper::tanggal_indonesia(date('Y-m-d'))?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('+1 year')));?> : <b>{{ number_format($data[4]) }}</b></span>
+							<span>Total Trx dari <?=Helper::tanggal_indonesia(date('Y-m-d', strtotime('-1 year')));?> s/d <?=Helper::tanggal_indonesia(date('Y-m-d'))?>: <b>{{ number_format($data[4]) }}</b></span>
 							<table class="table table-striped">
 								<tr class="text-center">
 									<th>ID</th>
