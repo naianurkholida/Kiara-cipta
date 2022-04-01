@@ -966,7 +966,7 @@
 				},
 				"brandSetting":{
 					"brandName":"Derma Express",
-					"brandSubTitle":"Klinik kecantikan dengan dokter dan layanan estetika terbaik di Indonesia.",
+					"brandSubTitle":"Cakep Terjangkau #dermaexpressaja",
 					"brandImg":"https://derma-express.com/assets/images/LogoDermaExpress-1@4x.png",
 					"welcomeText":"Halo #DexPeople 😀\nSelamat datang di Derma Express! Ada yang bisa kami bantu?🤗💖",
 					"messageText":"Hi Derma Express,\nSaya tertarik untuk treatment di Derma Express. Mohon informasi lebih lanjutnya ya. \nTerima kasih😊",
