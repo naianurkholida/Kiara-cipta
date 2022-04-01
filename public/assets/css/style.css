@@ -517,7 +517,7 @@ body {
 
 a {
     text-decoration: none !important;
-    color: #65b5aa;
+    color: #555 !important;
 }
 
 a:hover {
