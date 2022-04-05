@@ -57,7 +57,7 @@
 <link href="{{ asset('assets/theme/assets/plugins/custom/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/theme/assets/plugins/custom/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/theme/assets/plugins/custom/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('assets/theme/assets/plugins/custom/jstree/dist/themes/default/style.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/theme/assets/plugins/custom/jstree/dist/themes/default/style.css') }}?n=1" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/theme/assets/plugins/custom/jqvmap/dist/jqvmap.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/theme/assets/plugins/custom/uppy/dist/uppy.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/theme/assets/css/skins/header/base/light.css') }}" rel="stylesheet" type="text/css" />
