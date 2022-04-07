@@ -30,7 +30,7 @@
     	<link rel="stylesheet" href="{{asset('assets/css/animate.css')}}" type="text/css" />
     	<link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}" type="text/css" />
 
-    	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" type="text/css" />
+    	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}?n=1" type="text/css" />
     	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     	<link rel="stylesheet" href="{{asset('assets/css/colors.php?color=65b5aa')}}" type="text/css" />
