@@ -16,6 +16,9 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 #new front page route
 
 	Route::get('/home', 'FrontPage\HomeController')->name('dermaster.home');
+	Route::get('/satisfied', 'FrontPage\HomeController@satisfied');
+	Route::get('/free-voucher', 'FrontPage\HomeController@freeVoucher');
+
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
 	Route::get('/ajax-kategori-produk', 'FrontPage\HomeController@kategoriProdukListJson');
 	Route::get('/ajax-treatment', 'FrontPage\HomeController@treatmentListJson');

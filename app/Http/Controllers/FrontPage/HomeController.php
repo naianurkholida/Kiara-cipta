@@ -51,6 +51,14 @@ class HomeController extends Controller
         return view($this->view);
     }
 
+    public function satisfied(Request $request) {
+        return view('frontend.satisfied');
+    }
+
+    public function freeVoucher() {
+        return view('frontend.free-voucher');
+    }
+
     public function jurnalListJson()
     {
         $data = Posting::with('getPostingLanguage')
