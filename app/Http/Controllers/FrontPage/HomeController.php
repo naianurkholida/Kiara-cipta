@@ -55,7 +55,7 @@ class HomeController extends Controller
         return view('frontend.satisfied');
     }
 
-    public function unsatisfied(Request $request, $trx_no) {
+    public function unsatisfied(Request $request, $trx_no) {  
         return view('frontend.unsatisfied', compact('trx_no'));
     }
 
