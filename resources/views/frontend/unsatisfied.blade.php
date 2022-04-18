@@ -7,7 +7,6 @@
 <meta property="og:url" content="https://derma-express.com/satisfied" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Profile Derma di Sini." />
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <title>Derma Express - A Company by Dermaster Clinic</title>
 @endsection
