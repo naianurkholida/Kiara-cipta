@@ -15,6 +15,9 @@ use App\Entities\Admin\core\Posting;
 use App\Entities\Admin\core\MenuFrontPage;
 use App\Entities\Admin\core\MenuFrontPageLanguage;
 use GuzzleHttp\Client;
+use DB;
+use Image;
+use File;
 
 class HomeController extends Controller
 {
@@ -37,6 +40,9 @@ class HomeController extends Controller
             $pengunjung->ip = $request->ip();
             $pengunjung->save();
         }
+
+        //Definisi PATH Foto
+		$this->path =  'assets/admin/assets/media/img';
     }
 
 
@@ -57,6 +63,21 @@ class HomeController extends Controller
 
     public function unsatisfied(Request $request, $trx_no) {  
         return view('frontend.unsatisfied', compact('trx_no'));
+    }
+
+    public function unsatisfiedStore(Request $request) {
+        $reason = $request->reason;
+		$file = $request->file('image');
+
+		if ($file) {
+			$fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+			Image::make($file)->save($this->path.'/'. $fileName);
+		}
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Unsatisfied successfully upload'
+        ]);
     }
 
     public function freeVoucher() {

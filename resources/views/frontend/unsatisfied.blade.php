@@ -15,7 +15,7 @@
 <div class="breadcrumb-page"
     style="background-image: url({{ asset('assets/image/bg-paralax-title.jpg') }});">
     <div class="overlay-breadcrumb"></div>
-    <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Unsatisfied</h2>
+    <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Unsatisfied Form</h2>
 </div>
 
 <div class="container">
@@ -29,7 +29,24 @@
 </div>
 
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
-    <iframe src="http://103.11.135.246:2310/apex/f?p=887:4::::4:P4_MEMBER_ID,P4_TRX_NO:{{$trx_no}}" title="unsatisfied" style="width: 100%; height: 600px;"></iframe>
+
+    <div class="box-unsatisfied" style="margin-top:20px;padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 70px;">
+
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Upload</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControl">Reason</label>
+            <textarea class="form-control mb-3" placeholder=""></textarea>
+        </div>
+        <button type="submit" class="btn btn-success mb-2">Submit</button>
+
+    </div>
+
 </div>
 @endsection
 
@@ -44,5 +61,6 @@
         $("#container_dalem").addClass("container");
         $("#container_luar").removeClass("container-fluid").addClass("container");
     }
+
 </script>
 @endsection
