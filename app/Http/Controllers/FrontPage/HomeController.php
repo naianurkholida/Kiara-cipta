@@ -78,7 +78,7 @@ class HomeController extends Controller
                 Image::make($file)->save($this->path.'/'. $fileName);
                 $client = new Client();
     
-                $response = $client->request('POST', '103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
+                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
         
                 $res = $response->getBody();
                 $data = json_decode($res);
