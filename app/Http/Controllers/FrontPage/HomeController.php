@@ -81,7 +81,7 @@ class HomeController extends Controller
                 $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
         
                 $res = $response->getBody();
-                $data = json_decode($res);
+                // $data = json_decode($res);
                 
                 $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
                 $msg_error = '';
