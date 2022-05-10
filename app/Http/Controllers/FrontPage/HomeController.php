@@ -61,11 +61,42 @@ class HomeController extends Controller
         return view('frontend.satisfied');
     }
 
-    public function unsatisfied(Request $request, $trx_no) {  
-        return view('frontend.unsatisfied', compact('trx_no'));
+    public function unsatisfied(Request $request, $trx_no) {
+        $method = $request->method();
+
+        if($method == 'GET'){
+            $msg = '';
+            $msg_error = '';
+            return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
+        }else{
+            $trx_no = $request->trx_no;
+            $reason = $request->reason;
+            $file = $request->file('image');
+    
+            if ($file) {
+                $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+                Image::make($file)->save($this->path.'/'. $fileName);
+                $client = new Client();
+    
+                $response = $client->request('POST', '103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
+        
+                $res = $response->getBody();
+                $data = json_decode($res);
+                
+                $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
+                $msg_error = '';
+                return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
+            }else{
+                $msg = '';
+                $msg_error = 'Pesan anda gagal terkirim';
+                return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
+            }
+        }
     }
 
+    //not use
     public function unsatisfiedStore(Request $request) {
+        $trx_no = $request->trx_no;
         $reason = $request->reason;
 		$file = $request->file('image');
 
@@ -73,12 +104,11 @@ class HomeController extends Controller
 			$fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
 			Image::make($file)->save($this->path.'/'. $fileName);
 		}
-
-        return response()->json([
-            'status' => 200,
-            'message' => 'Unsatisfied successfully upload'
-        ]);
+        
+        $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
+        return view('frontend.unsatisfied', compact('trx_no','msg'));
     }
+    //end not use
 
     public function freeVoucher() {
         return view('frontend.free-voucher');

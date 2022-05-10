@@ -34,16 +34,26 @@
     border: 1px solid #e1e1e1;
     border-radius: 8px;
     margin-bottom: 70px;">
+        @if($msg)
+        <div class="alert alert-success alert-dismissible">{{ $msg }}</div>
+        @endif
 
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Upload</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControl">Reason</label>
-            <textarea class="form-control mb-3" placeholder="" minlength="10" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-success mb-2">Submit</button>
+        @if($msg_error)
+        <div class="alert alert-danger alert-dismissible">{{ $msg_error }}</div>
+        @endif
+        <form action="{{ url('unsatisfied',$trx_no) }}" method="post" enctype="multipart/form-data" autocomplete="off">
+            {{csrf_field()}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Upload</label>
+                <input type="hidden" name="code" class="form-control" value="{{ $trx_no }}">
+                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControl">Reason</label>
+                <textarea class="form-control mb-3" name="reason" placeholder="" minlength="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success mb-2">Submit</button>
+        </form>
 
     </div>
 
