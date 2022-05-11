@@ -43,7 +43,7 @@ class HomeController extends Controller
 
         //Definisi PATH Foto
 		$this->path =  'assets/admin/assets/media/img';
-        $this->dimensions = ['300', '500'];
+        // $this->dimensions = ['300', ''];
     }
 
 
@@ -76,45 +76,7 @@ class HomeController extends Controller
     
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-                
-                $size   = getimagesize($file);
-                $width  = $size[0];
-                $height = $size[1];
-
-                if($width > $height){
-                    $size = ($width/$height);
-                }else{
-                    $size = ($height/$width);
-                }
-
-                // Image::make($file)->save($this->path.'/'. $fileName);
-                foreach ($this->dimensions as $row) {
-                    #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
-                    if($width < $height){
-                        $canvas = Image::canvas($row, ceil($row*$size));
-                        $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-                            $constraint->aspectRatio();
-                        });
-                    }else{
-                        $canvas = Image::canvas(($row*$size), $row);
-                        $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-                            $constraint->aspectRatio();
-                        });
-                    }
-    
-                    #CEK JIKA FOLDERNYA BELUM ADA
-                    if (!File::isDirectory($this->path . '/' . $row)) {
-                        #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
-                        File::makeDirectory($this->path . '/' . $row);
-                    }
-    
-                    #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
-                    $canvas->insert($resizeImage, 'center');
-                    #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-                    
-                    $canvas->save($this->path . '/300/' . $fileName);
-                    $canvas->save($this->path . '/500/' . $fileName);
-                }
+                Image::make($file)->save($this->path.'/'. $fileName);
                 
                 // $client = new Client();
                 // $response = $client->request('POST', 'http://103.11.135.246:1507/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
