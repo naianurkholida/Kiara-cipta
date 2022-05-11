@@ -73,19 +73,20 @@ class HomeController extends Controller
             $trx_no = $request->trx_no;
             $reason = $request->reason;
             $file = $request->file('image');
-
-            $size   = getimagesize($file);
-            $width  = $size[0];
-            $height = $size[1];
-
-            if($width > $height){
-                $size = ($width/$height);
-            }else{
-                $size = ($height/$width);
-            }
     
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+                
+                $size   = getimagesize($file);
+                $width  = $size[0];
+                $height = $size[1];
+
+                if($width > $height){
+                    $size = ($width/$height);
+                }else{
+                    $size = ($height/$width);
+                }
+
                 // Image::make($file)->save($this->path.'/'. $fileName);
                 foreach ($this->dimensions as $row) {
                     #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
