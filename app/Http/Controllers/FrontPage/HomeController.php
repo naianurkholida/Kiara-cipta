@@ -66,9 +66,7 @@ class HomeController extends Controller
 
         if($method == 'GET'){
             $client = new Client();
-            $customer = $client->request('GET', 'http://103.11.135.246:1506/datapercustomer', ['query' => [
-                'tel' => '081274587066'
-            ]]);
+            $customer = $client->request('GET', 'https://api.mizanamanah.or.id/api/user');
     
             $res2 = $customer->getBody();
             $response_users = json_decode($res2);
