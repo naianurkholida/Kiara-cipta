@@ -86,7 +86,8 @@ class HomeController extends Controller
                 // $msg_error = '';
                 // return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
 
-                return redirect('http://103.11.135.246:2310/apex/f?p=887:4:9448631956690:::4:P4_TRX_NO,P4_REASON,P4_LINK_IMG:'.str_replace(',','', $trx_no).',https://derma-express.com/'.$this->path.'/'.$fileName.','.$reason);
+                return redirect('http://103.11.135.246:2310/apex/f?p=887:4:3196839729598:::4:P4_TRX_NO,P4_REASON,P4_LINK_IMG:'.str_replace(',','', $trx_no).'/'.$fileName.'/'.$reason);
+
             }else{
                 $msg = '';
                 $msg_error = 'Pesan anda gagal terkirim';
