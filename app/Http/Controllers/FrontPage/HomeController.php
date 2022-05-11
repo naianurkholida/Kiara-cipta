@@ -65,6 +65,16 @@ class HomeController extends Controller
         $method = $request->method();
 
         if($method == 'GET'){
+            $client = new Client();
+            $customer = $client->request('GET', 'http://103.11.135.246:1506/datapercustomer', ['query' => [
+                'tel' => $username
+            ]]);
+    
+            $res2 = $customer->getBody();
+            $response_users = json_decode($res2);
+
+            dd($response_users);
+            
             $msg = '';
             $msg_error = '';
             return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
