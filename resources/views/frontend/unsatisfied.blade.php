@@ -41,7 +41,7 @@
         @if($msg_error)
         <div class="alert alert-danger alert-dismissible">{{ $msg_error }}</div>
         @endif
-        <form action="{{ url('unsatisfied',$trx_no) }}" method="post" enctype="multipart/form-data" autocomplete="off">
+        <form action="{{ url('unsatisfied',$trx_no) }}" method="post" enctype="multipart/form-data" autocomplete="off" target="_blank">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="exampleFormControlFile1">Upload</label>
