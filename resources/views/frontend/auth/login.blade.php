@@ -172,9 +172,11 @@
 			}else{
 
 				$.ajax({
-					url: '{{ url("sign/next?username=") }}'+username+'&password='+password,
-					// url: 'http://103.11.135.246:1506/login?username='+username+'&password='+password,
+					// url: '{{ url("sign/next?username=") }}'+username+'&password='+password,
+					url: 'http://103.11.135.246:1507/login?username='+username+'&password='+password,
 					type: 'POST',
+					crossDomain: true,
+            		format: "json",
 					dataType: 'json',
 				})
 				.done(function(res) {
