@@ -43,7 +43,7 @@ class HomeController extends Controller
 
         //Definisi PATH Foto
 		$this->path =  'assets/admin/assets/media/img';
-        // $this->dimensions = ['300', ''];
+        $this->dimensions = ['300', '500'];
     }
 
 
@@ -78,18 +78,17 @@ class HomeController extends Controller
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
                 Image::make($file)->save($this->path.'/'. $fileName);
                 
-                // $client = new Client();
-                // $response = $client->request('POST', 'http://103.11.135.246:1507/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
+                $client = new Client();
+                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
         
-                // $res = $response->getBody();
-                // $data = json_decode($res);
+                $res = $response->getBody();
+                $data = json_decode($res);
                 
-                // $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
-                // $msg_error = '';
+                $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
+                $msg_error = '';
+
+                return redirect('satisfied');
                 // return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
-
-                return redirect('http://103.11.135.246:2310/apex/f?p=887:4:3196839729598:::4:P4_TRX_NO,P4_REASON,P4_LINK_IMG:'.str_replace(',','', $trx_no).'/'.$fileName.'/'.$reason);
-
             }else{
                 $msg = '';
                 $msg_error = 'Pesan anda gagal terkirim';
