@@ -87,7 +87,7 @@ class HomeController extends Controller
                 $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
                 $msg_error = '';
 
-                return redirect('satisfied');
+                return redirect('free-voucher');
                 // return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
             }else{
                 $msg = '';
