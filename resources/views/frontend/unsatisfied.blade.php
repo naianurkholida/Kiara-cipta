@@ -7,6 +7,7 @@
 <meta property="og:url" content="https://derma-express.com/satisfied" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Profile Derma di Sini." />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>Derma Express - A Company by Dermaster Clinic</title>
 @endsection
@@ -46,7 +47,8 @@
             <div class="form-group">
                 <label for="exampleFormControlFile1">Upload</label>
                 <input type="hidden" name="code" class="form-control" value="{{ $trx_no }}">
-                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" name="image" class="form-control-file" id="file">
+                <input type="hidden" name="filename" id="filename">
             </div>
             <div class="form-group">
                 <label for="exampleFormControl">Reason</label>
@@ -61,6 +63,7 @@
 @endsection
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.1/compressor.min.js" integrity="sha512-VaRptAfSxXFAv+vx33XixtIVT9A/9unb1Q8fp63y1ljF+Sbka+eMJWoDAArdm7jOYuLQHVx5v60TQ+t3EA8weA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     if (window.matchMedia('(max-width: 425px)')) {
         $("#container_dalem").removeClass("container");
@@ -72,5 +75,55 @@
         $("#container_luar").removeClass("container-fluid").addClass("container");
     }
 
+    $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+
+
+    document.getElementById('file').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+
+        if (!file) {
+            return;
+        }
+
+        new Compressor(file, {
+            quality: 2,
+            width: 500,
+            height: 500,
+
+            // The compression process is asynchronous,
+            // which means you have to access the `result` in the `success` hook function.
+            success(result) {
+                const formData = new FormData();
+
+                // The third parameter is required for server
+                formData.append('image', result);
+                formData.append('name', result.name);
+
+                //Send the compressed image file to server with XMLHttpRequest.
+                $.ajax({
+                    url: "{{ url('unsatisfied/store/image') }}",
+                    method: 'POST',
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    data: formData,
+                    enctype: 'multipart/form-data',
+                    success: function(data) {
+                        $('#filename').val(data)
+                        console.log(data)
+                    }
+                });
+
+            },
+            error(err) {
+                console.log(err.message);
+            },
+        });
+    
+    });
 </script>
 @endsection

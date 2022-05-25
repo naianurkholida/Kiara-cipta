@@ -69,21 +69,16 @@ class HomeController extends Controller
             $msg = '';
             $msg_error = '';
 
-            // phpinfo();
             return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
         }else{
             $trx_no = $request->trx_no;
             $reason = $request->reason;
-            $file = $request->file('image');
+            $file = $request->filename;
 
-            dd($file);
-    
             if ($file) {
-                $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-                Image::make($file)->save($this->path.'/'. $fileName);
                 
                 $client = new Client();
-                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
+                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$file.'&reason='.$reason);
         
                 $res = $response->getBody();
                 $data = json_decode($res);
@@ -102,17 +97,16 @@ class HomeController extends Controller
 
     //not use
     public function unsatisfiedStore(Request $request) {
-        $trx_no = $request->trx_no;
-        $reason = $request->reason;
+        $name = $request->name;
 		$file = $request->file('image');
 
+        $fileName = '';
 		if ($file) {
-			$fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+			$fileName = 'Reason'.'_'.uniqid().'-'.$name;
 			Image::make($file)->save($this->path.'/'. $fileName);
 		}
         
-        $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
-        return view('frontend.unsatisfied', compact('trx_no','msg'));
+        return response()->json($fileName);
     }
     //end not use
 
