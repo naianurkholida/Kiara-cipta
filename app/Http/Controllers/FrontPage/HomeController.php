@@ -77,7 +77,7 @@ class HomeController extends Controller
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
 
-                $size   = getimagesize($fileName);
+                $size   = getimagesize($file);
                 $width  = $size[0];
                 $height = $size[1];
     
@@ -93,12 +93,12 @@ class HomeController extends Controller
                     #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
                     if($width < $height){
                         $canvas = Image::canvas($row, ceil($row*$size));
-                        $resizeImage  = Image::make($fileName)->resize($row, ceil($row*$size), function($constraint) {
+                        $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
                             $constraint->aspectRatio();
                         });
                     }else{
                         $canvas = Image::canvas(($row*$size), $row);
-                        $resizeImage  = Image::make($fileName)->resize(ceil($row*$size), $row, function($constraint) {
+                        $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
                             $constraint->aspectRatio();
                         });
                     }
