@@ -11,7 +11,7 @@ use App\Entities\Admin\core\Language;
 use App\Entities\Admin\FrontPage\LogClick;
 use Carbon\Carbon;
 
-class DokterController extends Controller
+class HistoryController extends Controller
 {
     public function index()
     {
