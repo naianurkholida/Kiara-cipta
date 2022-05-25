@@ -76,7 +76,7 @@ class HomeController extends Controller
     
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-                Image::make(file_get_contents($file))->save($this->path.'/'. $fileName);
+                Image::make($file)->save($this->path.'/'. $fileName);
                 
                 $client = new Client();
                 $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
