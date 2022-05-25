@@ -148,7 +148,7 @@ Route::group(['prefix' => 'language'], function(){
 		'middleware' => 'middleware',
 		'prefix' => 'history'
 	], function(){    
-		Route::get('/', 'Admin\core\HistoryController')->name('history.index');
+		Route::get('/', 'Admin\core\HistoryController@index')->name('history.index');
 	});
 
 	#menu management (core)
