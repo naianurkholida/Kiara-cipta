@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use App\Entities\Admin\core\Menu as Menu;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Entities\Admin\core\Language;
-use App\Entities\Admin\FrontPage\LogClick;
+use App\Entities\FrontPage\LogClick;
 use Carbon\Carbon;
 
 class HistoryController extends Controller
