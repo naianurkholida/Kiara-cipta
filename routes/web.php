@@ -143,6 +143,14 @@ Route::group(['prefix' => 'language'], function(){
 		Route::get('/', 'Admin\core\DashboardController')->name('dashboard.index');
 	});
 
+	#history
+	Route::group([
+		'middleware' => 'middleware',
+		'prefix' => 'history'
+	], function(){    
+		Route::get('/', 'Admin\core\HistorController')->name('history.index');
+	});
+
 	#menu management (core)
 	Route::group([
 		'middleware' => 'middleware',
