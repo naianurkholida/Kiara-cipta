@@ -75,6 +75,8 @@ class HomeController extends Controller
             $trx_no = $request->trx_no;
             $reason = $request->reason;
             $file = $request->file('image');
+
+            dd($file);
     
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
