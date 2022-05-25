@@ -69,8 +69,8 @@ class HomeController extends Controller
             $msg = '';
             $msg_error = '';
 
-            phpinfo();
-            // return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
+            // phpinfo();
+            return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
         }else{
             $trx_no = $request->trx_no;
             $reason = $request->reason;
