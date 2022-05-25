@@ -76,42 +76,10 @@ class HomeController extends Controller
     
             if ($file) {
                 $fileName = 'Reason'.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-
-                $size   = getimagesize($file);
-                $width  = $size[0];
-                $height = $size[1];
-    
-                if($width > $height){
-                    $size = ($width/$height);
-                }else{
-                    $size = ($height/$width);
-                }
-
-                // Image::make($file)->save($this->path.'/'. $fileName);
-
-                foreach ($this->dimensions as $row) {
-                    #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
-                    if($width < $height){
-                        $canvas = Image::canvas($row, ceil($row*$size));
-                        $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
-                            $constraint->aspectRatio();
-                        });
-                    }else{
-                        $canvas = Image::canvas(($row*$size), $row);
-                        $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
-                            $constraint->aspectRatio();
-                        });
-                    }
-    
-                    #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
-                    $canvas->insert($resizeImage, 'center');
-                    #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
-    
-                    $canvas->save($this->path . '/500/' . $fileName);
-                }
+                Image::make(file_get_contents($file))->save($this->path.'/'. $fileName);
                 
                 $client = new Client();
-                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/500/'.$fileName.'&reason='.$reason);
+                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$fileName.'&reason='.$reason);
         
                 $res = $response->getBody();
                 $data = json_decode($res);
