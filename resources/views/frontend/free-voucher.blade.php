@@ -35,7 +35,7 @@
         </h4>
     </div>
     <div style="margin-top: 20px;">
-        <img src="https://derma-express.com/assets/admin/assets/media/bg/img-piclogin.JPG" style="width: 100%; height:400px; background-size: contain; border-radius: 10px;">
+        <img src="{{ asset('assets/image/voucher_unsatisfied.jpg') }}" style="width: 100%; height:400px; background-size: contain; border-radius: 10px;">
     </div>
     <div style="margin-top: 20px;">
         <h5>Terms and Conditions</h5>
