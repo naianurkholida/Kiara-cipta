@@ -86,7 +86,12 @@ class HomeController extends Controller
                 $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
                 $msg_error = '';
 
-                return redirect('free-voucher');
+                $client2 = new Client($data);
+                $response2 = $client->request('GET', 'http://103.11.135.246:1506/voucherunsatisfied?id='.str_replace(',','', $trx_no));
+                $res2 = $response2->getBody();
+                $voucher = json_decode($res2);
+
+                return view('frontend.free-voucher', compact('voucher'));
             }else{
                 $msg = '';
                 $msg_error = 'Pesan anda gagal terkirim';

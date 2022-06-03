@@ -35,7 +35,16 @@
         </h4>
     </div>
     <div style="margin-top: 20px;">
-        <img src="{{ asset('assets/image/voucher_unsatisfied.jpg') }}" style="width: 100%; height:400px; background-size: contain; border-radius: 10px;">
+        <center>
+		    <div class="card card-responsive text-center" style="">
+				<div class="card-body" style="background-image: url('/assets/image/voucher_unsatisfied.jpg'); background-size: cover; border-radius: 20px;">   
+                    @if($voucher)
+					<h3 class="name-customer" id="name_customer">{{ $voucher[0][0] }}</h3>
+					<h3 class="id-customer" id="id_customer">{{ substr(str_replace('T', ' ', $voucher[0][1]), 0,19) }}</h3>
+                    @endif
+	    		</div>
+			</div>
+		</center>
     </div>
     <div style="margin-top: 20px;">
         <h5>Terms and Conditions</h5>
