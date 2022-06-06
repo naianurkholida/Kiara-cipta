@@ -116,7 +116,8 @@ class HomeController extends Controller
     //end not use
 
     public function freeVoucher() {
-        return view('frontend.free-voucher');
+        $voucher = '';
+        return view('frontend.free-voucher',compact('voucher'));
     }
 
     public function jurnalListJson()
