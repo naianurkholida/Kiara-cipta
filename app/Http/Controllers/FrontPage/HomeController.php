@@ -86,7 +86,7 @@ class HomeController extends Controller
                 $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
                 $msg_error = '';
 
-                $client2 = new Client($data);
+                $client2 = new Client();
                 $response2 = $client->request('GET', 'http://103.11.135.246:1506/voucherunsatisfied?id='.str_replace(',','', $trx_no));
                 $res2 = $response2->getBody();
                 $voucher = json_decode($res2);
@@ -115,8 +115,13 @@ class HomeController extends Controller
     }
     //end not use
 
-    public function freeVoucher() {
-        $voucher = '';
+    public function freeVoucher(Request $request) {
+        $trx_no = $request->trx_no;
+        $client = new Client();
+        $response = $client->request('GET', 'http://103.11.135.246:1506/voucherunsatisfied?id='.str_replace(',','', $trx_no));
+        $res = $response->getBody();
+        $voucher = json_decode($res);
+
         return view('frontend.free-voucher',compact('voucher'));
     }
 
