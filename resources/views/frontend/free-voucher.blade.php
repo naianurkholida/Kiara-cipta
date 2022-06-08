@@ -37,14 +37,14 @@
     <div style="margin-top: 20px;">
         <center>
 		    <div class="card card-responsive text-center" style="">
-				<div class="card-body" style="background-image: url('/assets/image/unsatisfied-voucher-ok.jpg'); background-size: cover; border-radius: 20px;">   
+				<div class="card-body" style="background-image: url('/assets/image/unsatisfied-voucher-ok.jpg'); background-size: cover; border-radius: 10px;">   
                     @if($voucher)
-					<h3 class="name-customer" id="name_customer">{{ $voucher[0][0] }}</h3>
+					<h3 class="name-customer" id="name_customer" style="font-size: 12px !important;">{{ $voucher[0][0] }}</h3>
                     <?php 
                     $dateTrans = substr(str_replace('T', ' ', $voucher[0][1]), 0,19);
                     $date = date('d M Y', strtotime($dateTrans));
                     ?>
-					<h3 class="id-customer" id="id_customer">{{ $date }}</h3>
+					<h3 class="id-customer" id="id_customer" style="font-size: 12px !important;">{{ $date }}</h3>
                     @endif
 	    		</div>
 			</div>
