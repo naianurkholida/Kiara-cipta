@@ -31,13 +31,13 @@
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     <div>
         <h4>
-            Thank you for yout criticism and suggestions you give, enjoy for your treatment as a form of our appreciation.
+            Thankyou for sharing your experience, please enjoy your free treatment as a form of our appreciation.
         </h4>
     </div>
     <div style="margin-top: 20px;">
         <center>
 		    <div class="card card-responsive text-center" style="">
-				<div class="card-body" style="background-image: url('/assets/image/voucher_unsatisfied.jpg'); background-size: cover; border-radius: 20px;">   
+				<div class="card-body" style="background-image: url('/assets/image/unsatisfied-voucher-ok.jpg'); background-size: cover; border-radius: 20px;">   
                     @if($voucher)
 					<h3 class="name-customer" id="name_customer">{{ $voucher[0][0] }}</h3>
                     <?php 
