@@ -58,6 +58,15 @@
             3. ############################# <br>
             4. ############################# <br>
             5. ############################# <br>
+            <ol>
+            <li>Voucher tidak dapat diuangkan</li>
+            <li>Voucher hanya berlaku 2 bulan sejak melakukan pengisian form</li>
+            <li>Voucher hanya berlaku satu kali</li>
+            <li>Voucher tidak dapat digabungkan dengan promo lain</li>
+            <li>Voucher tidak dapat digunakan bersamaan dengan voucher lain</li>
+            <li>Tidak ada minimal transaksi untuk penggunaan voucher ini</li>
+            <li>Voucher dapat digunakan di semua klinik</li>
+            </ol>
         </p>
     </div>
 </div>
