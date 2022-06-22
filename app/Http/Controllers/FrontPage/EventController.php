@@ -32,8 +32,6 @@ class EventController extends Controller
                 })
                 ->get();
 
-                dd($data);
-
         return view('frontend.event', compact('data'));
     }
 
