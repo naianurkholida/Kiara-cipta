@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControl">Reason</label>
-                <textarea class="form-control mb-3" name="reason" placeholder="" minlength="10" required></textarea>
+                <textarea class="form-control mb-3" name="reason" placeholder="" minlength="10"></textarea>
             </div>
             <button type="submit" class="btn btn-success mb-2">Submit</button>
         </form>
