@@ -30,6 +30,7 @@ class EventController extends Controller
                 ->whereHas('category', function($q) {
                     $q->where('seo', 'event');
                 })
+                ->where('status', true)
                 ->get();
 
         return view('frontend.event', compact('data'));
