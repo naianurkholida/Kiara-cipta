@@ -74,8 +74,6 @@ class HomeController extends Controller
             $trx_no = $request->trx_no;
             $reason = $request->reason;
             $file = $request->filename;
-
-            if ($file) {
                 
                 $client = new Client();
                 $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$file.'&reason='.$reason);
@@ -92,11 +90,6 @@ class HomeController extends Controller
                 $voucher = json_decode($res2);
 
                 return view('frontend.free-voucher', compact('voucher'));
-            }else{
-                $msg = '';
-                $msg_error = 'Pesan anda gagal terkirim';
-                return view('frontend.unsatisfied', compact('trx_no','msg','msg_error'));
-            }
         }
     }
 
