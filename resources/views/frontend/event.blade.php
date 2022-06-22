@@ -2,7 +2,7 @@
 
 @section('header')
 <meta name="description" content="Event List Derma Express.">
-<link rel="canonical" href="https://derma-express.com/events">
+<link rel="canonical" href="https://derma-express.com/event">
 
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="article" />
