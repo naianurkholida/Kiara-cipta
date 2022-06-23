@@ -227,30 +227,13 @@
 			data: { id: id },
 		})
 		.done(function(res) {
-			// $('#id_customer').html(res.customer[0])
-			// $('#name_customer').html(res.customer[1])
-			
 			$('#td_name').html(res.customer[1])
 			$('#td_id').html(res.customer[0])
 
 			$('#td_member').html(res.customer[3])
 			$('#td_point').html(res.customer[2])
-		});		
-	}
 
-	function getDataCustomer() {
-		let no_telp = '{{ Session::get("customer_no_telp") }}'
-
-		$.ajax({
-			url: '{{ url("customer-profile") }}/'+no_telp,
-			type: 'GET',
-			dataType: 'json',
-		})
-		.done(function(res) {
-			let last =  res.data.length - 1;
-			let data = res.data[last][2];
-
-			let amount  = parseInt(data.replace(/,/g, ''));
+			let amount  = parseInt(res.customer[4]);
 
 			let turquoise = 30000000;
 			let silver = 60000000;
@@ -296,6 +279,69 @@
 			}
 
 			execProg(persen);
+		});		
+	}
+
+	function getDataCustomer() {
+		let no_telp = '{{ Session::get("customer_no_telp") }}'
+
+		$.ajax({
+			url: '{{ url("customer-profile") }}/'+no_telp,
+			type: 'GET',
+			dataType: 'json',
+		})
+		.done(function(res) {
+			let customer = res.message[0];
+
+			let last =  res.data.length - 1;
+			let data = res.data[last][2];
+
+			// let amount  = parseInt(data.replace(/,/g, ''));
+
+			// let turquoise = 30000000;
+			// let silver = 60000000;
+			// let gold = 100000000;
+			// let solitaire = 100000000;
+
+			// var persen = 0;
+			// var sisa = 0;
+			// var text = false;
+
+			// if(amount <= turquoise){
+			// 	sisa = (turquoise-amount)+' untuk menuju level Silver.';
+			// }else if(amount >= turquoise && amount <= silver){
+			// 	sisa = (silver-amount)+' untuk menuju level Gold.';
+
+			// 	document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
+
+			// }else if(amount >= silver && amount <= gold){
+			// 	sisa = (gold-amount)+' untuk menuju level Solitaire.';
+
+			// 	document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
+			// 	document.getElementById('circle-point-gold').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-gold').classList.remove("txt-point-nonactive");
+			// }else{
+			// 	sisa = (solitaire-amount)+', selamat and sudah mencapai level Solitaire.';
+			// 	text = true;
+
+			// 	document.getElementById('circle-point-silver').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-silver').classList.remove("txt-point-nonactive");
+			// 	document.getElementById('circle-point-gold').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-gold').classList.remove("txt-point-nonactive");
+			// 	document.getElementById('circle-point-solitaire').classList.remove("circle-nonactive");
+			// 	document.getElementById('circle-point-text-solitaire').classList.remove("txt-point-nonactive");
+			// }
+
+			// persen = ((amount / solitaire) * (80)).toFixed(2);
+			// if(text == true){
+			// 	$('#text-progress').html('Selamat kamu sudah mencapai level Solitaire.');
+			// }else{
+			// 	$('#text-progress').html('Ayo tingkatin transaksi kamu sisa '+'Rp. '+sisa.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			// }
+
+			// execProg(persen);
 		});
 	}
 </script>
