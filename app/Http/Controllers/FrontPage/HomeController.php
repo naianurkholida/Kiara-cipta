@@ -74,22 +74,27 @@ class HomeController extends Controller
             $trx_no = $request->trx_no;
             $reason = $request->reason;
             $file = $request->filename;
+
+            $image = '';
+            if($file != null){
+                $image = 'https://derma-express.com/'.$this->path.'/'.$file;
+            }
                 
-                $client = new Client();
-                $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image=https://derma-express.com/'.$this->path.'/'.$file.'&reason='.$reason);
+            $client = new Client();
+            $response = $client->request('POST', 'http://103.11.135.246:1506/Unsatisfied?no_trx='.str_replace(',','', $trx_no).'&image='.$image.'&reason='.$reason);
         
-                $res = $response->getBody();
-                $data = json_decode($res);
+            $res = $response->getBody();
+            $data = json_decode($res);
                 
-                $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
-                $msg_error = '';
+            $msg = 'Pesan anda berhasil terkirim, Terimakasih DexPeople';
+            $msg_error = '';
 
-                $client2 = new Client();
-                $response2 = $client->request('GET', 'http://103.11.135.246:1506/voucherunsatisfied?id='.str_replace(',','', $trx_no));
-                $res2 = $response2->getBody();
-                $voucher = json_decode($res2);
+            $client2 = new Client();
+            $response2 = $client->request('GET', 'http://103.11.135.246:1506/voucherunsatisfied?id='.str_replace(',','', $trx_no));
+            $res2 = $response2->getBody();
+            $voucher = json_decode($res2);
 
-                return view('frontend.free-voucher', compact('voucher'));
+            return view('frontend.free-voucher', compact('voucher'));
         }
     }
 
