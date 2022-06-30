@@ -21,6 +21,7 @@ Route::post('/blast_email', 'FrontPage\DashboardCustomerController@_blast_email'
 	Route::get('/unsatisfied/{trx_no?}', 'FrontPage\HomeController@unsatisfied');
 	Route::post('/unsatisfied/{trx_no}', 'FrontPage\HomeController@unsatisfied');
 	Route::post('/unsatisfied/store/image', 'FrontPage\HomeController@unsatisfiedStore');
+	Route::get('/survey', 'FrontPage\HomeController@survey');
 
 	Route::get('/ajax-produk', 'FrontPage\HomeController@produkListJson');
 	Route::get('/ajax-kategori-produk', 'FrontPage\HomeController@kategoriProdukListJson');

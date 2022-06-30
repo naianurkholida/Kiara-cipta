@@ -62,6 +62,10 @@ class HomeController extends Controller
         return view('frontend.satisfied');
     }
 
+    public function survey(Request $request) {
+        return view('frontend.survey');
+    }
+
     public function unsatisfied(Request $request, $trx_no) {
         $method = $request->method();
 
