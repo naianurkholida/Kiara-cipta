@@ -31,7 +31,7 @@
 
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     {!! $pages->konten_page !!}
-    <div id="carousel-profile" class="owl-carousel owl-theme">
+    <!-- <div id="carousel-profile" class="owl-carousel owl-theme">
         @foreach($category as $row)
             @foreach($row->getGallery as $val)
                 @if($val->embed != Null)
@@ -44,7 +44,7 @@
                 @endif
             @endforeach
         @endforeach
-    </div>
+    </div> -->
 
     <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
         <div class="container clearfix">
