@@ -46,6 +46,8 @@
         @endforeach
     </div>
 </div>
+
+@include('frontend.component.layouts.achivement_backup')
 @endsection
 
 @section('js')

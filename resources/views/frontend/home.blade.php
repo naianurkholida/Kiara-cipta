@@ -30,15 +30,6 @@
         margin-right: 15%;
     }
 
-    .img-award {
-        max-width: 35%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 20px;
-    }
-
-
     <blade media|%20(max-width%3A%20576px)%7B>.modal-show {
         padding: 0px !important;
     }
@@ -67,7 +58,7 @@
     }
 
     .img-award {
-        max-width: 50%;
+        max-width: 30%;
         display: block;
         margin-left: auto;
         margin-right: auto;
