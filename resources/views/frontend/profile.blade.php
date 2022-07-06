@@ -40,7 +40,7 @@
                         allowfullscreen></iframe>
                 @else
                     <img src="{{ asset('assets/admin/assets/media/derma_gallery') }}/{{ $val->image }}"
-                        style="height: 600px; width: 100%;">
+                        style="height: auto; width: 100%;">
                 @endif
             @endforeach
         @endforeach

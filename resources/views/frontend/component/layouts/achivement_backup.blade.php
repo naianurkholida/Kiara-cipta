@@ -9,7 +9,8 @@
 </div>
 
 <div class="container clearfix">
-
-	<img src="https://staging.derma-express.com/assets/image/award.jpg" class="img-award">
-
+	<div style="display: flex">
+		<img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
+		<img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
+	</div>
 </div>
