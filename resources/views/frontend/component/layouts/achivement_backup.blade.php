@@ -9,8 +9,14 @@
 </div>
 
 <div class="container clearfix">
-	<div style="display: flex">
-		<img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
-		<img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
-	</div>
+	<center>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
+                </div>
+            </div>
+    </center>
 </div>

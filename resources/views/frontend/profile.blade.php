@@ -1,6 +1,6 @@
 @extends('frontend.component.master')
 @section('header')
-<meta name="description" content="Profil Derma Express - A Company by Dermaster Clinic.">
+<meta name="description" content="Derma Express - Tentang Kami.">
 <link rel="canonical" href="https://derma-express.com/profile">
 
 
@@ -10,7 +10,7 @@
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Yuk Check Profile Derma di Sini." />
 
-<title>Derma Express - A Company by Dermaster Clinic</title>
+<title>Derma Express - Tentang Kami</title>
 @endsection
 @section('content')
 <div class="breadcrumb-page"
@@ -45,9 +45,32 @@
             @endforeach
         @endforeach
     </div>
+
+    <div class="section topmargin nobottommargin nobottomborder" style="margin: 0 !important; background-color: #ffffff !important; ">
+        <div class="container clearfix">
+            <center>
+                <h2>
+                    Award
+                </h2>
+            </center>
+        </div>
+    </div>
+
+    <div class="container clearfix">
+        <center>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
+                </div>
+            </div>
+        </center>
+    </div>
+
 </div>
 
-@include('frontend.component.layouts.achivement_backup')
 @endsection
 
 @section('js')

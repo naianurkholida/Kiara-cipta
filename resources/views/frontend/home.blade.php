@@ -57,16 +57,6 @@
         font-size: 12px !important;
     }
 
-    .img-award {
-        max-width: 30%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 20px;
-    }
-
-    }
-
 </style>
 @endsection
 
