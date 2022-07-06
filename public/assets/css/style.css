@@ -17610,7 +17610,7 @@ body:not(.no-transition) #wrapper,
     }
 
     .img-award {
-        max-width: 50%; 
+        max-width: 30%; 
         display: block; 
         margin-left: auto; 
         margin-right: auto; 
