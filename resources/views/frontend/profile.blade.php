@@ -58,12 +58,12 @@
 
     <div class="container clearfix">
         <center>
-            <div class="row">
-                <div class="col-lg-6">
+            <div style="display: flex; width: 100%;">
+                <div style="width: 50%;">
                     <img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
                 </div>
-                <div class="col-lg-6">
-                    <img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
+                <div style="width: 50%;">
+                <img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
                 </div>
             </div>
         </center>
