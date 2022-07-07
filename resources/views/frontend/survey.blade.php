@@ -31,11 +31,11 @@
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     <div>
         <h3>
-            Thank you, you have filled out the survey email.
+            Sorry you have filled this survey
         </h3>
     </div>
     <div style="margin-top: 20px;">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quod in aspernatur magni. Ipsum ratione beatae voluptatem natus impedit, dolorem unde quae dicta enim inventore ad aperiam placeat rerum labore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis sit, voluptates nostrum mollitia architecto atque adipisci eum ut quos, inventore dolore. Vero blanditiis debitis neque ad omnis autem ut officia?</p>
+       
     </div>
     <div style="margin-top: 20px;">
         <p>Love, <br> Derma Express</p>
