@@ -63,7 +63,7 @@
                     <img src="{{ asset('assets/image/award.jpg') }}" class="img-award">
                 </div>
                 <div style="width: 50%;">
-                <img src="{{ asset('assets/image/award-2.jpg') }}" class="img-award">
+                <img src="{{ asset('assets/image/award-3.jpg') }}" class="img-award">
                 </div>
             </div>
         </center>
