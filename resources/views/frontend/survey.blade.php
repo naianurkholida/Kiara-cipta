@@ -31,7 +31,7 @@
 <div class="container" style="margin-top: 0;padding-left: 80px;padding-right: 90px;">
     <div>
         <h3>
-            Sorry you have filled this survey
+            You have successfully reviewed. Thank you!
         </h3>
     </div>
     <div style="margin-top: 20px;">
