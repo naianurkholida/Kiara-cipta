@@ -14,7 +14,15 @@
 
 <style type="text/css">
     .pagination {
-        float: right;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .pagination {
+            width: 85% !important;
+        }
     }
 
 </style>
@@ -57,11 +65,8 @@
         @endforeach
 
         <div class="row">
-            <div class="col-lg-6">
-                Showing {{ $data->currentPage() }} to {{ $data->perPage() }} of {{ $data->total() }} entries
-            </div>
-            <div class="col-lg-6">
-                {{ $data->links() }}
+            <div class="col-lg-12">
+                    {{ $data->onEachSide(1)->links() }}
             </div>
         </div>
     </div>

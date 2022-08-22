@@ -66,7 +66,7 @@
 
         <div class="container-flex">
             @foreach(Helper::profile_cabang() as $value)
-                <div class="item-kontak">
+                <div class="item-kontak" style="padding: 10px; margin-bottom:10px;">
                     <b>{{ $value->name }}</b><br><br>
                     {{ $value->address }}<br>
 
@@ -92,7 +92,7 @@
             @endforeach
 
             <div class="item-kontak">
-                <b>Kontak Kami</b><br>
+                <b>Kontak Kami</b><br><br>
                 <i class="icon-whatsapp-square"></i> 0822 58883050<br><br>
             </div>
         </div>

@@ -46,7 +46,7 @@
         </div>
         <div class="container-detail-jurnal">
             <center><img src="https://derma-express.com/assets/admin/assets/media/posting/{{ $data->image }}" alt="{{ $data->getPostingLanguage->judul }}"
-                    class="img-header-jurnal"></center>
+                    class="img-header-jurnal" style="border-radius: 10px;"></center>
             <div class="row" style="margin-top: 70px;">
                 <div class="col-12">
                     {!! $data->getPostingLanguage->content !!}
