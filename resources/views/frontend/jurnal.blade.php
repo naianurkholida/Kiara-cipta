@@ -50,7 +50,7 @@
             <div class="box-jurnal">
                 <img class="img-jurnal"
                     src="{{ asset('assets/admin/assets/media/posting/') }}/{{ $row->image }}"
-                    alt="{{ asset('assets/admin/assets/media/posting/') }}/{{ $row->image }}">
+                    alt="{{ $row->getPostingLanguage->judul }}" style="border-radius: 10px;">
                 <a
                     href="{{ route('dermaster.jurnal.show', $row->getPostingLanguage->seo) }}">
                     <p id="dokter-name">{{ $row->getPostingLanguage->judul }}</p>
