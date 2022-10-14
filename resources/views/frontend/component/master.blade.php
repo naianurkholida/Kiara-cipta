@@ -428,6 +428,10 @@
                                 <a href="https://derma-express.com/profile">About</a>/
                                 <a href="https://derma-express.com/kontak">Contact</a>
                             </div>
+                            PT. Samudra Estetika Perkasa<br>
+                            Grand ITC Permata Hijau D/06 Arteri Permata Hijau<br>
+                            Jakarta Selatan-DKI Jakarta<br>
+
                             Copyrights &copy; 2020 All Rights Reserved by Derma Express.
                         </div>
 
