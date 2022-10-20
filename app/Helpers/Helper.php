@@ -23,6 +23,7 @@ use App\Entities\Admin\core\BestSellerIcon;
 use App\Entities\Admin\core\OnlineStore;
 use App\Entities\Admin\core\ProfileCabang;
 use App\Entities\Admin\core\Settings;
+use App\Entities\Admin\core\Pages;
 use DB;
 
 class Helper
@@ -30,6 +31,17 @@ class Helper
 	private static function baseLanguageId()
 	{
 		$data = Session::get('locale');
+
+		return $data;
+	}
+
+	public static function awardsHome()
+	{
+		$data = Pages::join('pages_language', 'pages_language.id_pages', '=', 'pages.id')
+				->join('category', 'category.id', '=', 'pages.id_category')
+				->where('category.seo', 'home-awards')
+				->where('pages_language.id_language', 1)
+				->get();
 
 		return $data;
 	}

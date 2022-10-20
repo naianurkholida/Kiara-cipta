@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin\core;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use App\Entities\Admin\core\Pages;
 use App\Entities\Admin\core\Category;
 use App\Entities\Admin\core\Language;
@@ -10,9 +12,19 @@ use App\Entities\Admin\core\PagesLanguage;
 use App\Entities\Admin\core\MenuAccess as MenuAccess;
 use App\Http\Controllers\Controller;
 use DB;
+use Image;
+use File;
 
 class PagesController extends Controller
 {
+    public function __construct()
+    {
+        //Definisi PATH Foto
+        $this->path =  'assets/admin/assets/media/pages';
+        //Definisi Dimensi Foto
+        $this->dimensions = ['500'];
+    }
+
     public function top_bar()
     {
         $data['menu_item'] = MenuAccess::select('*')
@@ -89,7 +101,62 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
+        #upload foto to database
+        $file = $request->file('image');
+
+        $fileName = '';
+        if($file != NULL) {
+            #JIKA FOLDERNYA BELUM ADA
+            if (!File::isDirectory($this->path)) {
+                #MAKA FOLDER TERSEBUT AKAN DIBUAT
+                File::makeDirectory($this->path);
+            }
+
+            #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+            $fileName = Str::slug($request->judul[0]). '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+            $size   = getimagesize($file);
+            $width  = $size[0];
+            $height = $size[1];
+
+            if($width > $height){
+                $size = ($width/$height);
+            }else{
+                $size = ($height/$width);
+            }
+
+            #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+            Image::make($file)->save($this->path . '/' . $fileName);
+            foreach ($this->dimensions as $row) {
+                #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+                if($width < $height){
+                    $canvas = Image::canvas($row, ceil($row*$size));
+                    $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }else{
+                    $canvas = Image::canvas(($row*$size), $row);
+                    $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }
+
+                #CEK JIKA FOLDERNYA BELUM ADA
+                if (!File::isDirectory($this->path . '/' . $row)) {
+                    #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                    File::makeDirectory($this->path . '/' . $row);
+                }
+
+                #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+                $canvas->insert($resizeImage, 'center');
+                #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+              
+                $canvas->save($this->path . '/500/' . $fileName);
+            }
+        }
+
         $pages = new Pages;
+        $pages->image = $fileName;
         $pages->id_category = $request->kategori;
         $pages->is_created  = \Session::get('id');
         $pages->save();
@@ -156,7 +223,65 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        #upload foto to database
+        $file = $request->file('image');
+
+        $fileName = '';
+        if($file != NULL) {
+            #JIKA FOLDERNYA BELUM ADA
+            if (!File::isDirectory($this->path)) {
+                #MAKA FOLDER TERSEBUT AKAN DIBUAT
+                File::makeDirectory($this->path);
+            }
+
+            #MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()
+            $fileName = Str::slug($request->judul[0]). '_' .date('Ymdhis'). '.' . $file->getClientOriginalExtension();
+
+            $size   = getimagesize($file);
+            $width  = $size[0];
+            $height = $size[1];
+
+            if($width > $height){
+                $size = ($width/$height);
+            }else{
+                $size = ($height/$width);
+            }
+
+            #UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
+            Image::make($file)->save($this->path . '/' . $fileName);
+            foreach ($this->dimensions as $row) {
+                #MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY 
+                if($width < $height){
+                    $canvas = Image::canvas($row, ceil($row*$size));
+                    $resizeImage  = Image::make($file)->resize($row, ceil($row*$size), function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }else{
+                    $canvas = Image::canvas(($row*$size), $row);
+                    $resizeImage  = Image::make($file)->resize(ceil($row*$size), $row, function($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                }
+
+                #CEK JIKA FOLDERNYA BELUM ADA
+                if (!File::isDirectory($this->path . '/' . $row)) {
+                    #MAKA BUAT FOLDER DENGAN NAMA DIMENSI
+                    File::makeDirectory($this->path . '/' . $row);
+                }
+
+                #MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS
+                $canvas->insert($resizeImage, 'center');
+                #SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+              
+                $canvas->save($this->path . '/500/' . $fileName);
+            }
+        }
+
         $pages = Pages::find($id);
+        if($fileName != ''){
+            $pages->image = $fileName;
+        }
+
         $pages->id_category = $request->kategori;
         $pages->is_created  = \Session::get('id');
         $pages->save();
