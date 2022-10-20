@@ -4,7 +4,6 @@
 			<h2>
 				Awards
 			</h2>
-			<span>Dipercaya dengan pencapaian</span> 
 		</center>
 		<div style="margin-top: 70px;">
 			<div class="owl-carousel owl-theme" id="carousel-awards">
