@@ -21,7 +21,7 @@
 
         @foreach(Helper::awardsHome() as $item)
         <div style="width: 50%;">
-            <img src="{{ asset('assets/admin/assets/media/pages') }}/{{ $item->image }}" alt="{{ $item->judul_page }}" style="padding: 5px; border-radius: 5%;" class="lazyload">
+            <img src="{{ asset('assets/admin/assets/media/pages') }}/{{ $item->image }}" alt="{{ $item->judul_page }}" style="padding: 5px; border-radius: 5%;" class="lazyload img-award">
         </div>
         @endforeach
     </div>
