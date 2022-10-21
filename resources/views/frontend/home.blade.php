@@ -72,7 +72,7 @@
 
 @include('frontend.component.layouts.slider_product')
 
-@include('frontend.component.layouts.achievement_backup')
+@include('frontend.component.layouts.achivement_backup')
 
 <!-- <div class="pop-container">
     <div class="box-pop">
