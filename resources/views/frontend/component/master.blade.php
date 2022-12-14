@@ -426,7 +426,8 @@
                             <div class="copyrights-menu copyright-links clearfix">
                                 <a href="https://derma-express.com">Home</a>/
                                 <a href="https://derma-express.com/profile">About</a>/
-                                <a href="https://derma-express.com/kontak">Contact</a>
+                                <a href="https://derma-express.com/kontak">Contact</a>/
+								<a href="https://derma-express.com/privacy_police">Privacy Police</a>
                             </div>
                             PT. Samudra Estetika Perkasa<br>
                             Grand ITC Permata Hijau D/06 Arteri Permata Hijau<br>

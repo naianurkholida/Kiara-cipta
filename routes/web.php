@@ -501,4 +501,6 @@ Route::group(['prefix' => 'language'], function(){
 	Route::get('/share/promo/{seo}', 'FrontPage\SharePromoController@index');
 	Route::get('/share/update/iklan/diskon', 'FrontPage\SharePromoController@iklan');
 	Route::post('/share/update/iklan/diskon/post', 'FrontPage\SharePromoController@store');
+
+	Route::get('/privacy_police', 'FrontPage\PrivacyPoliceController@index');
 #end route backend
