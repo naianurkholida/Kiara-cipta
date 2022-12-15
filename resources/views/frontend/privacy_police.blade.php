@@ -1,30 +1,30 @@
 @extends('frontend.component.master')
 
 @section('header')
-<meta name="description" content="Privacy Police Derma Express.">
-<link rel="canonical" href="https://derma-express.com/privacy_police">
+<meta name="description" content="Privacy Policy Derma Express.">
+<link rel="canonical" href="https://derma-express.com/privacy_policy">
 
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://derma-express.com/privacy_police" />
+<meta property="og:url" content="https://derma-express.com/privacy_policy" />
 <meta property="og:title" content="Derma Express" />
 <meta property="og:description" content="Privacy Police" />
 
-<title>Privacy Police</title>
+<title>Privacy Policy</title>
 @endsection
 
 @section('content')
 <div class="breadcrumb-page"
     style="background-image: url({{ asset('assets/image/bg-paralax-title.jpg') }});">
     <div class="overlay-breadcrumb"></div>
-    <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Privacy Police</h2>
+    <h2 class="" style="margin:0;font-weight:600;z-index: 9;">Privacy Policy</h2>
 </div>
 
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Privacy Police</li>
+            <li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
         </ol>
     </nav>
     <br /><br />
