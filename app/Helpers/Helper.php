@@ -175,7 +175,7 @@ class Helper
 
 	public static function logo_login()
 	{
-		$data = '/assets/images/logo-aesthetic.png';
+		$data = '/assets/images/LOGO-AESTHETIC-2.png';
 
 		return $data;
 	}
