@@ -1,11 +1,11 @@
 <header id="header" class="full-header clearfix">
 
-    <div id="header-wrap">
+    <div id="header-wrap" style="height: 65px;">
         <div class="container" id="header_luar">
             <div class="container" id="header_dalem">
                 <div class="container" id="header_detail" style="display: flex; justify-content:center;">
                     <a href="{{ url('/') }}" class="mobile-logo">
-                        <img src="{{asset('assets/images/LogoDermaExpress-1@4x.png')}}" alt="DermaexpressLogo" width="100">
+                        <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" width="100">
                     </a>
                     
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
@@ -189,10 +189,10 @@
                             @endforeach 
 
                             <div id="logo" class="logo-desktop" style="border:0;padding: 0px !important;margin: 0px !important;">
-                                <a href="{{ url('/') }}" class="standard-logo">
+                                <a href="{{ url('/home') }}" class="standard-logo">
                                     <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 45px; margin-top: 12px;">
                                 </a>
-                                <a href="{{ url('/') }}" class="retina-logo">
+                                <a href="{{ url('/home') }}" class="retina-logo">
                                     <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 45px; margin-top: 12px;">
                                 </a>
                             </div>
