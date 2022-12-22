@@ -51,8 +51,6 @@
 	<link href="{{asset('assets/admin/assets/vendors/custom/vendors/flaticon2/flaticon.css')}}" rel="stylesheet" type="text/css" />
 	<link href="{{asset('assets/admin/assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css" />
 
-	<!-- <link rel="shortcut icon" href="{{asset('assets/images/dermaexpress.png')}}"> -->
-
 	<link rel="shortcut icon" href="{{asset('rsz_1logodermaexpress.png')}}">
 
 	<link rel="canonical" href="https://derma-express.com/">
