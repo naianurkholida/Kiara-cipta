@@ -84,7 +84,12 @@
 <div class="modal" tabindex="-1" id="iklan">
     <div class="modal-dialog">
         <div class="modal-content" style="border-radius: 6px;">
+            {{-- <div class="modal-header">      
+            </div> --}}
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>    
                 <div class="row">
                     <div class="col-lg-6">
                         <img src="{{ asset('assets/admin/assets/media/posting/') }}/{{ Helper::info_desc()->image }}"
