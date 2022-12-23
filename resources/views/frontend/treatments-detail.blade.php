@@ -1,4 +1,5 @@
-@extends('frontend.component.master_product_and_treatment')
+{{-- @extends('frontend.component.master_product_and_treatment') --}}
+@extends('frontend.component.master')
 
 @section('header')
 <meta charset="UTF-8" />
