@@ -190,10 +190,10 @@
 
                             <div id="logo" class="logo-desktop" style="border:0;padding: 0px !important;margin: 0px !important;">
                                 <a href="{{ url('/home') }}" class="standard-logo">
-                                    <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 45px; margin-top: 12px;">
+                                    <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 73px;">
                                 </a>
                                 <a href="{{ url('/home') }}" class="retina-logo">
-                                    <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 45px; margin-top: 12px;">
+                                    <img src="{{ asset(Helper::logo_login()) }}" alt="DermaexpressLogo" style="height: 73px;">
                                 </a>
                             </div>
 
