@@ -24,7 +24,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('home') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Kontak</li>
+            <li class="breadcrumb-item active" style="font-size: 8px !important;" aria-current="page">Kontak</li>
         </ol>
     </nav>
     <br /><br />

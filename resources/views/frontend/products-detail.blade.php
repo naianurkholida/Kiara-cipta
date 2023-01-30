@@ -159,7 +159,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('home') }}">Home</a></li>
                 <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('products') }}">Produk</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $data->getProdukLanguage->judul }}</li>
+                <li class="breadcrumb-item active" style="font-size: 8px !important;" aria-current="page">{{ $data->getProdukLanguage->judul }}</li>
             </ol>
         </nav>
         <br /><br />

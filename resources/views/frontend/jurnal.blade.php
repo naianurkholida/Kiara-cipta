@@ -40,14 +40,15 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('home') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Jurnal</li>
+                <li class="breadcrumb-item active" style="font-size: 8px !important;" aria-current="page">Jurnal</li>
             </ol>
         </nav>
         <br /><br />
     </div>
     <div class="container">
         @foreach($data as $row)
-            <div class="box-jurnal">
+            <center>
+                <div class="box-jurnal" style="text-align: left !important;">
                 <img class="img-jurnal"
                     src="{{ asset('assets/admin/assets/media/posting/') }}/{{ $row->image }}"
                     alt="{{ $row->getPostingLanguage->judul }}" style="border-radius: 10px;">
@@ -62,6 +63,7 @@
                     Read More
                 </a>
             </div>
+            </center>
         @endforeach
 
         <div class="row">
