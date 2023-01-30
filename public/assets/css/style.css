@@ -17321,8 +17321,8 @@ body:not(.no-transition) #wrapper,
 .mobile-logo{
     display: inline;
     position: absolute;
-    top: 20px;
-    left: 100px;
+    top: 0px;
+    left: 150px !important;
 }
 
 }
