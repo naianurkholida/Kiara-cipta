@@ -33,8 +33,8 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('treatments') }}">Treatments</a></li>
+                <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('home') }}">Home</a></li>
+                <li class="breadcrumb-item" style="font-size: 8px !important;"><a href="{{ url('treatments') }}">Treatments</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$data->getTreatmentLanguage->judul}}</li>
             </ol>
         </nav>
