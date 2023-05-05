@@ -367,12 +367,12 @@
                                             </ul>
                                             <br>
                                             <ul>
-                                                <span style="font-size: 12px;">Jam Operasional :</span><br>
+                                                <!-- <span style="font-size: 12px;">Jam Operasional :</span><br>
                                                 @foreach($value->detail as $detail)
                                                 @if ($detail->type == 'operational')
                                                 <li style="font-size: 11px; color: #999999;"><i>{{ $detail->value }}</i></li>
                                                 @endif
-                                                @endforeach
+                                                @endforeach -->
                                             </ul>
                                         </div>
                                     </div>
@@ -429,11 +429,11 @@
                                 <a href="https://derma-express.com/kontak">Contact</a>/
 								<a href="https://derma-express.com/privacy_policy">Privacy Policy</a>
                             </div>
-                            PT. Samudra Estetika Perkasa<br>
+                            <!-- PT. Samudra Estetika Perkasa<br>
                             Grand ITC Permata Hijau D/06 Arteri Permata Hijau<br>
                             Jakarta Selatan-DKI Jakarta<br>
 
-                            Copyrights &copy; 2020 All Rights Reserved by Derma Express.
+                            Copyrights &copy; 2020 All Rights Reserved by Derma Express. -->
                         </div>
 
                     </div>

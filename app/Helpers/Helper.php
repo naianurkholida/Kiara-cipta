@@ -440,6 +440,7 @@ class Helper
 		$data = ProfileCabang::with('detail')
 							->where('is_active', 1)
 							->where('deleted_at', null)
+							->orderBy('created_at','desc')
 							->get();
 
 		return $data;
