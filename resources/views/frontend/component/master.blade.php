@@ -357,7 +357,7 @@
 
                                <div id="post-list-footer">
                                     @foreach(Helper::profile_cabang() as $value)
-                                    <div class="spost clearfix" style="height: auto;">
+                                    <div class="spost clearfix" style="height: auto; padding-top: 0px;">
                                         <div class="entry-c">
                                             <div class="entry-title">
                                                 <h4><a href="{{ $value->link }}" target="blank">{{ $value->name }}</a></h4>
