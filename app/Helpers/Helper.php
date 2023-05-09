@@ -480,4 +480,12 @@ class Helper
 
 		return $data;
 	}
+
+	public static function kontak_kami()
+	{
+		$data = Parameter::where('key', 'kontak_kami')->first();
+
+		return $data ? $data->value : '';
+		
+	}
 }

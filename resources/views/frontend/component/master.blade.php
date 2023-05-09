@@ -271,7 +271,7 @@
                                             <abbr title="Headquarters" style="display: inline-block;margin-bottom: 7px;cursor: default;">
                                                 <strong>Kontak Kami:</strong>
                                             </abbr><br>
-                                            082258883050<br>
+                                            {{ Helper::kontak_kami() }}<br>
                                         </address>
                                     </div>
                                 </div>
